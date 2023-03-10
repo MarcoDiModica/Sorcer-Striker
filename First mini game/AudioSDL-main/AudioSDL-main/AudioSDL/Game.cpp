@@ -80,7 +80,7 @@ bool Game::LoadImages()
 		SDL_Log("IMG_Init, failed to init required png support: %s\n", IMG_GetError());
 		return false;
 	}
-	img_background = SDL_CreateTextureFromSurface(Renderer, IMG_Load("background.png"));
+	img_background = SDL_CreateTextureFromSurface(Renderer, IMG_Load("Background city Seamless.png"));
 	if (img_background == NULL) {
 		SDL_Log("CreateTextureFromSurface failed: %s\n", SDL_GetError());
 		return false;
