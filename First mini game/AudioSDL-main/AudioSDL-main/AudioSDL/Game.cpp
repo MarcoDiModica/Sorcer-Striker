@@ -85,7 +85,7 @@ bool Game::LoadImages()
 		SDL_Log("CreateTextureFromSurface failed: %s\n", SDL_GetError());
 		return false;
 	}
-	img_player = SDL_CreateTextureFromSurface(Renderer, IMG_Load("spaceship.png"));
+	img_player = SDL_CreateTextureFromSurface(Renderer, IMG_Load("dog.png"));
 	if (img_player == NULL) {
 		SDL_Log("CreateTextureFromSurface failed: %s\n", SDL_GetError());
 		return false;
@@ -158,12 +158,10 @@ bool Game::Update()
 		Player.GetRect(&x, &y, &w, &h);
 		//size: 56x20
 		//offset from player: dx, dy = [(29, 3), (29, 59)]
-		Shots[idx_shot].Init(x + 29, y + 3, 56, 20, 10);
+		Shots[idx_shot].Init(x + 80, y + 23, 56, 20, 10);
 		idx_shot++;
 		idx_shot %= MAX_SHOTS;
-		Shots[idx_shot].Init(x + 29, y + 59, 56, 20, 10);
-		idx_shot++;
-		idx_shot %= MAX_SHOTS;
+		
 
 		// Play a single Sound
 		Mix_PlayChannel(-1, sfxs[0], 0);
