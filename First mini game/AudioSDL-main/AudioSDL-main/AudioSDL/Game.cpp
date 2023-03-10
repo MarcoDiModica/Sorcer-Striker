@@ -68,7 +68,7 @@ bool Game::LoadAudios() {
 
 	Mix_PlayMusic(tracks[0], -1);
 
-	sfxs[num_sfxs++] = Mix_LoadWAV("sample_wav.wav");
+	sfxs[num_sfxs++] = Mix_LoadWAV("fart.wav");
 
 	return true;
 }
@@ -90,7 +90,7 @@ bool Game::LoadImages()
 		SDL_Log("CreateTextureFromSurface failed: %s\n", SDL_GetError());
 		return false;
 	}
-	img_shot = SDL_CreateTextureFromSurface(Renderer, IMG_Load("shot.png"));
+	img_shot = SDL_CreateTextureFromSurface(Renderer, IMG_Load("poop.png"));
 	if (img_shot == NULL) {
 		SDL_Log("CreateTextureFromSurface failed: %s\n", SDL_GetError());
 		return false;
