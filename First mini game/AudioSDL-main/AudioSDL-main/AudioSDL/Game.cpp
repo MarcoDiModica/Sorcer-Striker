@@ -1,5 +1,7 @@
 #include "Game.h"
 #include <math.h>
+#include <random>
+#include <time.h>
 
 Game::Game() {}
 Game::~Game(){}
@@ -54,6 +56,22 @@ bool Game::Init()
 	Player.Init(20, WINDOW_HEIGHT >> 1, 104, 82, 5);
 	idx_shot = 0;
 
+	srand(time(NULL));
+
+	for (int i = 0; i < MAX_ENEMIES; i++)
+	{
+		enemies[i].x = WINDOW_WIDTH;
+		enemies[i].y = 1 + rand() % (WINDOW_HEIGHT + 1 - 1);
+		enemies[i].speed = 1 + rand() % (2 + 1 - 1);
+		for (int a = 0; a <= WINDOW_HEIGHT; a++)
+		{
+			if (enemies[i].y == a)
+			{
+				enemies[i].y = 1 + rand() % (WINDOW_HEIGHT + 1 - 1);
+			}
+		}
+	}
+
 	int w;
 	SDL_QueryTexture(img_background, NULL, NULL, &w, NULL);
 	Scene.Init(0, 0, w, WINDOW_HEIGHT, 4);
@@ -95,14 +113,21 @@ bool Game::LoadImages()
 		SDL_Log("CreateTextureFromSurface failed: %s\n", SDL_GetError());
 		return false;
 	}
+	//img_enemie = SDL_CreateTextureFromSurface(Renderer, IMG_Load("PABLOPUTERO.png")); //change image plsss sdajhskfgajskdhsakjd
+	//if (img_shot == NULL) {
+	//	SDL_Log("CreateTextureFromSurface failed: %s\n", SDL_GetError());
+	//	return false;
+	//}
 	return true;
 }
+
 void Game::Release()
 {
 	//Release images
 	SDL_DestroyTexture(img_background);
 	SDL_DestroyTexture(img_player);
 	SDL_DestroyTexture(img_shot);
+	/*SDL_DestroyTexture(img_enemie);*/
 	IMG_Quit();
 	
 	// Free Audios
@@ -139,6 +164,12 @@ bool Game::Input()
 
 	return true;
 }
+
+//bool Game::checkcolisions() 
+//{
+//	return SDL_HasIntersection();
+//}
+
 bool Game::Update()
 {
 	//Read Input
@@ -166,7 +197,8 @@ bool Game::Update()
 		// Play a single Sound
 		Mix_PlayChannel(-1, sfxs[0], 0);
 	}
-
+	if (keys[SDL_SCANCODE_LSHIFT] == KEY_DOWN)	fy = -10;
+	if (keys[SDL_SCANCODE_LCTRL] == KEY_DOWN)	fy = +10;
 	//Logic
 	//Scene scroll
 	Scene.Move(-1, 0);
@@ -182,9 +214,25 @@ bool Game::Update()
 			if (Shots[i].GetX() > WINDOW_WIDTH)	Shots[i].ShutDown();
 		}
 	}
+
+	for (int i = 0; i < MAX_ENEMIES; i++)
+	{
+		enemies[i].x += enemies[i].speed;
+		if (enemies[i].x < 0)
+		{
+			enemies[i].x = 0;
+			enemies[i].speed = -enemies[i].speed; 
+		}
+		else if (enemies[i].x > WINDOW_WIDTH)
+		{
+			enemies[i].x = WINDOW_WIDTH;
+			enemies[i].speed = -enemies[i].speed; 
+		}
+	}
 		
 	return false;
 }
+
 void Game::Draw()
 {
 	SDL_Rect rc;
@@ -207,6 +255,13 @@ void Game::Draw()
 	Player.GetRect(&rc.x, &rc.y, &rc.w, &rc.h);
 	SDL_RenderCopy(Renderer, img_player, NULL, &rc);
 	if (god_mode) SDL_RenderDrawRect(Renderer, &rc);
+
+	//Draw Enemies
+	SDL_SetRenderDrawColor(Renderer, 255, 0, 0, 255);
+	for (int i = 0; i < MAX_ENEMIES; i++) {
+		SDL_Rect enem = { enemies[i].x, enemies[i].y, 40, 40 };
+		SDL_RenderFillRect(Renderer, &enem);
+	}
 	
 	//Draw shots
 	for (int i = 0; i < MAX_SHOTS; ++i)

@@ -1,5 +1,11 @@
 #include "Entity.h"
 
+#define WINDOW_WIDTH	1024
+#define WINDOW_HEIGHT	768
+#define MAX_KEYS		256
+#define MAX_SHOTS		32
+#define MAX_TRACKS		8
+#define MAX_ENEMIES		2
 
 Entity::Entity()
 {
@@ -49,4 +55,21 @@ void Entity::Move(int dx, int dy)
 {
 	x += dx * speed;
 	y += dy * speed;
+
+	if (x > WINDOW_WIDTH)
+	{
+		x = WINDOW_WIDTH;
+	}
+	if (x < 0)
+	{
+		x = 0;
+	}
+	if (y > WINDOW_HEIGHT)
+	{
+		y = WINDOW_HEIGHT;
+	}
+	if (y < 0)
+	{
+		y = 0;
+	}
 }
