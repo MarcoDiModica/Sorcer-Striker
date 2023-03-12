@@ -113,11 +113,11 @@ bool Game::LoadImages()
 		SDL_Log("CreateTextureFromSurface failed: %s\n", SDL_GetError());
 		return false;
 	}
-	//img_enemie = SDL_CreateTextureFromSurface(Renderer, IMG_Load("PABLOPUTERO.png")); //change image plsss sdajhskfgajskdhsakjd
-	//if (img_shot == NULL) {
-	//	SDL_Log("CreateTextureFromSurface failed: %s\n", SDL_GetError());
-	//	return false;
-	//}
+	img_enemie = SDL_CreateTextureFromSurface(Renderer, IMG_Load("PABLOPUTERO.png")); //change image plsss sdajhskfgajskdhsakjd
+	if (img_enemie == NULL) {
+		SDL_Log("CreateTextureFromSurface failed: %s\n", SDL_GetError());
+		return false;
+	}
 	return true;
 }
 
@@ -127,7 +127,7 @@ void Game::Release()
 	SDL_DestroyTexture(img_background);
 	SDL_DestroyTexture(img_player);
 	SDL_DestroyTexture(img_shot);
-	/*SDL_DestroyTexture(img_enemie);*/
+	SDL_DestroyTexture(img_enemie);
 	IMG_Quit();
 	
 	// Free Audios
@@ -165,11 +165,6 @@ bool Game::Input()
 	return true;
 }
 
-//bool Game::checkcolisions() 
-//{
-//	return SDL_HasIntersection();
-//}
-
 bool Game::Update()
 {
 	//Read Input
@@ -197,8 +192,8 @@ bool Game::Update()
 		// Play a single Sound
 		Mix_PlayChannel(-1, sfxs[0], 0);
 	}
-	if (keys[SDL_SCANCODE_LSHIFT] == KEY_DOWN)	fy = -10;
-	if (keys[SDL_SCANCODE_LCTRL] == KEY_DOWN)	fy = +10;
+	if (keys[SDL_SCANCODE_LSHIFT] == KEY_DOWN)	fy = -30;
+	if (keys[SDL_SCANCODE_LCTRL] == KEY_DOWN)	fy = +30;
 	//Logic
 	//Scene scroll
 	Scene.Move(-1, 0);
@@ -229,7 +224,9 @@ bool Game::Update()
 			enemies[i].speed = -enemies[i].speed; 
 		}
 	}
-		
+	
+	
+
 	return false;
 }
 
@@ -257,9 +254,9 @@ void Game::Draw()
 	if (god_mode) SDL_RenderDrawRect(Renderer, &rc);
 
 	//Draw Enemies
-	SDL_SetRenderDrawColor(Renderer, 255, 0, 0, 255);
 	for (int i = 0; i < MAX_ENEMIES; i++) {
 		SDL_Rect enem = { enemies[i].x, enemies[i].y, 40, 40 };
+		SDL_RenderCopy(Renderer, img_enemie, NULL, NULL);
 		SDL_RenderFillRect(Renderer, &enem);
 	}
 	

@@ -43,13 +43,12 @@ public:
 	/*void updateenemies(enemies);*/
 	bool Update();
 	/*void drawEnemies(enemies);*/
-	/*bool checkcolisions();*/
 	void Draw();
 
 private:
 	SDL_Window *Window;
 	SDL_Renderer *Renderer;
-	SDL_Texture *img_background, *img_player, *img_shot/*, *img_enemie*/;
+	SDL_Texture *img_background, *img_player, *img_shot, *img_enemie;
 
 	Entity Player, Shots[MAX_SHOTS], Scene;
 	int idx_shot;
