@@ -255,9 +255,9 @@ void Game::Draw()
 
 	//Draw Enemies
 	for (int i = 0; i < MAX_ENEMIES; i++) {
-		SDL_Rect enem = { enemies[i].x, enemies[i].y, 40, 40 };
-		SDL_RenderCopy(Renderer, img_enemie, NULL, NULL);//el segundo null tiene que ser un poiter que indique el destino donde poner el pepe//
-		SDL_RenderFillRect(Renderer, &enem);
+		
+		SDL_Rect enem = { enemies[i].x, enemies[i].y, 70, 60 };
+		SDL_RenderCopy(Renderer, img_enemie, NULL, &enem);
 	}
 	
 	//Draw shots
