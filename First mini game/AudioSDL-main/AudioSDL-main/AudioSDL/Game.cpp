@@ -82,7 +82,7 @@ bool Game::Init()
 
 bool Game::LoadAudios() {
 	num_tracks = 0;
-	tracks[num_tracks++] = Mix_LoadMUS("sample_ogg.ogg");
+	tracks[num_tracks++] = Mix_LoadMUS("garfield.ogg");
 
 	Mix_PlayMusic(tracks[0], -1);
 
