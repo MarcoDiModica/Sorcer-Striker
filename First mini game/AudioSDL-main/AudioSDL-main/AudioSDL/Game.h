@@ -17,7 +17,7 @@
 #define MAX_KEYS		256
 #define MAX_SHOTS		32
 #define MAX_TRACKS		8
-#define MAX_ENEMIES		2
+#define MAX_ENEMIES		4
 
 
 
@@ -56,6 +56,8 @@ private:
 	Enemy enemies[MAX_ENEMIES];
 
 	bool god_mode;
+
+	int SCORE = 0;
 
 	enum KEY_STATE { KEY_IDLE, KEY_DOWN, KEY_REPEAT, KEY_UP	};
 	KEY_STATE keys[MAX_KEYS]; 

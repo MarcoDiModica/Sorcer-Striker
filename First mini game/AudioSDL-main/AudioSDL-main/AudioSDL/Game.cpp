@@ -14,7 +14,7 @@ bool Game::Init()
 		return false;
 	}
 	//Create our window: title, x, y, w, h, flags
-	Window = SDL_CreateWindow("Spaceship: arrow keys + space, f1: god mode", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_SHOWN);
+	Window = SDL_CreateWindow("Spaceship: arrow keys + space, SCORE 10 to WIN", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_SHOWN);
 	if (Window == NULL)
 	{
 		SDL_Log("Unable to create window: %s", SDL_GetError());
@@ -61,15 +61,8 @@ bool Game::Init()
 	for (int i = 0; i < MAX_ENEMIES; i++)
 	{
 		enemies[i].x = WINDOW_WIDTH;
-		enemies[i].y = 1 + rand() % (WINDOW_HEIGHT + 1 - 1);
-		enemies[i].speed = 1 + rand() % (2 + 1 - 1);
-		for (int a = 0; a <= WINDOW_HEIGHT; a++)
-		{
-			if (enemies[i].y == a)
-			{
-				enemies[i].y = 1 + rand() % (WINDOW_HEIGHT + 1 - 1);
-			}
-		}
+		enemies[i].y = 80 + rand() % (WINDOW_HEIGHT + 1 - 80);
+		enemies[i].speed = 3 + rand() % (4+ 1 - 3);
 	}
 
 	int w;
@@ -225,7 +218,27 @@ bool Game::Update()
 		}
 	}
 	
-	
+	for (int i = 0; i < MAX_ENEMIES; i++)
+	{
+		if (enemies[i].x < 1 || SCORE == 10)
+		{
+			return true;
+		}
+	}
+
+	for (int i = 0; i < MAX_ENEMIES; i++)
+	{
+		SDL_Rect rect1 = { enemies[i].x, enemies[i].y, 70, 60 };
+		for (int a = 0; a < MAX_SHOTS; a++)
+		{
+			SDL_Rect rect2 = {Shots[a].GetX(),Shots[a].GetY(),56,20};
+			if (SDL_HasIntersection(&rect1, &rect2)) {
+				enemies[i].x = WINDOW_WIDTH;
+				enemies[i].y = 1 + rand() % (WINDOW_HEIGHT + 1 - 1);
+				SCORE++;
+			}
+		}
+	}
 
 	return false;
 }

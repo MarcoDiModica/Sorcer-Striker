@@ -34,6 +34,10 @@ int Entity::GetX()
 {
 	return x;
 }
+int Entity::GetY()
+{
+	return y;
+}
 int Entity::GetWidth()
 {
 	return width;
