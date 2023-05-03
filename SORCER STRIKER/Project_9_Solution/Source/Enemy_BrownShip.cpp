@@ -42,7 +42,17 @@ void Enemy_BrownShip::Update()
 
 	position.x = spawnPos.x + (waveHeight * sinf(waveRatio));
 
-	if (position.y > (App->player->OPTMIZENELJUEGUITO + 70)) {
+	if (position.x <= 5)
+	{
+		position.x = 5;
+	}
+
+	if (position.x >= SCREEN_WIDTH - 40)
+	{
+		position.x = SCREEN_WIDTH - 40;
+	}
+
+	if (position.y > (App->player->OPTMIZENELJUEGUITO + 60)) {
 		position.y -= 3;
 	}
 

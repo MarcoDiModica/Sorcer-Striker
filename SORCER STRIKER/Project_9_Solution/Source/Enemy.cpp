@@ -37,8 +37,6 @@ void Enemy::Draw()
 		App->render->Blit(texture, position.x, position.y, &(currentAnim->GetCurrentFrame()));
 }
 
-
-
 void Enemy::OnCollision(Collider* collider)
 {
 	cnt--;

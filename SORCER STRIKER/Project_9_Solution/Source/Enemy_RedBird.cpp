@@ -24,8 +24,8 @@ void Enemy_RedBird::Update()
 
 	position.x = spawnPos.x + (waveHeight * sinf(waveRatio));
 
-	if (position.y > (App->player->OPTMIZENELJUEGUITO + 70)) {
-		position.y -= 3;
+	if (position.y > (App->player->OPTMIZENELJUEGUITO + SCREEN_HEIGHT + 30)) {
+		SetToDelete();
 	}
 	
 	Enemy::Update();
