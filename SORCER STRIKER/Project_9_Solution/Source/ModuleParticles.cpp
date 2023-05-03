@@ -5,6 +5,7 @@
 #include "ModuleTextures.h"
 #include "ModuleRender.h"
 #include "ModuleCollisions.h"
+#include "ModulePlayer.h"
 
 #include "SDL/include/SDL_timer.h"
 
@@ -37,8 +38,14 @@ bool ModuleParticles::Start()
 	laser.anim.PushBack({ 0, 0, 8, 21 });
 	
 	laser.speed.y = -8;
-	laser.lifetime = 180;
+	laser.lifetime = 50;
 	laser.anim.speed = 0.2f;
+
+	EnemyL.anim.PushBack({ 276,275,15,13 });
+
+	EnemyL.speed.y = 2;
+	EnemyL.lifetime = 120;
+	EnemyL.anim.speed = 0.2f;
 
 	return true;
 }
@@ -138,7 +145,7 @@ Particle* ModuleParticles::AddParticle(const Particle& particle, int x, int y, C
 			newParticle->position.y = y;
 
 			//Adding the particle's collider
-			if (colliderType != Collider::Type::NONE)
+			if (colliderType != Collider::Type::NONE )
 				newParticle->collider = App->collisions->AddCollider(newParticle->anim.GetCurrentFrame(), colliderType, this);
 
 			particles[i] = newParticle;

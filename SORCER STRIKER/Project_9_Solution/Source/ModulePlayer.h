@@ -56,11 +56,13 @@ public:
 
 	// The player's collider
 	Collider* collider = nullptr;
+	Collider* collider2 = nullptr;
+	Collider* collider3 = nullptr;
 
 	// A flag to detect when the player has been destroyed
 	bool destroyed = false;
 	bool god_mode = false;
-	float OPTMIZENELJUEGUITO;
+	int OPTMIZENELJUEGUITO;
 
 	// Sound effects indices
 	uint laserFx = 0;

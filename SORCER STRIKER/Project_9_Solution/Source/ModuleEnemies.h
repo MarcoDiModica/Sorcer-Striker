@@ -30,6 +30,8 @@ public:
 	// Constructor
 	ModuleEnemies(bool startEnabled);
 
+
+
 	// Destructor
 	~ModuleEnemies();
 

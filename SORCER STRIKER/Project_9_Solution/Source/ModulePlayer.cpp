@@ -68,6 +68,7 @@ bool ModulePlayer::Start()
 
 	collider = App->collisions->AddCollider({ position.x, position.y, 32, 29 }, Collider::Type::PLAYER, this);
 
+
 	char lookupTable[] = { "! @,_./0123456789$;< ?abcdefghijklmnopqrstuvwxyz" };
 	scoreFont = App->fonts->Load("Assets/Fonts/textocosa.png", lookupTable, 2);
 
@@ -76,9 +77,10 @@ bool ModulePlayer::Start()
 
 Update_Status ModulePlayer::Update()
 {
-	// Moving the player with the camera scroll
+	
 	App->player->position.y -= speed;
 	OPTMIZENELJUEGUITO -= speed;
+
 
 	if (position.y <= OPTMIZENELJUEGUITO)
 	{
@@ -123,7 +125,7 @@ Update_Status ModulePlayer::Update()
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN)
 	{
 		Particle* newParticle = App->particles->AddParticle(App->particles->laser, position.x + 12, position.y  - 10, Collider::Type::PLAYER_SHOT);
-		newParticle->collider->AddListener(this);
+ 		newParticle->collider->AddListener(this);
 		App->audio->PlayFx(laserFx);
 	}
 
@@ -134,7 +136,7 @@ Update_Status ModulePlayer::Update()
 
 	if (App->input->keys[SDL_SCANCODE_F3] == Key_State::KEY_DOWN)
 	{
-		
+		App->audio->PlayFx(winFx);
 		App->collisions->debug = false;
 		if (score > highscore) {
 			highscore = score;
@@ -142,7 +144,6 @@ Update_Status ModulePlayer::Update()
 		score = 0;
 		lives = 3;
 		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneStageclear, 70);
-		App->audio->PlayFx(winFx);
 	}
 
 	if (App->input->keys[SDL_SCANCODE_F4] == Key_State::KEY_DOWN)

@@ -3,7 +3,7 @@
 
 #include "SDL/include/SDL_Rect.h"
 
-#define MAX_LISTENERS 6
+#define MAX_LISTENERS 30
 
 class Module;
 
@@ -26,6 +26,7 @@ struct Collider
 	Collider(SDL_Rect rectangle, Type type, Module* listener = nullptr);
 
 	void SetPos(int x, int y);
+	void SetY(int y);
 
 	bool Intersects(const SDL_Rect& r) const;
 

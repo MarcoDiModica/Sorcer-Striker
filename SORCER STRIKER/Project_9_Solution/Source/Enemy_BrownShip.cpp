@@ -4,11 +4,12 @@
 #include "ModuleCollisions.h"
 #include "ModuleRender.h"
 #include "ModulePlayer.h"
+#include "ModuleParticles.h"
 
 Enemy_BrownShip::Enemy_BrownShip(int x, int y) : Enemy(x, y)
 {
 	cnt = 3;
-	
+
 	// Define the fly animation
 	flyAnim.PushBack({68, 0, 34, 31});
 	
@@ -36,6 +37,8 @@ Enemy_BrownShip::Enemy_BrownShip(int x, int y) : Enemy(x, y)
 	collider = App->collisions->AddCollider({ position.y + 5, position.y, 34, 30}, Collider::Type::ENEMY, (Module*)App->enemies);
 }
 
+
+
 void Enemy_BrownShip::Update()
 {
 	waveRatio += waveRatioSpeed;
@@ -46,17 +49,29 @@ void Enemy_BrownShip::Update()
 	{
 		position.x = 5;
 	}
-
+	
 	if (position.x >= SCREEN_WIDTH - 40)
 	{
 		position.x = SCREEN_WIDTH - 40;
 	}
 
+	yoldi = SDL_GetTicks();
+
+	if (yoldi % 10000)
+	{
+		yoldi = 0;
+		/*newParticle = App->particles->AddParticle(App->particles->EnemyL, position.x + 17, position.y + 35, Collider::Type::ENEMY_SHOT);
+		newParticle->collider->AddListener();*/
+	}
+
 	if (position.y > (App->player->OPTMIZENELJUEGUITO + 60)) {
 		position.y -= 3;
+
+		
 	}
 
 	// Call to the base class. It must be called at the end
 	// It will update the collider depending on the position
 	Enemy::Update();
 }
+

@@ -3,6 +3,7 @@
 
 #include "Enemy.h"
 #include "Path.h"
+#include "ModuleParticles.h"
 
 class Enemy_BrownShip : public Enemy
 {
@@ -11,6 +12,7 @@ public:
 	// Creates animation and movement data and the collider
 	Enemy_BrownShip(int x, int y);
 
+	Particle* newParticle;
 	// The enemy is going to follow the different steps in the path
 	// Position will be updated depending on the speed defined at each step
 	void Update();
@@ -19,6 +21,8 @@ private:
 	// A set of steps that define the position in the screen
 	// And an animation for each step
 	Path path;
+
+	int yoldi;
 
 	float waveRatio = 0.9f;
 

@@ -7,7 +7,7 @@
 #include "Particle.h"
 #include "Collider.h"
 
-#define MAX_ACTIVE_PARTICLES 100
+#define MAX_ACTIVE_PARTICLES 1000
 
 struct SDL_Texture;
 struct Collider;
@@ -58,6 +58,7 @@ public:
 
 	//Template particle for a laser
 	Particle laser;
+	Particle EnemyL;
 
 private:
 	// Particles spritesheet loaded into an SDL Texture
