@@ -194,12 +194,12 @@ Update_Status ModulePlayer::PostUpdate()
 	App->fonts->BlitText(2, 2, scoreFont, "player1");
 	App->fonts->BlitText(88, 2, scoreFont, "highscore");
 	App->fonts->BlitText(96, 15, scoreFont, highscoreText);
-	App->fonts->BlitText(2, 30, scoreFont, "lives x ");
-	App->fonts->BlitText(15, 30, scoreFont, livesText);
+	App->fonts->BlitText(180, 2, scoreFont, "lives x ");
+	App->fonts->BlitText(192, 2, scoreFont, livesText);
 
 	if (god_mode)
 	{
-		App->fonts->BlitText(190, 2, scoreFont, "god mode");
+		App->fonts->BlitText(180, 15, scoreFont, "god mode");
 	}
 
 	return Update_Status::UPDATE_CONTINUE;

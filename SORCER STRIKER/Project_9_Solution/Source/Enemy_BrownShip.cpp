@@ -38,11 +38,11 @@ Enemy_BrownShip::Enemy_BrownShip(int x, int y) : Enemy(x, y)
 
 void Enemy_BrownShip::Update()
 {
-	path.Update();
+	waveRatio += waveRatioSpeed;
 
-	position = spawnPos + path.GetRelativePosition();
+	position.x = spawnPos.x + (waveHeight * sinf(waveRatio));
 
-	if (position.y > (App->player->OPTMIZENELJUEGUITO + 120)) {
+	if (position.y > (App->player->OPTMIZENELJUEGUITO + 70)) {
 		position.y -= 3;
 	}
 

@@ -101,29 +101,29 @@ bool SceneLevel1::Start()
 
 
 	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 50, -300);
-	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 50, -600);
-	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 50, -900);
-	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 50, -1200);
+	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 120, -600);
+	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 75, -900);
+	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 160, -1200);
 	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 50, -1500);
-	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 50, -1800);
+	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 200, -1800);
 	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 50, -2100);
-	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 50, -2300);
-	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 50, -2400);
+	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 90, -2300);
+	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 20, -2400);
 	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 50, -2700);
-	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 50, -3000);
+	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 110, -3000);
 	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 50, -3200);
-	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 50, -3600);
-	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 50, -3700);
-	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 50, -4000);
+	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 150, -3600);
+	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 70, -3700);
+	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 185, -4000);
 	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 50, -4200);
-	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 50, -4600);
+	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 130, -4600);
 	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 50, -4900);
-	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 50, -5400);
-	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 50, -5600);
+	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 180, -5400);
+	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 90, -5600);
 	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 50, -5900);
-	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 50, -6600);
-	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 50, -6900);
-	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 50, -7200);
+	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 20, -6600);
+	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 110, -6900);
+	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 190, -7200);
 
 
 	App->render->camera.x = 0;
