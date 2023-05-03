@@ -25,7 +25,7 @@ bool SceneIntro2::Start()
 
 	bool ret = true;
 
-	bgTexture = App->textures->Load("Assets/Sprites/cockcumbeer2.png");
+	bgTexture = App->textures->Load("Assets/Sprites/cockcumbeer.png");
 
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;
