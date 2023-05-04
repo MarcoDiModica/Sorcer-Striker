@@ -155,7 +155,7 @@ Update_Status ModulePlayer::Update()
 			highscore = score;
 		}
 		if (lives <= 0) {
-			lives = 3;
+			lives = 4;
 			score = 0;
 			App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneIntro3, 70);
 		}
@@ -231,7 +231,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 			}
 
 			if (lives <= 0) {
-				lives = 3;
+				lives = 4;
 				score = 0;
 				App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneIntro3, 70);
 			}
