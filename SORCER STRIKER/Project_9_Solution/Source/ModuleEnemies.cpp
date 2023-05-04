@@ -9,7 +9,6 @@
 #include "Enemy.h"
 #include "Enemy_RedBird.h"
 #include "Enemy_BrownShip.h"
-#include "Enemy_Mech.h"
 #include "Enemy_Bag.h"
 
 #define SPAWN_MARGIN 50
@@ -163,9 +162,6 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info)
 					break;
 				case Enemy_Type::BROWNSHIP:
 					enemies[i] = new Enemy_BrownShip(info.x, info.y);
-					break;
-				case Enemy_Type::MECH:
-					enemies[i] = new Enemy_Mech(info.x, info.y);
 					break;
 				case Enemy_Type::BAG:
 					enemies[i] = new Enemy_Bag(info.x, info.y);
