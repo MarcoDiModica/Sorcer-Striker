@@ -27,11 +27,14 @@ public:
 	// Performs the render call of all the parts of the scene's background
 	Update_Status PostUpdate() override;
 
-
 	uint coinFx = 0;
 public:
 	// The scene sprite sheet loaded into an SDL_Texture
 	SDL_Texture* bgTexture = nullptr;
+	SDL_Texture* bgTexture2 = nullptr;
+	int scoreFont = -1;
+	int contador_segundos = 0;
+
 };
 
 #endif

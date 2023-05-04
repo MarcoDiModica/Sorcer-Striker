@@ -30,7 +30,7 @@ public:
 	// After the first step, the modules should be switched
 	bool FadeToBlack(Module* toDisable, Module* toEnable, float frames = 60);
 
-private:
+public:
 
 	enum Fade_Step
 	{
