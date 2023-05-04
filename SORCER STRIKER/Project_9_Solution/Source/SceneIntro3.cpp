@@ -31,7 +31,7 @@ bool SceneIntro3::Start()
 
 	bool ret = true;
 	int contador_segundos = 0;
-	//bgTexture = App->textures->Load("Assets/Sprites/menu.png");
+	bgTexture = App->textures->Load("Assets/Sprites/menu.png");
 	//bgTexture2 = App->textures->Load("Assets/Sprites/StageClear.png");
 	char lookupTable[] = { "! @,_./0123456789$;< ?abcdefghijklmnopqrstuvwxyz" };
 	insertFont = App->fonts->Load("Assets/Fonts/textocosa.png", lookupTable, 2);
