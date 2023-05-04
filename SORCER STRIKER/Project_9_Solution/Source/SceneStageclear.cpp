@@ -7,6 +7,8 @@
 #include "ModuleInput.h"
 #include "ModuleFadeToBlack.h"
 #include "ModuleCollisions.h"
+#include <SDL_mixer/include/SDL_mixer.h>
+#include "ModulePlayer.h"
 
 SceneStageclear::SceneStageclear(bool startEnabled) : Module(startEnabled)
 {
@@ -25,9 +27,11 @@ bool SceneStageclear::Start()
 
 	bool ret = true;
 
-	bgTexture = App->textures->Load("Assets/Sprites/goodending.png");
-	App->audio->PlayMusic("Assets/Music/introTitle.ogg", 1.0f);
+	Mix_PauseMusic();
 
+	bgTexture = App->textures->Load("Assets/Sprites/goodending.png");
+	/*App->audio->PlayMusic("Assets/Music/introTitle.ogg", 1.0f);*/
+	App->audio->PlayFx(App->player->winFx);
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;
 

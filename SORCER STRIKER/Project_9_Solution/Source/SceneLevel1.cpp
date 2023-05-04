@@ -153,7 +153,7 @@ Update_Status SceneLevel1::Update()
 
 	if (App->player->position.y <= -6700)
 	{
-		App->audio->PlayFx(App->player->winFx);
+		/*App->audio->PlayFx(App->player->winFx);*/
 		if (App->player->score > App->player->highscore) {
 			App->player->highscore = App->player->score;
 		}

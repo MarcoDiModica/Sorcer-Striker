@@ -12,6 +12,7 @@
 #include <iostream>
 #include <thread>
 #include "ModuleCollisions.h"
+#include <SDL_mixer/include/SDL_mixer.h>
 
 
 SceneIntro3::SceneIntro3(bool startEnabled) : Module(startEnabled)
@@ -28,7 +29,7 @@ SceneIntro3::~SceneIntro3()
 bool SceneIntro3::Start()
 {
 	LOG("Loading background assets");
-
+	Mix_ResumeMusic();
 	bool ret = true;
 	int contador_segundos = 0;
 	bgTexture = App->textures->Load("Assets/Sprites/menu.png");

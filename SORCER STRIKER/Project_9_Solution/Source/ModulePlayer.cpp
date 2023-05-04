@@ -136,7 +136,7 @@ Update_Status ModulePlayer::Update()
 
 	if (App->input->keys[SDL_SCANCODE_F3] == Key_State::KEY_DOWN)
 	{
-		App->audio->PlayFx(winFx);
+		/*App->audio->PlayFx(winFx);*/
 		App->collisions->debug = false;
 		if (score > highscore) {
 			highscore = score;

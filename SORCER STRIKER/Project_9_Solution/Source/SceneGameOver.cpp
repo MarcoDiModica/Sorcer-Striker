@@ -7,6 +7,7 @@
 #include "ModuleInput.h"
 #include "ModuleFadeToBlack.h"
 #include "ModuleCollisions.h"
+#include <SDL_mixer/include/SDL_mixer.h>
 
 SceneGameOver::SceneGameOver(bool startEnabled) : Module(startEnabled)
 {
@@ -26,7 +27,7 @@ bool SceneGameOver::Start()
 	bool ret = true;
 
 	bgTexture = App->textures->Load("Assets/Sprites/gameover test.png");
-	App->audio->PlayMusic("Assets/Music/introTitle.ogg", 1.0f);
+	Mix_PauseMusic();
 
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;
@@ -40,9 +41,7 @@ Update_Status SceneGameOver::Update()
 {
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN)
 	{
-			App->fade->FadeToBlack(this, (Module*)App->sceneIntro3, 70);
-		
-		
+		App->fade->FadeToBlack(this, (Module*)App->sceneIntro3, 30);
 	}
 
 	return Update_Status::UPDATE_CONTINUE;
