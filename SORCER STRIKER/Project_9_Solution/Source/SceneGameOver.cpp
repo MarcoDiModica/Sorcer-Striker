@@ -6,6 +6,7 @@
 #include "ModuleAudio.h"
 #include "ModuleInput.h"
 #include "ModuleFadeToBlack.h"
+#include "ModuleCollisions.h"
 
 SceneGameOver::SceneGameOver(bool startEnabled) : Module(startEnabled)
 {
@@ -29,6 +30,8 @@ bool SceneGameOver::Start()
 
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;
+
+	App->collisions->CleanUp();
 
 	return ret;
 }

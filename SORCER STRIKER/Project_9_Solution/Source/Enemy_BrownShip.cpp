@@ -64,10 +64,8 @@ void Enemy_BrownShip::Update()
 		newParticle->collider->AddListener();*/
 	}
 
-	if (position.y > (App->player->OPTMIZENELJUEGUITO + 60)) {
+	if (position.y > (App->player->OPTMIZENELJUEGUITO + 30)) {
 		position.y -= 3;
-
-		
 	}
 
 	// Call to the base class. It must be called at the end

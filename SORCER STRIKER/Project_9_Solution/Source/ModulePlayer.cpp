@@ -94,7 +94,7 @@ Update_Status ModulePlayer::Update()
 
 	if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT)
 	{
-		position.x -= speed + 1;
+		position.x -= speed + 2;
 		if (currentAnimation != &leftAnim)
 		{
 			leftAnim.Reset();
@@ -104,7 +104,7 @@ Update_Status ModulePlayer::Update()
 
 	if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT)
 	{
-	    position.x += speed + 1;
+	    position.x += speed + 2;
 		if (currentAnimation != &rightAnim)
 		{
 			rightAnim.Reset();
@@ -114,12 +114,12 @@ Update_Status ModulePlayer::Update()
 
 	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_REPEAT)
 	{
-		position.y += speed +1;
+		position.y += speed +2;
 	}
 
 	if (App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_REPEAT)
 	{
-		position.y -= speed + 1;
+		position.y -= speed + 2;
 	}
 
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN)
@@ -154,15 +154,16 @@ Update_Status ModulePlayer::Update()
 		if (score > highscore) {
 			highscore = score;
 		}
-		if (lives <= 0) {
-			lives = 0;
+		if (lives <= 1) {
+			lives = 3;
 			score = 0;
 			App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneIntro3, 70);
 		}
-		else {
-			lives = lives - 1;
+		if (lives > 1)
+		{
+			lives -= 1;
 			App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneGameOver, 70);
-		}
+		}		
 	}
 
 	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_IDLE
@@ -228,13 +229,16 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 			if (score > highscore) {
 				highscore = score;
 			}
-			if (lives <= 0) {
-				lives = 0;
+
+			if (lives <= 1) {
+				lives = 3;
 				score = 0;
 				App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneIntro3, 70);
 			}
-			else {
-				lives = lives - 1;
+
+			if (lives > 1)
+			{
+				lives -= 1;
 				App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneGameOver, 70);
 			}
 		}

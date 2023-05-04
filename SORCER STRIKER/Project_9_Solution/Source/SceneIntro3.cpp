@@ -9,6 +9,7 @@
 #include <chrono>
 #include <iostream>
 #include <thread>
+#include "ModuleCollisions.h"
 
 
 SceneIntro3::SceneIntro3(bool startEnabled) : Module(startEnabled)
@@ -34,6 +35,8 @@ bool SceneIntro3::Start()
 	coinFx = App->audio->LoadFx("Assets/Fx/coin.wav");
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;
+
+	App->collisions->CleanUp();
 
 	return ret;
 }

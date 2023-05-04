@@ -47,7 +47,8 @@ void Enemy::OnCollision(Collider* collider)
 		SetToDelete();
 	}
 	else {
-		App->particles->AddParticle(App->particles->EnemyL, position.x, position.y);
+		App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+		App->particles->AddParticle(App->particles->EnemyL, position.x, position.y, Collider::Type::ENEMY_SHOT);
 		App->audio->PlayFx(destroyedFx);
 	}
 }

@@ -43,7 +43,7 @@ bool ModuleParticles::Start()
 
 	EnemyL.anim.PushBack({ 276,275,15,13 });
 
-	EnemyL.speed.y = 2;
+	EnemyL.speed.y = 1;
 	EnemyL.lifetime = 120;
 	EnemyL.anim.speed = 0.2f;
 

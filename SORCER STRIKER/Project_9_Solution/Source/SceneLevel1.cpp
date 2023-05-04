@@ -139,7 +139,7 @@ bool SceneLevel1::Start()
 
 Update_Status SceneLevel1::Update()
 {
-	App->render->camera.y -= 6;
+	App->render->camera.y -= 4;
 
 	if (App->player->position.x <= 0)
 	{
