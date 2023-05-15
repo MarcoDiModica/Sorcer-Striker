@@ -77,6 +77,29 @@ bool ModulePlayer::Start()
 
 Update_Status ModulePlayer::Update()
 {
+
+	GamePad& pad = App->input->pads[0];
+
+	// Moving the player with the camera scroll
+	App->player->position.x += 1;
+
+	//Debug key for gamepad rumble testing purposes
+	if (App->input->keys[SDL_SCANCODE_1] == Key_State::KEY_DOWN)
+	{
+		App->input->ShakeController(0, 12, 0.33f);
+	}
+
+	//Debug key for gamepad rumble testing purposes
+	if (App->input->keys[SDL_SCANCODE_2] == Key_State::KEY_DOWN)
+	{
+		App->input->ShakeController(0, 36, 0.66f);
+	}
+
+	//Debug key for gamepad rumble testing purposes
+	if (App->input->keys[SDL_SCANCODE_3] == Key_State::KEY_DOWN)
+	{
+		App->input->ShakeController(0, 60, 1.0f);
+	}
 	
 	App->player->position.y -= speed;
 	OPTMIZENELJUEGUITO -= speed;
@@ -92,7 +115,7 @@ Update_Status ModulePlayer::Update()
 		position.y = OPTMIZENELJUEGUITO + 289;
 	}
 
-	if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT)
+	if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT || pad.l_x < 0.0f ||pad.left == true)
 	{
 		position.x -= speed + 2;
 		if (currentAnimation != &leftAnim)
@@ -102,7 +125,7 @@ Update_Status ModulePlayer::Update()
 		}
 	}
 
-	if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT)
+	if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT || pad.l_x > 0.0f || pad.right == true)
 	{
 	    position.x += speed + 2;
 		if (currentAnimation != &rightAnim)
@@ -112,17 +135,17 @@ Update_Status ModulePlayer::Update()
 		}
 	}
 
-	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_REPEAT)
+	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_REPEAT || pad.l_y > 0.0f || pad.down == true)
 	{
 		position.y += speed +2;
 	}
 
-	if (App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_REPEAT)
+	if (App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_REPEAT || pad.l_y < 0.0f || pad.up == true)
 	{
 		position.y -= speed + 2;
 	}
 
-	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN)
+	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN || pad.a == true)
 	{
 		Particle* newParticle = App->particles->AddParticle(App->particles->laser, position.x + 12, position.y  - 10, Collider::Type::PLAYER_SHOT);
  		newParticle->collider->AddListener(this);
@@ -165,12 +188,14 @@ Update_Status ModulePlayer::Update()
 			App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneGameOver, 70);
 		}		
 	}
-
+    // If no up/down movement detected, set the current animation back to idle
 	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_IDLE
 		&& App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_IDLE
 		&& App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_IDLE
-		&& App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_IDLE)
+		&& App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_IDLE
+		&&(pad.up == false && pad.down == false)&&(pad.l_y == 0 && pad.l_x == 0))
 		currentAnimation = &idleAnim;
+		
 
 	collider->SetPos(position.x, position.y);
 

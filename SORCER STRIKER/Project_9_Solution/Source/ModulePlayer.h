@@ -33,6 +33,9 @@ public:
 	// Collision callback, called when the player intersects with another collider
 	void OnCollision(Collider* c1, Collider* c2) override;
 
+	// Draws gamepad debug info in the screen
+	void DebugDrawGamepadInfo();
+
 public:
 	// Position of the player in the map
 	iPoint position;
@@ -81,6 +84,9 @@ public:
 	char livesText[10] = { "\0" };
 	char scoreText[10] = { "\0" };
 	char highscoreText[10] = { "\0" };
+
+	// Debugdraw for gamepad data
+	bool debugGamepadInfo = false;
 
 };
 
