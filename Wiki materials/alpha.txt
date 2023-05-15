@@ -1,0 +1,13 @@
+Website
+Gameplay video
+Required features:
+- All previous points from the prototype assignment.
+- All music and audio effects should be added as in the original game.
+- The game must be played on desktop fullscreen by default.
+- The game uses the gamepad as the primary input method. It must still be playable with a keyboard.
+- A minimum of 1 level.
+- Levels must not be generated randomly; use the original game as a reference.
+- A minimum of 2 different power-ups.
+- A minimum of 3 enemies and one boss.
+- An utterly functional UI: score, lives, timing, etc.
+- Add to the debug functionalities the possibility of jumping to specific areas/levels, spawning all types of enemies (i.e. at mouse location), and spawning power-ups on purpose. Choose the keys to use and list them on the README.md file.
