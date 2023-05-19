@@ -6,7 +6,10 @@
 #include "ModulePlayer.h"
 #include "ModuleParticles.h"
 
-Enemy_BrownShip::Enemy_Boss(int x, int y) : Enemy(x, y)
+
+//   Jordi / Marco      Puteros, aqui os dejo el copy paste para que podais ir cambiando cosas //
+
+Enemy_Boss::Enemy_Boss(int x, int y) : Enemy(x, y)
 {
 	cnt = 3;
 
