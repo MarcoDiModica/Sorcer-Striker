@@ -39,7 +39,10 @@ Update_Status SceneIntro::Update()
 	{
 		App->fade->FadeToBlack(this, (Module*)App->sceneIntro2, 70);
 	}
-
+	if (App->input->keys[SDL_SCANCODE_K] == Key_State::KEY_DOWN)
+	{
+		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 70);
+	}
 	if (App->input->pads[0].a == true)
 	{
 		App->fade->FadeToBlack(this, (Module*)App->sceneIntro2, 70);
