@@ -40,6 +40,11 @@ Update_Status SceneIntro::Update()
 		App->fade->FadeToBlack(this, (Module*)App->sceneIntro2, 70);
 	}
 
+	if (App->input->pads[0].a == true)
+	{
+		App->fade->FadeToBlack(this, (Module*)App->sceneIntro2, 70);
+	}
+
 	tiempou = SDL_GetTicks();
 
 	if (tiempou >= 4500)

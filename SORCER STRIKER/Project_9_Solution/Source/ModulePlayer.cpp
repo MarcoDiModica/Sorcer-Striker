@@ -80,8 +80,7 @@ Update_Status ModulePlayer::Update()
 
 	GamePad& pad = App->input->pads[0];
 
-	// Moving the player with the camera scroll
-	App->player->position.x += 1;
+	
 
 	//Debug key for gamepad rumble testing purposes
 	if (App->input->keys[SDL_SCANCODE_1] == Key_State::KEY_DOWN)

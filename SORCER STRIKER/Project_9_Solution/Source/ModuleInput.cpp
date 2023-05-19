@@ -8,6 +8,11 @@ ModuleInput::ModuleInput(bool startEnabled) : Module(startEnabled)
 	for (uint i = 0; i < MAX_KEYS; ++i)
 		keys[i] = KEY_IDLE;
 
+	for (int i = 0; i < MAX_PADS; ++i)
+	{
+		GamePad& pad = pads[i];
+		pad.a = KEY_IDLE;
+	}
 	memset(&pads[0], 0, sizeof(GamePad) * MAX_PADS);
 }
 
@@ -54,7 +59,9 @@ Update_Status ModuleInput::PreUpdate()
 		else
 			keys[i] = (keys[i] == KEY_REPEAT || keys[i] == KEY_DOWN) ? KEY_UP : KEY_IDLE;
 	}
+	
 
+	
 	//Read new SDL events
 	SDL_Event event;
 	while (SDL_PollEvent(&event) != 0)
@@ -148,6 +155,7 @@ void ModuleInput::HandleDeviceRemoval(int index)
 
 void ModuleInput::UpdateGamepadsInput()
 {
+	bool buttonA, buttonB, buttonX, buttonY;
 	// Iterate through all active gamepads and update all input data
 	for (int i = 0; i < MAX_PADS; ++i)
 	{
@@ -155,8 +163,21 @@ void ModuleInput::UpdateGamepadsInput()
 
 		if (pad.enabled == true)
 		{
-			pad.a = SDL_GameControllerGetButton(pad.controller, SDL_CONTROLLER_BUTTON_A) == 1;
-			pad.b = SDL_GameControllerGetButton(pad.controller, SDL_CONTROLLER_BUTTON_B) == 1;
+			//pad.a = SDL_GameControllerGetButton(pad.controller, SDL_CONTROLLER_BUTTON_A) == 1;
+			buttonA = SDL_GameControllerGetButton(pad.controller, SDL_CONTROLLER_BUTTON_A) == 1;
+			if (buttonA)
+				pad.a = (pad.a == KEY_IDLE) ? KEY_DOWN : KEY_REPEAT;
+			else
+				pad.a = (pad.a == KEY_REPEAT || pad.a == KEY_DOWN) ? KEY_UP : KEY_IDLE;
+
+			buttonB = SDL_GameControllerGetButton(pad.controller, SDL_CONTROLLER_BUTTON_B) == 1;
+			if (buttonB)
+				pad.b = (pad.b == KEY_IDLE) ? KEY_DOWN : KEY_REPEAT;
+			else
+				pad.b = (pad.b == KEY_REPEAT || pad.b == KEY_DOWN) ? KEY_UP : KEY_IDLE;
+				
+
+			/*pad.b = SDL_GameControllerGetButton(pad.controller, SDL_CONTROLLER_BUTTON_B) == 1;
 			pad.x = SDL_GameControllerGetButton(pad.controller, SDL_CONTROLLER_BUTTON_X) == 1;
 			pad.y = SDL_GameControllerGetButton(pad.controller, SDL_CONTROLLER_BUTTON_Y) == 1;
 			pad.l1 = SDL_GameControllerGetButton(pad.controller, SDL_CONTROLLER_BUTTON_LEFTSHOULDER) == 1;
@@ -170,7 +191,7 @@ void ModuleInput::UpdateGamepadsInput()
 
 			pad.start = SDL_GameControllerGetButton(pad.controller, SDL_CONTROLLER_BUTTON_START) == 1;
 			pad.guide = SDL_GameControllerGetButton(pad.controller, SDL_CONTROLLER_BUTTON_GUIDE) == 1;
-			pad.back = SDL_GameControllerGetButton(pad.controller, SDL_CONTROLLER_BUTTON_BACK) == 1;
+			pad.back = SDL_GameControllerGetButton(pad.controller, SDL_CONTROLLER_BUTTON_BACK) == 1;*/
 
 			pad.l2 = float(SDL_GameControllerGetAxis(pad.controller, SDL_CONTROLLER_AXIS_TRIGGERLEFT)) / 32767.0f;
 			pad.r2 = float(SDL_GameControllerGetAxis(pad.controller, SDL_CONTROLLER_AXIS_TRIGGERRIGHT)) / 32767.0f;

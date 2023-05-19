@@ -44,6 +44,11 @@ Update_Status SceneGameOver::Update()
 		App->fade->FadeToBlack(this, (Module*)App->sceneIntro3, 30);
 	}
 
+	if (App->input->pads[0].a == true)
+	{
+		App->fade->FadeToBlack(this, (Module*)App->sceneIntro3, 30);
+	}
+
 	return Update_Status::UPDATE_CONTINUE;
 }
 

@@ -39,6 +39,11 @@ Update_Status SceneIntro2::Update()
 	{
 		App->fade->FadeToBlack(this, (Module*)App->sceneIntro3, 70);
 	}
+	
+	if (App->input->pads[0].a == true)
+	{
+		App->fade->FadeToBlack(this, (Module*)App->sceneIntro3, 70);
+	}
 
 	PabloArquitecto = SDL_GetTicks();
 

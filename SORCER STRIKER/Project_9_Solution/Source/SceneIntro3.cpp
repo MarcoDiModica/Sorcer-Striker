@@ -68,6 +68,11 @@ Update_Status SceneIntro3::Update()
 		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 70);
 		App->audio->PlayFx(coinFx);
 	}
+	if (App->input->pads[0].a == true)
+	{
+		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 70);
+		App->audio->PlayFx(coinFx);
+	}
 
 	return Update_Status::UPDATE_CONTINUE;
 }
