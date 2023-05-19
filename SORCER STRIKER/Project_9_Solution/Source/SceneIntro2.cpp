@@ -47,7 +47,7 @@ Update_Status SceneIntro2::Update()
 
 	PabloArquitecto = SDL_GetTicks();
 
-	if (PabloArquitecto >= 7500)
+	if (PabloArquitecto >= 15000)
 	{
 		App->fade->FadeToBlack(this, (Module*)App->sceneIntro3, 70);
 	}
