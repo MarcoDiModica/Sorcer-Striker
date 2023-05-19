@@ -1,4 +1,4 @@
-#include "SceneIntro3.h"
+#include "SelectScreen.h"
 #include "SceneIntro2.h"
 #include "Application.h"
 #include "ModuleTextures.h"
@@ -15,18 +15,18 @@
 #include <SDL_mixer/include/SDL_mixer.h>
 
 
-SceneIntro3::SceneIntro3(bool startEnabled) : Module(startEnabled)
+SelectScreen::SelectScreen(bool startEnabled) : Module(startEnabled)
 {
 
 }
 
-SceneIntro3::~SceneIntro3()
+SelectScreen::~SelectScreen()
 {
 
 }
 
 // Load assets
-bool SceneIntro3::Start()
+bool SelectScreen::Start()
 {
 	LOG("Loading background assets");
 	Mix_ResumeMusic();
@@ -36,7 +36,7 @@ bool SceneIntro3::Start()
 	//bgTexture2 = App->textures->Load("Assets/Sprites/StageClear.png");
 	char lookupTable[] = { "! @,_./0123456789$;< ?abcdefghijklmnopqrstuvwxyz" };
 	insertFont = App->fonts->Load("Assets/Fonts/textocosa.png", lookupTable, 2);
-	App->audio->PlayMusic("Assets/Music/introTitle.ogg", 1.0f); 
+	App->audio->PlayMusic("Assets/Music/introTitle.ogg", 1.0f);
 	coinFx = App->audio->LoadFx("Assets/Fx/coin.wav");
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;
@@ -46,29 +46,24 @@ bool SceneIntro3::Start()
 	return ret;
 }
 
-Update_Status SceneIntro3::Update()
+Update_Status SelectScreen::Update()
 {
-	
 
-		//contador_segundos++;
-		//if (contador_segundos % 70 == 0) {
 
-		//	bgTexture2 = App->textures->Load("Assets/Sprites/.png");
-		//	contador_segundos = 0;
+	//contador_segundos++;
+	//if (contador_segundos % 70 == 0) {
 
-		//}
-		//else if(contador_segundos>=10){
-		//	//bgTexture2 = App->textures->Load("Assets/Sprites/StageClear.png");
-		//	App->fonts->BlitText(88, 70, scoreFont, "highscore");
-		//}
-	
-	
+	//	bgTexture2 = App->textures->Load("Assets/Sprites/.png");
+	//	contador_segundos = 0;
+
+	//}
+	//else if(contador_segundos>=10){
+	//	//bgTexture2 = App->textures->Load("Assets/Sprites/StageClear.png");
+	//	App->fonts->BlitText(88, 70, scoreFont, "highscore");
+	//}
+
+
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN)
-	{
-		App->fade->FadeToBlack(this, (Module*)App->selectscreen, 70);
-		App->audio->PlayFx(coinFx);
-	}
-	if (App->input->pads[0].a == true)
 	{
 		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 70);
 		App->audio->PlayFx(coinFx);
@@ -78,13 +73,13 @@ Update_Status SceneIntro3::Update()
 }
 
 // Update: draw background
-Update_Status SceneIntro3::PostUpdate()
+Update_Status SelectScreen::PostUpdate()
 {
 	// Draw everything --------------------------------------
 	App->render->Blit(bgTexture, 0, 0, NULL);
 	App->render->Blit(bgTexture2, 0, 0, NULL);
-	
-	
+
+
 	contador_segundos++;
 	if (contador_segundos % 100 == 0) {
 
@@ -99,7 +94,7 @@ Update_Status SceneIntro3::PostUpdate()
 
 	}
 
-	
+
 
 	return Update_Status::UPDATE_CONTINUE;
 }
