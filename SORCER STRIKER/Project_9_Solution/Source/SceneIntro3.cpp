@@ -73,6 +73,11 @@ Update_Status SceneIntro3::Update()
 		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 70);
 		App->audio->PlayFx(coinFx);
 	}
+	
+	if (App->input->keys[SDL_SCANCODE_K] == Key_State::KEY_DOWN)
+	{
+		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 70);
+	}
 
 	return Update_Status::UPDATE_CONTINUE;
 }
