@@ -151,7 +151,7 @@ Update_Status ModulePlayer::Update()
 		App->audio->PlayFx(laserFx);
 	}
 
-	if (App->input->keys[SDL_SCANCODE_F2] == Key_State::KEY_DOWN)
+	if (App->input->keys[SDL_SCANCODE_F2] == Key_State::KEY_DOWN || pad.back == true)
 	{
 		god_mode = !god_mode;
 	}
