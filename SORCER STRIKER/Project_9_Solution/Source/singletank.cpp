@@ -6,7 +6,7 @@
 #include "ModulePlayer.h"
 #include "ModuleParticles.h"
 
-
+/*
 //   Jordi / Marco      Puteros, aqui os dejo el copy paste para que podais ir cambiando cosas //
 
 Enemy_Tank::Enemy_Tank(int x, int y) : Enemy(x, y)

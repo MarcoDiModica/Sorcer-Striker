@@ -5,7 +5,7 @@
 #include "Path.h"
 #include "ModuleParticles.h"
 
-
+/*
 class Enemy_Flizard :public Enemy {
 public:
 
