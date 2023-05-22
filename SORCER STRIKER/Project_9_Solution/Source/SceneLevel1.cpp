@@ -35,8 +35,6 @@ bool SceneLevel1::Start()
 	App->collisions->AddCollider({ 0, SCREEN_HEIGHT, 1, -6930 }, Collider::Type::WALL);
 	App->collisions->AddCollider({ SCREEN_WIDTH -1, SCREEN_HEIGHT, 1, -6930 }, Collider::Type::WALL);
 
-	App->enemies->AddEnemy(Enemy_Type::BlUEDRAGON, 50, -700);
-
 	App->enemies->AddEnemy(Enemy_Type::BAG, 50, -700);
 	App->enemies->AddEnemy(Enemy_Type::BAG, 80, -2400);
 	App->enemies->AddEnemy(Enemy_Type::BAG, 210, -3400);
