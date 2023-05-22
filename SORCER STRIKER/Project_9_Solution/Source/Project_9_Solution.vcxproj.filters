@@ -133,19 +133,19 @@
     <ClInclude Include="SelectScreen.h">
       <Filter>Source Files\Modules\Gameplay</Filter>
     </ClInclude>
-    <ClInclude Include="bluedragon.h">
+    <ClInclude Include="Enemy_BlueDragon.h">
       <Filter>Source Files\Entities\Enemies</Filter>
     </ClInclude>
     <ClInclude Include="Boss.h">
       <Filter>Source Files\Entities\Enemies</Filter>
     </ClInclude>
-    <ClInclude Include="doubletank.h">
+    <ClInclude Include="Enemy_DoubleTank.h">
       <Filter>Source Files\Entities\Enemies</Filter>
     </ClInclude>
-    <ClInclude Include="flyinglizard.h">
+    <ClInclude Include="Enemy_FlyingLizard.h">
       <Filter>Source Files\Entities\Enemies</Filter>
     </ClInclude>
-    <ClInclude Include="singletank.h">
+    <ClInclude Include="Enemy_SingleTank.h">
       <Filter>Source Files\Entities\Enemies</Filter>
     </ClInclude>
   </ItemGroup>
@@ -246,19 +246,19 @@
     <ClCompile Include="SelectScreen.cpp">
       <Filter>Source Files\Modules\Gameplay</Filter>
     </ClCompile>
-    <ClCompile Include="bluedragon.cpp">
+    <ClCompile Include="Enemy_BlueDragon.cpp">
       <Filter>Source Files\Entities\Enemies</Filter>
     </ClCompile>
     <ClCompile Include="Boss.cpp">
       <Filter>Source Files\Entities\Enemies</Filter>
     </ClCompile>
-    <ClCompile Include="doubletank.cpp">
+    <ClCompile Include="Enemy_DoubleTank.cpp">
       <Filter>Source Files\Entities\Enemies</Filter>
     </ClCompile>
-    <ClCompile Include="flyinglizard.cpp">
+    <ClCompile Include="Enemy_FlyingLizard.cpp">
       <Filter>Source Files\Entities\Enemies</Filter>
     </ClCompile>
-    <ClCompile Include="singletank.cpp">
+    <ClCompile Include="Enemy_SingleTank.cpp">
       <Filter>Source Files\Entities\Enemies</Filter>
     </ClCompile>
   </ItemGroup>

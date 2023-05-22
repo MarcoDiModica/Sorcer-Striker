@@ -10,6 +10,10 @@
 #include "Enemy_RedBird.h"
 #include "Enemy_BrownShip.h"
 #include "Enemy_Bag.h"
+#include "Enemy_SingleTank.h"
+#include "Enemy_DoubleTank.h"
+#include "Enemy_FlyingLizard.h"
+#include "Enemy_BlueDragon.h"
 
 #define SPAWN_MARGIN 50
 
@@ -166,6 +170,19 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info)
 				case Enemy_Type::BAG:
 					enemies[i] = new Enemy_Bag(info.x, info.y);
 					break;
+				case Enemy_Type::SINGLETANK:
+					enemies[i] = new Enemy_SingleTank(info.x, info.y);
+					break;
+				case Enemy_Type::DOUBLETANK:
+					enemies[i] = new Enemy_DoubleTank(info.x, info.y);
+					break;
+				case Enemy_Type::FLYINGLIZARD:
+					enemies[i] = new Enemy_FlyingLizard(info.x, info.y);
+					break;
+				case Enemy_Type::BlUEDRAGON:
+					enemies[i] = new Enemy_BlueDragon(info.x, info.y);
+					break;
+
 			}
 			enemies[i]->texture = texture;
 			enemies[i]->destroyedFx = enemyDestroyedFx;
