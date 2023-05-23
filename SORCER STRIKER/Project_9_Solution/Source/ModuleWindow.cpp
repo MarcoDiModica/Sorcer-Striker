@@ -57,13 +57,13 @@ bool ModuleWindow::Init()
 }
 
 Update_Status ModuleWindow::Update() {
-	if (quit)
+	if (quit && !isFullscreen)
 	{
 		SDL_DestroyWindow(window);
 	}
 	if (App->input->keys[SDL_SCANCODE_F11] == Key_State::KEY_DOWN && isFullscreen == false)
 	{
-		SDL_SetWindowFullscreen(window, SDL_WINDOW_FULLSCREEN);
+		SDL_SetWindowFullscreen(window, SDL_WINDOW_FULLSCREEN_DESKTOP);
 		isFullscreen = !isFullscreen;
 	}
 	else if (App->input->keys[SDL_SCANCODE_F11] == Key_State::KEY_DOWN && isFullscreen == true)

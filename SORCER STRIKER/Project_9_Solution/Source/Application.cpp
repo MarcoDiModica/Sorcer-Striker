@@ -91,8 +91,10 @@ Update_Status Application::Update()
 
 	if (App->input->keys[SDL_SCANCODE_ESCAPE] == Key_State::KEY_DOWN)
 	{
-		/*App->window->quit = true;*/
-		App->CleanUp();
+		if (!App->window->isFullscreen)
+		{
+			App->window->quit = true;
+		}
 	}
 
 	SDL_Delay(16.6);
