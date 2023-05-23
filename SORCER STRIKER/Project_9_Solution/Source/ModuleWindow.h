@@ -20,9 +20,13 @@ public:
 	// Initializes the SDL Library and creates a window.
 	bool Init() override;
 
+	Update_Status Update() override;
+
 	// Called on application exit.
 	// Destroys the window and uninitializes the SDL library
 	bool CleanUp() override;
+	bool quit = false;
+	bool isFullscreen = false;
 
 public:
 	//The window we'll be rendering to

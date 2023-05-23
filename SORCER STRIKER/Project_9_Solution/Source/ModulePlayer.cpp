@@ -10,6 +10,7 @@
 #include "ModuleFadeToBlack.h"
 #include "ModuleFonts.h"
 #include "ModuleCollisions.h"
+#include "ModuleWindow.h"
 
 #include <stdio.h>
 
@@ -194,8 +195,7 @@ Update_Status ModulePlayer::Update()
 		&& App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_IDLE
 		&&(pad.up == false && pad.down == false)&&(pad.l_y == 0 && pad.l_x == 0))
 		currentAnimation = &idleAnim;
-		
-
+	
 	collider->SetPos(position.x, position.y);
 
 	currentAnimation->Update();
