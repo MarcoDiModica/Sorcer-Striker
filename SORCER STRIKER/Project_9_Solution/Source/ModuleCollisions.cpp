@@ -178,7 +178,7 @@ bool ModuleCollisions::CleanUp()
 	return true;
 }
 
-Collider* ModuleCollisions::AddCollider(SDL_Rect rect, Collider::Type type, Module* listener)
+Collider* ModuleCollisions::AddCollider(SDL_Rect rect,Collider::Type type, Module* listener)
 {
 	Collider* ret = nullptr;
 

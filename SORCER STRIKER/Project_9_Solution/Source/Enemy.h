@@ -3,6 +3,7 @@
 
 #include "p2Point.h"
 #include "Animation.h"
+#include "ModuleEnemies.h"
 
 struct SDL_Texture;
 struct Collider;
@@ -30,7 +31,7 @@ public:
 	virtual void Draw();
 
 	// Collision response
-	virtual void OnCollision(Collider* collider);
+	virtual void OnCollision(Collider* collider, Enemy_Type type);
 
 	// Sets flag for deletion and for the collider aswell
 	virtual void SetToDelete();
@@ -54,6 +55,8 @@ protected:
 
 	// The enemy's collider
 	Collider* collider = nullptr;
+
+	Enemy_Type tipo = Enemy_Type::NO_TYPE;
 
 	// Original spawn position. Stored for movement calculations
 	iPoint spawnPos;

@@ -5,6 +5,7 @@
 #include "ModuleParticles.h"
 #include "ModuleAudio.h"
 #include "ModuleRender.h"
+#include "ModuleEnemies.h"
 
 Enemy::Enemy(int x, int y) : position(x, y)
 {
@@ -37,7 +38,7 @@ void Enemy::Draw()
 		App->render->Blit(texture, position.x, position.y, &(currentAnim->GetCurrentFrame()));
 }
 
-void Enemy::OnCollision(Collider* collider)
+void Enemy::OnCollision(Collider* collider, Enemy_Type type)
 {
 	cnt--;
 	if (cnt == 0) {
@@ -50,6 +51,11 @@ void Enemy::OnCollision(Collider* collider)
 		App->particles->AddParticle(App->particles->explosion, position.x, position.y);
 		App->particles->AddParticle(App->particles->EnemyL, position.x, position.y, Collider::Type::ENEMY_SHOT);
 		App->audio->PlayFx(destroyedFx);
+	}
+
+	if (type == Enemy_Type::BAG)
+	{
+		
 	}
 }
 

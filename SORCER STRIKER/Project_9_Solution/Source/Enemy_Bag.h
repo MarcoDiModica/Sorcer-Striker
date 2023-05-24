@@ -25,6 +25,7 @@ private:
 
 	// The enemy animation
 	Animation hoverAnim;
+
 };
 
 #endif // __ENEMY_BAG_H__ 
