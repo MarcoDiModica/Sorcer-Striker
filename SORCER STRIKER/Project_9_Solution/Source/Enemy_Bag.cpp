@@ -18,7 +18,7 @@ Enemy_Bag::Enemy_Bag(int x, int y) : Enemy(x, y)
 
 	currentAnim = &hoverAnim;
 
-	collider = App->collisions->AddCollider({ 0, 0, 35, 30 }, Collider::Type::ITEM, (Module*)App->enemies);
+	collider = App->collisions->AddCollider({ 0, 0, 35, 30 }, Collider::Type::ENEMY, (Module*)App->enemies);
 
 }
 
