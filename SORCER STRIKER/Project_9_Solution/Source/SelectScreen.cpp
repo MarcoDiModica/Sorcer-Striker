@@ -32,8 +32,7 @@ bool SelectScreen::Start()
 	Mix_ResumeMusic();
 	bool ret = true;
 	int contador_segundos = 0;
-	bgTexture = App->textures->Load("Assets/Sprites/menu.png");
-	//bgTexture2 = App->textures->Load("Assets/Sprites/StageClear.png");
+	bgTexture = App->textures->Load("Assets/Sprites/selectdefinitive2.png");
 	char lookupTable[] = { "! @,_./0123456789$;< ?abcdefghijklmnopqrstuvwxyz" };
 	insertFont = App->fonts->Load("Assets/Fonts/textocosa.png", lookupTable, 2);
 	App->audio->PlayMusic("Assets/Music/introTitle.ogg", 1.0f);
@@ -77,22 +76,10 @@ Update_Status SelectScreen::PostUpdate()
 {
 	// Draw everything --------------------------------------
 	App->render->Blit(bgTexture, 0, 0, NULL);
-	App->render->Blit(bgTexture2, 0, 0, NULL);
+	
 
 
-	contador_segundos++;
-	if (contador_segundos % 100 == 0) {
-
-		//bgTexture2 = App->textures->Load("Assets/Sprites/.png");
-		contador_segundos = 0;
-
-	}
-	else if (contador_segundos >= 50) {
-		//bgTexture2 = App->textures->Load("Assets/Sprites/StageClear.png");
-
-		App->fonts->BlitText(57, 179, insertFont, "please insert coin");
-
-	}
+	
 
 
 
