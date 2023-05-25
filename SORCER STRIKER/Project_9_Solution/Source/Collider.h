@@ -2,7 +2,6 @@
 #define __COLLIDER_H__
 
 #include "SDL/include/SDL_Rect.h"
-#include "ModuleEnemies.h"
 
 #define MAX_LISTENERS 30
 
@@ -19,6 +18,7 @@ struct Collider
 		PLAYER_SHOT,
 		ENEMY_SHOT,
 		ITEM,
+		BOOK,
 		 
 		MAX
 	};
@@ -34,7 +34,6 @@ struct Collider
 	void AddListener(Module* listener);
 
 	//Variables
-	Enemy_Type tipo;
 	SDL_Rect rect;
 	bool pendingToDelete = false;
 	Type type;

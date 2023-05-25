@@ -47,6 +47,12 @@ bool ModuleParticles::Start()
 	EnemyL.lifetime = 120;
 	EnemyL.anim.speed = 0.2f;
 
+	coin.anim.PushBack({ 276,275,15,13 });
+	
+	coin.speed.y = 1;
+	coin.lifetime = 120;
+	coin.anim.speed = 0.2f;
+
 	return true;
 }
 
