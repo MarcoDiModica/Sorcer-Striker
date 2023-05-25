@@ -17,6 +17,7 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::WALL][Collider::Type::PLAYER_SHOT] = true;
 	matrix[Collider::Type::WALL][Collider::Type::ENEMY_SHOT] = true;
 	matrix[Collider::Type::WALL][Collider::Type::ITEM] = true;
+	matrix[Collider::Type::ITEM][Collider::Type::BOOK] = false;
 
 	matrix[Collider::Type::PLAYER][Collider::Type::WALL] = true;
 	matrix[Collider::Type::PLAYER][Collider::Type::PLAYER] = false;
@@ -24,6 +25,7 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::PLAYER][Collider::Type::PLAYER_SHOT] = false;
 	matrix[Collider::Type::PLAYER][Collider::Type::ENEMY_SHOT] = true;
 	matrix[Collider::Type::PLAYER][Collider::Type::ITEM] = false;
+	matrix[Collider::Type::PLAYER][Collider::Type::BOOK] = false;
 
 	matrix[Collider::Type::ENEMY][Collider::Type::WALL] = false;
 	matrix[Collider::Type::ENEMY][Collider::Type::PLAYER] = true;
@@ -31,6 +33,7 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::ENEMY][Collider::Type::PLAYER_SHOT] = true;
 	matrix[Collider::Type::ENEMY][Collider::Type::ENEMY_SHOT] = false;
 	matrix[Collider::Type::ENEMY][Collider::Type::ITEM] = false;
+	matrix[Collider::Type::ENEMY][Collider::Type::BOOK] = false;
 
 	matrix[Collider::Type::PLAYER_SHOT][Collider::Type::WALL] = true;
 	matrix[Collider::Type::PLAYER_SHOT][Collider::Type::PLAYER] = false;
@@ -38,6 +41,7 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::PLAYER_SHOT][Collider::Type::PLAYER_SHOT] = false;
 	matrix[Collider::Type::PLAYER_SHOT][Collider::Type::ENEMY_SHOT] = false;
 	matrix[Collider::Type::PLAYER_SHOT][Collider::Type::ITEM] = true;
+	matrix[Collider::Type::PLAYER_SHOT][Collider::Type::BOOK] = false;
 
 	matrix[Collider::Type::ENEMY_SHOT][Collider::Type::WALL] = false;
 	matrix[Collider::Type::ENEMY_SHOT][Collider::Type::PLAYER] = true;
@@ -45,6 +49,7 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::ENEMY_SHOT][Collider::Type::PLAYER_SHOT] = false;
 	matrix[Collider::Type::ENEMY_SHOT][Collider::Type::ENEMY_SHOT] = false;
 	matrix[Collider::Type::ENEMY_SHOT][Collider::Type::ITEM] = false;
+	matrix[Collider::Type::ENEMY_SHOT][Collider::Type::BOOK] = false;
 
 	matrix[Collider::Type::ITEM][Collider::Type::WALL] = false;
 	matrix[Collider::Type::ITEM][Collider::Type::PLAYER] = false;
@@ -52,6 +57,15 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::ITEM][Collider::Type::PLAYER_SHOT] = true;
 	matrix[Collider::Type::ITEM][Collider::Type::ENEMY_SHOT] = false;
 	matrix[Collider::Type::ITEM][Collider::Type::ITEM] = false;
+	matrix[Collider::Type::ITEM][Collider::Type::BOOK] = false;
+
+	matrix[Collider::Type::BOOK][Collider::Type::WALL] = false;
+	matrix[Collider::Type::BOOK][Collider::Type::PLAYER] = false;
+	matrix[Collider::Type::BOOK][Collider::Type::ENEMY] = false;
+	matrix[Collider::Type::BOOK][Collider::Type::PLAYER_SHOT] = false;
+	matrix[Collider::Type::BOOK][Collider::Type::ENEMY_SHOT] = false;
+	matrix[Collider::Type::BOOK][Collider::Type::ITEM] = false;
+	matrix[Collider::Type::BOOK][Collider::Type::BOOK] = false;
 
 }
 

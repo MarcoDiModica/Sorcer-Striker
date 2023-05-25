@@ -60,6 +60,8 @@ public:
 	Particle laser;
 	Particle EnemyL;
 
+	Particle coin;
+
 private:
 	// Particles spritesheet loaded into an SDL Texture
 	SDL_Texture* texture = nullptr;

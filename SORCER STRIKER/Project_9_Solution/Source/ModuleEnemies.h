@@ -12,6 +12,7 @@ enum class Enemy_Type
 	BROWNSHIP,
 	MECH,
 	BAG,
+	BOOK,
 	SINGLETANK,
 	DOUBLETANK,
 	FLYINGLIZARD,

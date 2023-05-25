@@ -38,24 +38,27 @@ void Enemy::Draw()
 		App->render->Blit(texture, position.x, position.y, &(currentAnim->GetCurrentFrame()));
 }
 
-void Enemy::OnCollision(Collider* collider, Enemy_Type type)
+void Enemy::OnCollision(Collider* collider)
 {
 	cnt--;
-	if (cnt == 0) {
-		App->particles->AddParticle(App->particles->explosion, position.x, position.y);
-		App->audio->PlayFx(destroyedFx);
-
-		SetToDelete();
-	}
-	else {
+	
+	if (tipo == Enemy_Type::BROWNSHIP) 
+	{
 		App->particles->AddParticle(App->particles->explosion, position.x, position.y);
 		App->particles->AddParticle(App->particles->EnemyL, position.x, position.y, Collider::Type::ENEMY_SHOT);
 		App->audio->PlayFx(destroyedFx);
 	}
 
-	if (type == Enemy_Type::BAG)
+	if (tipo == Enemy_Type::BAG)
 	{
-		
+		App->particles->AddParticle(App->particles->coin, position.x, position.y, Collider::Type::ITEM);
+	}
+
+	if (cnt == 0) {
+		App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+		App->audio->PlayFx(destroyedFx);
+
+		SetToDelete();
 	}
 }
 

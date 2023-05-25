@@ -9,6 +9,7 @@
 Enemy_BrownShip::Enemy_BrownShip(int x, int y) : Enemy(x, y)
 {
 	cnt = 3;
+	tipo = Enemy_Type::BROWNSHIP;
 
 	// Define the fly animation
 	flyAnim.PushBack({68, 0, 34, 31});
