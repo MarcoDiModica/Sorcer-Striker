@@ -11,6 +11,7 @@
 #include "ModuleFonts.h"
 #include "ModuleCollisions.h"
 #include "ModuleWindow.h"
+#include <random>
 
 #include <stdio.h>
 
@@ -188,6 +189,17 @@ Update_Status ModulePlayer::Update()
 			App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneGameOver, 70);
 		}		
 	}
+
+	if (App->input->keys[SDL_SCANCODE_1] == Key_State::KEY_DOWN)
+	{
+		App->enemies->AddEnemy(Enemy_Type::REDBIRD, (rand() % 231) + 10, App->player->position.y - 260);
+	}
+
+	if (App->input->keys[SDL_SCANCODE_2] == Key_State::KEY_DOWN)
+	{
+		App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, (rand() % 231) + 10, App->player->position.y - 260);
+	}
+
     // If no up/down movement detected, set the current animation back to idle
 	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_IDLE
 		&& App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_IDLE
