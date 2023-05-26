@@ -14,6 +14,7 @@
 #include "Enemy_DoubleTank.h"
 #include "Enemy_FlyingLizard.h"
 #include "Enemy_BlueDragon.h"
+#include "Boss.h"
 
 #define SPAWN_MARGIN 50
 
@@ -181,6 +182,9 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info)
 					break;
 				case Enemy_Type::BlUEDRAGON:
 					enemies[i] = new Enemy_BlueDragon(info.x, info.y);
+					break;
+				case Enemy_Type::BOSS:
+					enemies[i] = new Boss(info.x, info.y);
 					break;
 
 			}

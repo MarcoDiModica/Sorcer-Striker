@@ -17,6 +17,7 @@ enum class Enemy_Type
 	DOUBLETANK,
 	FLYINGLIZARD,
 	BlUEDRAGON,
+	BOSS,
 
 };
 
