@@ -148,9 +148,9 @@ Update_Status SceneLevel1::Update()
 		App->player->position.x = 0;
 	}
 
-	if (App->player->position.x + 32 >= SCREEN_WIDTH)
+	if (App->player->position.x + 32 >= SCREEN_WIDTH / 2)
 	{
-		App->player->position.x = SCREEN_WIDTH - 32;
+		App->player->position.x = SCREEN_WIDTH / 2 - 32;
 	}
 
 	if (App->player->position.y <= -6700)

@@ -145,7 +145,7 @@ Update_Status ModulePlayer::Update()
 		position.y -= speed + 2;
 	}
 
-	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN || pad.a == true)
+	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN || pad.a == true )
 	{
 		Particle* newParticle = App->particles->AddParticle(App->particles->laser, position.x + 12, position.y  - 10, Collider::Type::PLAYER_SHOT);
  		newParticle->collider->AddListener(this);
