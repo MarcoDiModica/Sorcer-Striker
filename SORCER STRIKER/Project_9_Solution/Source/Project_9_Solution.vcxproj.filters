@@ -130,9 +130,6 @@
     <ClInclude Include="Enemy_Bag.h">
       <Filter>Source Files\Entities\Enemies</Filter>
     </ClInclude>
-    <ClInclude Include="SelectScreen.h">
-      <Filter>Source Files\Modules\Gameplay</Filter>
-    </ClInclude>
     <ClInclude Include="Enemy_BlueDragon.h">
       <Filter>Source Files\Entities\Enemies</Filter>
     </ClInclude>
@@ -150,6 +147,9 @@
     </ClInclude>
     <ClInclude Include="Enemy_Book.h">
       <Filter>Source Files\Entities\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectScreen.h">
+      <Filter>Source Files\Modules\Gameplay</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

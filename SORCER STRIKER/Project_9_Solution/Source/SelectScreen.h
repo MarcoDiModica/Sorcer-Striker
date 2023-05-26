@@ -35,6 +35,7 @@ public:
 	SDL_Texture* bgTexture2 = nullptr;
 	int insertFont = -1;
 	int contador_segundos = 0;
+int currentCharacterIndex = 1;
 	//char insertText[10] = { "\0" };
 };
 
