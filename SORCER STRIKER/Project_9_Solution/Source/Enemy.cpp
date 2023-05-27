@@ -44,21 +44,54 @@ void Enemy::OnCollision(Collider* collider)
 	
 	if (tipo == Enemy_Type::BROWNSHIP) 
 	{
-		App->particles->AddParticle(App->particles->explosion, position.x, position.y);
-		App->particles->AddParticle(App->particles->EnemyL, position.x, position.y, Collider::Type::ENEMY_SHOT);
-		App->audio->PlayFx(destroyedFx);
+		if (cnt == 0) {
+			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+			App->audio->PlayFx(destroyedFx);
+
+			SetToDelete();
+		}
+		else
+		{
+			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+			App->particles->AddParticle(App->particles->EnemyL, position.x, position.y, Collider::Type::ENEMY_SHOT);
+			App->audio->PlayFx(destroyedFx);
+		}
 	}
 
 	if (tipo == Enemy_Type::BAG)
 	{
-		App->particles->AddParticle(App->particles->coin, position.x, position.y, Collider::Type::ITEM);
+		if (cnt == 0) {
+			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+			App->audio->PlayFx(destroyedFx);
+			App->particles->AddParticle(App->particles->coin, position.x, position.y, Collider::Type::PICK);
+
+			SetToDelete();
+		}
 	}
 
-	if (cnt == 0) {
-		App->particles->AddParticle(App->particles->explosion, position.x, position.y);
-		App->audio->PlayFx(destroyedFx);
+	if (tipo == Enemy_Type::DOUBLETANK)
+	{
+		if (cnt == 0) {
+			App->audio->PlayFx(destroyedFx);
+			App->particles->AddParticle(App->particles->explosion, position.x + 35, position.y + 20);
+			App->particles->AddParticle(App->particles->DoubleTankMark, position.x, position.y);
 
-		SetToDelete();
+			SetToDelete();
+		}
+		else
+		{
+			App->particles->AddParticle(App->particles->explosion, position.x + 30, position.y + 26);
+		}
+	}
+
+	if (tipo == Enemy_Type::REDBIRD)
+	{
+		if (cnt == 0) {
+			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+			App->audio->PlayFx(destroyedFx);
+
+			SetToDelete();
+		}
 	}
 }
 
