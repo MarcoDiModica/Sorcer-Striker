@@ -31,8 +31,12 @@ public:
 	uint coinFx = 0;
 public:
 	// The scene sprite sheet loaded into an SDL_Texture
-	SDL_Texture* bgTexture = nullptr;
-	SDL_Texture* bgTexture2 = nullptr;
+	SDL_Texture* character1 = nullptr;
+	SDL_Texture* character2 = nullptr;
+	SDL_Texture* character3 = nullptr;
+	SDL_Texture* character4 = nullptr;
+	SDL_Texture* cuadrado = nullptr;
+
 	int contador_segundos = 0;
 int currentCharacterIndex = 1;
 };

@@ -6,6 +6,7 @@
 #include "ModuleAudio.h"
 #include "ModuleInput.h"
 #include "ModuleFonts.h"
+#include "ModulePlayer.h"
 #include "ModuleFadeToBlack.h"
 #include <chrono>
 
@@ -73,16 +74,21 @@ Update_Status SceneIntro3::Update()
 		//}
 	
 	
-	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN || pad.a)
+	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN && App->player->lives ==3)
 	{
 		App->fade->FadeToBlack(this, (Module*)App->selectscreen, 40);
 		App->audio->PlayFx(coinFx);
 	}
-	/*if (App->input->pads[0].a == true)
+	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN && App->player->lives != 3)
 	{
-		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 70);
+		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 40);
 		App->audio->PlayFx(coinFx);
-	}*/
+	}
+	if (App->input->pads[0].a == true && App->player->lives == 3)
+	{
+		App->fade->FadeToBlack(this, (Module*)App->selectscreen, 40);
+		App->audio->PlayFx(coinFx);
+	}
 	
 	
 
