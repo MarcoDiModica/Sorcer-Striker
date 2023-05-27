@@ -313,21 +313,12 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 	if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::ITEM)
 	{
 		score += 200;
-		if (App->particles->laser.speed.y <= 10)
-		{
-			App->particles->laser.speed.y -= 0.2f;
-		}
 		App->audio->PlayFx(coinFx);
 	}
 
-	int shots = 1;
-
 	if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::BOOK)
 	{
-		if (shots < 3)
-		{
-			/*App->particles->laser.anim.PushBack();*/
-		}
+		
 	}
 
 }

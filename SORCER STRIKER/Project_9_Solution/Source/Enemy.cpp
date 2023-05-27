@@ -63,7 +63,7 @@ void Enemy::OnCollision(Collider* collider)
 		if (cnt == 0) {
 			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
 			App->audio->PlayFx(destroyedFx);
-			App->particles->AddParticle(App->particles->coin, position.x, position.y, Collider::Type::ITEM);
+			App->particles->AddParticle(App->particles->coin, position.x, position.y, Collider::Type::PICK);
 
 			SetToDelete();
 		}

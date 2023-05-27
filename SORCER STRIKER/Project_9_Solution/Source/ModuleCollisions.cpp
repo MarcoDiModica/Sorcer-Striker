@@ -60,7 +60,7 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::ITEM][Collider::Type::BOOK] = false;
 
 	matrix[Collider::Type::BOOK][Collider::Type::WALL] = false;
-	matrix[Collider::Type::BOOK][Collider::Type::PLAYER] = false;
+	matrix[Collider::Type::BOOK][Collider::Type::PLAYER] = true;
 	matrix[Collider::Type::BOOK][Collider::Type::ENEMY] = false;
 	matrix[Collider::Type::BOOK][Collider::Type::PLAYER_SHOT] = false;
 	matrix[Collider::Type::BOOK][Collider::Type::ENEMY_SHOT] = false;
