@@ -87,13 +87,13 @@ Update_Status ModulePlayer::Update()
 	//Debug key for gamepad rumble testing purposes
 	if (App->input->keys[SDL_SCANCODE_1] == Key_State::KEY_DOWN)
 	{
-		App->input->ShakeController(0, 12, 0.33f);
+		App->input->ShakeController(0, 60, 0.33f);
 	}
 
 	//Debug key for gamepad rumble testing purposes
 	if (App->input->keys[SDL_SCANCODE_2] == Key_State::KEY_DOWN)
 	{
-		App->input->ShakeController(0, 36, 0.66f);
+		App->input->ShakeController(0, 60, 0.66f);
 	}
 
 	//Debug key for gamepad rumble testing purposes
@@ -151,6 +151,9 @@ Update_Status ModulePlayer::Update()
 		Particle* newParticle = App->particles->AddParticle(App->particles->laser, position.x + 12, position.y  - 10, Collider::Type::PLAYER_SHOT);
  		newParticle->collider->AddListener(this);
 		App->audio->PlayFx(laserFx);
+
+		//rumble the Gamepad when firing
+		/*App->input->ShakeController(0, 60, 0.02f);*/
 	}
 
 	if (App->input->keys[SDL_SCANCODE_F2] == Key_State::KEY_DOWN || pad.back == true)
@@ -207,7 +210,12 @@ Update_Status ModulePlayer::Update()
 		&& App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_IDLE
 		&&(pad.up == false && pad.down == false)&&(pad.l_y == 0 && pad.l_x == 0))
 		currentAnimation = &idleAnim;
-	
+
+	//// Switch gamepad debug info
+	//if (App->input->keys[SDL_SCANCODE_F6] == KEY_DOWN)
+	//	debugGamepadInfo = !debugGamepadInfo;
+
+	// Update animation and collider position
 	collider->SetPos(position.x, position.y);
 
 	currentAnimation->Update();
@@ -240,6 +248,11 @@ Update_Status ModulePlayer::PostUpdate()
 		App->fonts->BlitText(180, 15, scoreFont, "god mode");
 	}
 
+	/*if (debugGamepadInfo == true)
+		DebugDrawGamepadInfo();
+	else
+		App->fonts->BlitText(5, 80, scoreFont, "f5 to display gamepad debug info");*/
+
 	return Update_Status::UPDATE_CONTINUE;
 }
 
@@ -258,6 +271,9 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 			App->audio->PlayFx(explosionFx);
 
 			App->audio->PlayFx(loseFx);
+
+			//Rumble the Gamepad when colliding
+			App->input->ShakeController(0, 140, 0.9f);
 			
 			destroyed = true;
 			App->collisions->debug = false;
@@ -282,6 +298,8 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 
 	if (c1->type == Collider::Type::PLAYER_SHOT && c2->type == Collider::Type::ENEMY)
 	{
+		//rumble the gamepad when colliding
+		App->input->ShakeController(0, 60, 0.1f);
 		score += 50;
 	}
 
@@ -306,3 +324,51 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 	}
 
 }
+
+//void ModulePlayer::DebugDrawGamepadInfo()
+//{
+//	GamePad& pad = App->input->pads[0];
+//
+//	sprintf_s(scoreText, 150, "pad 0 %s, press 1/2/3 for rumble", (pad.enabled) ? "plugged" : "not detected");
+//	App->fonts->BlitText(5, 10, scoreFont, scoreText);
+//
+//	sprintf_s(scoreText, 150, "buttons %s %s %s %s %s %s %s %s %s %s %s",
+//		(pad.a) ? "a" : "",
+//		(pad.b) ? "b" : "",
+//		(pad.x) ? "x" : "",
+//		(pad.y) ? "y" : "",
+//		(pad.start) ? "start" : "",
+//		(pad.back) ? "back" : "",
+//		(pad.guide) ? "guide" : "",
+//		(pad.l1) ? "lb" : "",
+//		(pad.r1) ? "rb" : "",
+//		(pad.l3) ? "l3" : "",
+//		(pad.r3) ? "r3" : ""
+//	);
+//	App->fonts->BlitText(5, 20, scoreFont, scoreText);
+//
+//	sprintf_s(scoreText, 150, "dpad %s %s %s %s",
+//		(pad.up) ? "up" : "",
+//		(pad.down) ? "down" : "",
+//		(pad.left) ? "left" : "",
+//		(pad.right) ? "right" : ""
+//	);
+//	App->fonts->BlitText(5, 30, scoreFont, scoreText);
+//
+//	sprintf_s(scoreText, 150, "left trigger  %0.2f", pad.l2);
+//	App->fonts->BlitText(5, 40, scoreFont, scoreText);
+//	sprintf_s(scoreText, 150, "right trigger %0.2f", pad.r2);
+//	App->fonts->BlitText(5, 50, scoreFont, scoreText);
+//
+//	sprintf_s(scoreText, 150, "left thumb    %.2fx, %0.2fy", pad.l_x, pad.l_y);
+//	App->fonts->BlitText(5, 60, scoreFont, scoreText);
+//
+//	sprintf_s(scoreText, 150, "   deadzone   %0.2f", pad.l_dz);
+//	App->fonts->BlitText(5, 70, scoreFont, scoreText);
+//
+//	sprintf_s(scoreText, 150, "right thumb   %.2fx, %0.2fy", pad.r_x, pad.r_y);
+//	App->fonts->BlitText(5, 80, scoreFont, scoreText);
+//
+//	sprintf_s(scoreText, 150, "   deadzone   %0.2f", pad.r_dz);
+//	App->fonts->BlitText(5, 90, scoreFont, scoreText);
+//}
