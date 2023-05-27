@@ -37,8 +37,6 @@ bool SelectScreen::Start()
 	bgTexture2 = App->textures->Load("Assets/Sprites/cuadrado2.png");
 	SDL_Texture* characterTexture = nullptr;
 	int currentCharacterIndex = 0;
-	char lookupTable[] = { "! @,_./0123456789$;< ?abcdefghijklmnopqrstuvwxyz" };
-	insertFont = App->fonts->Load("Assets/Fonts/textocosa.png", lookupTable, 2);
 	App->audio->PlayMusic("Assets/Music/introTitle.ogg", 1.0f);
 	/*coinFx = App->audio->LoadFx("Assets/Fx/coin.wav");*/
 	App->render->camera.x = 0;
@@ -58,22 +56,21 @@ Update_Status SelectScreen::Update()
 
 	
 	
-	if (App->input->keys[SDL_SCANCODE_LEFT] == Key_State::KEY_DOWN || pad.left == true)
+	if (App->input->keys[SDL_SCANCODE_LEFT] == Key_State::KEY_DOWN || App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_DOWN|| pad.left == true)
 	{
 		currentCharacterIndex--;
 		if (currentCharacterIndex <= 0)
-			currentCharacterIndex = 4; // Cambia el número al índice máximo de personajes disponibles
-		// Carga la imagen correspondiente al nuevo índice
-		// Por ejemplo:
-		// characterTexture = App->textures->Load("Assets/Sprites/witch.png");
+			currentCharacterIndex = 4; 
+		
+		
 	}
-	if (App->input->keys[SDL_SCANCODE_RIGHT] == Key_State::KEY_DOWN || pad.right == true)
+	if (App->input->keys[SDL_SCANCODE_RIGHT] == Key_State::KEY_DOWN || App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_DOWN||pad.right == true)
 	{
 		currentCharacterIndex++;
-		if (currentCharacterIndex > 4) // Cambia el número al índice máximo de personajes disponibles
+		if (currentCharacterIndex > 4) 
 			currentCharacterIndex = 1;
-		// Carga la imagen correspondiente al nuevo índice
-		// Por ejemplo:
+		
+		
 		
 	}
 	if (currentCharacterIndex == 1) {
@@ -114,6 +111,26 @@ Update_Status SelectScreen::PostUpdate()
 {
 	// Draw everything --------------------------------------
 	App->render->Blit(bgTexture, 0, 0, NULL);
+
+	contador_segundos++;
+	if (contador_segundos % 5 == 0) {
+		if (contador_segundos <= 5) {
+			bgTexture2 = App->textures->Load("Assets/Sprites/cuadrado2.png");
+		}
+		else if (contador_segundos <= 10) {
+			bgTexture2 = App->textures->Load("Assets/Sprites/cuadrado2azul.png");
+		}
+		else if (contador_segundos <= 15) {
+			bgTexture2 = App->textures->Load("Assets/Sprites/cuadrado2verde.png");
+		}
+		else if (contador_segundos >= 20) {
+			bgTexture2 = App->textures->Load("Assets/Sprites/cuadrado2rosa.png");
+			contador_segundos = 0;
+		}
+	}
+	
+	
+
 	if (currentCharacterIndex == 1) {
 
 		App->render->Blit(bgTexture2, 31, 73, NULL);

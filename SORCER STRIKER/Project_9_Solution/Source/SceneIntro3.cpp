@@ -106,7 +106,6 @@ Update_Status SceneIntro3::PostUpdate()
 	}
 	else if (contador_segundos >= 50) {
 		//bgTexture2 = App->textures->Load("Assets/Sprites/StageClear.png");
-
 		App->fonts->BlitText(57, 179, insertFont, "please insert coin");
 
 	}
