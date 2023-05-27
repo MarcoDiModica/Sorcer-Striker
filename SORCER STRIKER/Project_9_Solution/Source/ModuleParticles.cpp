@@ -48,11 +48,11 @@ bool ModuleParticles::Start()
 	EnemyL.anim.speed = 0.2f;
 
 	coin.anim.PushBack({ 90,93,11,11 }); 
-	coin.anim.PushBack({ 112,95,11,13 });
-	coin.anim.PushBack({ 134,95,15,13 });
-	coin.anim.PushBack({ 150,95,15,13 });
-	coin.anim.PushBack({ 167,96,15,13 });
-	coin.anim.PushBack({ 183,96,15,13 });
+	coin.anim.PushBack({ 112,95,11,11 });
+	coin.anim.PushBack({ 134,95,11,11 });
+	coin.anim.PushBack({ 150,95,11,11 });
+	coin.anim.PushBack({ 167,96,11,11 });
+	coin.anim.PushBack({ 183,96,11,11 });
 	coin.anim.loop = true;
 	coin.anim.speed = 0.3f;
 	
