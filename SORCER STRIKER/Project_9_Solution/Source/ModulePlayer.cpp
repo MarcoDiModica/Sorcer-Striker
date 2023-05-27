@@ -202,6 +202,10 @@ Update_Status ModulePlayer::Update()
 	{
 		App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, (rand() % 231) + 10, App->player->position.y - 260);
 	}
+	if (App->input->keys[SDL_SCANCODE_3] == Key_State::KEY_DOWN)
+	{
+		App->enemies->AddEnemy(Enemy_Type::DOUBLETANK, (rand() % 231) + 10, App->player->position.y - 260);
+	}
 
     // If no up/down movement detected, set the current animation back to idle
 	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_IDLE

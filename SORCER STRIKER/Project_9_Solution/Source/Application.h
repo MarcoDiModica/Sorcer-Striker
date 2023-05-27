@@ -69,9 +69,9 @@ public:
 
 	
 	
-
-	ModuleEnemies* enemies = nullptr;
 	ModuleParticles* particles = nullptr;
+	ModuleEnemies* enemies = nullptr;
+	
 	ModuleItems* items = nullptr;
 
 	ModuleCollisions* collisions = nullptr;

@@ -23,7 +23,7 @@ ModuleParticles::~ModuleParticles()
 bool ModuleParticles::Start()
 {
 	LOG("Loading particles");
-	texture = App->textures->Load("Assets/Sprites/particles.png");
+	texture = App->textures->Load("Assets/Sprites/particles2.png");
 
 	// Explosion particle
 	explosion.anim.PushBack({274, 296, 33, 30});
@@ -47,11 +47,16 @@ bool ModuleParticles::Start()
 	EnemyL.lifetime = 120;
 	EnemyL.anim.speed = 0.2f;
 
-	coin.anim.PushBack({ 276,275,15,13 });
+	coin.anim.PushBack({ 276,275,15,13 }); //////////////////////
 	
 	coin.speed.y = 1;
 	coin.lifetime = 120;
 	coin.anim.speed = 0.2f;
+
+	DoubleTankMark.anim.PushBack({ 16,103,63,33 });
+	
+	DoubleTankMark.speed.y = 0;
+	DoubleTankMark.lifetime = 120;
 
 	return true;
 }
