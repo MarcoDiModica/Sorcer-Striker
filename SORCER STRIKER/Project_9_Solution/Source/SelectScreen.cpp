@@ -7,6 +7,7 @@
 #include "ModuleInput.h"
 #include "ModuleFonts.h"
 #include "ModuleFadeToBlack.h"
+#include "ModulePlayer.h"
 #include <chrono>
 
 #include <iostream>
@@ -53,9 +54,11 @@ bool SelectScreen::Start()
 
 Update_Status SelectScreen::Update()
 {
+	GamePad& pad = App->input->pads[0];
+
 	
 	
-	if (App->input->keys[SDL_SCANCODE_LEFT] == Key_State::KEY_DOWN)
+	if (App->input->keys[SDL_SCANCODE_LEFT] == Key_State::KEY_DOWN || pad.left == true)
 	{
 		currentCharacterIndex--;
 		if (currentCharacterIndex <= 0)
@@ -64,7 +67,7 @@ Update_Status SelectScreen::Update()
 		// Por ejemplo:
 		// characterTexture = App->textures->Load("Assets/Sprites/witch.png");
 	}
-	if (App->input->keys[SDL_SCANCODE_RIGHT] == Key_State::KEY_DOWN)
+	if (App->input->keys[SDL_SCANCODE_RIGHT] == Key_State::KEY_DOWN || pad.right == true)
 	{
 		currentCharacterIndex++;
 		if (currentCharacterIndex > 4) // Cambia el número al índice máximo de personajes disponibles
@@ -94,10 +97,10 @@ Update_Status SelectScreen::Update()
 
 	}
 	
-	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN && currentCharacterIndex == 3)
+	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN && currentCharacterIndex == 3 || pad.a)
 	{
-		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 70);
-		/*App->audio->PlayFx(coinFx);*/
+		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 40);
+		App->audio->PlayFx(coinFx);
 	}
 	
 
@@ -133,10 +136,6 @@ Update_Status SelectScreen::PostUpdate()
 	}
 
 	
-
-
-	
-
 
 
 	return Update_Status::UPDATE_CONTINUE;

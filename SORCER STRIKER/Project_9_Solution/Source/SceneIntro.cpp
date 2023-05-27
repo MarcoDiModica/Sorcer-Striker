@@ -35,14 +35,23 @@ bool SceneIntro::Start()
 
 Update_Status SceneIntro::Update()
 {
+
+	//Press "s" to skip to selection Screen
+	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_DOWN)
+	{
+		App->fade->FadeToBlack(this, (Module*)App->selectscreen, 30);
+	}
+	//Press "k" to skip to level 1
+	if (App->input->keys[SDL_SCANCODE_K] == Key_State::KEY_DOWN)
+	{
+		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 30);
+	}
+
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN)
 	{
 		App->fade->FadeToBlack(this, (Module*)App->sceneIntro2, 70);
 	}
-	if (App->input->keys[SDL_SCANCODE_K] == Key_State::KEY_DOWN)
-	{
-		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 70);
-	}
+	
 	if (App->input->pads[0].a == true)
 	{
 		App->fade->FadeToBlack(this, (Module*)App->sceneIntro2, 70);

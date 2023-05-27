@@ -48,7 +48,17 @@ bool SceneIntro3::Start()
 
 Update_Status SceneIntro3::Update()
 {
-	
+	GamePad& pad = App->input->pads[0];
+
+	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_DOWN)
+	{
+		App->fade->FadeToBlack(this, (Module*)App->selectscreen, 30);
+	}
+
+	if (App->input->keys[SDL_SCANCODE_K] == Key_State::KEY_DOWN)
+	{
+		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 30);
+	}
 
 		//contador_segundos++;
 		//if (contador_segundos % 70 == 0) {
@@ -63,21 +73,18 @@ Update_Status SceneIntro3::Update()
 		//}
 	
 	
-	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN)
+	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN || pad.a)
 	{
-		App->fade->FadeToBlack(this, (Module*)App->selectscreen, 70);
+		App->fade->FadeToBlack(this, (Module*)App->selectscreen, 40);
 		App->audio->PlayFx(coinFx);
 	}
-	if (App->input->pads[0].a == true)
+	/*if (App->input->pads[0].a == true)
 	{
 		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 70);
 		App->audio->PlayFx(coinFx);
-	}
+	}*/
 	
-	if (App->input->keys[SDL_SCANCODE_K] == Key_State::KEY_DOWN)
-	{
-		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 70);
-	}
+	
 
 	return Update_Status::UPDATE_CONTINUE;
 }

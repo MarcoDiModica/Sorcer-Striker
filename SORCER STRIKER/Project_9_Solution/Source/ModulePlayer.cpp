@@ -260,6 +260,9 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 {
 	if (c1 == collider && destroyed == false)
 	{
+		//Rumble the Gamepad when colliding even in god mode
+		App->input->ShakeController(0, 140, 0.9f);
+
 		if (god_mode) { destroyed = false; }
 		else {
 			App->particles->AddParticle(App->particles->explosion, position.x, position.y, Collider::Type::NONE, 9);

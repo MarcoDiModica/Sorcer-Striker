@@ -42,6 +42,17 @@ bool SceneStageclear::Start()
 
 Update_Status SceneStageclear::Update()
 {
+
+	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_DOWN)
+	{
+		App->fade->FadeToBlack(this, (Module*)App->selectscreen, 30);
+	}
+
+	if (App->input->keys[SDL_SCANCODE_K] == Key_State::KEY_DOWN)
+	{
+		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 30);
+	}
+
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN)
 	{
 		App->fade->FadeToBlack(this, (Module*)App->sceneIntro3, 30);
@@ -51,10 +62,7 @@ Update_Status SceneStageclear::Update()
 	{
 		App->fade->FadeToBlack(this, (Module*)App->sceneIntro3, 30);
 	}
-	if (App->input->keys[SDL_SCANCODE_K] == Key_State::KEY_DOWN)
-	{
-		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 70);
-	}
+	
 
 	return Update_Status::UPDATE_CONTINUE;
 }

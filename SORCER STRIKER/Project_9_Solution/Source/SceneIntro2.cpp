@@ -35,6 +35,16 @@ bool SceneIntro2::Start()
 
 Update_Status SceneIntro2::Update()
 {
+	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_DOWN)
+	{
+		App->fade->FadeToBlack(this, (Module*)App->selectscreen, 30);
+	}
+
+	if (App->input->keys[SDL_SCANCODE_K] == Key_State::KEY_DOWN)
+	{
+		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 30);
+	}
+
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN)
 	{
 		App->fade->FadeToBlack(this, (Module*)App->sceneIntro3, 70);
@@ -44,10 +54,7 @@ Update_Status SceneIntro2::Update()
 	{
 		App->fade->FadeToBlack(this, (Module*)App->sceneIntro3, 70);
 	}
-	if (App->input->keys[SDL_SCANCODE_K] == Key_State::KEY_DOWN)
-	{
-		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 70);
-	}
+	
 	
 	PabloArquitecto = SDL_GetTicks();
 
