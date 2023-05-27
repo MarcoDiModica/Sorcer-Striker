@@ -56,8 +56,6 @@ void Enemy::OnCollision(Collider* collider)
 			App->particles->AddParticle(App->particles->EnemyL, position.x, position.y, Collider::Type::ENEMY_SHOT);
 			App->audio->PlayFx(destroyedFx);
 		}
-		
-
 	}
 
 	if (tipo == Enemy_Type::BAG)
