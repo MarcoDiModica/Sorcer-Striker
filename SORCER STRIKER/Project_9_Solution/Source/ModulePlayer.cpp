@@ -148,9 +148,14 @@ Update_Status ModulePlayer::Update()
 
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN || pad.a == true )
 	{
-		Particle* newParticle = App->particles->AddParticle(App->particles->laser, position.x + 12, position.y  - 10, Collider::Type::PLAYER_SHOT);
- 		newParticle->collider->AddListener(this);
-		App->audio->PlayFx(laserFx);
+		if (shotCountdown == 0)
+		{
+
+			Particle* newParticle = App->particles->AddParticle(App->particles->laser, position.x + 12, position.y - 10, Collider::Type::PLAYER_SHOT);
+			newParticle->collider->AddListener(this);
+			App->audio->PlayFx(laserFx);
+			shotCountdown = shotMaxCountdown;
+		}
 
 		//rumble the Gamepad when firing
 		/*App->input->ShakeController(0, 60, 0.02f);*/
@@ -231,6 +236,10 @@ Update_Status ModulePlayer::Update()
 	collider->SetPos(position.x, position.y);
 
 	currentAnimation->Update();
+
+	// Update shot countdown
+	if (shotCountdown > 0)
+		--shotCountdown;
 
 	return Update_Status::UPDATE_CONTINUE;
 }
