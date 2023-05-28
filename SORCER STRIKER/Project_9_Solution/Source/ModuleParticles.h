@@ -63,6 +63,7 @@ public:
 	Particle laser4;
 	Particle laser5;
 	Particle EnemyL;
+	Particle tubo;
 
 	Particle coin;
 

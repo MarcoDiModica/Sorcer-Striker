@@ -67,6 +67,12 @@ bool ModuleParticles::Start()
 	EnemyL.lifetime = 120;
 	EnemyL.anim.speed = 0.2f;
 
+	tubo.anim.PushBack({ 0,233,254,35 });
+
+	tubo.speed.y = 0;
+	tubo.lifetime = 120;
+	tubo.anim.speed = 0.2f;
+
 	coin.anim.PushBack({ 90,93,11,11 }); 
 	coin.anim.PushBack({ 112,95,11,11 });
 	coin.anim.PushBack({ 134,95,11,11 });

@@ -9,7 +9,8 @@
 #include "ModulePlayer.h"
 #include "SceneStageclear.h"
 #include "ModuleFadeToBlack.h"
-#include "ModuleItems.h"    
+#include "ModuleItems.h"
+#include "ModuleParticles.h"
 
 
 SceneLevel1::SceneLevel1(bool startEnabled) : Module(startEnabled)
@@ -173,6 +174,7 @@ Update_Status SceneLevel1::Update()
 Update_Status SceneLevel1::PostUpdate()
 {
 	App->render->Blit(bgTexture, 0, -10050, NULL);
+	App->particles->AddParticle(App->particles->tubo, 0, -300, Collider::Type::NONE);
 
 	return Update_Status::UPDATE_CONTINUE;
 }
