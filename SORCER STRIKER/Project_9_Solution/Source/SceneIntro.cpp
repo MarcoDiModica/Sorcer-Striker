@@ -49,19 +49,19 @@ Update_Status SceneIntro::Update()
 
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN)
 	{
-		App->fade->FadeToBlack(this, (Module*)App->sceneIntro2, 70);
+		App->fade->FadeToBlack(this, (Module*)App->sceneIntro2, 50);
 	}
 	
 	if (App->input->pads[0].a == true)
 	{
-		App->fade->FadeToBlack(this, (Module*)App->sceneIntro2, 70);
+		App->fade->FadeToBlack(this, (Module*)App->sceneIntro2, 50);
 	}
 
 	tiempou = SDL_GetTicks();
 
-	if (tiempou >= 4500)
+	if (tiempou >= 8000)
 	{
-		App->fade->FadeToBlack(this, (Module*)App->sceneIntro2, 70);
+		App->fade->FadeToBlack(this, (Module*)App->sceneIntro2, 50);
 	}
 
 	return Update_Status::UPDATE_CONTINUE;

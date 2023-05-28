@@ -47,20 +47,20 @@ Update_Status SceneIntro2::Update()
 
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN)
 	{
-		App->fade->FadeToBlack(this, (Module*)App->sceneIntro3, 70);
+		App->fade->FadeToBlack(this, (Module*)App->sceneIntro3, 50);
 	}
 	
 	if (App->input->pads[0].a == true)
 	{
-		App->fade->FadeToBlack(this, (Module*)App->sceneIntro3, 70);
+		App->fade->FadeToBlack(this, (Module*)App->sceneIntro3, 50);
 	}
 	
 	
 	PabloArquitecto = SDL_GetTicks();
 
-	if (PabloArquitecto >= 15000)
+	if (PabloArquitecto >= 8000)
 	{
-		App->fade->FadeToBlack(this, (Module*)App->sceneIntro3, 70);
+		App->fade->FadeToBlack(this, (Module*)App->sceneIntro3, 50);
 	}
 
 	return Update_Status::UPDATE_CONTINUE;
