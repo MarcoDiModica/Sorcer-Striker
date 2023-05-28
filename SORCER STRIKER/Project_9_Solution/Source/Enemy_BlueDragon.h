@@ -24,7 +24,7 @@ private:
 
 	int waveHeight = 15;
 
-	Animation flyingAnim;
-	//mabybe add some more
+	Animation DrakeAnim1;
+	
 };
 #endif // __ENEMY_SINGLETANK_H__

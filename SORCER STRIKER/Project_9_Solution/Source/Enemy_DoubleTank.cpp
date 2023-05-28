@@ -8,7 +8,7 @@
 
 Enemy_DoubleTank::Enemy_DoubleTank(int x, int y) : Enemy(x, y)
 {
-	cnt = 4;
+	cnt = 6;
 	tipo = Enemy_Type::DOUBLETANK;
 
 	Anim1.PushBack({ 3,157,71,42 });
