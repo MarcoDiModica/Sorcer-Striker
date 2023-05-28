@@ -50,8 +50,7 @@ void Enemy::OnCollision(Collider* collider)
 			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
 			App->audio->PlayFx(destroyedFx);
 
-			//rumble when killed the doubletank
-			App->input->ShakeController(0, 60, 0.1f);
+			App->player->score += 50;
 
 			SetToDelete();
 		}
@@ -60,6 +59,7 @@ void Enemy::OnCollision(Collider* collider)
 			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
 			App->particles->AddParticle(App->particles->EnemyL, position.x, position.y, Collider::Type::ENEMY_SHOT);
 			App->audio->PlayFx(destroyedFx);
+			App->player->score += 10;
 		}
 	}
 
@@ -68,9 +68,6 @@ void Enemy::OnCollision(Collider* collider)
 		if (cnt == 0) {
 			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
 			App->audio->PlayFx(destroyedFx);
-
-			//rumble when killed the doubletank
-			App->input->ShakeController(0, 60, 0.1f);
 			
 			SetToDelete();
 			App->enemies->AddEnemy(Enemy_Type::COIN, position.x, position.y);
@@ -83,9 +80,6 @@ void Enemy::OnCollision(Collider* collider)
 		if (cnt == 0) {
 			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
 			App->audio->PlayFx(destroyedFx);
-
-			//rumble when killed the doubletank
-			App->input->ShakeController(0, 60, 0.1f);
 
 			SetToDelete();
 			App->enemies->AddEnemy(Enemy_Type::BOOK, position.x, position.y);
@@ -102,12 +96,14 @@ void Enemy::OnCollision(Collider* collider)
 
 			//rumble when killed the doubletank
 			App->input->ShakeController(0, 60, 0.2f);
+			App->player->score += 100;
 			
 			SetToDelete();
 		}
 		else
 		{
 			App->particles->AddParticle(App->particles->explosion, position.x + 30, position.y + 26);
+			App->player->score += 10;
 		}
 	}
 
@@ -117,10 +113,60 @@ void Enemy::OnCollision(Collider* collider)
 			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
 			App->audio->PlayFx(destroyedFx);
 
-			//rumble when killed the doubletank
-			App->input->ShakeController(0, 60, 0.1f);
+			App->player->score += 50;
 
 			SetToDelete();
+		}
+	}
+
+	if (tipo == Enemy_Type::SINGLETANK)
+	{
+		if (cnt == 0) {
+			App->audio->PlayFx(destroyedFx);
+			App->particles->AddParticle(App->particles->explosion, position.x + 35, position.y + 20);
+
+			App->player->score += 100;
+
+			SetToDelete();
+		}
+		else
+		{
+			App->particles->AddParticle(App->particles->explosion, position.x + 30, position.y + 26);
+			App->player->score += 10;
+		}
+	}
+	
+	if (tipo == Enemy_Type::BlUEDRAGON)
+	{
+		if (cnt == 0) {
+			App->audio->PlayFx(destroyedFx);
+			App->particles->AddParticle(App->particles->explosion, position.x + 35, position.y + 20);
+
+			App->player->score += 100;
+
+			SetToDelete();
+		}
+		else
+		{
+			App->particles->AddParticle(App->particles->explosion, position.x + 30, position.y + 26);
+			App->player->score += 10;
+		}
+	}
+
+	if (tipo == Enemy_Type::FLYINGLIZARD)
+	{
+		if (cnt == 0) {
+			App->audio->PlayFx(destroyedFx);
+			App->particles->AddParticle(App->particles->explosion, position.x + 35, position.y + 20);
+
+			App->player->score += 100;
+
+			SetToDelete();
+		}
+		else
+		{
+			App->particles->AddParticle(App->particles->explosion, position.x + 30, position.y + 26);
+			App->player->score += 10;
 		}
 	}
 }

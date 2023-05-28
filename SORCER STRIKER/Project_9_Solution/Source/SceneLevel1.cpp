@@ -29,7 +29,7 @@ bool SceneLevel1::Start()
 
 	bool ret = true;
 
-	bgTexture = App->textures->Load("Assets/Sprites/background2.png");
+	bgTexture = App->textures->Load("Assets/Sprites/background.png");
 	App->audio->PlayMusic("Assets/Music/stage1.ogg", 1.0f);
 
 	App->collisions->AddCollider({ 0, SCREEN_HEIGHT, 1, -6930 }, Collider::Type::WALL);
@@ -164,7 +164,7 @@ Update_Status SceneLevel1::Update()
 		App->collisions->debug = false;
 		App->player->lives = 3;
 		App->player->score = 0;
-		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneStageclear, 70);
+		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneStageclear, 40);
 	}
 	
 	return Update_Status::UPDATE_CONTINUE;
@@ -172,7 +172,7 @@ Update_Status SceneLevel1::Update()
 
 Update_Status SceneLevel1::PostUpdate()
 {
-	App->render->Blit(bgTexture, 0, -7050, NULL);
+	App->render->Blit(bgTexture, 0, -10050, NULL);
 
 	return Update_Status::UPDATE_CONTINUE;
 }
@@ -182,6 +182,7 @@ bool SceneLevel1::CleanUp()
 	App->player->Disable();
 	App->enemies->Disable();
 	App->items->Disable();
+
 
 	return true;
 }

@@ -83,6 +83,7 @@ Update_Status ModulePlayer::Update()
 	GamePad& pad = App->input->pads[0];
 
 	laserspeed;
+	playershots;
 
 	//Debug key for gamepad rumble testing purposes
 	if (App->input->keys[SDL_SCANCODE_F6] == Key_State::KEY_DOWN)
@@ -148,17 +149,46 @@ Update_Status ModulePlayer::Update()
 
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN || pad.a == true )
 	{
-		if (shotCountdown == 0)
+		if (playershots <= 2)
 		{
-
-			Particle* newParticle = App->particles->AddParticle(App->particles->laser, position.x + 12, position.y - 10, Collider::Type::PLAYER_SHOT);
-			newParticle->collider->AddListener(this);
-			App->audio->PlayFx(laserFx);
-			shotCountdown = shotMaxCountdown;
+			if (shotCountdown == 0)
+			{
+				Particle* newParticle = App->particles->AddParticle(App->particles->laser2, position.x + 12, position.y - 10, Collider::Type::PLAYER_SHOT);
+				newParticle->collider->AddListener(this);
+				App->audio->PlayFx(laserFx);
+				shotCountdown = shotMaxCountdown;
+			}
 		}
-
-		//rumble the Gamepad when firing
-		/*App->input->ShakeController(0, 60, 0.02f);*/
+		else if (playershots == 3)
+		{
+			if (shotCountdown == 0)
+			{
+				Particle* newParticle = App->particles->AddParticle(App->particles->laser3, position.x + 12, position.y - 10, Collider::Type::PLAYER_SHOT);
+				newParticle->collider->AddListener(this);
+				App->audio->PlayFx(laserFx);
+				shotCountdown = shotMaxCountdown;
+			}
+		}
+		else if (playershots == 4)
+		{
+			if (shotCountdown == 0)
+			{
+				Particle* newParticle = App->particles->AddParticle(App->particles->laser4, position.x + 12, position.y - 10, Collider::Type::PLAYER_SHOT);
+				newParticle->collider->AddListener(this);
+				App->audio->PlayFx(laserFx);
+				shotCountdown = shotMaxCountdown;
+			}
+		}
+		else
+		{
+			if (shotCountdown == 0)
+			{
+				Particle* newParticle = App->particles->AddParticle(App->particles->laser5, position.x + 12, position.y - 10, Collider::Type::PLAYER_SHOT);
+				newParticle->collider->AddListener(this);
+				App->audio->PlayFx(laserFx);
+				shotCountdown = shotMaxCountdown;
+			}
+		}
 	}
 
 	if (App->input->keys[SDL_SCANCODE_F2] == Key_State::KEY_DOWN || pad.back == true)
@@ -330,31 +360,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 				App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneGameOver, 70);
 			}
 		}
-	}
-
-	if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::COIN)
-	{
-		score += 200;
-		App->audio->PlayFx(coinFx);
-		App->particles->coin.pendingToDelete = true;
-	}
-
-	if (c1->type == Collider::Type::PLAYER_SHOT && c2->type == Collider::Type::ENEMY)
-	{
-		//rumble the gamepad when colliding
-		/*App->input->ShakeController(0, 60, 0.1f);*/
-		score += 50;
-	}
-
-	//collide the player shot with ITEM
-	if (c1->type == Collider::Type::PLAYER_SHOT && c2->type == Collider::Type::ITEM)
-	{
-		//rumble the gamepad when colliding
-		/*App->input->ShakeController(0, 60, 0.1f)*/;
-		
-	}
-	
-	
+	}	
 }
 
 //void ModulePlayer::DebugDrawGamepadInfo()

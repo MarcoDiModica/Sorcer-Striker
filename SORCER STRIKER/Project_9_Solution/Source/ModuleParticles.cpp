@@ -37,11 +37,29 @@ bool ModuleParticles::Start()
 	explosion.anim.loop = false;
 	explosion.anim.speed = 0.3f;
 
-	laser.anim.PushBack({ 0, 0, 8, 21 });
+	laser2.anim.PushBack({ 24, 26, 8, 21 });
 	
-	laser.speed.y = App->player->laserspeed;
-	laser.lifetime = 50;
-	laser.anim.speed = 0.2f;
+	laser2.speed.y = App->player->laserspeed;
+	laser2.lifetime = 50;
+	laser2.anim.speed = 0.2f;
+
+	laser3.anim.PushBack({ 6, 23, 12, 24 });
+
+	laser3.speed.y = App->player->laserspeed;
+	laser3.lifetime = 50;
+	laser3.anim.speed = 0.2f;
+
+	laser4.anim.PushBack({ 24, 26, 22, 21 });
+
+	laser4.speed.y = App->player->laserspeed;
+	laser4.lifetime = 50;
+	laser4.anim.speed = 0.2f;
+
+	laser5.anim.PushBack({ 50, 23, 22, 24 });
+
+	laser5.speed.y = App->player->laserspeed;
+	laser5.lifetime = 50;
+	laser5.anim.speed = 0.2f;
 
 	EnemyL.anim.PushBack({ 276,275,15,13 });
 
@@ -80,8 +98,6 @@ Update_Status ModuleParticles::PreUpdate()
 			particles[i] = nullptr;
 		}
 	}
-
-	laser.speed.y = App->player->laserspeed;
 
 	return Update_Status::UPDATE_CONTINUE;
 }

@@ -45,6 +45,8 @@ public:
 
 	float laserspeed = -8;
 
+	int playershots = 2;
+
 	// Countdown to handle shot spacing
 	int shotMaxCountdown = 7;
 	int shotCountdown = 0;

@@ -30,7 +30,10 @@ void Book::Update()
 	if (position.x >= App->player->position.x && position.x + 11 <= App->player->position.x + 32 && position.y + 11 >= App->player->position.y)
 	{
 		/*App->audio->PlayFx(App->player->coinFx);*/
-
+		if (App->player->playershots <= 5) 
+		{
+			App->player->playershots += 1;
+		}
 		SetToDelete();
 	}
 

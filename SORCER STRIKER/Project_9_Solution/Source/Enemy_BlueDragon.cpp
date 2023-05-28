@@ -16,7 +16,7 @@ Enemy_BlueDragon::Enemy_BlueDragon(int x, int y) : Enemy(x, y)
 	DrakeAnim1.PushBack({ 634,266,114,120 });
 	DrakeAnim1.PushBack({ 760,270,114,120 });
 
-	DrakeAnim1.speed = 0.01f;
+	DrakeAnim1.speed = 0.05f;
 	DrakeAnim1.loop = true;
 
 	currentAnim = &DrakeAnim1;
