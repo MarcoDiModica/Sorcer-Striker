@@ -174,7 +174,7 @@ Update_Status SceneLevel1::Update()
 Update_Status SceneLevel1::PostUpdate()
 {
 
-	App->render->Blit(bgTexture, 0, -14999, NULL);
+	App->render->Blit(bgTexture, 0, -14690, NULL);
 
 	
 	App->particles->AddParticle(App->particles->tubo, 0, -300, Collider::Type::NONE);
