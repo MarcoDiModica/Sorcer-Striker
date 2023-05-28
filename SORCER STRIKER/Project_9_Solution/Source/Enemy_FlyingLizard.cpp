@@ -8,7 +8,7 @@
 
 Enemy_FlyingLizard::Enemy_FlyingLizard(int x, int y) : Enemy(x, y) 
 {
-	cnt = 6;
+	cnt = 1;
 	tipo = Enemy_Type::FLYINGLIZARD;
 
 	FlyAnim1.PushBack({ 144,221,26,24 });
@@ -20,6 +20,7 @@ Enemy_FlyingLizard::Enemy_FlyingLizard(int x, int y) : Enemy(x, y)
 	FlyAnim1.PushBack({ 74,230,26,14 });
 	FlyAnim1.PushBack({ 106,226,26,20 });
 	FlyAnim1.PushBack({ 144,221,26,24 });
+	FlyAnim1.loop = true;
 
 
 	FlyAnim1.speed = 0.01f;
@@ -33,5 +34,21 @@ Enemy_FlyingLizard::Enemy_FlyingLizard(int x, int y) : Enemy(x, y)
 
 void Enemy_FlyingLizard::Update()
 {
+	position.y += 2;
+
+	if (position.y > (App->player->OPTMIZENELJUEGUITO + SCREEN_HEIGHT + 30)) {
+		SetToDelete();
+	}
+
+	if (position.x <= 10)
+	{
+		position.x = 10;
+	}
+
+	if (position.x >= SCREEN_WIDTH - 10)
+	{
+		position.x = SCREEN_WIDTH - 10;
+	}
+	
 	Enemy::Update();
 }

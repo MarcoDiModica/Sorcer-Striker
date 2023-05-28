@@ -25,6 +25,8 @@ Book::Book(int x, int y) : Enemy(x, y)
 
 void Book::Update()
 {
+	position.y += 1.5f;
+	
 	if (position.x >= App->player->position.x && position.x + 11 <= App->player->position.x + 32 && position.y + 11 >= App->player->position.y)
 	{
 		/*App->audio->PlayFx(App->player->coinFx);*/

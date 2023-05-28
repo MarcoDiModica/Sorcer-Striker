@@ -29,6 +29,8 @@ Coin::Coin(int x, int y) : Enemy(x, y)
 
 void Coin::Update()
 {
+	position.y += 1.5f;
+	
 	if (position.x >= App->player->position.x && position.x + 11 <= App->player->position.x + 32 && position.y + 11 >= App->player->position.y)
 	{
 		App->player->score += 200;

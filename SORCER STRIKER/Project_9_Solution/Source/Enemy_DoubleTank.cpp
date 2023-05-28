@@ -14,6 +14,7 @@ Enemy_DoubleTank::Enemy_DoubleTank(int x, int y) : Enemy(x, y)
 	Anim1.PushBack({ 3,157,71,42 });
 	Anim1.PushBack({ 170,162,72,42 });
 	Anim1.speed = 0.01f;
+	Anim1.loop = true;
 
 	currentAnim = &Anim1;
 
