@@ -29,7 +29,7 @@ void Enemy_Bag::Update()
 
 	position.x = spawnPos.x + (waveHeight * sinf(waveRatio));
 
-	if (position.y > (App->player->OPTMIZENELJUEGUITO + 70)) {
+	if (position.y > (App->player->OPTMIZENELJUEGUITO + 50)) {
 		position.y -= 3;
 	}
 

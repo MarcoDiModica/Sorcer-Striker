@@ -17,6 +17,7 @@ Enemy_BlueDragon::Enemy_BlueDragon(int x, int y) : Enemy(x, y)
 	DrakeAnim1.PushBack({ 760,270,114,120 });
 
 	DrakeAnim1.speed = 0.01f;
+	DrakeAnim1.loop = true;
 
 	currentAnim = &DrakeAnim1;
 
@@ -25,5 +26,19 @@ Enemy_BlueDragon::Enemy_BlueDragon(int x, int y) : Enemy(x, y)
 
 void Enemy_BlueDragon::Update()
 {
+	if (position.x <= 5)
+	{
+		position.x = 5;
+	}
+
+	if (position.x >= SCREEN_WIDTH - 40)
+	{
+		position.x = SCREEN_WIDTH - 40;
+	}
+
+	if (position.y > (App->player->OPTMIZENELJUEGUITO + 60)) {
+		position.y -= 3;
+	}
+	
 	Enemy::Update();
 }

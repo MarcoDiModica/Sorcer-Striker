@@ -219,6 +219,18 @@ Update_Status ModulePlayer::Update()
 	{
 		App->enemies->AddEnemy(Enemy_Type::CHEST, (rand() % 210) + 10, App->player->position.y - 260);
 	}
+	if (App->input->keys[SDL_SCANCODE_6] == Key_State::KEY_DOWN)
+	{
+		App->enemies->AddEnemy(Enemy_Type::BlUEDRAGON, (rand() % 210) + 10, App->player->position.y - 260);
+	}
+	if (App->input->keys[SDL_SCANCODE_7] == Key_State::KEY_DOWN)
+	{
+		App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, (rand() % 210) + 10, App->player->position.y - 260);
+	}
+	if (App->input->keys[SDL_SCANCODE_8] == Key_State::KEY_DOWN)
+	{
+		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, (rand() % 210) + 10, App->player->position.y - 260);
+	}
 
     // If no up/down movement detected, set the current animation back to idle
 	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_IDLE

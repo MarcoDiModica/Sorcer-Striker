@@ -142,9 +142,6 @@
     <ClInclude Include="Enemy_SingleTank.h">
       <Filter>Source Files\Entities\Enemies</Filter>
     </ClInclude>
-    <ClInclude Include="Enemy_Book.h">
-      <Filter>Source Files\Entities\Enemies</Filter>
-    </ClInclude>
     <ClInclude Include="SceneLevel1.h">
       <Filter>Source Files\Modules\Gameplay</Filter>
     </ClInclude>
@@ -265,9 +262,6 @@
       <Filter>Source Files\Entities\Enemies</Filter>
     </ClCompile>
     <ClCompile Include="Enemy_SingleTank.cpp">
-      <Filter>Source Files\Entities\Enemies</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy_Book.cpp">
       <Filter>Source Files\Entities\Enemies</Filter>
     </ClCompile>
     <ClCompile Include="SceneLevel1.cpp">

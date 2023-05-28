@@ -16,6 +16,7 @@ Enemy_SingleTank::Enemy_SingleTank(int x, int y) : Enemy(x, y)
 	Anim1.PushBack({ 190,270,36,34 });
 	Anim1.PushBack({ 116,270,36,34 });
 	Anim1.speed = 0.01f;
+	Anim1.loop = true;
 
 	currentAnim = &Anim1;
 
@@ -28,6 +29,7 @@ Enemy_SingleTank::Enemy_SingleTank(int x, int y) : Enemy(x, y)
 void Enemy_SingleTank::Update()
 {
 	position.y -= 1;
+
 	if (cnt < 3)
 	{
 		currentAnim = &Anim2;
