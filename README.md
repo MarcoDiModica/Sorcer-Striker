@@ -22,11 +22,11 @@ To play sorcer striker the controls are pretty simple.
 
 Controller scheme:
 
-Start = Debug Mode
-Back = GOD Mode
-Use D-pad to select spaceship 
-Left stick controller spaceship movement
-press "A" to shoot lazers
+Start = Debug Mode.
+Back = GOD Mode.
+Use D-pad to select spaceship .
+Left stick controller spaceship movement.
+press "A" to shoot lazers.
 
 Keyboard:
 
