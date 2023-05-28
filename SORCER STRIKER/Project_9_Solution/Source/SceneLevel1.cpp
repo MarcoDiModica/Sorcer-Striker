@@ -29,7 +29,7 @@ bool SceneLevel1::Start()
 
 	bool ret = true;
 
-	bgTexture = App->textures->Load("Assets/Sprites/background2.png");
+	bgTexture = App->textures->Load("Assets/Sprites/background.png");
 	App->audio->PlayMusic("Assets/Music/stage1.ogg", 1.0f);
 
 	App->collisions->AddCollider({ 0, SCREEN_HEIGHT, 1, -6930 }, Collider::Type::WALL);
@@ -172,7 +172,7 @@ Update_Status SceneLevel1::Update()
 
 Update_Status SceneLevel1::PostUpdate()
 {
-	App->render->Blit(bgTexture, 0, -7050, NULL);
+	App->render->Blit(bgTexture, 0, -10050, NULL);
 
 	return Update_Status::UPDATE_CONTINUE;
 }

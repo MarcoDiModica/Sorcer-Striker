@@ -58,7 +58,10 @@ public:
 	Particle DoubleTankMark;
 
 	//Template particle for a laser
-	Particle laser;
+	Particle laser2;
+	Particle laser3;
+	Particle laser4;
+	Particle laser5;
 	Particle EnemyL;
 
 	Particle coin;
