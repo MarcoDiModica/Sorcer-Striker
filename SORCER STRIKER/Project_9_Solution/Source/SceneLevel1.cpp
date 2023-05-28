@@ -164,7 +164,7 @@ Update_Status SceneLevel1::Update()
 		App->collisions->debug = false;
 		App->player->lives = 3;
 		App->player->score = 0;
-		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneStageclear, 70);
+		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneStageclear, 40);
 	}
 	
 	return Update_Status::UPDATE_CONTINUE;
@@ -182,6 +182,7 @@ bool SceneLevel1::CleanUp()
 	App->player->Disable();
 	App->enemies->Disable();
 	App->items->Disable();
+
 
 	return true;
 }
