@@ -15,6 +15,9 @@
 #include "Enemy_FlyingLizard.h"
 #include "Enemy_BlueDragon.h"
 #include "Boss.h"
+#include "coin.h"
+#include "chest.h"
+#include "book.h"
 
 #define SPAWN_MARGIN 50
 
@@ -165,11 +168,20 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info)
 				case Enemy_Type::REDBIRD:
 					enemies[i] = new Enemy_RedBird(info.x, info.y);
 					break;
+				case Enemy_Type::CHEST:
+					enemies[i] = new Chest(info.x, info.y);
+					break;
+				case Enemy_Type::BOOK:
+					enemies[i] = new Book(info.x, info.y);
+					break;
 				case Enemy_Type::BROWNSHIP:
 					enemies[i] = new Enemy_BrownShip(info.x, info.y);
 					break;
 				case Enemy_Type::BAG:
 					enemies[i] = new Enemy_Bag(info.x, info.y);
+					break;
+				case Enemy_Type::COIN:
+					enemies[i] = new Coin(info.x, info.y);
 					break;
 				case Enemy_Type::SINGLETANK:
 					enemies[i] = new Enemy_SingleTank(info.x, info.y);

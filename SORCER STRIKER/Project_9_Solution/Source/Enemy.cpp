@@ -6,6 +6,7 @@
 #include "ModuleAudio.h"
 #include "ModuleRender.h"
 #include "ModuleEnemies.h"
+#include "ModulePlayer.h"
 
 Enemy::Enemy(int x, int y) : position(x, y)
 {
@@ -63,10 +64,23 @@ void Enemy::OnCollision(Collider* collider)
 		if (cnt == 0) {
 			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
 			App->audio->PlayFx(destroyedFx);
-			App->particles->AddParticle(App->particles->coin, position.x, position.y, Collider::Type::PICK);
+			
+			SetToDelete();
+			App->enemies->AddEnemy(Enemy_Type::COIN, position.x, position.y);
+		}
+
+	}
+
+	if (tipo == Enemy_Type::CHEST)
+	{
+		if (cnt == 0) {
+			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+			App->audio->PlayFx(destroyedFx);
 
 			SetToDelete();
+			App->enemies->AddEnemy(Enemy_Type::BOOK, position.x, position.y);
 		}
+
 	}
 
 	if (tipo == Enemy_Type::DOUBLETANK)

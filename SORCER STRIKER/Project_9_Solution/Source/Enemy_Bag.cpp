@@ -4,6 +4,7 @@
 #include "Application.h"
 #include "ModuleRender.h"
 #include "ModuleCollisions.h"
+#include "ModuleParticles.h"
 
 Enemy_Bag::Enemy_Bag(int x, int y) : Enemy(x, y) 
 {

@@ -56,21 +56,10 @@ void Enemy_BrownShip::Update()
 		position.x = SCREEN_WIDTH - 40;
 	}
 
-	yoldi = SDL_GetTicks();
-
-	if (yoldi % 10000)
-	{
-		yoldi = 0;
-		/*newParticle = App->particles->AddParticle(App->particles->EnemyL, position.x + 17, position.y + 35, Collider::Type::ENEMY_SHOT);
-		newParticle->collider->AddListener();*/
-	}
-
 	if (position.y > (App->player->OPTMIZENELJUEGUITO + 30)) {
 		position.y -= 3;
 	}
 
-	// Call to the base class. It must be called at the end
-	// It will update the collider depending on the position
 	Enemy::Update();
 }
 

@@ -8,7 +8,7 @@
 #include "ModuleEnemies.h"
 
 class ModuleCollisions : public Module
-{
+{ 
 public:
 	// Constructor
 	// Fills all collision matrix data

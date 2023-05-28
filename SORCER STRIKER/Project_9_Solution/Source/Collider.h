@@ -18,6 +18,7 @@ struct Collider
 		PLAYER_SHOT,
 		ENEMY_SHOT,
 		ITEM,
+		COIN,
 		BOOK,
 		 
 		MAX

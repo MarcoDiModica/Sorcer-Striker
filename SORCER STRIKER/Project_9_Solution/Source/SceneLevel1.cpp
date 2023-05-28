@@ -35,7 +35,7 @@ bool SceneLevel1::Start()
 	App->collisions->AddCollider({ 0, SCREEN_HEIGHT, 1, -6930 }, Collider::Type::WALL);
 	App->collisions->AddCollider({ SCREEN_WIDTH -1, SCREEN_HEIGHT, 1, -6930 }, Collider::Type::WALL);
 
-	App->enemies->AddEnemy(Enemy_Type::BlUEDRAGON, 50, -700);
+	/*App->enemies->AddEnemy(Enemy_Type::BlUEDRAGON, 50, -700);
 
 	App->enemies->AddEnemy(Enemy_Type::BAG, 50, -700);
 	App->enemies->AddEnemy(Enemy_Type::BAG, 80, -2400);
@@ -125,7 +125,7 @@ bool SceneLevel1::Start()
 	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 50, -5900);
 	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 20, -6600);
 	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 110, -6900);
-	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 190, -7200);
+	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 190, -7200);*/
 
 	/*App->enemies->AddEnemy(Enemy_Type::BOSS, 0, -20);*/
 

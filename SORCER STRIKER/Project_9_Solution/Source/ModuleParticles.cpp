@@ -6,6 +6,8 @@
 #include "ModuleRender.h"
 #include "ModuleCollisions.h"
 #include "ModulePlayer.h"
+#include "ModuleAudio.h"
+#include "coin.h"
 
 #include "SDL/include/SDL_timer.h"
 
@@ -37,7 +39,7 @@ bool ModuleParticles::Start()
 
 	laser.anim.PushBack({ 0, 0, 8, 21 });
 	
-	laser.speed.y = -8;
+	laser.speed.y = App->player->laserspeed;
 	laser.lifetime = 50;
 	laser.anim.speed = 0.2f;
 
@@ -54,7 +56,6 @@ bool ModuleParticles::Start()
 	coin.anim.PushBack({ 167,96,11,11 });
 	coin.anim.PushBack({ 183,96,11,11 });
 	coin.anim.loop = true;
-	coin.anim.speed = 0.3f;
 	
 	coin.speed.y = 1;
 	coin.lifetime = 120;
@@ -79,6 +80,8 @@ Update_Status ModuleParticles::PreUpdate()
 			particles[i] = nullptr;
 		}
 	}
+
+	laser.speed.y = App->player->laserspeed;
 
 	return Update_Status::UPDATE_CONTINUE;
 }

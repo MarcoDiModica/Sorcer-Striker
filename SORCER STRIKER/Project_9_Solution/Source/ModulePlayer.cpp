@@ -82,7 +82,7 @@ Update_Status ModulePlayer::Update()
 
 	GamePad& pad = App->input->pads[0];
 
-	
+	laserspeed;
 
 	//Debug key for gamepad rumble testing purposes
 	if (App->input->keys[SDL_SCANCODE_1] == Key_State::KEY_DOWN)
@@ -195,16 +195,24 @@ Update_Status ModulePlayer::Update()
 
 	if (App->input->keys[SDL_SCANCODE_1] == Key_State::KEY_DOWN)
 	{
-		App->enemies->AddEnemy(Enemy_Type::REDBIRD, (rand() % 231) + 10, App->player->position.y - 260);
+		App->enemies->AddEnemy(Enemy_Type::REDBIRD, (rand() % 211) + 10, App->player->position.y - 260);
 	}
 
 	if (App->input->keys[SDL_SCANCODE_2] == Key_State::KEY_DOWN)
 	{
-		App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, (rand() % 231) + 10, App->player->position.y - 260);
+		App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, (rand() % 211) + 10, App->player->position.y - 260);
 	}
 	if (App->input->keys[SDL_SCANCODE_3] == Key_State::KEY_DOWN)
 	{
-		App->enemies->AddEnemy(Enemy_Type::DOUBLETANK, (rand() % 231) + 10, App->player->position.y - 260);
+		App->enemies->AddEnemy(Enemy_Type::DOUBLETANK, (rand() % 211) + 10, App->player->position.y - 260);
+	}
+	if (App->input->keys[SDL_SCANCODE_4] == Key_State::KEY_DOWN)
+	{
+		App->enemies->AddEnemy(Enemy_Type::BAG, (rand() % 211) + 10, App->player->position.y - 260);
+	}
+	if (App->input->keys[SDL_SCANCODE_5] == Key_State::KEY_DOWN)
+	{
+		App->enemies->AddEnemy(Enemy_Type::CHEST, (rand() % 210) + 10, App->player->position.y - 260);
 	}
 
     // If no up/down movement detected, set the current animation back to idle
@@ -303,24 +311,21 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 		}
 	}
 
+	if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::COIN)
+	{
+		score += 200;
+		App->audio->PlayFx(coinFx);
+		App->particles->coin.pendingToDelete = true;
+	}
+
 	if (c1->type == Collider::Type::PLAYER_SHOT && c2->type == Collider::Type::ENEMY)
 	{
 		//rumble the gamepad when colliding
 		App->input->ShakeController(0, 60, 0.1f);
 		score += 50;
 	}
-
-	if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::ITEM)
-	{
-		score += 200;
-		App->audio->PlayFx(coinFx);
-	}
-
-	if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::BOOK)
-	{
-		
-	}
-
+	
+	
 }
 
 //void ModulePlayer::DebugDrawGamepadInfo()

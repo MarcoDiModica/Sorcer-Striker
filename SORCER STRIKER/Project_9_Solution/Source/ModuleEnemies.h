@@ -12,6 +12,8 @@ enum class Enemy_Type
 	BROWNSHIP,
 	MECH,
 	BAG,
+	COIN,
+	CHEST,
 	BOOK,
 	SINGLETANK,
 	DOUBLETANK,

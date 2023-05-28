@@ -43,6 +43,8 @@ public:
 	// The speed in which we move the player (pixels per frame)
 	int speed = 2;
 
+	float laserspeed = -8;
+
 	// The player spritesheet loaded into an SDL_Texture
 	SDL_Texture* texture = nullptr;
 

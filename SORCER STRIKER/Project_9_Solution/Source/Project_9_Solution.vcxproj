@@ -76,6 +76,9 @@
   <ItemGroup>
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Application.h" />
+    <ClInclude Include="Book.h" />
+    <ClInclude Include="Chest.h" />
+    <ClInclude Include="coin.h" />
     <ClInclude Include="Enemy_BlueDragon.h" />
     <ClInclude Include="Boss.h" />
     <ClInclude Include="Collider.h" />
@@ -117,6 +120,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="Book.cpp" />
+    <ClCompile Include="Chest.cpp" />
+    <ClCompile Include="coin.cpp" />
     <ClCompile Include="Enemy_BlueDragon.cpp" />
     <ClCompile Include="Boss.cpp" />
     <ClCompile Include="Collider.cpp" />
