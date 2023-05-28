@@ -33,10 +33,10 @@ bool SelectScreen::Start()
 	Mix_ResumeMusic();
 	bool ret = true;
 	int contador_segundos = 0;
-	character1 = App->textures->Load("Assets/Sprites/selectdefinitive2.png");
-	character2 = App->textures->Load("Assets/Sprites/witch.png");
-	character3 = App->textures->Load("Assets/Sprites/samurai.png");
-	character4 = App->textures->Load("Assets/Sprites/necromancer.png");
+	character1 = App->textures->Load("Assets/Sprites/finalselect.png");
+	character2 = App->textures->Load("Assets/Sprites/finalwitch.png");
+	character3 = App->textures->Load("Assets/Sprites/finalsamurai.png");
+	character4 = App->textures->Load("Assets/Sprites/finalnecromancer.png");
 	cuadrado = App->textures->Load("Assets/Sprites/cuadrado2.png");
 
 
@@ -49,7 +49,7 @@ bool SelectScreen::Start()
 	int arr[4];
 	App->collisions->CleanUp();
 
-	characterTexture = App->textures->Load("Assets/Sprites/selectdefinitive2.png");
+	characterTexture = App->textures->Load("Assets/Sprites/finalselect.png");
 
 	return ret;
 }
@@ -120,7 +120,7 @@ Update_Status SelectScreen::PostUpdate()
 
 		App->render->Blit(character1, 0, 0, NULL);
 
-		App->render->Blit(cuadrado, 31, 73, NULL);
+		App->render->Blit(cuadrado, 30, 73, NULL);
 
 	}
 	if (currentCharacterIndex == 2) {
@@ -128,7 +128,7 @@ Update_Status SelectScreen::PostUpdate()
 		App->render->Blit(character2, 0, 0, NULL);
 
 
-		App->render->Blit(cuadrado, 83, 73, NULL);
+		App->render->Blit(cuadrado, 81, 73, NULL);
 
 	}
 	if (currentCharacterIndex == 3) {
@@ -136,7 +136,7 @@ Update_Status SelectScreen::PostUpdate()
 
 		App->render->Blit(character3, 0, 0, NULL);
 
-		App->render->Blit(cuadrado, 135, 73, NULL);
+		App->render->Blit(cuadrado, 132, 73, NULL);
 
 	}
 	if (currentCharacterIndex == 4) {
@@ -145,7 +145,7 @@ Update_Status SelectScreen::PostUpdate()
 		App->render->Blit(character4, 0, 0, NULL);
 
 
-		App->render->Blit(cuadrado, 186, 73, NULL);
+		App->render->Blit(cuadrado, 183, 73, NULL);
 
 	}
 

@@ -4,12 +4,10 @@
 #include "ModuleTextures.h"
 #include "ModuleRender.h"
 #include "ModuleAudio.h"
-#include "ModulePlayer.h"
 #include "ModuleInput.h"
 #include "ModuleFadeToBlack.h"
 #include "ModuleCollisions.h"
 #include <SDL_mixer/include/SDL_mixer.h>
-
 
 SceneGameOver::SceneGameOver(bool startEnabled) : Module(startEnabled)
 {
@@ -43,12 +41,9 @@ Update_Status SceneGameOver::Update()
 {
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN)
 	{
-		App->fade->FadeToBlack(this, (Module*)App->sceneIntro3, 30);
+		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 30);
 	}
-	/*else {
-		App->fade->FadeToBlack(this, (Module*)App->sceneIntro3, 30);
 
-	}*/
 	if (App->input->pads[0].a == true)
 	{
 		App->fade->FadeToBlack(this, (Module*)App->sceneIntro3, 30);
