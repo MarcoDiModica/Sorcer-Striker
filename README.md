@@ -20,11 +20,22 @@ Sorcer striker is a vertical scrolling shooter launched in japan and europe on t
 How to play the game 
 To play sorcer striker the controls are pretty simple.
 
+controller scheme:
+
+
+Left stick controller spaceship movement
+D pad can also ccontroller the spaceship movement
+press "A" to shoot lazers
+
+Keyboard:
 
 F1 =Debug Mode 
 F2 = GOD Mode 
 F3= Auto Win 
 F4= Auto Lose
+F6, F7, F8 = Gamepad Rumble Debug
+
+
 
 
 W = Up
