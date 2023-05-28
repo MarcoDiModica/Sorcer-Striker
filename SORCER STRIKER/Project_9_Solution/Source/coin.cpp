@@ -23,7 +23,7 @@ Coin::Coin(int x, int y) : Enemy(x, y)
 
 	currentAnim = &hoverAnim;
 
-	collider = App->collisions->AddCollider({ 0, 0, 11, 11 }, Collider::Type::COIN, (Module*)App->enemies);
+	collider = App->collisions->AddCollider({ 0, 0, 15, 15 }, Collider::Type::COIN, (Module*)App->enemies);
 
 }
 
