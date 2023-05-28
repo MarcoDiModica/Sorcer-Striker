@@ -35,6 +35,8 @@ bool SceneIntro::Start()
 
 Update_Status SceneIntro::Update()
 {
+	//put this before use controller
+	GamePad& pad = App->input->pads[0];
 
 	//Press "s" to skip to selection Screen
 	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_DOWN)
@@ -47,16 +49,12 @@ Update_Status SceneIntro::Update()
 		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 30);
 	}
 
-	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN)
+	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN || pad.a == true)
 	{
 		App->fade->FadeToBlack(this, (Module*)App->sceneIntro2, 50);
 	}
 	
-	if (App->input->pads[0].a == true)
-	{
-		App->fade->FadeToBlack(this, (Module*)App->sceneIntro2, 50);
-	}
-
+	
 	tiempou = SDL_GetTicks();
 
 	if (tiempou >= 8000)

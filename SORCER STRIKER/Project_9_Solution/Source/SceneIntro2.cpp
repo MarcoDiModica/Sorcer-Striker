@@ -35,6 +35,10 @@ bool SceneIntro2::Start()
 
 Update_Status SceneIntro2::Update()
 {
+
+	//put this before use controller
+	GamePad& pad = App->input->pads[0];
+
 	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_DOWN)
 	{
 		App->fade->FadeToBlack(this, (Module*)App->selectscreen, 30);
@@ -45,15 +49,12 @@ Update_Status SceneIntro2::Update()
 		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 30);
 	}
 
-	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN)
+	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN || pad.a == true)
 	{
 		App->fade->FadeToBlack(this, (Module*)App->sceneIntro3, 50);
 	}
 	
-	if (App->input->pads[0].a == true)
-	{
-		App->fade->FadeToBlack(this, (Module*)App->sceneIntro3, 50);
-	}
+	
 	
 	
 	PabloArquitecto = SDL_GetTicks();

@@ -79,7 +79,7 @@ bool ModulePlayer::Start()
 
 Update_Status ModulePlayer::Update()
 {
-
+	//put this before use controller
 	GamePad& pad = App->input->pads[0];
 
 	laserspeed;

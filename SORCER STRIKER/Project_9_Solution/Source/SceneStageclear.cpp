@@ -42,6 +42,8 @@ bool SceneStageclear::Start()
 
 Update_Status SceneStageclear::Update()
 {
+	//put this before use controller
+	GamePad& pad = App->input->pads[0];
 
 	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_DOWN)
 	{
@@ -53,16 +55,12 @@ Update_Status SceneStageclear::Update()
 		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 30);
 	}
 
-	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN)
+	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN || pad.a == true)
 	{
 		App->fade->FadeToBlack(this, (Module*)App->sceneIntro3, 30);
 	}
 
-	if (App->input->pads[0].a == true)
-	{
-		App->fade->FadeToBlack(this, (Module*)App->sceneIntro3, 30);
-	}
-	
+
 
 	return Update_Status::UPDATE_CONTINUE;
 }
