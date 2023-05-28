@@ -20,7 +20,7 @@ Enemy_DoubleTank::Enemy_DoubleTank(int x, int y) : Enemy(x, y)
 
 	Anim2.PushBack({ 380,158,72,42 });
 
-	collider = App->collisions->AddCollider({ position.x,position.y,72,42 }, Collider::Type::ENEMY, (Module*)App->enemies);
+	collider = App->collisions->AddCollider({ position.x,position.y,72,42 }, Collider::Type::ITEM, (Module*)App->enemies);
 }
 
 void Enemy_DoubleTank::Update()

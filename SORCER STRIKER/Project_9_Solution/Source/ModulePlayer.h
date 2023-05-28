@@ -46,7 +46,7 @@ public:
 	float laserspeed = -8;
 
 	// Countdown to handle shot spacing
-	int shotMaxCountdown = 5;
+	int shotMaxCountdown = 7;
 	int shotCountdown = 0;
 
 	// The player spritesheet loaded into an SDL_Texture

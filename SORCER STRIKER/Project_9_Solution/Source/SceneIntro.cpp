@@ -57,7 +57,7 @@ Update_Status SceneIntro::Update()
 	
 	tiempou = SDL_GetTicks();
 
-	if (tiempou >= 8000)
+	if (tiempou >= 7000)
 	{
 		App->fade->FadeToBlack(this, (Module*)App->sceneIntro2, 50);
 	}

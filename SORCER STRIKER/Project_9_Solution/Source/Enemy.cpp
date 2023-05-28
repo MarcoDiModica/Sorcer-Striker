@@ -7,6 +7,7 @@
 #include "ModuleRender.h"
 #include "ModuleEnemies.h"
 #include "ModulePlayer.h"
+#include "ModuleInput.h"
 
 Enemy::Enemy(int x, int y) : position(x, y)
 {
@@ -49,6 +50,9 @@ void Enemy::OnCollision(Collider* collider)
 			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
 			App->audio->PlayFx(destroyedFx);
 
+			//rumble when killed the doubletank
+			App->input->ShakeController(0, 60, 0.1f);
+
 			SetToDelete();
 		}
 		else
@@ -64,6 +68,9 @@ void Enemy::OnCollision(Collider* collider)
 		if (cnt == 0) {
 			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
 			App->audio->PlayFx(destroyedFx);
+
+			//rumble when killed the doubletank
+			App->input->ShakeController(0, 60, 0.1f);
 			
 			SetToDelete();
 			App->enemies->AddEnemy(Enemy_Type::COIN, position.x, position.y);
@@ -76,6 +83,9 @@ void Enemy::OnCollision(Collider* collider)
 		if (cnt == 0) {
 			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
 			App->audio->PlayFx(destroyedFx);
+
+			//rumble when killed the doubletank
+			App->input->ShakeController(0, 60, 0.1f);
 
 			SetToDelete();
 			App->enemies->AddEnemy(Enemy_Type::BOOK, position.x, position.y);
@@ -90,6 +100,9 @@ void Enemy::OnCollision(Collider* collider)
 			App->particles->AddParticle(App->particles->explosion, position.x + 35, position.y + 20);
 			App->particles->AddParticle(App->particles->DoubleTankMark, position.x, position.y);
 
+			//rumble when killed the doubletank
+			App->input->ShakeController(0, 60, 0.2f);
+			
 			SetToDelete();
 		}
 		else
@@ -103,6 +116,9 @@ void Enemy::OnCollision(Collider* collider)
 		if (cnt == 0) {
 			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
 			App->audio->PlayFx(destroyedFx);
+
+			//rumble when killed the doubletank
+			App->input->ShakeController(0, 60, 0.1f);
 
 			SetToDelete();
 		}

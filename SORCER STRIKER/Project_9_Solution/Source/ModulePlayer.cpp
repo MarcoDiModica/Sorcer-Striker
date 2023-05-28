@@ -85,19 +85,19 @@ Update_Status ModulePlayer::Update()
 	laserspeed;
 
 	//Debug key for gamepad rumble testing purposes
-	if (App->input->keys[SDL_SCANCODE_1] == Key_State::KEY_DOWN)
+	if (App->input->keys[SDL_SCANCODE_F6] == Key_State::KEY_DOWN)
 	{
 		App->input->ShakeController(0, 60, 0.33f);
 	}
 
 	//Debug key for gamepad rumble testing purposes
-	if (App->input->keys[SDL_SCANCODE_2] == Key_State::KEY_DOWN)
+	if (App->input->keys[SDL_SCANCODE_F7] == Key_State::KEY_DOWN)
 	{
 		App->input->ShakeController(0, 60, 0.66f);
 	}
 
 	//Debug key for gamepad rumble testing purposes
-	if (App->input->keys[SDL_SCANCODE_3] == Key_State::KEY_DOWN)
+	if (App->input->keys[SDL_SCANCODE_F8] == Key_State::KEY_DOWN)
 	{
 		App->input->ShakeController(0, 60, 1.0f);
 	}
@@ -116,7 +116,7 @@ Update_Status ModulePlayer::Update()
 		position.y = OPTMIZENELJUEGUITO + 289;
 	}
 
-	if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT || pad.l_x < 0.0f ||pad.left == true)
+	if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT || pad.l_x < 0.0f)
 	{
 		position.x -= speed + 2;
 		if (currentAnimation != &leftAnim)
@@ -126,7 +126,7 @@ Update_Status ModulePlayer::Update()
 		}
 	}
 
-	if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT || pad.l_x > 0.0f || pad.right == true)
+	if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT || pad.l_x > 0.0f)
 	{
 	    position.x += speed + 2;
 		if (currentAnimation != &rightAnim)
@@ -136,12 +136,12 @@ Update_Status ModulePlayer::Update()
 		}
 	}
 
-	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_REPEAT || pad.l_y > 0.0f || pad.down == true)
+	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_REPEAT || pad.l_y > 0.0f)
 	{
 		position.y += speed +2;
 	}
 
-	if (App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_REPEAT || pad.l_y < 0.0f || pad.up == true)
+	if (App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_REPEAT || pad.l_y < 0.0f)
 	{
 		position.y -= speed + 2;
 	}
@@ -294,7 +294,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 	if (c1 == collider && destroyed == false)
 	{
 		//Rumble the Gamepad when colliding even in god mode
-		App->input->ShakeController(0, 140, 0.9f);
+		App->input->ShakeController(0, 110, 0.9f);
 
 		if (god_mode) { destroyed = false; }
 		else {
@@ -309,7 +309,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 			App->audio->PlayFx(loseFx);
 
 			//Rumble the Gamepad when colliding
-			App->input->ShakeController(0, 140, 0.9f);
+			App->input->ShakeController(0, 110, 0.9f);
 			
 			destroyed = true;
 			App->collisions->debug = false;
@@ -342,8 +342,16 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 	if (c1->type == Collider::Type::PLAYER_SHOT && c2->type == Collider::Type::ENEMY)
 	{
 		//rumble the gamepad when colliding
-		App->input->ShakeController(0, 60, 0.1f);
+		/*App->input->ShakeController(0, 60, 0.1f);*/
 		score += 50;
+	}
+
+	//collide the player shot with ITEM
+	if (c1->type == Collider::Type::PLAYER_SHOT && c2->type == Collider::Type::ITEM)
+	{
+		//rumble the gamepad when colliding
+		/*App->input->ShakeController(0, 60, 0.1f)*/;
+		
 	}
 	
 	
