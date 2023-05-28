@@ -79,7 +79,7 @@ Update_Status SelectScreen::Update()
 	}
 	
 	
-	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN && currentCharacterIndex == 3 || pad.a)
+	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN && currentCharacterIndex == 3 || pad.a && currentCharacterIndex == 3)
 	{
 		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 40);
 		App->audio->PlayFx(coinFx);
