@@ -85,6 +85,12 @@ bool ModuleParticles::Start()
 	coin.lifetime = 120;
 	coin.anim.speed = 0.2f;
 
+	StageClear.anim.PushBack({ 122,150,180,46 });
+
+	StageClear.speed.y = -2;
+	StageClear.lifetime = 500;
+	
+
 	DoubleTankMark.anim.PushBack({ 16,103,63,33 });
 	
 	DoubleTankMark.speed.y = 0;

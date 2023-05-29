@@ -53,7 +53,7 @@ bool ModulePlayer::Start()
 	bool ret = true;
 
 	texture = App->textures->Load("Assets/Sprites/character.png");
-	win = App->textures->Load("Assets/Sprites/Stage_Clear.png");
+	//win = App->textures->Load("Assets/Sprites/Stage_Clear.png");
 	currentAnimation = &idleAnim;
 	
 	laserFx = App->audio->LoadFx("Assets/Fx/laser.wav");
@@ -207,7 +207,8 @@ Update_Status ModulePlayer::Update()
 		}
 		score = 0;
 		lives = 3;
-		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneStageclear, 70);
+		App->particles->AddParticle(App->particles->StageClear, 35, -140, Collider::Type::NONE);
+		//App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneStageclear, 70);
 	}
 
 	if (App->input->keys[SDL_SCANCODE_F4] == Key_State::KEY_DOWN)
@@ -295,7 +296,7 @@ Update_Status ModulePlayer::PostUpdate()
 		SDL_Rect rect = currentAnimation->GetCurrentFrame();
 		App->render->Blit(texture, position.x, position.y, &rect);
 	}
-	App->render->Blit(win, 0, 0, NULL);
+	//App->render->Blit(win, 0, 0, NULL);
 
 	sprintf_s(scoreText, 10, "%7d", score);
 	sprintf_s(highscoreText, 10, "%7d", highscore);

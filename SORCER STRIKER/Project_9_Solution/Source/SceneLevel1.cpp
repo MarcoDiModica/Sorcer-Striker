@@ -34,6 +34,11 @@ bool SceneLevel1::Start()
 	
 	App->audio->PlayMusic("Assets/Music/stage1.ogg", 1.0f);
 
+
+	App->particles->AddParticle(App->particles->tubo, 0, -300, Collider::Type::NONE);
+	
+
+
 	App->collisions->AddCollider({ 0, SCREEN_HEIGHT, 1, -6930 }, Collider::Type::WALL);
 	App->collisions->AddCollider({ SCREEN_WIDTH -1, SCREEN_HEIGHT, 1, -6930 }, Collider::Type::WALL);
 
@@ -160,13 +165,15 @@ Update_Status SceneLevel1::Update()
 	if (App->player->position.y <= -16700)
 	{
 		/*App->audio->PlayFx(App->player->winFx);*/
+		App->particles->AddParticle(App->particles->StageClear, 35, -140, Collider::Type::NONE);
+
 		if (App->player->score > App->player->highscore) {
 			App->player->highscore = App->player->score;
 		}
 		App->collisions->debug = false;
 		App->player->lives = 3;
 		App->player->score = 0;
-		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneStageclear, 40);
+		//App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneStageclear, 40);
 	}
 	
 	return Update_Status::UPDATE_CONTINUE;
@@ -178,7 +185,10 @@ Update_Status SceneLevel1::PostUpdate()
 	App->render->Blit(bgTexture, 0, -14690, NULL);
 
 	
-	App->particles->AddParticle(App->particles->tubo, 0, -300, Collider::Type::NONE);
+	
+
+	
+
 
 
 	return Update_Status::UPDATE_CONTINUE;
