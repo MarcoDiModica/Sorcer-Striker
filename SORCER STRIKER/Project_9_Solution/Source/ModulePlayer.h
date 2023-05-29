@@ -61,7 +61,7 @@ public:
 
 	// The player spritesheet loaded into an SDL_Texture
 	SDL_Texture* texture = nullptr;
-
+	
 	SDL_Texture* win = nullptr;
 	
 	// The pointer to the current player animation

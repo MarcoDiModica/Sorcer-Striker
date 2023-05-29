@@ -53,7 +53,7 @@ bool ModulePlayer::Start()
 	bool ret = true;
 
 	texture = App->textures->Load("Assets/Sprites/character.png");
-	win = App->textures->Load("Assets/Sprites/victoryroyale.png");
+	win = App->textures->Load("Assets/Sprites/Stage_Clear.png");
 	currentAnimation = &idleAnim;
 	
 	laserFx = App->audio->LoadFx("Assets/Fx/laser.wav");
@@ -295,6 +295,7 @@ Update_Status ModulePlayer::PostUpdate()
 		SDL_Rect rect = currentAnimation->GetCurrentFrame();
 		App->render->Blit(texture, position.x, position.y, &rect);
 	}
+	App->render->Blit(win, 0, 0, NULL);
 
 	sprintf_s(scoreText, 10, "%7d", score);
 	sprintf_s(highscoreText, 10, "%7d", highscore);
