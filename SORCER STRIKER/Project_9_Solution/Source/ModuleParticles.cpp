@@ -61,11 +61,15 @@ bool ModuleParticles::Start()
 	laser5.lifetime = 50;
 	laser5.anim.speed = 0.2f;
 
-	EnemyL.anim.PushBack({ 276,275,15,13 });
+	EnemyL.anim.PushBack({ 265,82,17,15 });
+	EnemyL.anim.PushBack({ 264,106,16,15 });
+	EnemyL.anim.PushBack({ 297,108,18,17 });
+	EnemyL.anim.PushBack({ 327,97,19,17 });
 
-	EnemyL.speed.y = 1;
+	EnemyL.speed.y = 2;
 	EnemyL.lifetime = 120;
 	EnemyL.anim.speed = 0.2f;
+	EnemyL.anim.loop = true;
 
 	tubo.anim.PushBack({ 0,233,254,35 });
 

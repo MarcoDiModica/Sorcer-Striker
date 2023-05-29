@@ -119,16 +119,16 @@ Update_Status ModulePlayer::Update()
 	
 	App->player->position.y -= speed;
 	OPTMIZENELJUEGUITO -= speed;
+	
 
-
-	if (position.y <= OPTMIZENELJUEGUITO)
+	if (position.y <= App->render->camera.y)
 	{
-		position.y = OPTMIZENELJUEGUITO;
+		position.y = App->render->camera.y;
 	}
 
-	if (position.y >= OPTMIZENELJUEGUITO + 289)
+	if (position.y >= App->render->camera.y + 289)
 	{
-		position.y = OPTMIZENELJUEGUITO + 289;
+		position.y = App->render->camera.y + 289;
 	}
 
 	if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT || pad.l_x < 0.0f)
@@ -387,7 +387,6 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 			else if (lives > 0)
 			{
 				lives -= 1;
-				/*App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneGameOver, 70);*/
 				currentTime = SDL_GetTicks();
 				nextNotificationTime = currentTime + intervalo;
 				ahora = true;

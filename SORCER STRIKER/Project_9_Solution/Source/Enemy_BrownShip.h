@@ -23,6 +23,8 @@ private:
 	Path path;
 
 	int yoldi;
+	int mondongo = 1.00f;
+	float metanfentamina = 0.5f;
 
 	float waveRatio = 0.9f;
 
@@ -42,6 +44,10 @@ private:
 	Animation turnAnim2;
 	Animation turnAnim3;
 	Animation turnAnim4;
+
+	Uint32 current;
+	Uint32 next;
+	Uint32 interval = 4000;
 };
 
 #endif // __ENEMY_BROWNSHIP_H__

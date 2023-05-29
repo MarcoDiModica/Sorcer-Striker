@@ -25,6 +25,9 @@ Enemy_BrownShip::Enemy_BrownShip(int x, int y) : Enemy(x, y)
 
 	currentAnim = &Anim1;
 
+	current = SDL_GetTicks();
+	next = current + interval;
+
 	//turnAnim2.PushBack({ 144, 0, 34, 31 });
 	//
 	//turnAnim3.PushBack({ 179, 0, 34, 31 });
@@ -47,7 +50,6 @@ Enemy_BrownShip::Enemy_BrownShip(int x, int y) : Enemy(x, y)
 }
 
 
-
 void Enemy_BrownShip::Update()
 {
 	if (Anim2.HasFinished())
@@ -55,23 +57,24 @@ void Enemy_BrownShip::Update()
 		currentAnim = &Anim1;
 	}
 	
-	waveRatio += waveRatioSpeed;
+	position.x += mondongo;
 
-	position.x = spawnPos.x + (waveHeight * sinf(waveRatio));
-
-	if (position.x <= 5)
+	if (position.x < 10 || position.x > 190)
 	{
-		position.x = 5;
-	}
-	
-	if (position.x >= SCREEN_WIDTH - 40)
-	{
-		position.x = SCREEN_WIDTH - 40;
+		mondongo *= -1;
 	}
 
 	if (position.y > (App->player->OPTMIZENELJUEGUITO + 30)) {
-		position.y -= 3;
+		 position.y -= 2;
 	} 
+
+	current = SDL_GetTicks();
+	
+	if (current > next)
+	{
+		App->particles->AddParticle(App->particles->EnemyL, position.x, position.y, Collider::Type::ENEMY_SHOT);
+		next = current + interval;
+	}
 
 	Enemy::Update();
 }

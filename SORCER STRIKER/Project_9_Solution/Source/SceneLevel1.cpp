@@ -145,7 +145,7 @@ bool SceneLevel1::Start()
 
 Update_Status SceneLevel1::Update()
 {
-	App->render->camera.y -= 4;
+	App->render->camera.y -= 2;
 
 	if (App->player->position.x <= 0)
 	{
@@ -167,6 +167,12 @@ Update_Status SceneLevel1::Update()
 		App->player->lives = 3;
 		App->player->score = 0;
 		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneStageclear, 40);
+	}
+
+	if (App->player->position.y <= -5530)
+	{
+		App->render->camera.y += 1;
+		App->player->position.y += 1;
 	}
 	
 	return Update_Status::UPDATE_CONTINUE;
