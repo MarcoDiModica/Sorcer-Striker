@@ -57,7 +57,6 @@ void Enemy::OnCollision(Collider* collider)
 		else if (cnt == 1)
 		{
 			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
-			App->particles->AddParticle(App->particles->EnemyL, position.x, position.y, Collider::Type::ENEMY_SHOT);
 			App->audio->PlayFx(destroyedFx);
 			App->player->score += 10;
 			Anim2 = Anim3;
@@ -66,7 +65,6 @@ void Enemy::OnCollision(Collider* collider)
 		else if (cnt == 2)
 		{
 			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
-			App->particles->AddParticle(App->particles->EnemyL, position.x, position.y, Collider::Type::ENEMY_SHOT);
 			App->audio->PlayFx(destroyedFx);
 			App->player->score += 10;
 			currentAnim = &Anim2;
