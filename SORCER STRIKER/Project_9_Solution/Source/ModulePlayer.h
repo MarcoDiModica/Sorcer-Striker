@@ -44,9 +44,8 @@ public:
 	int speed = 2;
 
 	float laserspeed = -8;
-
+	int stagespeed = 1;
 	int playershots = 2;
-
 	bool ahora = false;
 
 	Uint32 intervalo = 1000;

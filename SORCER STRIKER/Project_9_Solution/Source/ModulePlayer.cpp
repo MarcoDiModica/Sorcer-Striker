@@ -119,6 +119,7 @@ Update_Status ModulePlayer::Update()
 	
 	App->player->position.y -= speed;
 	OPTMIZENELJUEGUITO -= speed;
+	
 
 
 	if (position.y <= OPTMIZENELJUEGUITO)
@@ -219,9 +220,27 @@ Update_Status ModulePlayer::Update()
 		}
 		score = 0;
 		lives = 3;
-		App->particles->AddParticle(App->particles->StageClear, 35, -140, Collider::Type::NONE);
+
+		
+
+		
+		//Stage = App->particles->AddParticle(App->particles->Stage, 0, App->player->OPTMIZENELJUEGUITO +30, Collider::Type::NONE);
+		
+
+		App->particles->AddParticle(App->particles->Clear, 135, App->player->OPTMIZENELJUEGUITO + 30, Collider::Type::NONE);
+
+		
+		
+
+		/*if (App->particles->Stage.position.y >= (App->player->OPTMIZENELJUEGUITO + 40)) {
+			App->particles->Stage.speed.y = 2;
+		}*/
 		//App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneStageclear, 70);
 	}
+	/*Stage->position.x += stagespeed;
+	if (App->particles->Stage.position.x >= 35) {
+		stagespeed *= -1;
+	}*/
 
 	if (App->input->keys[SDL_SCANCODE_F4] == Key_State::KEY_DOWN)
 	{

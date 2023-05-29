@@ -35,7 +35,14 @@ bool SceneLevel1::Start()
 	App->audio->PlayMusic("Assets/Music/stage1.ogg", 1.0f);
 
 
-	App->particles->AddParticle(App->particles->tubo, 0, -300, Collider::Type::NONE);
+	App->particles->AddParticle(App->particles->tubo, 0, 0, Collider::Type::NONE);
+	//App->particles->AddParticle(App->particles->tubo, 0, -100, Collider::Type::NONE);
+	App->particles->AddParticle(App->particles->tubo, 0, -200, Collider::Type::NONE);
+	//App->particles->AddParticle(App->particles->tubo, 0, -300, Collider::Type::NONE);
+	App->particles->AddParticle(App->particles->tubo, 0, -400, Collider::Type::NONE);
+	//App->particles->AddParticle(App->particles->tubo, 0, -500, Collider::Type::NONE);
+	App->particles->AddParticle(App->particles->tubo, 0, -600, Collider::Type::NONE);
+	//App->particles->AddParticle(App->particles->tubo, 0, -700, Collider::Type::NONE);
 	
 
 
@@ -165,11 +172,12 @@ Update_Status SceneLevel1::Update()
 	if (App->player->position.y <= -16700)
 	{
 		/*App->audio->PlayFx(App->player->winFx);*/
-		App->particles->AddParticle(App->particles->StageClear, 35, -140, Collider::Type::NONE);
+		//App->particles->AddParticle(App->particles->Stage, 35, -140, Collider::Type::NONE);
 
 		if (App->player->score > App->player->highscore) {
 			App->player->highscore = App->player->score;
 		}
+
 		App->collisions->debug = false;
 		App->player->lives = 3;
 		App->player->score = 0;

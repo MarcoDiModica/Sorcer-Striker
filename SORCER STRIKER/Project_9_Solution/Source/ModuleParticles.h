@@ -64,7 +64,8 @@ public:
 	Particle laser5;
 	Particle EnemyL;
 	Particle tubo;
-	Particle StageClear;
+	Particle Stage;
+	Particle Clear;
 
 	Particle coin;
 

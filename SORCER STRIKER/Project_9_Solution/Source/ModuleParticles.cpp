@@ -70,7 +70,7 @@ bool ModuleParticles::Start()
 	tubo.anim.PushBack({ 0,233,254,35 });
 
 	tubo.speed.y = 0;
-	tubo.lifetime = 120;
+	tubo.lifetime = 600;
 	tubo.anim.speed = 0.2f;
 
 	coin.anim.PushBack({ 90,93,11,11 }); 
@@ -85,11 +85,17 @@ bool ModuleParticles::Start()
 	coin.lifetime = 120;
 	coin.anim.speed = 0.2f;
 
-	StageClear.anim.PushBack({ 122,150,180,46 });
+	Stage.anim.PushBack({ 122,150,95,46 });
 
-	StageClear.speed.y = -2;
-	StageClear.lifetime = 500;
+	Stage.speed.y = -2;
+	Stage.speed.x = 0;
+	Stage.lifetime = 500;
+
 	
+	Clear.anim.PushBack({ 223,150,180,46 });
+
+	Clear.speed.y = -2;
+	Clear.lifetime = 500;
 
 	DoubleTankMark.anim.PushBack({ 16,103,63,33 });
 	
@@ -110,7 +116,7 @@ Update_Status ModuleParticles::PreUpdate()
 			particles[i] = nullptr;
 		}
 	}
-
+	
 	return Update_Status::UPDATE_CONTINUE;
 }
 
@@ -160,6 +166,9 @@ Update_Status ModuleParticles::Update()
 		}
 	}
 
+	if (App->particles->Stage.position.x >= 35) {
+		App->particles->Stage.position.x -= 2;
+	}
 	return Update_Status::UPDATE_CONTINUE;
 }
 
