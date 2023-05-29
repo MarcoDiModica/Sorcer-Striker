@@ -44,9 +44,8 @@ public:
 	int speed = 2;
 
 	float laserspeed = -8;
-
+	int stagespeed = 1;
 	int playershots = 2;
-
 	bool ahora = false;
 
 	Uint32 intervalo = 1000;
@@ -62,7 +61,7 @@ public:
 	// The player spritesheet loaded into an SDL_Texture
 	SDL_Texture* texture = nullptr;
 	
-	SDL_Texture* win = nullptr;
+	//SDL_Texture* win = nullptr;
 	
 	// The pointer to the current player animation
 	// It will be switched depending on the player's movement direction
