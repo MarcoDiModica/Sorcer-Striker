@@ -49,9 +49,9 @@ public:
 
 	bool ahora = false;
 
-	Uint32 intervalo = 2000;
+	Uint32 intervalo = 1000;
 
-	Uint32 startTime = SDL_GetTicks();
+	Uint32 startTime;
 	Uint32 nextNotificationTime;
 	Uint32 currentTime;
 
@@ -72,6 +72,10 @@ public:
 	Animation idleAnim;
 	Animation leftAnim;
 	Animation rightAnim;
+
+	Animation bright1;
+	Animation bright2;
+	Animation bright3;
 
 	// The player's collider
 	Collider* collider = nullptr;

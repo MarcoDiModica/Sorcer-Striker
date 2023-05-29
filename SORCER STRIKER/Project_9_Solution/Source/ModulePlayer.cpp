@@ -39,6 +39,18 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
 	rightAnim.PushBack({ 101, 66, 24, 29 });
 	rightAnim.loop = false;
 	rightAnim.speed = 0.1f;
+
+	idleAnim.PushBack({ 138, 154, 32, 29 });
+	bright1.PushBack({ 241, 154, 32, 29 });
+	bright1.PushBack({ 138, 154, 32, 29 });
+	bright1.PushBack({ 241, 154, 32, 29 });
+	bright1.PushBack({ 138, 154, 32, 29 });
+	bright1.PushBack({ 241, 154, 32, 29 });
+	bright1.PushBack({ 138, 154, 32, 29 });
+	bright1.loop = true;
+	bright1.speed = 0.5f;
+
+
 }
 
 ModulePlayer::~ModulePlayer()
@@ -326,10 +338,10 @@ Update_Status ModulePlayer::PostUpdate()
 		if (currentTime >= nextNotificationTime) {
 			App->player->position.x = 111;
 			App->player->position.y = OPTMIZENELJUEGUITO + 600;
-			App->audio->PlayFx(coinFx);
 			App->player->collider->type = Collider::Type::PLAYER;
 			destroyed = false;
 			ahora = false;
+			currentAnimation = &bright1;
 		}
 		
 	}
@@ -376,6 +388,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 			{
 				lives -= 1;
 				/*App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneGameOver, 70);*/
+				currentTime = SDL_GetTicks();
 				nextNotificationTime = currentTime + intervalo;
 				ahora = true;
 				App->player->collider->type = Collider::Type::NONE;
