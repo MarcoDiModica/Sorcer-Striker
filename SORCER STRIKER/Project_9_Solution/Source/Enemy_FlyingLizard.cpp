@@ -11,15 +11,12 @@ Enemy_FlyingLizard::Enemy_FlyingLizard(int x, int y) : Enemy(x, y)
 	cnt = 1;
 	tipo = Enemy_Type::FLYINGLIZARD;
 
-	FlyAnim1.PushBack({ 144,221,26,24 });
-	FlyAnim1.PushBack({ 106,226,26,20 });
-	FlyAnim1.PushBack({ 74,230,26,14 });
-	FlyAnim1.PushBack({ 45,225,26,20 });
-	FlyAnim1.PushBack({ 18,220,26,24 });
-	FlyAnim1.PushBack({ 45,225,26,20 });
-	FlyAnim1.PushBack({ 74,230,26,14 });
-	FlyAnim1.PushBack({ 106,226,26,20 });
-	FlyAnim1.PushBack({ 144,221,26,24 });
+	FlyAnim1.PushBack({ 18,229,26,24 });
+	FlyAnim1.PushBack({ 44,225,26,18 });
+	FlyAnim1.PushBack({ 71,230,26,14 });
+	FlyAnim1.PushBack({ 97,225,26,18 });
+	FlyAnim1.PushBack({ 123,220,26,24 });
+	
 	FlyAnim1.loop = true;
 
 

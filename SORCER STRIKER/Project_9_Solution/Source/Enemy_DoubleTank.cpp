@@ -11,8 +11,11 @@ Enemy_DoubleTank::Enemy_DoubleTank(int x, int y) : Enemy(x, y)
 	cnt = 6;
 	tipo = Enemy_Type::DOUBLETANK;
 
-	Anim1.PushBack({ 3,157,71,42 });
-	Anim1.PushBack({ 170,162,72,42 });
+	Anim1.PushBack({ 1,159,72,44 });
+	Anim1.PushBack({ 84,160,72,44 });
+	Anim1.PushBack({ 164,160,72,44 });
+	Anim1.PushBack({ 243,160,72,44 });
+
 	Anim1.speed = 0.01f;
 	Anim1.loop = true;
 

@@ -12,9 +12,11 @@ Enemy_SingleTank::Enemy_SingleTank(int x, int y) : Enemy(x, y)
 	cnt = 6;
 	tipo = Enemy_Type::SINGLETANK;
 
-	Anim1.PushBack({ 66,270,36,34 });
-	Anim1.PushBack({ 190,270,36,34 });
-	Anim1.PushBack({ 116,270,36,34 });
+	Anim1.PushBack({ 5,260,36,34 });
+	Anim1.PushBack({ 48,260,36,34 });
+	Anim1.PushBack({ 88,260,36,34 });
+	Anim1.PushBack({ 129,260,36,34 });
+	Anim1.PushBack({ 171,260,36,34 });
 	Anim1.speed = 0.01f;
 	Anim1.loop = true;
 
