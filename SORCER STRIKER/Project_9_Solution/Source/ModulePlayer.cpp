@@ -366,9 +366,9 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 			}
 
 			if (lives <= 0) {
-				lives = 4;
+				lives = 3;
 				score = 0;
-				App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneIntro3, 70);
+				App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneGameOver, 70);
 			}
 
 			else if (lives > 0)

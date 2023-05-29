@@ -43,7 +43,7 @@ Update_Status SceneGameOver::Update()
 	
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN || pad.a == true)
 	{
-		App->fade->FadeToBlack((Module*)App->sceneGameOver, (Module*)App->sceneLevel_1, 30);
+		App->fade->FadeToBlack((Module*)App->sceneGameOver, (Module*)App->sceneIntro3, 30);
 	}
 
 	return Update_Status::UPDATE_CONTINUE;
