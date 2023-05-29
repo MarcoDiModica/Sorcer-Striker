@@ -25,6 +25,6 @@ private:
 	int waveHeight = 15;
 
 	Animation DrakeAnim1;
-	
+	Animation DrakeAnim2;
 };
 #endif // __ENEMY_SINGLETANK_H__
