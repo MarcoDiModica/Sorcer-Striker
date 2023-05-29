@@ -47,6 +47,14 @@ public:
 
 	int playershots = 2;
 
+	bool ahora = false;
+
+	Uint32 intervalo = 2000;
+
+	Uint32 startTime = SDL_GetTicks();
+	Uint32 nextNotificationTime;
+	Uint32 currentTime;
+
 	// Countdown to handle shot spacing
 	int shotMaxCountdown = 7;
 	int shotCountdown = 0;

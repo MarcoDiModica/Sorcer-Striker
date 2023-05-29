@@ -318,6 +318,21 @@ Update_Status ModulePlayer::PostUpdate()
 	else
 		App->fonts->BlitText(5, 80, scoreFont, "f5 to display gamepad debug info");*/
 
+	if (ahora)
+	{
+		currentTime = SDL_GetTicks();
+		
+		if (currentTime >= nextNotificationTime) {
+			App->player->position.x = 111;
+			App->player->position.y = OPTMIZENELJUEGUITO + 600;
+			App->audio->PlayFx(coinFx);
+			App->player->collider->type = Collider::Type::PLAYER;
+			destroyed = false;
+			ahora = false;
+		}
+		
+	}
+
 	return Update_Status::UPDATE_CONTINUE;
 }
 
@@ -343,8 +358,8 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 			//Rumble the Gamepad when colliding
 			App->input->ShakeController(0, 110, 0.9f);
 			
-			/*destroyed = true;*/
-			App->collisions->debug = false;
+			destroyed = true;
+			/*App->collisions->debug = false;*/
 			
 			if (score > highscore) {
 				highscore = score;
@@ -356,14 +371,13 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 				App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneIntro3, 70);
 			}
 
-			if (lives > 0)
+			else if (lives > 0)
 			{
 				lives -= 1;
 				/*App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneGameOver, 70);*/
-				
-
-				App->player->position.x = 111;
-				App->player->position.y = OPTMIZENELJUEGUITO + 600;
+				nextNotificationTime = currentTime + intervalo;
+				ahora = true;
+				App->player->collider->type = Collider::Type::NONE;
 			}
 		}
 	}	
