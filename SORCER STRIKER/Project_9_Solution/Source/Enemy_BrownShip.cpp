@@ -11,11 +11,19 @@ Enemy_BrownShip::Enemy_BrownShip(int x, int y) : Enemy(x, y)
 	cnt = 3;
 	tipo = Enemy_Type::BROWNSHIP;
 
-	flyAnim.PushBack({ 44, 5, 36, 34 });
+	Anim1.PushBack({ 44, 5, 36, 34 });
 	
-	turnAnim1.PushBack({ 231, 3, 36, 34});
+	Anim2.PushBack({ 231, 3, 36, 34});
+	Anim2.PushBack({ 231, 3, 36, 34 });
+	Anim2.speed = 0.4f;
+	Anim2.loop = false;
 
-	currentAnim = &flyAnim;
+	Anim3.PushBack({ 231, 3, 36, 34 });
+	Anim3.PushBack({ 231, 3, 36, 34 });
+	Anim3.speed = 0.4f;
+	Anim3.loop = false;
+
+	currentAnim = &Anim1;
 
 	//turnAnim2.PushBack({ 144, 0, 34, 31 });
 	//
@@ -42,6 +50,11 @@ Enemy_BrownShip::Enemy_BrownShip(int x, int y) : Enemy(x, y)
 
 void Enemy_BrownShip::Update()
 {
+	if (Anim2.HasFinished())
+	{
+		currentAnim = &Anim1;
+	}
+	
 	waveRatio += waveRatioSpeed;
 
 	position.x = spawnPos.x + (waveHeight * sinf(waveRatio));

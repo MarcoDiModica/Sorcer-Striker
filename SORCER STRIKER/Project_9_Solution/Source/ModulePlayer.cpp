@@ -12,6 +12,8 @@
 #include "ModuleCollisions.h"
 #include "ModuleWindow.h"
 #include <random>
+#include <chrono>
+
 
 #include <stdio.h>
 
@@ -324,7 +326,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 	if (c1 == collider && destroyed == false)
 	{
 		//Rumble the Gamepad when colliding even in god mode
-		App->input->ShakeController(0, 110, 0.9f);
+		App->input->ShakeController(0, 60, 0.9f);
 
 		if (god_mode) { destroyed = false; }
 		else {
@@ -341,7 +343,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 			//Rumble the Gamepad when colliding
 			App->input->ShakeController(0, 110, 0.9f);
 			
-			destroyed = true;
+			/*destroyed = true;*/
 			App->collisions->debug = false;
 			
 			if (score > highscore) {
@@ -357,7 +359,11 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 			if (lives > 0)
 			{
 				lives -= 1;
-				App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneGameOver, 70);
+				/*App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneGameOver, 70);*/
+				
+
+				App->player->position.x = 111;
+				App->player->position.y = OPTMIZENELJUEGUITO + 600;
 			}
 		}
 	}	
