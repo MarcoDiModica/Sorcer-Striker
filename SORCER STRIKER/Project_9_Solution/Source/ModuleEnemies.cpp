@@ -18,6 +18,8 @@
 #include "coin.h"
 #include "chest.h"
 #include "book.h"
+#include "Stage.h"
+#include "Clear.h"
 #include "ReverseDT.h"
 #include "ReverseST.h"
 
@@ -204,6 +206,12 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info)
 					enemies[i] = new ReverseDT(info.x, info.y);
 					break;
 				case Enemy_Type::REVERSEST:
+					enemies[i] = new ReverseST(info.x, info.y);
+					break;
+				case Enemy_Type::STAGE:
+					enemies[i] = new ReverseST(info.x, info.y);
+					break;
+				case Enemy_Type::CLEAR:
 					enemies[i] = new ReverseST(info.x, info.y);
 					break;
 

@@ -22,6 +22,8 @@ enum class Enemy_Type
 	FLYINGLIZARD,
 	BlUEDRAGON,
 	BOSS,
+	STAGE,
+	CLEAR,
 
 };
 
