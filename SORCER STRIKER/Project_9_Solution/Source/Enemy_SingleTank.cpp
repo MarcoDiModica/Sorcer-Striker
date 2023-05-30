@@ -16,14 +16,14 @@ Enemy_SingleTank::Enemy_SingleTank(int x, int y) : Enemy(x, y)
 	Anim1.PushBack({ 88,260,36,34 });
 	Anim1.PushBack({ 129,260,36,34 });
 	Anim1.PushBack({ 88,260,36,34 });
-	Anim1.speed = 0.02f;
+	Anim1.speed = 0.06f;
 	Anim1.loop = true;
 
 	Anim1Rev.PushBack({ 1100,21,36,34 });
 	Anim1Rev.PushBack({ 1018,20 ,36,34 });
 	Anim1Rev.PushBack({ 977,20 ,36,34 });
 	Anim1Rev.PushBack({ 1018,20 ,36,34 });
-	Anim1Rev.speed = 0.02f;
+	Anim1Rev.speed = 0.06f;
 	Anim1Rev.loop = true;
 
 	currentAnim = &Anim1;
@@ -34,7 +34,7 @@ Enemy_SingleTank::Enemy_SingleTank(int x, int y) : Enemy(x, y)
 
 	Anim2.PushBack({ 171,260,36,34 });
 
-	collider = App->collisions->AddCollider({ position.x,position.y,36,34 }, Collider::Type::ITEM, (Module*)App->enemies);
+	collider = App->collisions->AddCollider({ position.x,position.y,36,34 }, Collider::Type::ENEMY, (Module*)App->enemies);
 
 }
 

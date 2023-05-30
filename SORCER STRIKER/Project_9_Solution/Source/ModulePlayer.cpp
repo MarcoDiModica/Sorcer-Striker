@@ -309,14 +309,6 @@ Update_Status ModulePlayer::Update()
 	{
 		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, (rand() % 210) + 10, App->player->position.y - 260);
 	}
-	if (App->input->keys[SDL_SCANCODE_9] == Key_State::KEY_DOWN)
-	{
-		App->enemies->AddEnemy(Enemy_Type::REVERSEDT, (rand() % 210) + 10, App->player->position.y - 260);
-	}
-	if (App->input->keys[SDL_SCANCODE_0] == Key_State::KEY_DOWN)
-	{
-		App->enemies->AddEnemy(Enemy_Type::REVERSEST, (rand() % 210) + 10, App->player->position.y - 260);
-	}
 
     // If no up/down movement detected, set the current animation back to idle
 	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_IDLE
