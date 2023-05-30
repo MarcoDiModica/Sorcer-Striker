@@ -21,6 +21,7 @@ private:
 	int waveHeight = 15;
 
 	Animation Anim1;
+	Animation Anim1Rev;
 	Animation Anim2;
 };
 #endif // __ENEMY_SINGLETANK_H__
