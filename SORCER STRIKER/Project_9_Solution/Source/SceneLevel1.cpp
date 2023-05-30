@@ -227,9 +227,9 @@ bool SceneLevel1::Start()
 	App->enemies->AddEnemy(Enemy_Type::BlUEDRAGON, 20, -4860);
 
 	//boss/
-	App->enemies->AddEnemy(Enemy_Type::BOSSLEFT, 0, -900);
-	App->enemies->AddEnemy(Enemy_Type::BOSS, 83, -900);
-	App->enemies->AddEnemy(Enemy_Type::BOSSRIGHT, 184, -900);
+	App->enemies->AddEnemy(Enemy_Type::BOSSLEFT, 0, -8690);
+	App->enemies->AddEnemy(Enemy_Type::BOSS, 83, -8690);
+	App->enemies->AddEnemy(Enemy_Type::BOSSRIGHT, 184, -8690);
 	
 
 
