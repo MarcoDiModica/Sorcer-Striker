@@ -78,7 +78,6 @@
     <ClInclude Include="Application.h" />
     <ClInclude Include="Book.h" />
     <ClInclude Include="Chest.h" />
-    <ClInclude Include="Clear.h" />
     <ClInclude Include="coin.h" />
     <ClInclude Include="Enemy_BlueDragon.h" />
     <ClInclude Include="Boss.h" />
@@ -117,13 +116,11 @@
     <ClInclude Include="SceneStageclear.h" />
     <ClInclude Include="SelectScreen.h" />
     <ClInclude Include="Enemy_SingleTank.h" />
-    <ClInclude Include="Stage.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Book.cpp" />
     <ClCompile Include="Chest.cpp" />
-    <ClCompile Include="Clear.cpp" />
     <ClCompile Include="coin.cpp" />
     <ClCompile Include="Enemy_BlueDragon.cpp" />
     <ClCompile Include="Boss.cpp" />
@@ -161,7 +158,6 @@
     <ClCompile Include="SceneStageclear.cpp" />
     <ClCompile Include="SelectScreen.cpp" />
     <ClCompile Include="Enemy_SingleTank.cpp" />
-    <ClCompile Include="Stage.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

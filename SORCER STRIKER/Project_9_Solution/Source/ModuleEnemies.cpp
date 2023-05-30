@@ -18,8 +18,6 @@
 #include "coin.h"
 #include "chest.h"
 #include "book.h"
-#include "Stage.h"
-#include "Clear.h"
 
 #define SPAWN_MARGIN 50
 
@@ -199,12 +197,6 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info)
 					break;
 				case Enemy_Type::BOSS:
 					enemies[i] = new Boss(info.x, info.y);
-					break;
-				case Enemy_Type::STAGE:
-					enemies[i] = new Stage(info.x, info.y);
-					break;
-				case Enemy_Type::CLEAR:
-					enemies[i] = new Stage(info.x, info.y);
 					break;
 
 			}
