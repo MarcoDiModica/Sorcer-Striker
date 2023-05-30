@@ -68,6 +68,8 @@ public:
 	Particle Clear;
 	Particle enemieShot;
 	Particle BigExplosion;
+	Particle SingleTankMark;
+	Particle InsaneEXplosion;
 
 	float cocaina = 0.00f;
 	float LSD = 2.00f;

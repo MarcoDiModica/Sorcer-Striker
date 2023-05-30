@@ -1,12 +1,12 @@
-#ifndef __ENEMY_DOUBLETANK_H__
-#define __ENEMY_DUBLETANK_H__
+#ifndef __REVERSEDT_H__
+#define __REVERSEDT_H__
 
 #include "Enemy.h"
 
-class Enemy_DoubleTank : public Enemy {
+class ReverseDT : public Enemy {
 public:
 
-	Enemy_DoubleTank(int x, int y);
+	ReverseDT(int x, int y);
 
 	void Update();
 
@@ -24,4 +24,4 @@ private:
 	Animation Anim1Rev;
 	Animation Anim2;
 };
-#endif // __ENEMY_SINGLETANK_H__
+#endif // __REVERSEDT__

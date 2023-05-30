@@ -140,9 +140,9 @@ bool SceneLevel1::Start()
 	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 20, -6600);
 	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 110, -6900);
 	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 190, -7200);*/
-
 	/*App->enemies->AddEnemy(Enemy_Type::BOSS, 0, -20);*/
 
+	
 
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;

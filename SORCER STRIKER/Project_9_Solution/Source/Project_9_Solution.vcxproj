@@ -98,6 +98,8 @@
     <ClInclude Include="ModuleFonts.h" />
     <ClInclude Include="ModuleItems.h" />
     <ClInclude Include="ModuleParticles.h" />
+    <ClInclude Include="ReverseDT.h" />
+    <ClInclude Include="ReverseST.h" />
     <ClInclude Include="SceneGameOver.h" />
     <ClInclude Include="SceneIntro.h" />
     <ClInclude Include="SceneIntro2.h" />
@@ -144,6 +146,8 @@
     <ClCompile Include="ModuleFonts.cpp" />
     <ClCompile Include="ModuleItems.cpp" />
     <ClCompile Include="ModuleParticles.cpp" />
+    <ClCompile Include="ReverseDT.cpp" />
+    <ClCompile Include="ReverseST.cpp" />
     <ClCompile Include="SceneGameOver.cpp" />
     <ClCompile Include="SceneIntro.cpp" />
     <ClCompile Include="SceneIntro2.cpp" />

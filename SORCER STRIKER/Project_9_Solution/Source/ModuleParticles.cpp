@@ -106,12 +106,17 @@ bool ModuleParticles::Start()
 	DoubleTankMark.speed.y = 0;
 	DoubleTankMark.lifetime = 120;
 
+	SingleTankMark.anim.PushBack({ 16,103,33,33 });
+	
+	SingleTankMark.speed.y = 0;
+	SingleTankMark.lifetime = 120;
+
 	enemieShot.anim.PushBack({ 20,201,13,13 });
 	enemieShot.anim.PushBack({ 73,201,13,13 });
 	enemieShot.anim.PushBack({ 56,201,13,13 });
 	enemieShot.anim.PushBack({ 38,201,13,13 });
 
-	enemieShot.speed.y = 0.5f;
+	enemieShot.speed.y = 1;
 	enemieShot.speed.x = cocaina;
 	enemieShot.lifetime = 120;
 	enemieShot.anim.loop = true;
@@ -126,6 +131,17 @@ bool ModuleParticles::Start()
 	BigExplosion.anim.speed = 0.2f;
 	BigExplosion.speed.y = -2;
 
+
+
+
+	
+	InsaneEXplosion.anim.PushBack({ 4,283,98,90 });
+	InsaneEXplosion.anim.PushBack({ 128,294,76,76 });
+	InsaneEXplosion.anim.PushBack({ 234,298,70,70 });
+
+	InsaneEXplosion.anim.loop = false;
+	InsaneEXplosion.anim.speed = 0.2f;
+	
 	return true;
 }
 

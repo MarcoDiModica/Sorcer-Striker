@@ -1,4 +1,4 @@
-#include "Enemy_SingleTank.h"
+#include "ReverseST.h"
 
 #include "Application.h"
 #include "ModuleCollisions.h"
@@ -6,18 +6,11 @@
 #include "ModulePlayer.h"
 #include "ModuleParticles.h"
 
-Enemy_SingleTank::Enemy_SingleTank(int x, int y) : Enemy(x, y) 
+ReverseST::ReverseST(int x, int y) : Enemy(x, y)
 {
 
 	cnt = 6;
-	tipo = Enemy_Type::SINGLETANK;
-
-	Anim1.PushBack({ 48,260,36,34 });
-	Anim1.PushBack({ 88,260,36,34 });
-	Anim1.PushBack({ 129,260,36,34 });
-	Anim1.PushBack({ 88,260,36,34 });
-	Anim1.speed = 0.02f;
-	Anim1.loop = true;
+	tipo = Enemy_Type::REVERSEST;
 
 	Anim1Rev.PushBack({ 1100,21,36,34 });
 	Anim1Rev.PushBack({ 1018,20 ,36,34 });
@@ -26,11 +19,7 @@ Enemy_SingleTank::Enemy_SingleTank(int x, int y) : Enemy(x, y)
 	Anim1Rev.speed = 0.02f;
 	Anim1Rev.loop = true;
 
-	currentAnim = &Anim1;
-
-
-	/*currentAnim = &Anim1Rev;*/
-	
+	currentAnim = &Anim1Rev;
 
 	Anim2.PushBack({ 171,260,36,34 });
 
@@ -38,7 +27,7 @@ Enemy_SingleTank::Enemy_SingleTank(int x, int y) : Enemy(x, y)
 
 }
 
-void Enemy_SingleTank::Update()
+void ReverseST::Update()
 {
 	position.y -= 1;
 
@@ -47,15 +36,5 @@ void Enemy_SingleTank::Update()
 		currentAnim = &Anim2;
 	}
 
-	if (position.x <= 0)
-	{
-		position.x = 0;
-	}
-
-	if (position.x >= SCREEN_WIDTH - 36)
-	{
-		position.x = SCREEN_WIDTH - 36;
-	}
-
-	Enemy:: Update();
+	Enemy::Update();
 }

@@ -1,12 +1,12 @@
-#ifndef __ENEMY_DOUBLETANK_H__
-#define __ENEMY_DUBLETANK_H__
+#ifndef __REVERSEST_H__
+#define __REVERSEST_H__
 
 #include "Enemy.h"
 
-class Enemy_DoubleTank : public Enemy {
+class ReverseST : public Enemy {
 public:
 
-	Enemy_DoubleTank(int x, int y);
+	ReverseST(int x, int y);
 
 	void Update();
 
@@ -21,7 +21,8 @@ private:
 	int waveHeight = 15;
 
 	Animation Anim1;
-	Animation Anim1Rev;
 	Animation Anim2;
+	Animation Anim1Rev;
 };
-#endif // __ENEMY_SINGLETANK_H__
+#endif // __REVERSEST_H__
+

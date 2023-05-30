@@ -18,8 +18,13 @@
 #include "coin.h"
 #include "chest.h"
 #include "book.h"
+
 #include "Stage.h"
 #include "Clear.h"
+
+#include "ReverseDT.h"
+#include "ReverseST.h"
+
 
 #define SPAWN_MARGIN 50
 
@@ -205,6 +210,11 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info)
 					break;
 				case Enemy_Type::CLEAR:
 					enemies[i] = new Stage(info.x, info.y);
+				case Enemy_Type::REVERSEDT:
+					enemies[i] = new ReverseDT(info.x, info.y);
+					break;
+				case Enemy_Type::REVERSEST:
+					enemies[i] = new ReverseST(info.x, info.y);
 					break;
 
 			}
