@@ -100,7 +100,7 @@ void Enemy::OnCollision(Collider* collider)
 		if (cnt == 0) {
 			App->audio->PlayFx(destroyedFx);
 			App->particles->AddParticle(App->particles->DoubleTankMark, position.x, position.y);
-			App->particles->AddParticle(App->particles->explosion, collider->rect.x, position.y + 20);
+			App->particles->AddParticle(App->particles->InsaneEXplosion, position.x , position.y -10);
 
 			//rumble when killed the doubletank
 			App->input->ShakeController(0, 60, 0.2f);
@@ -110,7 +110,7 @@ void Enemy::OnCollision(Collider* collider)
 		}
 		else
 		{
-			App->particles->AddParticle(App->particles->BigExplosion, collider->rect.x, position.y + 26);
+			App->particles->AddParticle(App->particles->explosion, collider->rect.x, position.y + 26);
 			App->player->score += 10;
 		}
 	}
@@ -150,7 +150,7 @@ void Enemy::OnCollision(Collider* collider)
 	{
 		if (cnt == 0) {
 			App->audio->PlayFx(destroyedFx);
-			App->particles->AddParticle(App->particles->BigExplosion, position.x + 35, position.y + 20);
+			App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 20 , position.y + 20);
 
 			App->player->score += 100;
 

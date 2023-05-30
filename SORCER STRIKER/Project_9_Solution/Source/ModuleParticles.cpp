@@ -131,6 +131,17 @@ bool ModuleParticles::Start()
 	BigExplosion.anim.speed = 0.2f;
 	BigExplosion.speed.y = -2;
 
+
+
+
+	
+	InsaneEXplosion.anim.PushBack({ 4,283,98,90 });
+	InsaneEXplosion.anim.PushBack({ 128,294,76,76 });
+	InsaneEXplosion.anim.PushBack({ 234,298,70,70 });
+
+	InsaneEXplosion.anim.loop = false;
+	InsaneEXplosion.anim.speed = 0.2f;
+	
 	return true;
 }
 
