@@ -12,17 +12,23 @@ Enemy_SingleTank::Enemy_SingleTank(int x, int y) : Enemy(x, y)
 	cnt = 6;
 	tipo = Enemy_Type::SINGLETANK;
 
-	Anim1.PushBack({ 5,260,36,34 });
 	Anim1.PushBack({ 48,260,36,34 });
 	Anim1.PushBack({ 88,260,36,34 });
 	Anim1.PushBack({ 129,260,36,34 });
-	Anim1.PushBack({ 171,260,36,34 });
-	Anim1.speed = 0.01f;
+	Anim1.PushBack({ 88,260,36,34 });
+	Anim1.speed = 0.06f;
 	Anim1.loop = true;
+
+	Anim1Rev.PushBack({ 48,260,36,34 });
+	Anim1Rev.PushBack({ 88,260,36,34 });
+	Anim1Rev.PushBack({ 129,260,36,34 });
+	Anim1Rev.PushBack({ 88,260,36,34 });
+	Anim1Rev.speed = 0.06f;
+	Anim1Rev.loop = true;
 
 	currentAnim = &Anim1;
 
-	Anim2.PushBack({ 24,270,36,34 });
+	Anim2.PushBack({ 171,260,36,34 });
 
 	collider = App->collisions->AddCollider({ position.x,position.y,36,34 }, Collider::Type::ENEMY, (Module*)App->enemies);
 
