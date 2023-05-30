@@ -35,14 +35,16 @@ bool SceneLevel1::Start()
 	App->audio->PlayMusic("Assets/Music/stage1.ogg", 1.0f);
 
 
-	App->particles->AddParticle(App->particles->tubo, 0, 0, Collider::Type::NONE);
-	//App->particles->AddParticle(App->particles->tubo, 0, -100, Collider::Type::NONE);
-	App->particles->AddParticle(App->particles->tubo, 0, -200, Collider::Type::NONE);
-	//App->particles->AddParticle(App->particles->tubo, 0, -300, Collider::Type::NONE);
-	App->particles->AddParticle(App->particles->tubo, 0, -400, Collider::Type::NONE);
-	//App->particles->AddParticle(App->particles->tubo, 0, -500, Collider::Type::NONE);
-	App->particles->AddParticle(App->particles->tubo, 0, -600, Collider::Type::NONE);
-	//App->particles->AddParticle(App->particles->tubo, 0, -700, Collider::Type::NONE);
+	App->particles->AddParticle(App->particles->tubo, 0, -50, Collider::Type::NONE);
+	App->particles->AddParticle(App->particles->tubo, 0, -250, Collider::Type::NONE);
+	App->particles->AddParticle(App->particles->tubo, 0, -450, Collider::Type::NONE);
+	App->particles->AddParticle(App->particles->tubo, 0, -650, Collider::Type::NONE);
+	App->particles->AddParticle(App->particles->tubo, 0, -850, Collider::Type::NONE);
+	App->particles->AddParticle(App->particles->tubo, 0, -1050, Collider::Type::NONE);
+	App->particles->AddParticle(App->particles->tubo, 0, -1250, Collider::Type::NONE);
+	App->particles->AddParticle(App->particles->tubo, 0, -1450, Collider::Type::NONE);
+	App->particles->AddParticle(App->particles->tubo, 0, -1650, Collider::Type::NONE);
+
 	
 
 

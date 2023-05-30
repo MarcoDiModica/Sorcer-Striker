@@ -47,6 +47,7 @@ public:
 	int stagespeed = 1;
 	int playershots = 2;
 	bool ahora = false;
+	bool crack = false;
 
 	Uint32 intervalo = 1000;
 
@@ -56,7 +57,8 @@ public:
 
 	Uint32 current;
 	Uint32 next;
-	Uint32 interval = 1000;
+	Uint32 interval = 4000;
+	Uint32 start;
 	// Countdown to handle shot spacing
 	int shotMaxCountdown = 7;
 	int shotCountdown = 0;

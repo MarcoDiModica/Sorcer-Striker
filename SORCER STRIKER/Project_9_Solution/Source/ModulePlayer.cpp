@@ -13,6 +13,7 @@
 #include "ModuleWindow.h"
 #include <random>
 #include <chrono>
+#include <SDL_mixer/include/SDL_mixer.h>
 
 
 #include <stdio.h>
@@ -161,7 +162,7 @@ Update_Status ModulePlayer::Update()
 		position.y -= speed + 2;
 	}
 
-	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN || pad.a == true )
+	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN && destroyed==false|| pad.a == true && destroyed == false)
 	{
 		if (playershots <= 2)
 		{
@@ -209,11 +210,12 @@ Update_Status ModulePlayer::Update()
 	{
 		god_mode = !god_mode;
 	}
-
+	current = SDL_GetTicks();
+	
 	if (App->input->keys[SDL_SCANCODE_F3] == Key_State::KEY_DOWN)
 	{
-		/*App->audio->PlayFx(winFx);*/
-		/*App->collisions->debug = false;*/
+		Mix_PauseMusic();
+		App->audio->PlayFx(App->player->winFx);
 		if (score > highscore) {
 			highscore = score;
 		}
@@ -222,6 +224,18 @@ Update_Status ModulePlayer::Update()
 
 		App->enemies->AddEnemy(Enemy_Type::STAGE, -20, App->render->camera.y + 50);
 		App->enemies->AddEnemy(Enemy_Type::CLEAR, SCREEN_WIDTH / 2 - 30, App->render->camera.y + 50);
+		App->player->collider->type = Collider::Type::NONE;
+
+		start = SDL_GetTicks();
+		next = start + interval;
+		crack = !crack;
+	}
+
+	if (crack) {
+		if (current > next) {
+			crack = !crack;
+			App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneIntro3, 70);
+		}
 	}
 
 	if (App->input->keys[SDL_SCANCODE_F4] == Key_State::KEY_DOWN)

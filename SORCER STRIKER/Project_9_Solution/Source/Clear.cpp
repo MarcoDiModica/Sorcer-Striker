@@ -12,7 +12,7 @@ Clear::Clear(int x, int y) : Enemy(x, y)
 	cnt = 1;
 	tipo = Enemy_Type::CLEAR;
 
-	Heroina.PushBack({ 947,213,80,37 });
+	Heroina.PushBack({ 947,211,80,47 });
 	Heroina.loop = true;
 
 	currentAnim = &Heroina;
@@ -24,7 +24,7 @@ void Clear::Update()
 {
 	position.x += mondongo;
 
-	if (position.x <= 130) {
+	if (position.x <= 140) {
 		mondongo = 0;
 	}
 

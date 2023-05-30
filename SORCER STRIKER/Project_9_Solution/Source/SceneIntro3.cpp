@@ -9,6 +9,8 @@
 #include "ModulePlayer.h"
 #include "ModuleFadeToBlack.h"
 #include <chrono>
+#include "ModuleParticles.h"
+#include "ModuleEnemies.h"
 
 #include <iostream>
 #include <thread>
@@ -43,7 +45,9 @@ bool SceneIntro3::Start()
 	App->render->camera.y = 0;
 
 	App->collisions->CleanUp();
-
+	App->particles->CleanUp();
+	App->enemies->CleanUp();
+	App->player->CleanUp();
 	return ret;
 }
 

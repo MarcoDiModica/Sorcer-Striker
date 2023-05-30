@@ -5,6 +5,9 @@
 #include "ModuleRender.h"
 #include "ModuleAudio.h"
 #include "ModuleInput.h"
+#include "ModuleEnemies.h"
+#include "ModulePlayer.h"
+#include "ModuleParticles.h"
 #include "ModuleFadeToBlack.h"
 #include "ModuleCollisions.h"
 #include <SDL_mixer/include/SDL_mixer.h>
@@ -32,7 +35,11 @@ bool SceneGameOver::Start()
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;
 
+	
 	App->collisions->CleanUp();
+	App->particles->CleanUp();
+	App->enemies->CleanUp();
+	App->player->CleanUp();
 
 	return ret;
 }

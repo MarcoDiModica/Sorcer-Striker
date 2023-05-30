@@ -73,7 +73,7 @@ bool ModuleParticles::Start()
 
 	tubo.anim.PushBack({ 0,233,254,35 });
 
-	tubo.speed.y = 0;
+	tubo.speed.y = 2.0f;
 	tubo.lifetime = 600;
 	tubo.anim.speed = 0.2f;
 
