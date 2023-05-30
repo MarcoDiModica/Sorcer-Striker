@@ -32,7 +32,7 @@ Enemy_DoubleTank::Enemy_DoubleTank(int x, int y) : Enemy(x, y)
 
 	currentAnim = &Anim1Rev;
 
-	Anim2.PushBack({ 243,158,72,42 });
+	Anim2.PushBack({ 930,62,72,42 });
 
 	collider = App->collisions->AddCollider({ position.x,position.y,72,42 }, Collider::Type::ITEM, (Module*)App->enemies);
 }

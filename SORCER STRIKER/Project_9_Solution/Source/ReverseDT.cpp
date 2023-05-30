@@ -21,7 +21,8 @@ ReverseDT::ReverseDT(int x, int y) : Enemy(x, y)
 
 	currentAnim = &Anim1;
 
-	Anim2.PushBack({ 380,158,72,42 }); //////////////pablo cambialo
+	Anim2.PushBack({ 244,158,72,42 }); 
+	//falta la marca del suelo//
 
 	collider = App->collisions->AddCollider({ position.x,position.y,72,42 }, Collider::Type::ITEM, (Module*)App->enemies);
 }
