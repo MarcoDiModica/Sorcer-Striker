@@ -20,6 +20,7 @@ struct Collider
 		ITEM,
 		COIN,
 		BOOK,
+		
 		 
 		MAX
 	};

@@ -1,18 +1,16 @@
-#ifndef __ENEMY_BOSS_H__
-#define __ENEMY_BOSS_H__
+#ifndef __ENEMY_BOSSRIGHT_H__
+#define __ENEMY_BOSSRIGHT_H__
 
 #include "Enemy.h"
 #include "Path.h"
 #include "ModuleParticles.h"
-#include "Boss_Left.h"
-#include "Application.h"
 
 
 
-class Boss :public Enemy {
+class BossRight :public Enemy {
 public:
 
-	Boss(int x, int y);
+	BossRight(int x, int y);
 
 	void Update();
 

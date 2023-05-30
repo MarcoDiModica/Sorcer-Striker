@@ -29,7 +29,7 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::PLAYER][Collider::Type::BOOK] = false;
 	matrix[Collider::Type::PLAYER][Collider::Type::COIN] = false;
 
-	matrix[Collider::Type::ENEMY][Collider::Type::WALL] = false;
+	matrix[Collider::Type::ENEMY][Collider::Type::WALL] = true;
 	matrix[Collider::Type::ENEMY][Collider::Type::PLAYER] = true;
 	matrix[Collider::Type::ENEMY][Collider::Type::ENEMY] = false;
 	matrix[Collider::Type::ENEMY][Collider::Type::PLAYER_SHOT] = true;
@@ -82,6 +82,8 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::COIN][Collider::Type::ITEM] = false;
 	matrix[Collider::Type::COIN][Collider::Type::BOOK] = false;
 	matrix[Collider::Type::COIN][Collider::Type::COIN] = false;
+
+	
 
 }
 

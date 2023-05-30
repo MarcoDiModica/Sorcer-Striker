@@ -169,6 +169,12 @@
     <ClInclude Include="Clear.h">
       <Filter>Source Files\Entities\Enemies</Filter>
     </ClInclude>
+    <ClInclude Include="Boss_Left.h">
+      <Filter>Source Files\Entities\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Boss_Right.h">
+      <Filter>Source Files\Entities\Enemies</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Module.cpp">
@@ -301,6 +307,12 @@
       <Filter>Source Files\Entities\Enemies</Filter>
     </ClCompile>
     <ClCompile Include="Clear.cpp">
+      <Filter>Source Files\Entities\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="Boss_Left.cpp">
+      <Filter>Source Files\Entities\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="Boss_Right.cpp">
       <Filter>Source Files\Entities\Enemies</Filter>
     </ClCompile>
   </ItemGroup>

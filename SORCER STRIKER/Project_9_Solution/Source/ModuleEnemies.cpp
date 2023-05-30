@@ -22,6 +22,8 @@
 #include "Clear.h"
 #include "ReverseDT.h"
 #include "ReverseST.h"
+#include "Boss_Left.h"
+#include "Boss_Right.h"
 
 #define SPAWN_MARGIN 50
 
@@ -213,6 +215,12 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info)
 					break;
 				case Enemy_Type::CLEAR:
 					enemies[i] = new Clear(info.x, info.y);
+					break;
+				case Enemy_Type::BOSSLEFT:
+					enemies[i] = new BossLeft(info.x, info.y);
+					break;
+				case Enemy_Type::BOSSRIGHT:
+					enemies[i] = new BossRight(info.x, info.y);
 					break;
 
 			}

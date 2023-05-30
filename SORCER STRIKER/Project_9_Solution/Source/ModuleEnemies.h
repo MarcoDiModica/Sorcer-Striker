@@ -24,6 +24,8 @@ enum class Enemy_Type
 	BOSS,
 	STAGE,
 	CLEAR,
+	BOSSLEFT,
+	BOSSRIGHT,
 
 };
 
