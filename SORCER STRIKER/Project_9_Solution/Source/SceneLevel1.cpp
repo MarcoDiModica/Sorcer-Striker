@@ -164,7 +164,7 @@ bool SceneLevel1::Start()
 	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190, -1360);
 
 
-	//3rd wave  izquierda a derecha //
+	//3rd wave  estaticos //
 	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -1420);
 	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -1450);
 	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -1480);

@@ -111,7 +111,7 @@ void Enemy::OnCollision(Collider* collider)
 		}
 		else
 		{
-			App->particles->AddParticle(App->particles->explosion, collider->rect.x, position.y + 26);
+			App->particles->AddParticle(App->particles->explosion, collider->rect.x - 15, position.y + 26);
 			App->player->score += 10;
 		}
 	}
@@ -182,7 +182,7 @@ void Enemy::OnCollision(Collider* collider)
 	{
 		if (cnt == 0) {
 			App->audio->PlayFx(destroyedFx);
-			App->particles->AddParticle(App->particles->SingleTankMark, position.x, position.y);
+			App->particles->AddParticle(App->particles->SingleTankMark, position.x- 3, position.y- 3);
 			App->particles->AddParticle(App->particles->BigExplosion, position.x - 8, position.y + 5);
 
 			App->player->score += 100;
@@ -194,6 +194,26 @@ void Enemy::OnCollision(Collider* collider)
 			App->particles->AddParticle(App->particles->explosion, collider->rect.x - 15, position.y);
 			App->player->score += 10;
 			App->audio->PlayFx(destroyedFx);
+		}
+	}
+
+	if (tipo == Enemy_Type::REVERSEDT)
+	{
+		if (cnt == 0) {
+			App->audio->PlayFx(destroyedFx);
+			App->particles->AddParticle(App->particles->DoubleTankMark, position.x, position.y);
+			App->particles->AddParticle(App->particles->InsaneEXplosion, position.x, position.y - 10);
+
+			//rumble when killed the doubletank
+			App->input->ShakeController(0, 60, 0.2f);
+			App->player->score += 100;
+
+			SetToDelete();
+		}
+		else
+		{
+			App->particles->AddParticle(App->particles->explosion, collider->rect.x - 15, position.y + 26);
+			App->player->score += 10;
 		}
 	}
 }

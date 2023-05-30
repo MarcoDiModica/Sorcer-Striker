@@ -106,7 +106,7 @@ bool ModuleParticles::Start()
 	DoubleTankMark.speed.y = 0;
 	DoubleTankMark.lifetime = 120;
 
-	SingleTankMark.anim.PushBack({ 16,103,33,33 });
+	SingleTankMark.anim.PushBack({ 17,146,36,35 });
 	
 	SingleTankMark.speed.y = 0;
 	SingleTankMark.lifetime = 120;

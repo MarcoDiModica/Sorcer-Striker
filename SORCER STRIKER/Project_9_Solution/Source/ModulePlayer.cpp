@@ -316,6 +316,20 @@ Update_Status ModulePlayer::Update()
 		App->enemies->AddEnemy(Enemy_Type::REVERSEST, (rand() % 210) + 10, App->player->position.y - 260);
 	}
 
+	if (App->input->keys[SDL_SCANCODE_M] == Key_State::KEY_DOWN)
+	{
+		App->player->position.y = -5590;
+		App->render->camera.y = -5525 - SCREEN_HEIGHT / 2;
+		App->player->OPTMIZENELJUEGUITO = -5525 - SCREEN_HEIGHT / 2;
+	}
+
+	if (App->input->keys[SDL_SCANCODE_N] == Key_State::KEY_DOWN)
+	{
+		App->player->position.y = -8590;
+		App->render->camera.y = -8525 - SCREEN_HEIGHT / 2;
+		App->player->OPTMIZENELJUEGUITO = -8525 - SCREEN_HEIGHT / 2;
+	}
+
     // If no up/down movement detected, set the current animation back to idle
 	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_IDLE
 		&& App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_IDLE

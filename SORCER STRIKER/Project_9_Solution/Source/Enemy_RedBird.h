@@ -19,7 +19,7 @@ private:
 	float waveRatio = 0.0f;
 
 	// The speed at which the wave ratio is increased
-	float waveRatioSpeed = 0.1f;
+	float waveRatioSpeed = 0.15f;
 
 	// The original spawning position. The wave will be calculated from that
 	int spawn_y = 0;
