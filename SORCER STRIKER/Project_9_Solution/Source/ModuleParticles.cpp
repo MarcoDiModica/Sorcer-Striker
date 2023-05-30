@@ -92,7 +92,7 @@ bool ModuleParticles::Start()
 	Stage.anim.PushBack({ 122,150,95,46 });
 
 	Stage.speed.y = -2;
-	Stage.speed.x = 0;
+	Stage.speed.x = LSD;
 	Stage.lifetime = 500;
 
 	
@@ -191,10 +191,11 @@ Update_Status ModuleParticles::Update()
 	}
 
 	enemieShot.speed.x = cocaina;
+	Stage.speed.x = LSD;
 
-	if (App->particles->Stage.position.x >= 35) {
+	/*if (App->particles->Stage.position.x >= 35) {
 		App->particles->Stage.position.x -= 2;
-	}
+	}*/
 	return Update_Status::UPDATE_CONTINUE;
 }
 

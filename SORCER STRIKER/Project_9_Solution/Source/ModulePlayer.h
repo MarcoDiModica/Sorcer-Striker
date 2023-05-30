@@ -54,6 +54,9 @@ public:
 	Uint32 nextNotificationTime;
 	Uint32 currentTime;
 
+	Uint32 current;
+	Uint32 next;
+	Uint32 interval = 1000;
 	// Countdown to handle shot spacing
 	int shotMaxCountdown = 7;
 	int shotCountdown = 0;

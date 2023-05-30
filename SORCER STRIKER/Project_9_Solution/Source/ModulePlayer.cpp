@@ -223,10 +223,16 @@ Update_Status ModulePlayer::Update()
 		
 
 		
-		//Stage = App->particles->AddParticle(App->particles->Stage, 0, App->player->OPTMIZENELJUEGUITO +30, Collider::Type::NONE);
-		
+		App->particles->AddParticle(App->particles->Stage, 0, App->render->camera.y + 30, Collider::Type::NONE);
+		current = SDL_GetTicks();
+		next = current + interval;
 
-		App->particles->AddParticle(App->particles->Clear, 135, App->player->OPTMIZENELJUEGUITO + 30, Collider::Type::NONE);
+		if (current > next)
+		{
+			App->particles->LSD = 0;
+
+		}
+		App->particles->AddParticle(App->particles->Clear, 135, App->render->camera.y + 30, Collider::Type::NONE);
 
 		
 		
@@ -240,6 +246,13 @@ Update_Status ModulePlayer::Update()
 	if (App->particles->Stage.position.x >= 35) {
 		stagespeed *= -1;
 	}*/
+	
+
+	if (current > next)
+	{
+		App->particles->LSD = 0;
+		
+	}
 
 	if (App->input->keys[SDL_SCANCODE_F4] == Key_State::KEY_DOWN)
 	{

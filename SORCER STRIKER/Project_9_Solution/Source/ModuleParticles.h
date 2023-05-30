@@ -70,6 +70,7 @@ public:
 	Particle BigExplosion;
 
 	float cocaina = 0.00f;
+	float LSD = 2.00f;
 
 	Particle coin;
 

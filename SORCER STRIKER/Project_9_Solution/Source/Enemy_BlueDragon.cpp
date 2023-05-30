@@ -55,9 +55,8 @@ void Enemy_BlueDragon::Update()
 	if (current > next)
 	{
 		App->particles->AddParticle(App->particles->enemieShot, position.x + 52, position.y + 100, Collider::Type::ENEMY_SHOT);
-		interval = rand() % 1201 + 600;
+		interval = rand() % 901 + 400;
 		App->particles->cocaina = static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / 3.5f));
-
 		next = current + interval;
 	}
 	

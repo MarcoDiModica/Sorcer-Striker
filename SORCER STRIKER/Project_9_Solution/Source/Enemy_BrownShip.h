@@ -47,7 +47,7 @@ private:
 
 	Uint32 current;
 	Uint32 next;
-	Uint32 interval = 4000;
+	Uint32 interval = 3000;
 };
 
 #endif // __ENEMY_BROWNSHIP_H__

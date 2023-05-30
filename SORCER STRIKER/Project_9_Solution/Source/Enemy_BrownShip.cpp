@@ -74,6 +74,7 @@ void Enemy_BrownShip::Update()
 	if (current > next)
 	{
 		App->particles->AddParticle(App->particles->EnemyL, position.x, position.y, Collider::Type::ENEMY_SHOT);
+		interval = rand() % 2001 + 2000;
 		next = current + interval;
 	}
 
