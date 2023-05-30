@@ -213,7 +213,7 @@ Update_Status ModulePlayer::Update()
 	if (App->input->keys[SDL_SCANCODE_F3] == Key_State::KEY_DOWN)
 	{
 		/*App->audio->PlayFx(winFx);*/
-		App->collisions->debug = false;
+		//App->collisions->debug = false;
 		if (score > highscore) {
 			highscore = score;
 		}
@@ -221,9 +221,11 @@ Update_Status ModulePlayer::Update()
 		lives = 3;
 
 		
+		//App->enemies->AddEnemy(Enemy_Type::STAGE,-20, App->render->camera.y + 50);
 
+		App->enemies->AddEnemy(Enemy_Type::CLEAR, 20, App->render->camera.y + 100);
 		
-		App->particles->AddParticle(App->particles->Stage, 0, App->render->camera.y + 30, Collider::Type::NONE);
+		/*App->particles->AddParticle(App->particles->Stage, 0, App->render->camera.y + 30, Collider::Type::NONE);
 		current = SDL_GetTicks();
 		next = current + interval;
 
@@ -232,7 +234,7 @@ Update_Status ModulePlayer::Update()
 			App->particles->LSD = 0;
 
 		}
-		App->particles->AddParticle(App->particles->Clear, 135, App->render->camera.y + 30, Collider::Type::NONE);
+		App->particles->AddParticle(App->particles->Clear, 135, App->render->camera.y + 30, Collider::Type::NONE);*/
 
 		
 		
