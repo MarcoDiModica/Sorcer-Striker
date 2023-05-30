@@ -17,6 +17,7 @@ Enemy_SingleTank::Enemy_SingleTank(int x, int y) : Enemy(x, y)
 	Anim1.PushBack({ 88,260,36,34 });
 	Anim1.PushBack({ 129,260,36,34 });
 	Anim1.PushBack({ 171,260,36,34 });
+
 	Anim1.speed = 0.01f;
 	Anim1.loop = true;
 
