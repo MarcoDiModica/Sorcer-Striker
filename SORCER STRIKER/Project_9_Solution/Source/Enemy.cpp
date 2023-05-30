@@ -182,7 +182,7 @@ void Enemy::OnCollision(Collider* collider)
 	{
 		if (cnt == 0) {
 			App->audio->PlayFx(destroyedFx);
-			App->particles->AddParticle(App->particles->SingleTankMark, position.x- 3, position.y- 3);
+			App->particles->AddParticle(App->particles->SingleTankMark, position.x, position.y);
 			App->particles->AddParticle(App->particles->BigExplosion, position.x - 8, position.y + 5);
 
 			App->player->score += 100;
