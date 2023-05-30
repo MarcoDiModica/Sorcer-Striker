@@ -22,5 +22,6 @@ private:
 
 	Animation Anim1;
 	Animation Anim2;
+	Animation Anim1Rev;
 };
 #endif // __ENEMY_SINGLETANK_H__
