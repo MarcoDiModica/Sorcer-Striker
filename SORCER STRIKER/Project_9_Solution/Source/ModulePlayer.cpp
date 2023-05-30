@@ -213,47 +213,16 @@ Update_Status ModulePlayer::Update()
 	if (App->input->keys[SDL_SCANCODE_F3] == Key_State::KEY_DOWN)
 	{
 		/*App->audio->PlayFx(winFx);*/
-		App->collisions->debug = false;
+		/*App->collisions->debug = false;*/
 		if (score > highscore) {
 			highscore = score;
 		}
 		score = 0;
 		lives = 3;
 
-		
-		App->enemies->AddEnemy(Enemy_Type::STAGE, -20, 50);
-		App->enemies->AddEnemy(Enemy_Type::CLEAR, 20,50);
-		
-		/*App->particles->AddParticle(App->particles->Stage, 0, App->render->camera.y + 30, Collider::Type::NONE);
-		current = SDL_GetTicks();
-		next = current + interval;
-
-		if (current > next)
-		{
-			App->particles->LSD = 0;
-
-		}
-		App->particles->AddParticle(App->particles->Clear, 135, App->render->camera.y + 30, Collider::Type::NONE);*/
-
-		
-		
-
-		/*if (App->particles->Stage.position.y >= (App->player->OPTMIZENELJUEGUITO + 40)) {
-			App->particles->Stage.speed.y = 2;
-		}*/
-		//App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneStageclear, 70);
+		App->enemies->AddEnemy(Enemy_Type::STAGE, -20, App->render->camera.y + 50);
+		App->enemies->AddEnemy(Enemy_Type::CLEAR, SCREEN_WIDTH / 2 - 30, App->render->camera.y + 50);
 	}
-	/*Stage->position.x += stagespeed;
-	if (App->particles->Stage.position.x >= 35) {
-		stagespeed *= -1;
-	}*/
-	
-
-	/*if (current > next)
-	{
-		App->particles->LSD = 0;
-		
-	}*/
 
 	if (App->input->keys[SDL_SCANCODE_F4] == Key_State::KEY_DOWN)
 	{

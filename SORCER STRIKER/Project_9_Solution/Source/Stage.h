@@ -26,7 +26,7 @@ private:
 	int waveHeight = 15;
 
 
-	Animation FlyAnim2;
+	Animation Cristal;
 
 	//mabybe add some more
 };

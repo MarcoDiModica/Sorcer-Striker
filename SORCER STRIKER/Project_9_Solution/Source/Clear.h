@@ -19,14 +19,14 @@ private:
 	float waveRatio = 0.0f;
 
 	float waveRatioSpeed = 0.2f;
-	int mondongo = 2.00f;
+	int mondongo = -2.00f;
 	int spawn_y = 0;
 	int spawn_x = 0;
 
 	int waveHeight = 15;
 
 
-	Animation FlyAnim1;
+	Animation Heroina;
 
 	//mabybe add some more
 };

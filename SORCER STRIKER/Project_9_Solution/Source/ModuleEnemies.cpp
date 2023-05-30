@@ -209,10 +209,10 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info)
 					enemies[i] = new ReverseST(info.x, info.y);
 					break;
 				case Enemy_Type::STAGE:
-					enemies[i] = new ReverseST(info.x, info.y);
+					enemies[i] = new Stage(info.x, info.y);
 					break;
 				case Enemy_Type::CLEAR:
-					enemies[i] = new ReverseST(info.x, info.y);
+					enemies[i] = new Clear(info.x, info.y);
 					break;
 
 			}
