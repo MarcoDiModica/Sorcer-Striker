@@ -37,6 +37,8 @@ public:
 	SDL_Texture* character4 = nullptr;
 	SDL_Texture* cuadrado = nullptr;
 
+	uint selectFx = 0;
+
 	int contador_segundos = 0;
 int currentCharacterIndex = 1;
 };

@@ -9,7 +9,7 @@
 
 Enemy_Bag::Enemy_Bag(int x, int y) : Enemy(x, y) 
 {
-	cnt = 1;
+	cnt = 4;
 	tipo = Enemy_Type::BAG;
 
 	hoverAnim.PushBack({ 176,367,36,31 });

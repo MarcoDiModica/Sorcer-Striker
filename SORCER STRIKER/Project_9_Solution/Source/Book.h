@@ -23,6 +23,8 @@ private:
 	// The total height of the wave
 	int waveHeight = 15;
 
+	uint buk = 0;
+
 	// The enemy animation
 	Animation hoverAnim;
 

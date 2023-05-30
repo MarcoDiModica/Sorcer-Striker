@@ -7,6 +7,7 @@
 #include "ModuleParticles.h"
 #include "SceneLevel1.h"
 #include <cstdlib>
+#include <ctime>
 
 Enemy_BlueDragon::Enemy_BlueDragon(int x, int y) : Enemy(x, y)
 {
@@ -29,7 +30,7 @@ Enemy_BlueDragon::Enemy_BlueDragon(int x, int y) : Enemy(x, y)
 	
 	current = SDL_GetTicks();
 	next = current + interval;
-	App->particles->cocaina = rand() % 5 - 4;
+	App->particles->cocaina = (rand() / static_cast<double>(RAND_MAX)) * 7.0 - 3.5;
 
 	collider = App->collisions->AddCollider({ position.x,position.y,122,140 }, Collider::Type::ENEMY, (Module*)App->enemies);
 }
@@ -54,9 +55,15 @@ void Enemy_BlueDragon::Update()
 
 	if (current > next)
 	{
-		App->particles->AddParticle(App->particles->enemieShot, position.x + 52, position.y + 100, Collider::Type::ENEMY_SHOT);
-		interval = rand() % 901 + 400;
-		App->particles->cocaina = static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / 3.5f));
+		App->particles->AddParticle(App->particles->enemieShot, position.x + (rand() % 51 + 30), position.y + 100, Collider::Type::ENEMY_SHOT);
+		App->particles->AddParticle(App->particles->enemieShot, position.x + (rand() % 51 + 30), position.y + 100, Collider::Type::ENEMY_SHOT);
+		App->particles->AddParticle(App->particles->enemieShot, position.x + (rand() % 51 + 30), position.y + 100, Collider::Type::ENEMY_SHOT);
+		App->particles->AddParticle(App->particles->enemieShot, position.x + (rand() % 51 + 30), position.y + 100, Collider::Type::ENEMY_SHOT);
+		App->particles->AddParticle(App->particles->enemieShot, position.x + (rand() % 51 + 30), position.y + 100, Collider::Type::ENEMY_SHOT);
+		App->particles->AddParticle(App->particles->enemieShot, position.x + (rand() % 51 + 30), position.y + 100, Collider::Type::ENEMY_SHOT);
+		App->particles->cocaina = (rand() / static_cast<double>(RAND_MAX)) * 7.0 - 3.5;
+		
+		interval = rand() % 1001 + 1000;
 		next = current + interval;
 	}
 	

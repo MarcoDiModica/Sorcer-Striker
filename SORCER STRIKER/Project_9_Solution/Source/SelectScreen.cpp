@@ -42,7 +42,8 @@ bool SelectScreen::Start()
 
 	SDL_Texture* characterTexture = nullptr;
 	int currentCharacterIndex = 0;
-	App->audio->PlayMusic("Assets/Music/introTitle.ogg", 1.0f);
+	App->audio->PlayMusic("Assets/Music/select.ogg", 1.0f);
+	selectFx = App->audio->LoadFx("Assets/Fx/8bit.wav");
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;
 	
@@ -62,6 +63,7 @@ Update_Status SelectScreen::Update()
 	
 	if (App->input->keys[SDL_SCANCODE_LEFT] == Key_State::KEY_DOWN || App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_DOWN|| pad.left == true)
 	{
+		App->audio->PlayFx(selectFx);
 		currentCharacterIndex--;
 		if (currentCharacterIndex <= 0)
 			currentCharacterIndex = 4; 
@@ -70,6 +72,7 @@ Update_Status SelectScreen::Update()
 	}
 	if (App->input->keys[SDL_SCANCODE_RIGHT] == Key_State::KEY_DOWN || App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_DOWN||pad.right == true)
 	{
+		App->audio->PlayFx(selectFx);
 		currentCharacterIndex++;
 		if (currentCharacterIndex > 4) 
 			currentCharacterIndex = 1;

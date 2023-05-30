@@ -71,8 +71,8 @@ bool ModulePlayer::Start()
 	
 	laserFx = App->audio->LoadFx("Assets/Fx/laser.wav");
 	explosionFx = App->audio->LoadFx("Assets/Fx/explosion.wav");
-	winFx = App->audio->LoadFx("Assets/Fx/win.wav");
-	loseFx = App->audio->LoadFx("Assets/Fx/lose.wav");
+	winFx = App->audio->LoadFx("Assets/Music/win.ogg");
+	loseFx = App->audio->LoadFx("Assets/Music/gameover.ogg");
 	coinFx = App->audio->LoadFx("Assets/Fx/coin.wav");
 	//damageFx = App->audio->LoadFx("Assets/Fx/damage.wav");
 	//lasthitFx = App->audio->LoadFx("Assets/Fx/lasthit.wav");

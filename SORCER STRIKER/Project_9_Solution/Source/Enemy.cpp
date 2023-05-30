@@ -76,8 +76,15 @@ void Enemy::OnCollision(Collider* collider)
 		if (cnt == 0) {
 			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
 			App->audio->PlayFx(destroyedFx);
-			
+			App->player->score += 20;
 			SetToDelete();
+			App->enemies->AddEnemy(Enemy_Type::COIN, position.x, position.y);
+		}
+		else
+		{
+			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+			App->audio->PlayFx(destroyedFx);
+			App->player->score += 20;
 			App->enemies->AddEnemy(Enemy_Type::COIN, position.x, position.y);
 		}
 

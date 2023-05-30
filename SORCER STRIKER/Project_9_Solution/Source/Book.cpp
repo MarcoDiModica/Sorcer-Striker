@@ -11,6 +11,7 @@ Book::Book(int x, int y) : Enemy(x, y)
 {
 	cnt = 1;
 	tipo = Enemy_Type::BOOK;
+	buk = App->audio->LoadFx("Assets/Fx/book.wav");
 
 	hoverAnim.PushBack({ 110,334,17,21 });
 	hoverAnim.PushBack({ 139,334,17,21 });
@@ -29,10 +30,11 @@ void Book::Update()
 	
 	if (position.x >= App->player->position.x && position.x + 11 <= App->player->position.x + 32 && position.y + 11 >= App->player->position.y)
 	{
-		/*App->audio->PlayFx(App->player->coinFx);*/
+		App->audio->PlayFx(buk);
 		if (App->player->playershots <= 5) 
 		{
 			App->player->playershots += 1;
+			
 		}
 		SetToDelete();
 	}
