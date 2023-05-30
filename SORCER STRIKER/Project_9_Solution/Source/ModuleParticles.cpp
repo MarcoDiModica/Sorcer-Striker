@@ -106,6 +106,26 @@ bool ModuleParticles::Start()
 	DoubleTankMark.speed.y = 0;
 	DoubleTankMark.lifetime = 120;
 
+	enemieShot.anim.PushBack({ 20,201,13,13 });
+	enemieShot.anim.PushBack({ 73,201,13,13 });
+	enemieShot.anim.PushBack({ 56,201,13,13 });
+	enemieShot.anim.PushBack({ 38,201,13,13 });
+
+	enemieShot.speed.y = 0.5f;
+	enemieShot.speed.x = cocaina;
+	enemieShot.lifetime = 120;
+	enemieShot.anim.loop = true;
+	enemieShot.anim.speed = 0.2f;
+	enemieShot.direction = -1;
+
+	BigExplosion.anim.PushBack({ 330,148,55,55 });
+	BigExplosion.anim.PushBack({ 400,148,55,55 });
+	BigExplosion.anim.PushBack({ 462,148,55,55 });
+	
+	BigExplosion.anim.loop = false;
+	BigExplosion.anim.speed = 0.2f;
+	BigExplosion.speed.y = -2;
+
 	return true;
 }
 
@@ -169,6 +189,8 @@ Update_Status ModuleParticles::Update()
 			particles[i]->SetToDelete();
 		}
 	}
+
+	enemieShot.speed.x = cocaina;
 
 	if (App->particles->Stage.position.x >= 35) {
 		App->particles->Stage.position.x -= 2;

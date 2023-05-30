@@ -12,12 +12,12 @@ Coin::Coin(int x, int y) : Enemy(x, y)
 	cnt = 1;
 	tipo = Enemy_Type::COIN;
 
-	hoverAnim.PushBack({ 22,377,15,15 });
-	hoverAnim.PushBack({ 44, 379, 15, 15 });
-	hoverAnim.PushBack({ 66, 379, 15, 15});
-	hoverAnim.PushBack({ 82, 379, 15, 15 });
-	hoverAnim.PushBack({ 99, 379, 15, 15 });
-	hoverAnim.PushBack({ 115, 379, 15, 15 });
+	hoverAnim.PushBack({ 14,369,15,15 });
+	hoverAnim.PushBack({ 33,369, 15, 15 });
+	hoverAnim.PushBack({ 52,369, 15, 15});
+	hoverAnim.PushBack({ 69,369, 15, 15 });
+	hoverAnim.PushBack({ 85,369, 15, 15 });
+	hoverAnim.PushBack({ 101,369, 15, 15 });
 	hoverAnim.speed = 0.2f;
 	hoverAnim.loop = true;
 

@@ -20,14 +20,12 @@ Enemy_RedBird::Enemy_RedBird(int x, int y) : Enemy(x, y)
 }
 
 void Enemy_RedBird::Update()
-{
-	position.y -= 1;
-	
+{	
 	waveRatio += waveRatioSpeed;
 
 	position.x = spawnPos.x + (waveHeight * sinf(waveRatio));
 
-	if (position.y > (App->player->OPTMIZENELJUEGUITO + SCREEN_HEIGHT + 30)) {
+	if (position.y > (App->render->camera.y + SCREEN_HEIGHT + 50)) {
 		SetToDelete();
 	}
 

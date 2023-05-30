@@ -28,7 +28,6 @@ Enemy_DoubleTank::Enemy_DoubleTank(int x, int y) : Enemy(x, y)
 
 void Enemy_DoubleTank::Update()
 {
-	position.y -= 1;
 	if (cnt < 3)
 	{
 		currentAnim = &Anim2;

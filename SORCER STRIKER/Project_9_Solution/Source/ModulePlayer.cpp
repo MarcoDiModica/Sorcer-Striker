@@ -177,7 +177,7 @@ Update_Status ModulePlayer::Update()
 		{
 			if (shotCountdown == 0)
 			{
-				Particle* newParticle = App->particles->AddParticle(App->particles->laser3, position.x + 12, position.y - 10, Collider::Type::PLAYER_SHOT);
+				Particle* newParticle = App->particles->AddParticle(App->particles->laser3, position.x + 8, position.y - 10, Collider::Type::PLAYER_SHOT);
 				newParticle->collider->AddListener(this);
 				App->audio->PlayFx(laserFx);
 				shotCountdown = shotMaxCountdown;
@@ -187,7 +187,7 @@ Update_Status ModulePlayer::Update()
 		{
 			if (shotCountdown == 0)
 			{
-				Particle* newParticle = App->particles->AddParticle(App->particles->laser4, position.x + 12, position.y - 10, Collider::Type::PLAYER_SHOT);
+				Particle* newParticle = App->particles->AddParticle(App->particles->laser4, position.x + 4, position.y - 10, Collider::Type::PLAYER_SHOT);
 				newParticle->collider->AddListener(this);
 				App->audio->PlayFx(laserFx);
 				shotCountdown = shotMaxCountdown;
@@ -197,7 +197,7 @@ Update_Status ModulePlayer::Update()
 		{
 			if (shotCountdown == 0)
 			{
-				Particle* newParticle = App->particles->AddParticle(App->particles->laser5, position.x + 12, position.y - 10, Collider::Type::PLAYER_SHOT);
+				Particle* newParticle = App->particles->AddParticle(App->particles->laser5, position.x, position.y - 10, Collider::Type::PLAYER_SHOT);
 				newParticle->collider->AddListener(this);
 				App->audio->PlayFx(laserFx);
 				shotCountdown = shotMaxCountdown;

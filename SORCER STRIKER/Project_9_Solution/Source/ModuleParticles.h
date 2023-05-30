@@ -66,6 +66,10 @@ public:
 	Particle tubo;
 	Particle Stage;
 	Particle Clear;
+	Particle enemieShot;
+	Particle BigExplosion;
+
+	float cocaina = 0.00f;
 
 	Particle coin;
 

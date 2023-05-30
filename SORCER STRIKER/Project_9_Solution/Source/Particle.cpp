@@ -44,7 +44,7 @@ bool Particle::Update()
 			ret = false;
 
 		// Update the position in the screen
-		position.x += speed.x;
+		position.x += direction * speed.x;
 		position.y += speed.y;
 
 		if (collider != nullptr)

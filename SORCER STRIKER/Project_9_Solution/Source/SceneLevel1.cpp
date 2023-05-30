@@ -188,6 +188,7 @@ Update_Status SceneLevel1::Update()
 	{
 		App->render->camera.y += 1;
 		App->player->position.y += 1;
+		aprendeaprogramar = 1;
 	}
 	
 	return Update_Status::UPDATE_CONTINUE;

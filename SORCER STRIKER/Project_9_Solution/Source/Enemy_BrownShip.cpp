@@ -5,6 +5,7 @@
 #include "ModuleRender.h"
 #include "ModulePlayer.h"
 #include "ModuleParticles.h"
+#include "SceneLevel1.h"
 
 Enemy_BrownShip::Enemy_BrownShip(int x, int y) : Enemy(x, y)
 {
@@ -64,8 +65,8 @@ void Enemy_BrownShip::Update()
 		mondongo *= -1;
 	}
 
-	if (position.y > (App->player->OPTMIZENELJUEGUITO + 30)) {
-		 position.y -= 2;
+	if (position.y > (App->render->camera.y + 30)) {
+		 position.y -= App->sceneLevel_1->aprendeaprogramar;
 	} 
 
 	current = SDL_GetTicks();

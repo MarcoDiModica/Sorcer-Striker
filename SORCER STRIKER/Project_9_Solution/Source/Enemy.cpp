@@ -110,7 +110,7 @@ void Enemy::OnCollision(Collider* collider)
 		}
 		else
 		{
-			App->particles->AddParticle(App->particles->explosion, position.x + 30, position.y + 26);
+			App->particles->AddParticle(App->particles->BigExplosion, position.x + 30, position.y + 26);
 			App->player->score += 10;
 		}
 	}
@@ -148,7 +148,7 @@ void Enemy::OnCollision(Collider* collider)
 	{
 		if (cnt == 0) {
 			App->audio->PlayFx(destroyedFx);
-			App->particles->AddParticle(App->particles->explosion, position.x + 35, position.y + 20);
+			App->particles->AddParticle(App->particles->BigExplosion, position.x + 35, position.y + 20);
 
 			App->player->score += 100;
 
@@ -156,7 +156,8 @@ void Enemy::OnCollision(Collider* collider)
 		}
 		else
 		{
-			App->particles->AddParticle(App->particles->explosion, position.x + 30, position.y + 26);
+			App->particles->AddParticle(App->particles->BigExplosion, collider->rect.x - 25, position.y + 76);
+			App->audio->PlayFx(destroyedFx);
 			App->player->score += 10;
 		}
 	}
@@ -165,16 +166,11 @@ void Enemy::OnCollision(Collider* collider)
 	{
 		if (cnt == 0) {
 			App->audio->PlayFx(destroyedFx);
-			App->particles->AddParticle(App->particles->explosion, position.x + 35, position.y + 20);
+			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
 
 			App->player->score += 100;
 
 			SetToDelete();
-		}
-		else
-		{
-			App->particles->AddParticle(App->particles->explosion, position.x + 30, position.y + 26);
-			App->player->score += 10;
 		}
 	}
 }

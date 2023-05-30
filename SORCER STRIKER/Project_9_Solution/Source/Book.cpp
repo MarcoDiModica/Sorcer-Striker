@@ -12,8 +12,8 @@ Book::Book(int x, int y) : Enemy(x, y)
 	cnt = 1;
 	tipo = Enemy_Type::BOOK;
 
-	hoverAnim.PushBack({ 39,333,15,19 });
-	hoverAnim.PushBack({ 15,333,15,19 });
+	hoverAnim.PushBack({ 110,334,17,21 });
+	hoverAnim.PushBack({ 139,334,17,21 });
 	hoverAnim.loop = true;
 	hoverAnim.speed = 0.05f;
 

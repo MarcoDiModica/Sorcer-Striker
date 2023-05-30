@@ -14,6 +14,8 @@ private:
 
 	float waveRatio = 0.0f;
 
+	int mondongo = 2;
+
 	// The speed at which the wave ratio is increased
 	float waveRatioSpeed = 0.2f;
 

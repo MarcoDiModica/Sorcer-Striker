@@ -26,5 +26,9 @@ private:
 
 	Animation DrakeAnim1;
 	Animation DrakeAnim2;
+
+	Uint32 current;
+	Uint32 next;
+	Uint32 interval = 1000;
 };
 #endif // __ENEMY_SINGLETANK_H__

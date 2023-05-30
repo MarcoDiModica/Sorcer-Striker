@@ -33,6 +33,8 @@ public:
 	// Defines the speed at which the particle will move (pixels per second)
 	iPoint speed;
 
+	int direction = 1;
+
 	// A set of rectangle sprites
 	Animation anim;
 
