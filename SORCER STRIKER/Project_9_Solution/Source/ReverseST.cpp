@@ -21,7 +21,7 @@ ReverseST::ReverseST(int x, int y) : Enemy(x, y)
 
 	currentAnim = &Anim1Rev;
 
-	Anim2.PushBack({ 171,260,36,34 });
+	Anim2.PushBack({ 935,20,36,34 });
 
 	collider = App->collisions->AddCollider({ position.x,position.y,36,34 }, Collider::Type::ITEM, (Module*)App->enemies);
 
@@ -29,8 +29,6 @@ ReverseST::ReverseST(int x, int y) : Enemy(x, y)
 
 void ReverseST::Update()
 {
-	position.y -= 1;
-
 	if (cnt < 3)
 	{
 		currentAnim = &Anim2;

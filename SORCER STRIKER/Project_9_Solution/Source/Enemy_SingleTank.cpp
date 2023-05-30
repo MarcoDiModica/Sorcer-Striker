@@ -40,21 +40,9 @@ Enemy_SingleTank::Enemy_SingleTank(int x, int y) : Enemy(x, y)
 
 void Enemy_SingleTank::Update()
 {
-	position.y -= 1;
-
 	if (cnt < 3)
 	{
 		currentAnim = &Anim2;
-	}
-
-	if (position.x <= 0)
-	{
-		position.x = 0;
-	}
-
-	if (position.x >= SCREEN_WIDTH - 36)
-	{
-		position.x = SCREEN_WIDTH - 36;
 	}
 
 	Enemy:: Update();

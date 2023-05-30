@@ -164,7 +164,7 @@ bool SceneLevel1::Start()
 	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190, -1360);
 
 
-	//3rd wave  izquierda a derecha //
+	//3rd wave  estaticos //
 	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -1420);
 	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -1450);
 	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -1480);
@@ -177,11 +177,7 @@ bool SceneLevel1::Start()
 	//mages //
 	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 160, -1700);
 	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 200, -1700);
-	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 60, -1850);
 	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 175, -1960);
-	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 35, -2100);
-	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 80, -2100);
-	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 130, -2250);
 	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 175, -2250);
 	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 80, -2400);
 
@@ -211,8 +207,8 @@ bool SceneLevel1::Start()
 	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 80, -3060);
 
 	//dragon//
-	App->enemies->AddEnemy(Enemy_Type::BlUEDRAGON, 35, -3960);
-	App->enemies->AddEnemy(Enemy_Type::BlUEDRAGON, 190, -4460);
+	App->enemies->AddEnemy(Enemy_Type::BlUEDRAGON, 20, -3960);
+	App->enemies->AddEnemy(Enemy_Type::BlUEDRAGON, 150, -4460);
 
 	//6th wave   izquierda a derecha //
 	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -4560);
@@ -226,7 +222,7 @@ bool SceneLevel1::Start()
 
 
 	//more dragons//
-	App->enemies->AddEnemy(Enemy_Type::BlUEDRAGON, 35, -4860);
+	App->enemies->AddEnemy(Enemy_Type::BlUEDRAGON, 20, -4860);
 
 
 
