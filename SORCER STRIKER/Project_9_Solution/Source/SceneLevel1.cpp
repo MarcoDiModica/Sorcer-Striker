@@ -142,7 +142,93 @@ bool SceneLevel1::Start()
 	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 190, -7200);*/
 	/*App->enemies->AddEnemy(Enemy_Type::BOSS, 0, -20);*/
 
-	
+	//1rst wave  izquierda a derecha  //
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -900);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -930);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -960);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -990);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -1020);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -1050);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -1080);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -1110);
+
+
+	//2nd wave derecha a izquierda//
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190, -1150);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190, -1180);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190, -1210);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190, -1240);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190, -1270);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190, -1300);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190, -1330);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190, -1360);
+
+
+	//3rd wave  izquierda a derecha //
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -1420);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -1450);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -1480);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -1510);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -1540);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -1570);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -1600);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -1630);
+
+	//mages //
+	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 160, -1700);
+	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 200, -1700);
+	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 60, -1850);
+	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 175, -1960);
+	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 35, -2100);
+	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 80, -2100);
+	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 130, -2250);
+	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 175, -2250);
+	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 80, -2400);
+
+
+	//4th wave derecha a izquierda//
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190, -2550);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190, -2580);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190, -2610);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190, -2640);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190, -2670);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190, -2700);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190, -2730);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190, -2760);
+
+	//5th wave   izquierda a derecha //
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -2800);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -2830);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -2860);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -2890);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -2920);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -2950);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -2980);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -3010);
+
+	//more mages//
+	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 175, -3060);
+	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 80, -3060);
+
+	//dragon//
+	App->enemies->AddEnemy(Enemy_Type::BlUEDRAGON, 35, -3960);
+	App->enemies->AddEnemy(Enemy_Type::BlUEDRAGON, 190, -4460);
+
+	//6th wave   izquierda a derecha //
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -4560);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -4590);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -4620);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -4650);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -4680);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -4710);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -4740);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -4770);
+
+
+	//more dragons//
+	App->enemies->AddEnemy(Enemy_Type::BlUEDRAGON, 35, -4860);
+
+
 
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;
