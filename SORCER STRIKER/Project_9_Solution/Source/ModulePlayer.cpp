@@ -74,7 +74,7 @@ bool ModulePlayer::Start()
 	winFx = App->audio->LoadFx("Assets/Music/win.ogg");
 	loseFx = App->audio->LoadFx("Assets/Music/gameover.ogg");
 	coinFx = App->audio->LoadFx("Assets/Fx/coin.wav");
-	//damageFx = App->audio->LoadFx("Assets/Fx/damage.wav");
+	damageFx = App->audio->LoadFx("Assets/Fx/lose.wav");
 	//lasthitFx = App->audio->LoadFx("Assets/Fx/lasthit.wav");
 
 	position.x = 111;
@@ -322,6 +322,33 @@ Update_Status ModulePlayer::Update()
 		&&(pad.up == false && pad.down == false)&&(pad.l_y == 0 && pad.l_x == 0))
 		currentAnimation = &idleAnim;
 
+	if (ahora)
+	{
+		currentTime = SDL_GetTicks();
+
+		if (currentTime > nextNotificationTime) {
+			App->player->position.x = 111;
+			App->player->position.y = App->render->camera.y + 600;
+			destroyed = false;
+			ahora = false;
+			currentTime = SDL_GetTicks();
+			nextNotificationTime = currentTime + intervalo;
+			anfetaminas = true;
+			currentAnimation = &bright1;
+		}
+	}
+
+	if (anfetaminas)
+	{
+		currentTime = SDL_GetTicks();
+		
+		if (currentTime > (nextNotificationTime))
+		{
+			App->player->collider->type = Collider::Type::PLAYER;
+			anfetaminas = false;
+		}
+	}
+
 	//// Switch gamepad debug info
 	//if (App->input->keys[SDL_SCANCODE_F6] == KEY_DOWN)
 	//	debugGamepadInfo = !debugGamepadInfo;
@@ -369,20 +396,7 @@ Update_Status ModulePlayer::PostUpdate()
 	else
 		App->fonts->BlitText(5, 80, scoreFont, "f5 to display gamepad debug info");*/
 
-	if (ahora)
-	{
-		currentTime = SDL_GetTicks();
-		
-		if (currentTime >= nextNotificationTime) {
-			App->player->position.x = 111;
-			App->player->position.y = OPTMIZENELJUEGUITO + 600;
-			App->player->collider->type = Collider::Type::PLAYER;
-			destroyed = false;
-			ahora = false;
-			currentAnimation = &bright1;
-		}
-		
-	}
+	
 
 	return Update_Status::UPDATE_CONTINUE;
 }
@@ -404,7 +418,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 
 			App->audio->PlayFx(explosionFx);
 
-			App->audio->PlayFx(loseFx);
+			
 
 			//Rumble the Gamepad when colliding
 			App->input->ShakeController(0, 110, 0.9f);
@@ -419,11 +433,13 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 			if (lives <= 0) {
 				lives = 3;
 				score = 0;
+				App->audio->PlayFx(loseFx);
 				App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneGameOver, 70);
 			}
 
 			else if (lives > 0)
 			{
+				App->audio->PlayFx(damageFx);
 				lives -= 1;
 				currentTime = SDL_GetTicks();
 				nextNotificationTime = currentTime + intervalo;
