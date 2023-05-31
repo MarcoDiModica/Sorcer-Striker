@@ -48,6 +48,7 @@ public:
 	int playershots = 2;
 	bool ahora = false;
 	bool crack = false;
+	bool farlopa = false;
 	bool anfetaminas = false;
 
 	Uint32 intervalo = 1000;
@@ -60,6 +61,11 @@ public:
 	Uint32 next;
 	Uint32 interval = 4000;
 	Uint32 start;
+	Uint32 current2;
+	Uint32 next2;
+	Uint32 interval2 = 4000;
+	Uint32 start2;
+
 	// Countdown to handle shot spacing
 	int shotMaxCountdown = 7;
 	int shotCountdown = 0;

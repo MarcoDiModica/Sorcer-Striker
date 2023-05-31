@@ -27,6 +27,11 @@ public:
 	// Performs the render call of all the parts of the scene's background
 	Update_Status PostUpdate() override;
 	int aprendeaprogramar = 2;
+	
+	Uint32 current;
+	Uint32 next;
+	Uint32 interval = 4000;
+	Uint32 start;
 	// Disables the player and the enemies
 	bool CleanUp();
 

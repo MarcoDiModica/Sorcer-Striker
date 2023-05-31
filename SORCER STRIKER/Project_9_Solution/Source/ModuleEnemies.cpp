@@ -20,6 +20,8 @@
 #include "book.h"
 #include "Stage.h"
 #include "Clear.h"
+#include "Warning.h"
+#include "Arrow.h"
 #include "ReverseDT.h"
 #include "ReverseST.h"
 #include "Boss_Left.h"
@@ -215,6 +217,12 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info)
 					break;
 				case Enemy_Type::CLEAR:
 					enemies[i] = new Clear(info.x, info.y);
+					break;
+				case Enemy_Type::WARNING:
+					enemies[i] = new Warning(info.x, info.y);
+					break;
+				case Enemy_Type::ARROW:
+					enemies[i] = new Arrow(info.x, info.y);
 					break;
 				case Enemy_Type::BOSSLEFT:
 					enemies[i] = new BossLeft(info.x, info.y);

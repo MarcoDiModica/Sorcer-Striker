@@ -348,7 +348,11 @@ Update_Status ModulePlayer::Update()
 			anfetaminas = false;
 		}
 	}
-
+	if (App->input->keys[SDL_SCANCODE_L] == Key_State::KEY_DOWN)
+	{
+		App->enemies->AddEnemy(Enemy_Type::WARNING, 20, App->render->camera.y +40);
+	}
+	
 	//// Switch gamepad debug info
 	//if (App->input->keys[SDL_SCANCODE_F6] == KEY_DOWN)
 	//	debugGamepadInfo = !debugGamepadInfo;

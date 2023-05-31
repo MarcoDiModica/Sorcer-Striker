@@ -257,6 +257,11 @@ Update_Status SceneLevel1::Update()
 	{
 		App->player->position.x = SCREEN_WIDTH / 2 - 32;
 	}
+	//Codigo para el mensaje de warning antes del boss
+	/*if (App->render->camera.y == -200) {
+		App->enemies->AddEnemy(Enemy_Type::WARNING, 17, App->render->camera.y - 50);
+		App->enemies->AddEnemy(Enemy_Type::ARROW, 107, App->render->camera.y - 80);
+	}*/
 
 	if (App->player->position.y <= -16700)
 	{

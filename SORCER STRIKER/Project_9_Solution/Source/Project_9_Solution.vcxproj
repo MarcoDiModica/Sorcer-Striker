@@ -76,6 +76,7 @@
   <ItemGroup>
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Application.h" />
+    <ClInclude Include="Arrow.h" />
     <ClInclude Include="Book.h" />
     <ClInclude Include="Boss_Left.h" />
     <ClInclude Include="Boss_Right.h" />
@@ -122,9 +123,11 @@
     <ClInclude Include="SelectScreen.h" />
     <ClInclude Include="Enemy_SingleTank.h" />
     <ClInclude Include="Stage.h" />
+    <ClInclude Include="Warning.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="Arrow.cpp" />
     <ClCompile Include="Book.cpp" />
     <ClCompile Include="Boss_Left.cpp" />
     <ClCompile Include="Boss_Right.cpp" />
@@ -170,6 +173,7 @@
     <ClCompile Include="SelectScreen.cpp" />
     <ClCompile Include="Enemy_SingleTank.cpp" />
     <ClCompile Include="Stage.cpp" />
+    <ClCompile Include="Warning.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
