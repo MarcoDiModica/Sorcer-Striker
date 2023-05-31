@@ -29,7 +29,7 @@ ReverseST::ReverseST(int x, int y) : Enemy(x, y)
 
 void ReverseST::Update()
 {
-	if (cnt < 3)
+	if (cnt < 2)
 	{
 		currentAnim = &Anim2;
 	}

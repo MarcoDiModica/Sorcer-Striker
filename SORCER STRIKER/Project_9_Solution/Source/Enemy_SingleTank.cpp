@@ -40,7 +40,7 @@ Enemy_SingleTank::Enemy_SingleTank(int x, int y) : Enemy(x, y)
 
 void Enemy_SingleTank::Update()
 {
-	if (cnt < 3)
+	if (cnt < 2)
 	{
 		currentAnim = &Anim2;
 	}
