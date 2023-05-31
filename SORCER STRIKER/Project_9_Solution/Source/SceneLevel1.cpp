@@ -147,86 +147,120 @@ bool SceneLevel1::Start()
 	/*App->enemies->AddEnemy(Enemy_Type::BOSS, 0, -20);*/
 
 	//1rst wave  izquierda a derecha  //
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -900);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -930);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -960);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -990);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -1020);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -1050);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -1080);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -1110);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48+250, -900);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48+250, -930);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48 + 250, -960);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48 + 250, -990);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48 + 250, -1020);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48 + 250, -1050);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48 + 250, -1080);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48 + 250, -1110);
 
 
 	//2nd wave derecha a izquierda//
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190, -1150);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190, -1180);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190, -1210);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190, -1240);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190, -1270);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190, -1300);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190, -1330);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190, -1360);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190 + 250, -1150);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190 + 250, -1180);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190 + 250, -1210);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190 + 250, -1240);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190 + 250, -1270);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190 + 250, -1300);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190 + 250, -1330);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190 + 250, -1360);
 
 
 	//3rd wave  estaticos //
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -1420);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -1450);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -1480);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -1510);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -1540);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -1570);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -1600);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -1630);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48 + 250, -1420);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48 + 250, -1450);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48 + 250, -1480);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48 + 250, -1510);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48 + 250, -1540);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48 + 250, -1570);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48 + 250, -1600);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48 + 250, -1630);
 
 	//mages //
-	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 160, -1700);
-	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 200, -1700);
-	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 175, -1960);
-	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 175, -2250);
-	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 80, -2400);
+	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 160 + 250, -1700);
+	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 200 + 250, -1700);
+	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 175 + 250, -1960);
+	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 175 + 250, -2250);
+	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 80 + 250, -2400);
 
 
 	//4th wave derecha a izquierda//
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190, -2550);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190, -2580);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190, -2610);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190, -2640);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190, -2670);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190, -2700);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190, -2730);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190, -2760);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190 + 250, -2550);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190 + 250, -2580);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190 + 250, -2610);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190 + 250, -2640);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190 + 250, -2670);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190 + 250, -2700);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190 + 250, -2730);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 190 + 250, -2760);
 
 	//5th wave   izquierda a derecha //
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -2800);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -2830);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -2860);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -2890);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -2920);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -2950);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -2980);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -3010);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48 + 250, -2800);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48 + 250, -2830);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48 + 250, -2860);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48 + 250, -2890);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48 + 250, -2920);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48 + 250, -2950);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48 + 250, -2980);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48 + 250, -3010);
 
 	//more mages//
-	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 175, -3060);
-	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 80, -3060);
+	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 175 + 250, -3060);
+	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 80 + 250, -3060);
 
 	//dragon//
-	App->enemies->AddEnemy(Enemy_Type::BlUEDRAGON, 20, -3960);
-	App->enemies->AddEnemy(Enemy_Type::BlUEDRAGON, 150, -4460);
+	App->enemies->AddEnemy(Enemy_Type::BlUEDRAGON, 20 + 250, -3960);
+	App->enemies->AddEnemy(Enemy_Type::BlUEDRAGON, 150 + 250, -4460);
 
 	//6th wave   izquierda a derecha //
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -4560);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -4590);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -4620);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -4650);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -4680);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -4710);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -4740);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48, -4770);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48 + 250, -4560);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48 + 250, -4590);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48 + 250, -4620);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48 + 250, -4650);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48 + 250, -4680);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48 + 250, -4710);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48 + 250, -4740);
+	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48 + 250, -4770);
 
 
 	//more dragons//
-	App->enemies->AddEnemy(Enemy_Type::BlUEDRAGON, 20, -4860);
+	App->enemies->AddEnemy(Enemy_Type::BlUEDRAGON, 20 + 250, -4860);
+
+	//Tanks DERECHA //
+
+	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 145 + 250, -5590);
+	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 185 + 250, -5590);
+	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 225 + 250, -5590);
+
+	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -5850);
+	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -5890);
+	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -5930);
+	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -5970);
+	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -6010);
+	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -6040);
+
+	//tanks izquierda//
+	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 5 + 250, -5560);
+	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 40 + 250, -5560);
+	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 75 + 250, -5560);
+
+	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -5850);
+	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -5890);
+	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -5930);
+	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -5970);
+	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -6010);
+	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -6040);
+
+	// doubletank derecha //
+
+	App->enemies->AddEnemy(Enemy_Type::DOUBLETANK, 175 + 250, -6170);
+	App->enemies->AddEnemy(Enemy_Type::DOUBLETANK, 175 + 250, -6290);
+
+
+
+
 
 	//boss/
 	App->enemies->AddEnemy(Enemy_Type::BOSSLEFT, 0, -8690);

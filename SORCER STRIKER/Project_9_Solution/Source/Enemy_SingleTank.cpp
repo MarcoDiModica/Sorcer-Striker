@@ -9,7 +9,7 @@
 Enemy_SingleTank::Enemy_SingleTank(int x, int y) : Enemy(x, y) 
 {
 
-	cnt = 6;
+	cnt = 4;
 	tipo = Enemy_Type::SINGLETANK;
 
 	Anim1.PushBack({ 48,260,36,34 });
