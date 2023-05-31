@@ -95,6 +95,9 @@ Update_Status Application::Update()
 		if (!App->window->isFullscreen)
 		{
 			App->window->quit = true;
+
+			//kill the app
+			ret = Update_Status::UPDATE_STOP;
 		}
 
 	}
