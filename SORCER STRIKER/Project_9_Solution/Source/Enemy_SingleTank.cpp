@@ -51,7 +51,10 @@ void Enemy_SingleTank::Update()
 	if (cnt == 0)
 	{
 		currentAnim = &Mark;
-		collider->type==Collider::Type::NONE;
+		if (collider != nullptr)
+		{
+			collider->type = Collider::Type::NONE;
+		}
 	}
 
 	Enemy:: Update();

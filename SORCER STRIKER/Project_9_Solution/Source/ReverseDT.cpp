@@ -35,7 +35,10 @@ void ReverseDT::Update()
 	if (cnt == 0)
 	{
 		currentAnim = &Mark;
-		collider->type == Collider::Type::NONE;
+		if (collider != nullptr)
+		{
+			collider->type = Collider::Type::NONE;
+		}
 	}
 
 	if (cnt == 2 || cnt == 1)

@@ -26,7 +26,7 @@ ReverseST::ReverseST(int x, int y) : Enemy(x, y)
 	Mark.PushBack({ 213,257,38,40 });
 
 	collider = App->collisions->AddCollider({ position.x,position.y,36,34 }, Collider::Type::ITEM, (Module*)App->enemies);
-
+	k
 }
 
 void ReverseST::Update()
@@ -38,7 +38,10 @@ void ReverseST::Update()
 	if (cnt == 0)
 	{
 		currentAnim = &Mark;
-		collider->type == Collider::Type::NONE;
+		if (collider != nullptr)
+		{
+			collider->type = Collider::Type::NONE;
+		}
 	}
 
 	Enemy::Update();

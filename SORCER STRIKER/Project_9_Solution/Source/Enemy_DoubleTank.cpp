@@ -32,15 +32,19 @@ Enemy_DoubleTank::Enemy_DoubleTank(int x, int y) : Enemy(x, y)
 
 void Enemy_DoubleTank::Update()
 {
-	if (cnt == 0)
-	{
-		currentAnim = &Mark;
-		collider->type == Collider::Type::NONE;
-	}
 	
 	if (cnt == 2 || cnt == 1)
 	{
 		currentAnim = &Anim2;
+	}
+
+	if (cnt == 0)
+	{
+		currentAnim = &Mark;
+		if (collider != nullptr)
+		{
+			collider->type = Collider::Type::NONE;
+		}
 	}
 
 	Enemy::Update();
