@@ -77,8 +77,8 @@ bool ModulePlayer::Start()
 	damageFx = App->audio->LoadFx("Assets/Fx/lose.wav");
 	//lasthitFx = App->audio->LoadFx("Assets/Fx/lasthit.wav");
 
-	position.x = 111;
-	position.y = 250;
+	position.x = 111 + 250;
+	position.y = 250 + 250;
 	OPTMIZENELJUEGUITO = 0;
 
 	destroyed = false;
@@ -222,8 +222,8 @@ Update_Status ModulePlayer::Update()
 		score = 0;
 		lives = 3;
 
-		App->enemies->AddEnemy(Enemy_Type::STAGE, -20, App->render->camera.y + 50);
-		App->enemies->AddEnemy(Enemy_Type::CLEAR, SCREEN_WIDTH / 2 - 30, App->render->camera.y + 50);
+		App->enemies->AddEnemy(Enemy_Type::STAGE, -20 + 250, App->render->camera.y + 50);
+		App->enemies->AddEnemy(Enemy_Type::CLEAR, SCREEN_WIDTH / 2 - 30 + 250, App->render->camera.y + 50);
 		App->player->collider->type = Collider::Type::NONE;
 
 		start = SDL_GetTicks();
@@ -260,44 +260,44 @@ Update_Status ModulePlayer::Update()
 
 	if (App->input->keys[SDL_SCANCODE_1] == Key_State::KEY_DOWN)
 	{
-		App->enemies->AddEnemy(Enemy_Type::REDBIRD, (rand() % 211) + 10, App->player->position.y - 260);
+		App->enemies->AddEnemy(Enemy_Type::REDBIRD, (rand() % 211) + 10 + 250, App->player->position.y - 260);
 	}
 
 	if (App->input->keys[SDL_SCANCODE_2] == Key_State::KEY_DOWN)
 	{
-		App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, (rand() % 211) + 10, App->player->position.y - 260);
+		App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, (rand() % 211) + 10 + 250, App->player->position.y - 260);
 	}
 	if (App->input->keys[SDL_SCANCODE_3] == Key_State::KEY_DOWN)
 	{
-		App->enemies->AddEnemy(Enemy_Type::DOUBLETANK, (rand() % 211) + 10, App->player->position.y - 260);
+		App->enemies->AddEnemy(Enemy_Type::DOUBLETANK, (rand() % 211) + 10 + 250, App->player->position.y - 260);
 	}
 	if (App->input->keys[SDL_SCANCODE_4] == Key_State::KEY_DOWN)
 	{
-		App->enemies->AddEnemy(Enemy_Type::BAG, (rand() % 211) + 10, App->player->position.y - 260);
+		App->enemies->AddEnemy(Enemy_Type::BAG, (rand() % 211) + 10 + 250, App->player->position.y - 260);
 	}
 	if (App->input->keys[SDL_SCANCODE_5] == Key_State::KEY_DOWN)
 	{
-		App->enemies->AddEnemy(Enemy_Type::CHEST, (rand() % 210) + 10, App->player->position.y - 260);
+		App->enemies->AddEnemy(Enemy_Type::CHEST, (rand() % 210) + 10 + 250, App->player->position.y - 260);
 	}
 	if (App->input->keys[SDL_SCANCODE_6] == Key_State::KEY_DOWN)
 	{
-		App->enemies->AddEnemy(Enemy_Type::BlUEDRAGON, (rand() % 210) + 10, App->player->position.y - 260);
+		App->enemies->AddEnemy(Enemy_Type::BlUEDRAGON, (rand() % 210) + 10 + 250, App->player->position.y - 260);
 	}
 	if (App->input->keys[SDL_SCANCODE_7] == Key_State::KEY_DOWN)
 	{
-		App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, (rand() % 210) + 10, App->player->position.y - 260);
+		App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, (rand() % 210) + 10 + 250, App->player->position.y - 260);
 	}
 	if (App->input->keys[SDL_SCANCODE_8] == Key_State::KEY_DOWN)
 	{
-		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, (rand() % 210) + 10, App->player->position.y - 260);
+		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, (rand() % 210) + 10 + 250, App->player->position.y - 260);
 	}
 	if (App->input->keys[SDL_SCANCODE_9] == Key_State::KEY_DOWN)
 	{
-		App->enemies->AddEnemy(Enemy_Type::REVERSEDT, (rand() % 210) + 10, App->player->position.y - 260);
+		App->enemies->AddEnemy(Enemy_Type::REVERSEDT, (rand() % 210) + 10 + 250, App->player->position.y - 260);
 	}
 	if (App->input->keys[SDL_SCANCODE_0] == Key_State::KEY_DOWN)
 	{
-		App->enemies->AddEnemy(Enemy_Type::REVERSEST, (rand() % 210) + 10, App->player->position.y - 260);
+		App->enemies->AddEnemy(Enemy_Type::REVERSEST, (rand() % 210) + 10 + 250, App->player->position.y - 260);
 	}
 
 	if (App->input->keys[SDL_SCANCODE_M] == Key_State::KEY_DOWN)
@@ -327,7 +327,7 @@ Update_Status ModulePlayer::Update()
 		currentTime = SDL_GetTicks();
 
 		if (currentTime > nextNotificationTime) {
-			App->player->position.x = 111;
+			App->player->position.x = 111 + 250;
 			App->player->position.y = App->render->camera.y + 600;
 			destroyed = false;
 			ahora = false;
@@ -350,7 +350,7 @@ Update_Status ModulePlayer::Update()
 	}
 	if (App->input->keys[SDL_SCANCODE_L] == Key_State::KEY_DOWN)
 	{
-		App->enemies->AddEnemy(Enemy_Type::WARNING, 20, App->render->camera.y +40);
+		App->enemies->AddEnemy(Enemy_Type::WARNING, 20 + 250, App->render->camera.y +40);
 	}
 	
 	//// Switch gamepad debug info

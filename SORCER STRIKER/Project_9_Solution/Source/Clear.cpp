@@ -24,7 +24,7 @@ void Clear::Update()
 {
 	position.x += mondongo;
 
-	if (position.x <= 140) {
+	if (position.x <= 140 + 250) {
 		mondongo = 0;
 	}
 

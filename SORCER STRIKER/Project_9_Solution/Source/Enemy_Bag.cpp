@@ -9,7 +9,7 @@
 
 Enemy_Bag::Enemy_Bag(int x, int y) : Enemy(x, y) 
 {
-	cnt = 4;
+	cnt = 1;
 	tipo = Enemy_Type::BAG;
 
 	hoverAnim.PushBack({ 176,367,36,31 });
@@ -31,7 +31,7 @@ void Enemy_Bag::Update()
 {
 	position.x += mondongo;
 
-	if (position.x < 30 || position.x > 160)
+	if (position.x < 30 + 250 || position.x > 160 + 250)
 	{
 		mondongo *= -1;
 	}

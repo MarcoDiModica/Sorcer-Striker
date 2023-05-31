@@ -27,7 +27,7 @@ public:
 	// Performs the render call of all the parts of the scene's background
 	Update_Status PostUpdate() override;
 	int aprendeaprogramar = 2;
-	
+	int space = 250;
 	Uint32 current;
 	Uint32 next;
 	Uint32 interval = 4000;

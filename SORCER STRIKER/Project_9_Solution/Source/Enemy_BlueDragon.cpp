@@ -37,14 +37,14 @@ Enemy_BlueDragon::Enemy_BlueDragon(int x, int y) : Enemy(x, y)
 
 void Enemy_BlueDragon::Update()
 {
-	if (position.x <= 5)
+	if (position.x <= 5 + 250)
 	{
 		position.x = 5;
 	}
 
-	if (position.x >= SCREEN_WIDTH - 120)
+	if (position.x >= SCREEN_WIDTH / 2 - 120 + 250)
 	{
-		position.x = SCREEN_WIDTH - 120;
+		position.x = SCREEN_WIDTH / 2 - 120 + 250;
 	}
 
 	if (position.y > (App->render->camera.y + 60)) {

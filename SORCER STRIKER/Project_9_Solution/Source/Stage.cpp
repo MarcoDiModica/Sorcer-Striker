@@ -24,7 +24,7 @@ void Stage::Update()
 {
 	position.x += mondongo;
 
-	if (position.x >= 35) {
+	if (position.x >= 35 + 250) {
 		mondongo = 0;
 	}
 

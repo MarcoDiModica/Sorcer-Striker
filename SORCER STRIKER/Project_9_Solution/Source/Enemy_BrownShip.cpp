@@ -60,7 +60,7 @@ void Enemy_BrownShip::Update()
 	
 	position.x += mondongo;
 
-	if (position.x < 10 || position.x > 190)
+	if (position.x < 10 + 250 || position.x > 190 + 250)
 	{
 		mondongo *= -1;
 	}

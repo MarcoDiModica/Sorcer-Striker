@@ -35,21 +35,21 @@ bool SceneLevel1::Start()
 	App->audio->PlayMusic("Assets/Music/stage1.ogg", 1.0f);
 
 
-	App->particles->AddParticle(App->particles->tubo, 0, -50, Collider::Type::NONE);
-	App->particles->AddParticle(App->particles->tubo, 0, -250, Collider::Type::NONE);
-	App->particles->AddParticle(App->particles->tubo, 0, -450, Collider::Type::NONE);
-	App->particles->AddParticle(App->particles->tubo, 0, -650, Collider::Type::NONE);
-	App->particles->AddParticle(App->particles->tubo, 0, -850, Collider::Type::NONE);
-	App->particles->AddParticle(App->particles->tubo, 0, -1050, Collider::Type::NONE);
-	App->particles->AddParticle(App->particles->tubo, 0, -1250, Collider::Type::NONE);
-	App->particles->AddParticle(App->particles->tubo, 0, -1450, Collider::Type::NONE);
-	App->particles->AddParticle(App->particles->tubo, 0, -1650, Collider::Type::NONE);
+	App->particles->AddParticle(App->particles->tubo, 0 + space, -50, Collider::Type::NONE);
+	App->particles->AddParticle(App->particles->tubo, 0 + space, -250, Collider::Type::NONE);
+	App->particles->AddParticle(App->particles->tubo, 0 + space, -450, Collider::Type::NONE);
+	App->particles->AddParticle(App->particles->tubo, 0 + space, -650, Collider::Type::NONE);
+	App->particles->AddParticle(App->particles->tubo, 0 + space, -850, Collider::Type::NONE);
+	App->particles->AddParticle(App->particles->tubo, 0 + space, -1050, Collider::Type::NONE);
+	App->particles->AddParticle(App->particles->tubo, 0 + space, -1250, Collider::Type::NONE);
+	App->particles->AddParticle(App->particles->tubo, 0 + space, -1450, Collider::Type::NONE);
+	App->particles->AddParticle(App->particles->tubo, 0 + space, -1650, Collider::Type::NONE);
 
 	
 
 
-	App->collisions->AddCollider({ 0, SCREEN_HEIGHT, 1, -6930 }, Collider::Type::WALL);
-	App->collisions->AddCollider({ SCREEN_WIDTH -1, SCREEN_HEIGHT, 1, -6930 }, Collider::Type::WALL);
+	App->collisions->AddCollider({ 0 + space, SCREEN_HEIGHT, 1, -6930 }, Collider::Type::WALL);
+	App->collisions->AddCollider({ SCREEN_WIDTH -1 + space, SCREEN_HEIGHT, 1, -6930 }, Collider::Type::WALL);
 
 	/*App->enemies->AddEnemy(Enemy_Type::BlUEDRAGON, 50, -700);
 
@@ -233,8 +233,8 @@ bool SceneLevel1::Start()
 	
 
 
-	App->render->camera.x = 0;
-	App->render->camera.y = 0;
+	App->render->camera.x = 0 + space;
+	App->render->camera.y = 0 + space;
 	
 	App->items->Enable();
 	App->player->Enable();
@@ -248,14 +248,14 @@ Update_Status SceneLevel1::Update()
 {
 	App->render->camera.y -= 2;
 
-	if (App->player->position.x <= 0)
+	if (App->player->position.x <= 0 + space)
 	{
-		App->player->position.x = 0;
+		App->player->position.x = 0 + space;
 	}
 
-	if (App->player->position.x + 32 >= SCREEN_WIDTH / 2)
+	if (App->player->position.x + 32 >= (SCREEN_WIDTH  / 2) + space)
 	{
-		App->player->position.x = SCREEN_WIDTH / 2 - 32;
+		App->player->position.x = (SCREEN_WIDTH / 2 - 32) + space;
 	}
 	//Codigo para el mensaje de warning antes del boss
 	/*if (App->render->camera.y == -200) {
@@ -291,14 +291,7 @@ Update_Status SceneLevel1::Update()
 Update_Status SceneLevel1::PostUpdate()
 {
 
-	App->render->Blit(bgTexture, 0, -14690, NULL);
-
-	
-	
-
-	
-
-
+	App->render->Blit(bgTexture, 0 + space, -14450, NULL);
 
 	return Update_Status::UPDATE_CONTINUE;
 }

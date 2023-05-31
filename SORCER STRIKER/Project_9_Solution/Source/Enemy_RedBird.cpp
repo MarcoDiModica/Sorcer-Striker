@@ -28,16 +28,6 @@ void Enemy_RedBird::Update()
 	if (position.y > (App->render->camera.y + SCREEN_HEIGHT + 50)) {
 		SetToDelete();
 	}
-
-	if (position.x <= 10)
-	{
-		position.x = 10;
-	}
-
-	if (position.x >= SCREEN_WIDTH - 10)
-	{
-		position.x = SCREEN_WIDTH - 10;
-	}
 	
 	Enemy::Update();
 }

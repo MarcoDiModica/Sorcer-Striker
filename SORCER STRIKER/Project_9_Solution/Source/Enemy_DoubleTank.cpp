@@ -44,16 +44,6 @@ void Enemy_DoubleTank::Update()
 		currentAnim = &Anim2;
 	}
 
-	if (position.x <= 0)
-	{
-		position.x = 0;
-	}
-
-	if (position.x >= SCREEN_WIDTH - 72)
-	{
-		position.x = SCREEN_WIDTH - 72;
-	}
-
 	Enemy::Update();
 }
 
