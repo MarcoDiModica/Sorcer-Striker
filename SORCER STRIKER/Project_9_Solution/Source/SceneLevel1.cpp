@@ -251,8 +251,10 @@ bool SceneLevel1::Start()
 	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -6010);
 	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -6040);
 
+	// doubletank derecha //
 
-
+	App->enemies->AddEnemy(Enemy_Type::DOUBLETANK, 175 + 250, -6170);
+	App->enemies->AddEnemy(Enemy_Type::DOUBLETANK, 175 + 250, -6290);
 
 
 
