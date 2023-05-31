@@ -83,6 +83,7 @@ public:
 	Animation idleAnim;
 	Animation leftAnim;
 	Animation rightAnim;
+	Animation boost;
 
 	Animation bright1;
 	Animation bright2;

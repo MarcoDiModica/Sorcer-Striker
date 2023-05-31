@@ -36,16 +36,13 @@ bool SceneLevel1::Start()
 	
 	App->audio->PlayMusic("Assets/Music/stage1.ogg", 1.0f);
 
-
+	App->particles->AddParticle(App->particles->tubo, 0 + space, 520, Collider::Type::NONE);
+	App->particles->AddParticle(App->particles->tubo, 0 + space, 250, Collider::Type::NONE);
 	App->particles->AddParticle(App->particles->tubo, 0 + space, -50, Collider::Type::NONE);
-	App->particles->AddParticle(App->particles->tubo, 0 + space, -250, Collider::Type::NONE);
-	App->particles->AddParticle(App->particles->tubo, 0 + space, -450, Collider::Type::NONE);
+	App->particles->AddParticle(App->particles->tubo, 0 + space, -350, Collider::Type::NONE);
 	App->particles->AddParticle(App->particles->tubo, 0 + space, -650, Collider::Type::NONE);
-	App->particles->AddParticle(App->particles->tubo, 0 + space, -850, Collider::Type::NONE);
-	App->particles->AddParticle(App->particles->tubo, 0 + space, -1050, Collider::Type::NONE);
+	App->particles->AddParticle(App->particles->tubo, 0 + space, -950, Collider::Type::NONE);
 	App->particles->AddParticle(App->particles->tubo, 0 + space, -1250, Collider::Type::NONE);
-	App->particles->AddParticle(App->particles->tubo, 0 + space, -1450, Collider::Type::NONE);
-	App->particles->AddParticle(App->particles->tubo, 0 + space, -1650, Collider::Type::NONE);
 
 	/*App->enemies->AddEnemy(Enemy_Type::BlUEDRAGON, 50, -700);
 
@@ -326,29 +323,15 @@ Update_Status SceneLevel1::Update()
 		App->player->position.y += 1;
 		aprendeaprogramar = 1;
 	}
-	else if (App->render->camera.y >= 150)
-	{
-		App->render->camera.y -= 0;
-		App->player->position.y -= 0;
-	}
-	else if (App->render->camera.y >= 100)
-	{
-		App->render->camera.y -= 1;
-		App->player->position.y -= 1;
-	}
-	else if (App->render->camera.y >= -100)
-	{
-		App->render->camera.y -= 2;
-		App->player->position.y -= 2;
-	}
 	else if (App->render->camera.y >= -820)
 	{
-		App->render->camera.y -= 3;
-		App->player->position.y -= 3;
+		App->render->camera.y -= 4;
+		App->player->position.y -= 4.5f;
 	}
 	else
 	{
 		eldenboy = true;
+		
 	}
 	
 	return Update_Status::UPDATE_CONTINUE;

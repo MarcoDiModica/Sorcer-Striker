@@ -52,7 +52,9 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
 	bright1.loop = true;
 	bright1.speed = 0.5f;
 
-
+	boost.PushBack({ 188, 126, 44, 28 });
+	boost.loop = true;
+	boost.speed = 0.07f;
 }
 
 ModulePlayer::~ModulePlayer()
@@ -79,7 +81,7 @@ bool ModulePlayer::Start()
 	//lasthitFx = App->audio->LoadFx("Assets/Fx/lasthit.wav");
 
 	position.x = 111 + 250;
-	position.y = 250 + 250;
+	position.y = 600;
 	OPTMIZENELJUEGUITO = 0;
 
 	destroyed = false;
@@ -128,12 +130,12 @@ Update_Status ModulePlayer::Update()
 		position.y = App->render->camera.y;
 	}
 
-	if (position.y >= App->render->camera.y + 289)
+	if (position.y >= App->render->camera.y + 289 && App->sceneLevel_1->eldenboy)
 	{
 		position.y = App->render->camera.y + 289;
 	}
 
-	if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT || pad.l_x < 0.0f)
+	if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT && App->sceneLevel_1->eldenboy || pad.l_x < 0.0f && App->sceneLevel_1->eldenboy)
 	{
 		position.x -= speed + 2;
 		if (currentAnimation != &leftAnim)
@@ -143,7 +145,7 @@ Update_Status ModulePlayer::Update()
 		}
 	}
 
-	if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT || pad.l_x > 0.0f)
+	if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT && App->sceneLevel_1->eldenboy || pad.l_x > 0.0f && App->sceneLevel_1->eldenboy)
 	{
 	    position.x += speed + 2;
 		if (currentAnimation != &rightAnim)
@@ -153,12 +155,12 @@ Update_Status ModulePlayer::Update()
 		}
 	}
 
-	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_REPEAT || pad.l_y > 0.0f)
+	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_REPEAT && App->sceneLevel_1->eldenboy || pad.l_y > 0.0f && App->sceneLevel_1->eldenboy)
 	{
 		position.y += speed +2;
 	}
 
-	if (App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_REPEAT || pad.l_y < 0.0f)
+	if (App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_REPEAT && App->sceneLevel_1->eldenboy || pad.l_y < 0.0f && App->sceneLevel_1->eldenboy)
 	{
 		position.y -= speed + 2;
 	}
@@ -169,8 +171,8 @@ Update_Status ModulePlayer::Update()
 		{
 			if (shotCountdown == 0)
 			{
-				Particle* newParticle = App->particles->AddParticle(App->particles->laser2, position.x + 12, position.y - 10, Collider::Type::PLAYER_SHOT);
-				newParticle->collider->AddListener(this);
+				/*Particle* newParticle = */App->particles->AddParticle(App->particles->laser2, position.x + 12, position.y - 10, Collider::Type::PLAYER_SHOT);
+				/*newParticle->collider->AddListener(this);*/
 				App->audio->PlayFx(laserFx);
 				shotCountdown = shotMaxCountdown;
 			}
@@ -179,8 +181,8 @@ Update_Status ModulePlayer::Update()
 		{
 			if (shotCountdown == 0)
 			{
-				Particle* newParticle = App->particles->AddParticle(App->particles->laser3, position.x + 8, position.y - 10, Collider::Type::PLAYER_SHOT);
-				newParticle->collider->AddListener(this);
+				/*Particle* newParticle = */App->particles->AddParticle(App->particles->laser2, position.x + 12, position.y - 10, Collider::Type::PLAYER_SHOT);
+				/*newParticle->collider->AddListener(this);*/
 				App->audio->PlayFx(laserFx);
 				shotCountdown = shotMaxCountdown;
 			}
@@ -189,8 +191,8 @@ Update_Status ModulePlayer::Update()
 		{
 			if (shotCountdown == 0)
 			{
-				Particle* newParticle = App->particles->AddParticle(App->particles->laser4, position.x + 4, position.y - 10, Collider::Type::PLAYER_SHOT);
-				newParticle->collider->AddListener(this);
+				/*Particle* newParticle = */App->particles->AddParticle(App->particles->laser2, position.x + 12, position.y - 10, Collider::Type::PLAYER_SHOT);
+				/*newParticle->collider->AddListener(this);*/
 				App->audio->PlayFx(laserFx);
 				shotCountdown = shotMaxCountdown;
 			}
@@ -199,8 +201,8 @@ Update_Status ModulePlayer::Update()
 		{
 			if (shotCountdown == 0)
 			{
-				Particle* newParticle = App->particles->AddParticle(App->particles->laser5, position.x, position.y - 10, Collider::Type::PLAYER_SHOT);
-				newParticle->collider->AddListener(this);
+				/*Particle* newParticle = */App->particles->AddParticle(App->particles->laser2, position.x + 12, position.y - 10, Collider::Type::PLAYER_SHOT);
+				/*newParticle->collider->AddListener(this);*/
 				App->audio->PlayFx(laserFx);
 				shotCountdown = shotMaxCountdown;
 			}
@@ -320,6 +322,7 @@ Update_Status ModulePlayer::Update()
 		&& App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_IDLE
 		&& App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_IDLE
 		&& App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_IDLE
+		&& App->sceneLevel_1->eldenboy
 		&&(pad.up == false && pad.down == false)&&(pad.l_y == 0 && pad.l_x == 0))
 		currentAnimation = &idleAnim;
 

@@ -26,9 +26,6 @@ Enemy_BrownShip::Enemy_BrownShip(int x, int y) : Enemy(x, y)
 
 	currentAnim = &Anim1;
 
-	current = SDL_GetTicks();
-	next = current + interval;
-
 	//turnAnim2.PushBack({ 144, 0, 34, 31 });
 	//
 	//turnAnim3.PushBack({ 179, 0, 34, 31 });
@@ -68,15 +65,24 @@ void Enemy_BrownShip::Update()
 	if (position.y > (App->render->camera.y + 30)) {
 		 position.y -= App->sceneLevel_1->aprendeaprogramar;
 	} 
-
-	current = SDL_GetTicks();
 	
-	if (current > next)
+	if (position.y == App->render->camera.y)
 	{
-		App->particles->AddParticle(App->particles->EnemyL, position.x, position.y, Collider::Type::ENEMY_SHOT);
-		interval = rand() % 2001 + 2000;
 		next = current + interval;
 	}
+
+	if (position.y > App->render->camera.y)
+	{
+		current = SDL_GetTicks();
+
+		if (current > next)
+		{
+			App->particles->AddParticle(App->particles->EnemyL, position.x, position.y, Collider::Type::ENEMY_SHOT);
+			interval = rand() % 2001 + 2000;
+			next = current + interval;
+		}
+	}
+	
 
 	Enemy::Update();
 }

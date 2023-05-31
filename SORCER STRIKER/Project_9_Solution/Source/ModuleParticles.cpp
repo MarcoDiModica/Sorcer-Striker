@@ -73,7 +73,7 @@ bool ModuleParticles::Start()
 
 	tubo.anim.PushBack({ 0,233,254,35 });
 
-	tubo.speed.y = 2.0f;
+	tubo.speed.y = 4.0f;
 	tubo.lifetime = 600;
 	tubo.anim.speed = 0.2f;
 
@@ -94,7 +94,6 @@ bool ModuleParticles::Start()
 	Stage.speed.y = -2;
 	Stage.speed.x = LSD;
 	Stage.lifetime = 500;
-
 	
 	Clear.anim.PushBack({ 223,150,180,46 });
 
@@ -131,10 +130,6 @@ bool ModuleParticles::Start()
 	BigExplosion.anim.speed = 0.2f;
 	BigExplosion.speed.y = -2;
 
-
-
-
-	
 	InsaneEXplosion.anim.PushBack({ 4,283,98,90 });
 	InsaneEXplosion.anim.PushBack({ 128,294,76,76 });
 	InsaneEXplosion.anim.PushBack({ 234,298,70,70 });
