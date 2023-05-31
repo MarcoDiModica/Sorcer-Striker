@@ -32,6 +32,11 @@ void Enemy::Update()
 
 	if (collider != nullptr)
 		collider->SetPos(position.x, position.y);
+
+	if (position.y > App->render->camera.y + 1000)
+	{
+		SetToDelete();
+	}
 }
 
 void Enemy::Draw()

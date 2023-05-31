@@ -215,7 +215,7 @@ Update_Status ModulePlayer::Update()
 	}
 	current = SDL_GetTicks();
 	
-	if (App->input->keys[SDL_SCANCODE_F3] == Key_State::KEY_DOWN)
+	if (App->input->keys[SDL_SCANCODE_F3] == Key_State::KEY_DOWN && App->sceneLevel_1->eldenboy)
 	{
 		Mix_PauseMusic();
 		App->audio->PlayFx(App->player->winFx);
@@ -241,7 +241,7 @@ Update_Status ModulePlayer::Update()
 		}
 	}
 
-	if (App->input->keys[SDL_SCANCODE_F4] == Key_State::KEY_DOWN)
+	if (App->input->keys[SDL_SCANCODE_F4] == Key_State::KEY_DOWN && App->sceneLevel_1->eldenboy)
 	{
 		App->audio->PlayFx(loseFx);
 		App->collisions->debug = false;
@@ -261,56 +261,56 @@ Update_Status ModulePlayer::Update()
 		}		
 	}
 
-	if (App->input->keys[SDL_SCANCODE_1] == Key_State::KEY_DOWN)
+	if (App->input->keys[SDL_SCANCODE_1] == Key_State::KEY_DOWN && App->sceneLevel_1->eldenboy)
 	{
 		App->enemies->AddEnemy(Enemy_Type::REDBIRD, (rand() % 211) + 10 + 250, App->player->position.y - 260);
 	}
 
-	if (App->input->keys[SDL_SCANCODE_2] == Key_State::KEY_DOWN)
+	if (App->input->keys[SDL_SCANCODE_2] == Key_State::KEY_DOWN && App->sceneLevel_1->eldenboy)
 	{
 		App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, (rand() % 211) + 10 + 250, App->player->position.y - 260);
 	}
-	if (App->input->keys[SDL_SCANCODE_3] == Key_State::KEY_DOWN)
+	if (App->input->keys[SDL_SCANCODE_3] == Key_State::KEY_DOWN && App->sceneLevel_1->eldenboy)
 	{
 		App->enemies->AddEnemy(Enemy_Type::DOUBLETANK, (rand() % 211) + 10 + 250, App->player->position.y - 260);
 	}
-	if (App->input->keys[SDL_SCANCODE_4] == Key_State::KEY_DOWN)
+	if (App->input->keys[SDL_SCANCODE_4] == Key_State::KEY_DOWN && App->sceneLevel_1->eldenboy)
 	{
 		App->enemies->AddEnemy(Enemy_Type::BAG, (rand() % 211) + 10 + 250, App->player->position.y - 260);
 	}
-	if (App->input->keys[SDL_SCANCODE_5] == Key_State::KEY_DOWN)
+	if (App->input->keys[SDL_SCANCODE_5] == Key_State::KEY_DOWN && App->sceneLevel_1->eldenboy)
 	{
 		App->enemies->AddEnemy(Enemy_Type::CHEST, (rand() % 210) + 10 + 250, App->player->position.y - 260);
 	}
-	if (App->input->keys[SDL_SCANCODE_6] == Key_State::KEY_DOWN)
+	if (App->input->keys[SDL_SCANCODE_6] == Key_State::KEY_DOWN && App->sceneLevel_1->eldenboy)
 	{
 		App->enemies->AddEnemy(Enemy_Type::BlUEDRAGON, (rand() % 210) + 10 + 250, App->player->position.y - 260);
 	}
-	if (App->input->keys[SDL_SCANCODE_7] == Key_State::KEY_DOWN)
+	if (App->input->keys[SDL_SCANCODE_7] == Key_State::KEY_DOWN && App->sceneLevel_1->eldenboy)
 	{
 		App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, (rand() % 210) + 10 + 250, App->player->position.y - 260);
 	}
-	if (App->input->keys[SDL_SCANCODE_8] == Key_State::KEY_DOWN)
+	if (App->input->keys[SDL_SCANCODE_8] == Key_State::KEY_DOWN && App->sceneLevel_1->eldenboy)
 	{
 		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, (rand() % 210) + 10 + 250, App->player->position.y - 260);
 	}
-	if (App->input->keys[SDL_SCANCODE_9] == Key_State::KEY_DOWN)
+	if (App->input->keys[SDL_SCANCODE_9] == Key_State::KEY_DOWN && App->sceneLevel_1->eldenboy)
 	{
 		App->enemies->AddEnemy(Enemy_Type::REVERSEDT, (rand() % 210) + 10 + 250, App->player->position.y - 260);
 	}
-	if (App->input->keys[SDL_SCANCODE_0] == Key_State::KEY_DOWN)
+	if (App->input->keys[SDL_SCANCODE_0] == Key_State::KEY_DOWN && App->sceneLevel_1->eldenboy)
 	{
 		App->enemies->AddEnemy(Enemy_Type::REVERSEST, (rand() % 210) + 10 + 250, App->player->position.y - 260);
 	}
 
-	if (App->input->keys[SDL_SCANCODE_M] == Key_State::KEY_DOWN)
+	if (App->input->keys[SDL_SCANCODE_M] == Key_State::KEY_DOWN && App->sceneLevel_1->eldenboy)
 	{
 		App->player->position.y = -5590;
 		App->render->camera.y = -5525 - SCREEN_HEIGHT / 2;
 		App->player->OPTMIZENELJUEGUITO = -5525 - SCREEN_HEIGHT / 2;
 	}
 
-	if (App->input->keys[SDL_SCANCODE_N] == Key_State::KEY_DOWN)
+	if (App->input->keys[SDL_SCANCODE_N] == Key_State::KEY_DOWN && App->sceneLevel_1->eldenboy)
 	{
 		App->player->position.y = -8590;
 		App->render->camera.y = -8525 - SCREEN_HEIGHT / 2;
@@ -352,7 +352,7 @@ Update_Status ModulePlayer::Update()
 			anfetaminas = false;
 		}
 	}
-	if (App->input->keys[SDL_SCANCODE_L] == Key_State::KEY_DOWN)
+	if (App->input->keys[SDL_SCANCODE_L] == Key_State::KEY_DOWN && App->sceneLevel_1->eldenboy)
 	{
 		App->enemies->AddEnemy(Enemy_Type::WARNING, 20 + 250, App->render->camera.y +40);
 	}
