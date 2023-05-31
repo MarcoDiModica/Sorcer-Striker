@@ -34,12 +34,20 @@ Enemy_DoubleTank::Enemy_DoubleTank(int x, int y) : Enemy(x, y)
 
 	Anim2.PushBack({ 930,62,72,42 });
 
+	Mark.PushBack({327,167,67,36});
+	Mark.loop = true;
+
 	collider = App->collisions->AddCollider({ position.x,position.y,72,42 }, Collider::Type::ITEM, (Module*)App->enemies);
 }
 
 void Enemy_DoubleTank::Update()
 {
-	if (cnt < 3)
+	if (cnt == 0)
+	{
+		currentAnim = &Mark;
+	}
+	
+	if (cnt == 2 || cnt == 1)
 	{
 		currentAnim = &Anim2;
 	}
