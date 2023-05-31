@@ -80,7 +80,7 @@ bool ModulePlayer::Start()
 	damageFx = App->audio->LoadFx("Assets/Fx/lose.wav");
 	//lasthitFx = App->audio->LoadFx("Assets/Fx/lasthit.wav");
 
-	position.x = 111 + 250;
+	position.x = 63 + 250;
 	position.y = 600;
 	OPTMIZENELJUEGUITO = 0;
 
