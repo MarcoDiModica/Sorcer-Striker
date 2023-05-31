@@ -23,6 +23,7 @@ private:
 	Animation Anim1;
 	Animation Anim2;
 	Animation Anim1Rev;
+	Animation Mark;
 };
 #endif // __REVERSEST_H__
 

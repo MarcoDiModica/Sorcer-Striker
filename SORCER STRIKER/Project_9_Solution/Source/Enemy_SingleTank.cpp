@@ -34,15 +34,24 @@ Enemy_SingleTank::Enemy_SingleTank(int x, int y) : Enemy(x, y)
 
 	Anim2.PushBack({ 171,260,36,34 });
 
+	Mark.PushBack({ 213,257,38,40 });
+
 	collider = App->collisions->AddCollider({ position.x,position.y,36,34 }, Collider::Type::ITEM, (Module*)App->enemies);
 
 }
 
 void Enemy_SingleTank::Update()
 {
-	if (cnt < 2)
+
+	if (cnt == 1)
 	{
 		currentAnim = &Anim2;
+	}
+
+	if (cnt == 0)
+	{
+		currentAnim = &Mark;
+		collider->type==Collider::Type::NONE;
 	}
 
 	Enemy:: Update();

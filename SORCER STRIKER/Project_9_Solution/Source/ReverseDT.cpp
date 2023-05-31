@@ -18,6 +18,9 @@ ReverseDT::ReverseDT(int x, int y) : Enemy(x, y)
 	Anim1.speed = 0.015f;
 	Anim1.loop = true;
 
+	Mark.PushBack({ 327,167,67,36 });
+	Mark.loop = true;
+
 	currentAnim = &Anim1;
 
 	Anim2.PushBack({ 244,158,72,42 }); 
@@ -28,9 +31,17 @@ ReverseDT::ReverseDT(int x, int y) : Enemy(x, y)
 
 void ReverseDT::Update()
 {
-	if (cnt < 3)
+
+	if (cnt == 0)
+	{
+		currentAnim = &Mark;
+		collider->type == Collider::Type::NONE;
+	}
+
+	if (cnt == 2 || cnt == 1)
 	{
 		currentAnim = &Anim2;
+
 	}
 
 	Enemy::Update();
