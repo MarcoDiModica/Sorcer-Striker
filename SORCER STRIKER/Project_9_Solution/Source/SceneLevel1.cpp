@@ -31,6 +31,8 @@ bool SceneLevel1::Start()
 	bool ret = true;
 
 	bgTexture = App->textures->Load("Assets/Sprites/backgroundedit2edit.png");
+	bgTexture2 = App->textures->Load("Assets/Sprites/backgroundedit2edit.png");
+	bgTexture3 = App->textures->Load("Assets/Sprites/backgroundedit2edit.png");
 	
 	App->audio->PlayMusic("Assets/Music/stage1.ogg", 1.0f);
 
