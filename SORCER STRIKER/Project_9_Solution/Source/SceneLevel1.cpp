@@ -130,47 +130,48 @@ bool SceneLevel1::Start()
 
 	//Tanks DERECHA //
 
-	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 145 + 250, -5590);
-	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 185 + 250, -5590);
-	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 225 + 250, -5590);
+	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 145 + 250, -5590-400);
+	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 185 + 250, -5590 - 400);
+	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 225 + 250, -5590 - 400);
 
-	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -5850);
-	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -5890);
-	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -5930);
-	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -5970);
-	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -6010);
-	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -6040);
+	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -5850 -900);
+	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -5890 - 900);
+	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -5930 - 900);
+	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -5970 - 900);
+	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -6010 - 900);
+	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -6040 - 900);
 
 	//tanks izquierda//
-	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 5 + 250, -5560);
-	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 40 + 250, -5560);
-	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 75 + 250, -5560);
+	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 5 + 250, -5560 - 400);
+	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 40 + 250, -5560 - 400);
+	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 75 + 250, -5560 - 400);
 
-	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -5850);
-	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -5890);
-	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -5930);
-	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -5970);
-	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -6010);
-	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -6040);
+	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -5850 - 900);
+	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -5890 - 900);
+	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -5930 -900);
+	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -5970 - 900);
+	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -6010 - 900);
+	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -6040 - 900);
 
 	// doubletank derecha //
 
-	App->enemies->AddEnemy(Enemy_Type::DOUBLETANK, 175 + 250, -6170);
-	App->enemies->AddEnemy(Enemy_Type::DOUBLETANK, 175 + 250, -6290);
+	App->enemies->AddEnemy(Enemy_Type::DOUBLETANK, 175 + 250, -6170 - 900);
+	App->enemies->AddEnemy(Enemy_Type::DOUBLETANK, 175 + 250, -6290 - 920);
 
 
 	//double tank izquierda//
-	App->enemies->AddEnemy(Enemy_Type::REVERSEDT, 10 + 250, -6290);
-	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -6320);
+	App->enemies->AddEnemy(Enemy_Type::REVERSEDT, 10 + 250, -6290 - 925);
+
+	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -6320 - 925);
 
 
 
-	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 130 + 250, -6470);
-	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 170 + 250, -6470);
-	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -6470);
+	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 130 + 250, -6470 - 930);
+	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 170 + 250, -6470 - 930);
+	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -6470 - 930);
 
 
-	App->enemies->AddEnemy(Enemy_Type::DOUBLETANK, 160 + 250, -6580);
+	App->enemies->AddEnemy(Enemy_Type::DOUBLETANK, 160 + 250, -6580 - 950);
 
 
 

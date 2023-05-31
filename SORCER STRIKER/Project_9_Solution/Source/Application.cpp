@@ -97,7 +97,7 @@ Update_Status Application::Update()
 			App->window->quit = true;
 
 			//kill the app
-			ret = Update_Status::UPDATE_STOP;
+			/*ret = Update_Status::UPDATE_STOP;*/
 		}
 
 	}
