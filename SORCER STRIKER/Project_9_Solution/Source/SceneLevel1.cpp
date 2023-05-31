@@ -30,9 +30,9 @@ bool SceneLevel1::Start()
 
 	bool ret = true;
 
-	bgTexture = App->textures->Load("Assets/Sprites/backgroundedit2edit.png");
-	bgTexture2 = App->textures->Load("Assets/Sprites/backgroundedit2edit.png");
-	bgTexture3 = App->textures->Load("Assets/Sprites/backgroundedit2edit.png");
+	bgTexture = App->textures->Load("Assets/Sprites/inicio.png");
+	bgTexture2 = App->textures->Load("Assets/Sprites/tank.png");
+	bgTexture3 = App->textures->Load("Assets/Sprites/boss.png");
 	
 	App->audio->PlayMusic("Assets/Music/stage1.ogg", 1.0f);
 
@@ -46,12 +46,6 @@ bool SceneLevel1::Start()
 	App->particles->AddParticle(App->particles->tubo, 0 + space, -1250, Collider::Type::NONE);
 	App->particles->AddParticle(App->particles->tubo, 0 + space, -1450, Collider::Type::NONE);
 	App->particles->AddParticle(App->particles->tubo, 0 + space, -1650, Collider::Type::NONE);
-
-	
-
-
-	App->collisions->AddCollider({ 0 + space, SCREEN_HEIGHT, 1, -6930 }, Collider::Type::WALL);
-	App->collisions->AddCollider({ SCREEN_WIDTH -1 + space, SCREEN_HEIGHT, 1, -6930 }, Collider::Type::WALL);
 
 	/*App->enemies->AddEnemy(Enemy_Type::BlUEDRAGON, 50, -700);
 
@@ -311,10 +305,10 @@ Update_Status SceneLevel1::Update()
 		App->enemies->AddEnemy(Enemy_Type::ARROW, 107, App->render->camera.y - 80);
 	}*/
 
-	if (App->player->position.y <= -16700)
+	/*if (App->player->position.y <= -16700)
 	{
-		/*App->audio->PlayFx(App->player->winFx);*/
-		//App->particles->AddParticle(App->particles->Stage, 35, -140, Collider::Type::NONE);
+		App->audio->PlayFx(App->player->winFx);
+		App->particles->AddParticle(App->particles->Stage, 35, -140, Collider::Type::NONE);
 
 		if (App->player->score > App->player->highscore) {
 			App->player->highscore = App->player->score;
@@ -323,14 +317,38 @@ Update_Status SceneLevel1::Update()
 		App->collisions->debug = false;
 		App->player->lives = 3;
 		App->player->score = 0;
-		//App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneStageclear, 40);
-	}
+		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneStageclear, 40);
+	}*/
 
-	if (App->player->position.y <= -5530)
+	if (App->player->position.y <= -5930)
 	{
 		App->render->camera.y += 1;
 		App->player->position.y += 1;
 		aprendeaprogramar = 1;
+	}
+	else if (App->render->camera.y >= 150)
+	{
+		App->render->camera.y -= 0;
+		App->player->position.y -= 0;
+	}
+	else if (App->render->camera.y >= 100)
+	{
+		App->render->camera.y -= 1;
+		App->player->position.y -= 1;
+	}
+	else if (App->render->camera.y >= -100)
+	{
+		App->render->camera.y -= 2;
+		App->player->position.y -= 2;
+	}
+	else if (App->render->camera.y >= -820)
+	{
+		App->render->camera.y -= 3;
+		App->player->position.y -= 3;
+	}
+	else
+	{
+		eldenboy = true;
 	}
 	
 	return Update_Status::UPDATE_CONTINUE;
@@ -339,7 +357,9 @@ Update_Status SceneLevel1::Update()
 Update_Status SceneLevel1::PostUpdate()
 {
 
-	App->render->Blit(bgTexture, 0 + space, -14450, NULL);
+	App->render->Blit(bgTexture, 0 + space, -4200, NULL);
+	App->render->Blit(bgTexture2, 0 + space, -8760, NULL);
+	App->render->Blit(bgTexture3, 0 + space, -13360, NULL);
 
 	return Update_Status::UPDATE_CONTINUE;
 }

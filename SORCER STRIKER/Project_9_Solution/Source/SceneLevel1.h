@@ -32,6 +32,7 @@ public:
 	Uint32 next;
 	Uint32 interval = 4000;
 	Uint32 start;
+	bool eldenboy;
 	// Disables the player and the enemies
 	bool CleanUp();
 
