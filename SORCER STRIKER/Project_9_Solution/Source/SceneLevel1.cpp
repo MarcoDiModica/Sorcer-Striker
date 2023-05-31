@@ -257,6 +257,18 @@ bool SceneLevel1::Start()
 	App->enemies->AddEnemy(Enemy_Type::DOUBLETANK, 175 + 250, -6290);
 
 
+	//double tank izquierda//
+	App->enemies->AddEnemy(Enemy_Type::REVERSEDT, 10 + 250, -6290);
+	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -6320);
+
+
+
+	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 130 + 250, -6470);
+	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 170 + 250, -6470);
+	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -6470);
+
+
+	App->enemies->AddEnemy(Enemy_Type::DOUBLETANK, 160 + 250, -6580);
 
 
 
