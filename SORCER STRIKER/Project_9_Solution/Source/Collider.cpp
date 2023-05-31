@@ -26,16 +26,20 @@ bool Collider::Intersects(const SDL_Rect& r) const
 
 void Collider::AddListener(Module* listener)
 {
-	for (int i = 0; i < MAX_LISTENERS; ++i)
+	if (listener != nullptr)
 	{
- 		if (listeners[i] == nullptr)
+		for (int i = 0; i < MAX_LISTENERS; ++i)
 		{
-			listeners[i] = listener;
-			break;
+			if (listeners[i] == nullptr)
+			{
+				listeners[i] = listener;
+				break;
+			}
+			//Simple security check to avoid adding the same listener twice
+			else if (listeners[i] == listener)
+			{
+				break;
+			}
 		}
-
-		//Simple security check to avoid adding the same listener twice
-		else if (listeners[i] == listener)
-			break;
 	}
 }
