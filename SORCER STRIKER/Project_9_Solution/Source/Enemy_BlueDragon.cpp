@@ -18,13 +18,23 @@ Enemy_BlueDragon::Enemy_BlueDragon(int x, int y) : Enemy(x, y)
 	DrakeAnim1.PushBack({ 704,280,116,130 });
 	DrakeAnim1.PushBack({ 564,278,116,130 });
 	DrakeAnim1.PushBack({ 704,280,116,130 });
-
-	DrakeAnim2.PushBack({ 433,128,122,140 });
-	DrakeAnim2.PushBack({ 568,134,122,140 });
-	DrakeAnim2.PushBack({ 634,266,122,140 });
-
 	DrakeAnim1.speed = 0.05f;
 	DrakeAnim1.loop = true;
+
+	DrakeAnim2.PushBack({ 433,128,122,140 });
+	DrakeAnim2.PushBack({ 433,128,122,140 });
+	DrakeAnim1.speed = 0.05f;
+	DrakeAnim1.loop = false;
+
+	DrakeAnim3.PushBack({ 568,134,122,140 });
+	DrakeAnim3.PushBack({ 568,134,122,140 });
+	DrakeAnim1.speed = 0.05f;
+	DrakeAnim1.loop = false;
+
+	DrakeAnim4.PushBack({ 634,266,122,140 }); 
+	DrakeAnim4.PushBack({ 634,266,122,140 });
+	DrakeAnim1.speed = 0.03f;
+	DrakeAnim1.loop = false;
 
 	currentAnim = &DrakeAnim1;
 	App->particles->man = -1;

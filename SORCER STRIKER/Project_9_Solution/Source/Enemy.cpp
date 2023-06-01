@@ -75,6 +75,33 @@ void Enemy::OnCollision(Collider* collider)
 			currentAnim = &Anim2;
 		}	
 	}
+	
+	if (tipo == Enemy_Type::BROWNSHIP2)
+	{
+		if (cnt == 0) {
+			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+			App->audio->PlayFx(destroyedFx);
+
+			App->player->score += 50;
+
+			SetToDelete();
+		}
+		else if (cnt == 1)
+		{
+			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+			App->audio->PlayFx(destroyedFx);
+			App->player->score += 10;
+			Anim2 = Anim3;
+			currentAnim = &Anim2;
+		}
+		else if (cnt == 2)
+		{
+			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+			App->audio->PlayFx(destroyedFx);
+			App->player->score += 10;
+			currentAnim = &Anim2;
+		}
+	}
 
 	if (tipo == Enemy_Type::BAG)
 	{
@@ -199,8 +226,6 @@ void Enemy::OnCollision(Collider* collider)
 			App->particles->AddParticle(App->particles->BigExplosion, position.x - 8, position.y + 5);
 
 			App->player->score += 100;
-
-			
 		}
 		else
 		{

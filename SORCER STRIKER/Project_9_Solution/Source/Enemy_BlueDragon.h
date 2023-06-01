@@ -26,6 +26,8 @@ private:
 
 	Animation DrakeAnim1;
 	Animation DrakeAnim2;
+	Animation DrakeAnim3;
+	Animation DrakeAnim4;
 
 	Uint32 current;
 	Uint32 next;
