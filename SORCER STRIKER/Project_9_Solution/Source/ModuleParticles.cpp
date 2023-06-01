@@ -120,7 +120,91 @@ bool ModuleParticles::Start()
 	enemieShot.lifetime = 120;
 	enemieShot.anim.loop = true;
 	enemieShot.anim.speed = 0.2f;
-	enemieShot.direction = -1;
+	enemieShot.direction = man;
+
+	enemieShot2.anim.PushBack({ 20,201,13,13 });
+	enemieShot2.anim.PushBack({ 73,201,13,13 });
+	enemieShot2.anim.PushBack({ 56,201,13,13 });
+	enemieShot2.anim.PushBack({ 38,201,13,13 });
+		
+	enemieShot2.speed.y = 1;
+	enemieShot2.speed.x = cocaina2;
+	enemieShot2.lifetime = 120;
+	enemieShot2.anim.loop = true;
+	enemieShot2.anim.speed = 0.2f;
+	enemieShot2.direction = man;
+
+	enemieShot3.anim.PushBack({ 20,201,13,13 });
+	enemieShot3.anim.PushBack({ 73,201,13,13 });
+	enemieShot3.anim.PushBack({ 56,201,13,13 });
+	enemieShot3.anim.PushBack({ 38,201,13,13 });
+			  
+	enemieShot3.speed.y = 1;
+	enemieShot3.speed.x = cocaina3;
+	enemieShot3.lifetime = 120;
+	enemieShot3.anim.loop = true;
+	enemieShot3.anim.speed = 0.2f;
+	enemieShot3.direction = man;
+
+	enemieShot4.anim.PushBack({ 20,201,13,13 });
+	enemieShot4.anim.PushBack({ 73,201,13,13 });
+	enemieShot4.anim.PushBack({ 56,201,13,13 });
+	enemieShot4.anim.PushBack({ 38,201,13,13 });
+			  
+	enemieShot4.speed.y = 1;
+	enemieShot4.speed.x = cocaina4;
+	enemieShot4.lifetime = 120;
+	enemieShot4.anim.loop = true;
+	enemieShot4.anim.speed = 0.2f;
+	enemieShot4.direction = man;
+
+	enemieShot5.anim.PushBack({ 20,201,13,13 });
+	enemieShot5.anim.PushBack({ 73,201,13,13 });
+	enemieShot5.anim.PushBack({ 56,201,13,13 });
+	enemieShot5.anim.PushBack({ 38,201,13,13 });
+		  
+	enemieShot5.speed.y = 1;
+	enemieShot5.speed.x = cocaina5;
+	enemieShot5.lifetime = 120;
+	enemieShot5.anim.loop = true;
+	enemieShot5.anim.speed = 0.2f;
+	enemieShot5.direction = man;
+
+	enemieShot6.anim.PushBack({ 20,201,13,13 });
+	enemieShot6.anim.PushBack({ 73,201,13,13 });
+	enemieShot6.anim.PushBack({ 56,201,13,13 });
+	enemieShot6.anim.PushBack({ 38,201,13,13 });
+			  
+	enemieShot6.speed.y = 1;
+	enemieShot6.speed.x = cocaina6;
+	enemieShot6.lifetime = 120;
+	enemieShot6.anim.loop = true;
+	enemieShot6.anim.speed = 0.2f;
+	enemieShot6.direction = man;
+
+	enemieShot8.anim.PushBack({ 20,201,13,13 });
+	enemieShot8.anim.PushBack({ 73,201,13,13 });
+	enemieShot8.anim.PushBack({ 56,201,13,13 });
+	enemieShot8.anim.PushBack({ 38,201,13,13 });
+			  
+	enemieShot8.speed.y = 1;
+	enemieShot8.speed.x = cocaina8;
+	enemieShot8.lifetime = 120;
+	enemieShot8.anim.loop = true;
+	enemieShot8.anim.speed = 0.2f;
+	enemieShot8.direction = man;
+
+	enemieShot7.anim.PushBack({ 20,201,13,13 });
+	enemieShot7.anim.PushBack({ 73,201,13,13 });
+	enemieShot7.anim.PushBack({ 56,201,13,13 });
+	enemieShot7.anim.PushBack({ 38,201,13,13 });
+			  
+	enemieShot7.speed.y = 1;
+	enemieShot7.speed.x = cocaina7;
+	enemieShot7.lifetime = 120;
+	enemieShot7.anim.loop = true;
+	enemieShot7.anim.speed = 0.2f;
+	enemieShot7.direction = man;
 
 	BigExplosion.anim.PushBack({ 330,148,55,55 });
 	BigExplosion.anim.PushBack({ 400,148,55,55 });
@@ -202,8 +286,20 @@ Update_Status ModuleParticles::Update()
 	}
 
 	enemieShot.speed.x = cocaina;
+	enemieShot2.speed.x = cocaina2;
+	enemieShot3.speed.x = cocaina3;
+	enemieShot4.speed.x = cocaina4;
+	enemieShot5.speed.x = cocaina5;
+	enemieShot6.speed.x = cocaina6;
+	enemieShot7.speed.x = cocaina7;
+	enemieShot8.speed.x = cocaina8;
 	Stage.speed.x = LSD;
-
+	enemieShot.direction = man;
+	enemieShot2.direction = man;
+	enemieShot3.direction = man;
+	enemieShot4.direction = man;
+	enemieShot5.direction = man;
+	enemieShot6.direction = man;
 	/*if (App->particles->Stage.position.x >= 35) {
 		App->particles->Stage.position.x -= 2;
 	}*/

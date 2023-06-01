@@ -67,11 +67,26 @@ public:
 	Particle Stage;
 	Particle Clear;
 	Particle enemieShot;
+	Particle enemieShot2;
+	Particle enemieShot3;
+	Particle enemieShot4;
+	Particle enemieShot5;
+	Particle enemieShot6;
+	Particle enemieShot7;
+	Particle enemieShot8;
 	Particle BigExplosion;
 	Particle SingleTankMark;
 	Particle InsaneEXplosion;
 
 	float cocaina = 0.00f;
+	float cocaina2 = 0.00f;
+	float cocaina3 = 0.00f;
+	float cocaina4 = 0.00f;
+	float cocaina5 = 0.00f;
+	float cocaina6 = 0.00f;
+	float cocaina7 = 0.00f;
+	float cocaina8 = 0.00f;
+	int man = -1;
 	float LSD = 2.00f;
 
 	Particle coin;

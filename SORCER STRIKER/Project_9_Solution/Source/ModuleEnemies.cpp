@@ -9,6 +9,7 @@
 #include "Enemy.h"
 #include "Enemy_RedBird.h"
 #include "Enemy_BrownShip.h"
+#include "Enemy_BrownShip2.h"
 #include "Enemy_Bag.h"
 #include "Enemy_SingleTank.h"
 #include "Enemy_DoubleTank.h"
@@ -26,6 +27,7 @@
 #include "ReverseST.h"
 #include "Boss_Left.h"
 #include "Boss_Right.h"
+#include "Enemy_BlueDragon2.h"
 
 #define SPAWN_MARGIN 50
 
@@ -185,6 +187,9 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info)
 				case Enemy_Type::BROWNSHIP:
 					enemies[i] = new Enemy_BrownShip(info.x, info.y);
 					break;
+				case Enemy_Type::BROWNSHIP2:
+					enemies[i] = new Enemy_BrownShip2(info.x, info.y);
+					break;
 				case Enemy_Type::BAG:
 					enemies[i] = new Enemy_Bag(info.x, info.y);
 					break;
@@ -202,6 +207,9 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info)
 					break;
 				case Enemy_Type::BlUEDRAGON:
 					enemies[i] = new Enemy_BlueDragon(info.x, info.y);
+					break;
+				case Enemy_Type::BlUEDRAGON2:
+					enemies[i] = new Enemy_BlueDragon2(info.x, info.y);
 					break;
 				case Enemy_Type::BOSS:
 					enemies[i] = new Boss(info.x, info.y);

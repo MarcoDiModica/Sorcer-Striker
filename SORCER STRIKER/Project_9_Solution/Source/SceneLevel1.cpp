@@ -45,7 +45,6 @@ bool SceneLevel1::Start()
 	App->particles->AddParticle(App->particles->tubo, 0 + space, -950, Collider::Type::NONE);
 	App->particles->AddParticle(App->particles->tubo, 0 + space, -1250, Collider::Type::NONE);
 
-
 	//1rst wave  izquierda a derecha  //
 	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48+250, -900);
 	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 48+250, -930);
@@ -233,7 +232,7 @@ Update_Status SceneLevel1::Update()
 		App->player->position.y += 1;
 		aprendeaprogramar = 1;
 	}
-	else if (App->render->camera.y >= -820)
+	else if (App->render->camera.y >= -880)
 	{
 		App->render->camera.y -= 4;
 		App->player->position.y -= 4.5f;
@@ -252,7 +251,7 @@ Update_Status SceneLevel1::PostUpdate()
 
 	App->render->Blit(bgTexture, 0 + space, -4200, NULL);
 	App->render->Blit(bgTexture2, 0 + space, -8760, NULL);
-	App->render->Blit(bgTexture3, 0 + space, -13360, NULL);
+	App->render->Blit(bgTexture3, 0 + space, -13060, NULL);
 
 	return Update_Status::UPDATE_CONTINUE;
 }

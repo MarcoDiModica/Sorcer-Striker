@@ -302,6 +302,10 @@ Update_Status ModulePlayer::Update()
 	{
 		App->enemies->AddEnemy(Enemy_Type::REVERSEST, (rand() % 210) + 10 + 250, App->player->position.y - 260);
 	}
+	if (App->input->keys[SDL_SCANCODE_Y] == Key_State::KEY_DOWN && App->sceneLevel_1->eldenboy)
+	{
+		App->enemies->AddEnemy(Enemy_Type::BlUEDRAGON2, (rand() % 210) + 10 + 250, App->player->position.y - 260);
+	}
 
 	if (App->input->keys[SDL_SCANCODE_M] == Key_State::KEY_DOWN && App->sceneLevel_1->eldenboy)
 	{

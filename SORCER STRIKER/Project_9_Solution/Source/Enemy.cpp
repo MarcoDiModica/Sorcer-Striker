@@ -162,6 +162,24 @@ void Enemy::OnCollision(Collider* collider)
 		}
 	}
 
+	if (tipo == Enemy_Type::BlUEDRAGON2)
+	{
+		if (cnt == 0) {
+			App->audio->PlayFx(destroyedFx);
+			App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 20, position.y + 20);
+
+			App->player->score += 100;
+
+			SetToDelete();
+		}
+		else
+		{
+			App->particles->AddParticle(App->particles->BigExplosion, collider->rect.x - 25, position.y + 76);
+			App->audio->PlayFx(destroyedFx);
+			App->player->score += 10;
+		}
+	}
+
 	if (tipo == Enemy_Type::FLYINGLIZARD)
 	{
 		if (cnt == 0) {
