@@ -13,6 +13,7 @@ public:
 	BossLeft(int x, int y);
 
 	void Update();
+
 	Animation dedge;
 
 	
@@ -28,12 +29,9 @@ private:
 
 	int spawn_y = 0;
 
-	int waveHeight = 50;
+	int waveHeight = 0;
 
 	Animation flyAnim;
-	
-
-
 
 };
 

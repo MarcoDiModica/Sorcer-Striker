@@ -46,6 +46,8 @@ public:
 	// Sound fx when destroyed
 	int destroyedFx = 0;
 
+	int bossdelete;
+
 	// A flag for the enemy removal. Important! We do not delete objects instantly
 	bool pendingToDelete = false;
 

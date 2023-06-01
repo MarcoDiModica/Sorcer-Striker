@@ -12,6 +12,7 @@
 #include <cstdlib>
 #include <ctime>
 
+
 Boss::Boss(int x, int y) :Enemy(x, y) {
 
 	cnt = 10;
@@ -33,14 +34,20 @@ Boss::Boss(int x, int y) :Enemy(x, y) {
 }
 
 void Boss::Update() {
-	position.y -= 1;
+	
+	position.y -= 0;
+
+	if (App->render->camera.y <= (-8525 - SCREEN_HEIGHT / 2))
+	{
+		position.y -= 1;
+	}
 
 	waveRatio += waveRatioSpeed;
 
 	current = SDL_GetTicks();
 
-
 	if (cnt == 0) {
+		
 		currentAnim = &dedge;
 		
 	}

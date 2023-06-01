@@ -27,7 +27,12 @@ BossRight::BossRight(int x, int y) :Enemy(x, y) {
 }
 
 void BossRight::Update() {
-	position.y -= 1;
+	position.y -= 0;
+
+	if (App->render->camera.y <= (-8525 - SCREEN_HEIGHT / 2))
+	{
+		position.y -= 1;
+	}
 
 	waveRatio += waveRatioSpeed;
 
@@ -37,15 +42,7 @@ void BossRight::Update() {
 		currentAnim = &dedge;
 	}
 
-	
-
-
 	position.x = spawnPos.x + (waveHeight * sinf(waveRatio));
-
-	
-
-	
-
 
 	Enemy::Update();
 }

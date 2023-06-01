@@ -21,9 +21,8 @@ Enemy_RedBird3::Enemy_RedBird3(int x, int y) : Enemy(x, y)
 
 void Enemy_RedBird3::Update()
 {
-	waveRatio += waveRatioSpeed;
-
-	position.x = spawnPos.x + (waveHeight * sinf(waveRatio));
+	position.x -= 1;
+	position.y += 1;
 
 	if (position.y > (App->render->camera.y + SCREEN_HEIGHT + 50)) {
 		SetToDelete();

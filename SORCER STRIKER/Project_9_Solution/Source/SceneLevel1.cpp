@@ -257,9 +257,9 @@ bool SceneLevel1::Start()
 
 
 	//boss/
-	App->enemies->AddEnemy(Enemy_Type::BOSSLEFT, 0+250, -8600);
-	App->enemies->AddEnemy(Enemy_Type::BOSS, 83+250, -8600);
-	App->enemies->AddEnemy(Enemy_Type::BOSSRIGHT, 180+250, -8600);
+	App->enemies->AddEnemy(Enemy_Type::BOSSLEFT, 0+250, -8800);
+	App->enemies->AddEnemy(Enemy_Type::BOSS, 83+250, -8800);
+	App->enemies->AddEnemy(Enemy_Type::BOSSRIGHT, 180+250, -8800);
 	
 
 

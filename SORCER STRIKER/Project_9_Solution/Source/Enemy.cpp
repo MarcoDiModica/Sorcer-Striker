@@ -135,6 +135,7 @@ void Enemy::OnCollision(Collider* collider)
 		else
 		{
 			App->particles->AddParticle(App->particles->explosion, collider->rect.x - 15, position.y + 26);
+			App->audio->PlayFx(destroyedFx);
 			App->player->score += 10;
 		}
 	}
@@ -250,7 +251,57 @@ void Enemy::OnCollision(Collider* collider)
 		else
 		{
 			App->particles->AddParticle(App->particles->explosion, collider->rect.x - 15, position.y + 26);
+			App->audio->PlayFx(destroyedFx);
 			App->player->score += 10;
+		}
+	}
+	
+	if (tipo == Enemy_Type::BOSSLEFT)
+	{
+		if (cnt == 0) {
+
+			//SUPER EXPLOSION
+			App->player->score += 1000;
+		}
+		else
+		{
+			App->particles->AddParticle(App->particles->InsaneEXplosion, collider->rect.x - 35, position.y + 46);
+			App->audio->PlayFx(destroyedFx);
+			App->player->score += 100;
+		}
+	}
+
+	if (tipo == Enemy_Type::BOSSRIGHT)
+	{
+		if (cnt == 0) {
+
+			//SUPER EXPLOSION
+			App->player->score += 1000;
+		}
+		else
+		{
+			App->particles->AddParticle(App->particles->InsaneEXplosion, collider->rect.x - 35, position.y + 46);
+			App->audio->PlayFx(destroyedFx);
+			App->player->score += 100;
+		}
+	}
+
+	if (tipo == Enemy_Type::BOSS)
+	{
+		if (cnt == 0) {
+			
+			//Anadir explosiones para disimular que hemos deleteado todos los enemigos : OPCION 1
+
+			App->player->score += 10000;
+			App->enemies->Disable();
+			
+			//ponerle la animacion de que esta derrotado 
+		}
+		else
+		{
+			App->particles->AddParticle(App->particles->InsaneEXplosion, collider->rect.x - 35, position.y + 46);
+			App->audio->PlayFx(destroyedFx);
+			App->player->score += 100;
 		}
 	}
 }
