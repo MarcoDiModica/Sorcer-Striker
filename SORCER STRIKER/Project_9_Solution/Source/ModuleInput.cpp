@@ -308,11 +308,6 @@ void ModuleInput::UpdateGamepadsInput()
 			pad.r_y = (fabsf(pad.r_y) > PadDeadzone) ? pad.r_y : 0.0f;
 
 
-
-
-
-
-
 			if (pad.rumble_countdown > 0)
 				pad.rumble_countdown--;
 		}
