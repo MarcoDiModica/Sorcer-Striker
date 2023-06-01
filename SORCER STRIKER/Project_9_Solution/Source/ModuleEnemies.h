@@ -9,6 +9,8 @@ enum class Enemy_Type
 {
 	NO_TYPE,
 	REDBIRD,
+	REDBIRD2,
+	REDBIRD3,
 	BROWNSHIP,
 	BROWNSHIP2,
 	MECH,

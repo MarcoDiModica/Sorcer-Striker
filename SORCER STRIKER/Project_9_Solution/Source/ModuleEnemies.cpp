@@ -8,6 +8,8 @@
 
 #include "Enemy.h"
 #include "Enemy_RedBird.h"
+#include "Enemy_RedBird2.h"
+#include "Enemy_RedBird3.h"
 #include "Enemy_BrownShip.h"
 #include "Enemy_BrownShip2.h"
 #include "Enemy_Bag.h"
@@ -177,6 +179,12 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info)
 			{
 				case Enemy_Type::REDBIRD:
 					enemies[i] = new Enemy_RedBird(info.x, info.y);
+					break;
+				case Enemy_Type::REDBIRD2:
+					enemies[i] = new Enemy_RedBird2(info.x, info.y);
+					break;
+				case Enemy_Type::REDBIRD3:
+					enemies[i] = new Enemy_RedBird3(info.x, info.y);
 					break;
 				case Enemy_Type::CHEST:
 					enemies[i] = new Chest(info.x, info.y);
