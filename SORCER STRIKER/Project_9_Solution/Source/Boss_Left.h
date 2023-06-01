@@ -15,6 +15,7 @@ public:
 	void Update();
 	Animation dedge;
 
+	
 private:
 
 	Path path;

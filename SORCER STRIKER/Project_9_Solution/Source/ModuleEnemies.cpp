@@ -30,6 +30,7 @@
 #include "Boss_Left.h"
 #include "Boss_Right.h"
 #include "Enemy_BlueDragon2.h"
+#include "Enemy_Minion.h"
 
 #define SPAWN_MARGIN 50
 
@@ -245,6 +246,9 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info)
 					break;
 				case Enemy_Type::BOSSRIGHT:
 					enemies[i] = new BossRight(info.x, info.y);
+					break;
+				case Enemy_Type::MINION:
+					enemies[i] = new Enemy_Minion(info.x, info.y);
 					break;
 
 			}

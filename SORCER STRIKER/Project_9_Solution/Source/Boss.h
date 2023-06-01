@@ -5,6 +5,7 @@
 #include "Path.h"
 #include "ModuleParticles.h"
 #include "Boss_Left.h"
+#include "Boss_Right.h"
 #include "Application.h"
 
 
@@ -15,6 +16,10 @@ public:
 	Boss(int x, int y);
 
 	void Update();
+
+	Uint32 current;
+	Uint32 next;
+	Uint32 interval = 1000;
 
 
 private:

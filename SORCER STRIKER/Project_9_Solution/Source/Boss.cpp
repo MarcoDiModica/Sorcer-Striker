@@ -7,6 +7,10 @@
 #include "ModuleParticles.h"
 #include "Boss_Right.h"
 #include "Boss_Left.h"
+#include "Enemy_Minion.h"
+#include "SceneLevel1.h"
+#include <cstdlib>
+#include <ctime>
 
 Boss::Boss(int x, int y) :Enemy(x, y) {
 
@@ -20,6 +24,8 @@ Boss::Boss(int x, int y) :Enemy(x, y) {
 	currentAnim = &flyAnim;
 
 	dedge.PushBack({653,556,98,128});
+
+	current = SDL_GetTicks();
 	
 	collider = App->collisions->AddCollider({ position.x,position.y,98,128 }, Collider::Type::ENEMY, (Module*)App->enemies);
 
@@ -31,11 +37,24 @@ void Boss::Update() {
 
 	waveRatio += waveRatioSpeed;
 
+	current = SDL_GetTicks();
+
+
 	if (cnt == 0) {
 		currentAnim = &dedge;
 		
 	}
 
+	if (position.y == App->render->camera.y)
+	{
+		next = current + interval;
+	}
+
+	/*if (current > next) {
+		App->enemies->AddEnemy(Enemy_Type::MINION, position.x + rand() % 51 + 30, position.y);
+		interval = rand() % 20 + 21;
+		next = current + interval;
+	}*/
 
 
 	position.x = spawnPos.x + (waveHeight * sinf(waveRatio));

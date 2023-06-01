@@ -36,6 +36,7 @@ void BossLeft::Update() {
 	}
 
 	
+	
 
 	position.x = spawnPos.x + (waveHeight * sinf(waveRatio));
 
