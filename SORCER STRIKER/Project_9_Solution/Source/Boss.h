@@ -16,6 +16,7 @@ public:
 
 	void Update();
 
+
 private:
 
 	Path path;
@@ -31,7 +32,7 @@ private:
 	int waveHeight = 50;
 
 	Animation flyAnim;
-
+	Animation dedge;
 
 
 };

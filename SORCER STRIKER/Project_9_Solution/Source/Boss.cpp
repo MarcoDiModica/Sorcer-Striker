@@ -5,18 +5,23 @@
 #include "ModuleRender.h"
 #include "ModulePlayer.h"
 #include "ModuleParticles.h"
+#include "Boss_Right.h"
+#include "Boss_Left.h"
 
 Boss::Boss(int x, int y) :Enemy(x, y) {
 
-	cnt = 20;
+	cnt = 10;
 	tipo = Enemy_Type::BOSS;
 
 	flyAnim.PushBack({ 95,418,101,128 });
 	flyAnim.PushBack({ 377, 418, 101,128 });
+	flyAnim.PushBack({ 654,418,101,128 });
 	flyAnim.speed = 0.01f;
 	currentAnim = &flyAnim;
+
+	dedge.PushBack({653,556,98,128});
 	
-	collider = App->collisions->AddCollider({ position.x,position.y,101,128 }, Collider::Type::ENEMY, (Module*)App->enemies);
+	collider = App->collisions->AddCollider({ position.x,position.y,98,128 }, Collider::Type::ENEMY, (Module*)App->enemies);
 
 	//////////////////OEE WATON SI LE DAI A LA TECLA ENE VAI A LA ZONA DEL BO
 }
@@ -26,23 +31,17 @@ void Boss::Update() {
 
 	waveRatio += waveRatioSpeed;
 
-
-	/*position.x = spawnPos.x + (waveHeight * sinf(waveRatio));
-
-	if (position.y > (App->render->camera.y + SCREEN_HEIGHT + 50)) {
-		SetToDelete();
+	if (cnt == 0) {
+		currentAnim = &dedge;
+		
 	}
 
-	if (position.x <= 10)
-	{
-		position.x = 10;
-	}
 
-	if (position.x >= SCREEN_WIDTH - 10)
-	{
-		position.x = SCREEN_WIDTH - 10;
-	}
-	*/
+
+	position.x = spawnPos.x + (waveHeight * sinf(waveRatio));
+
+
+	
 
 
 	Enemy::Update();
