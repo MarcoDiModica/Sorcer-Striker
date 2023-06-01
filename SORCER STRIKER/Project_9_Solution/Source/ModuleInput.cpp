@@ -289,11 +289,29 @@ void ModuleInput::UpdateGamepadsInput()
 			pad.r_x = float(SDL_GameControllerGetAxis(pad.controller, SDL_CONTROLLER_AXIS_RIGHTX)) / 32767.0f;
 			pad.r_y = float(SDL_GameControllerGetAxis(pad.controller, SDL_CONTROLLER_AXIS_RIGHTY)) / 32767.0f;
 
-			// Apply deadzone. All values below the deadzone will be discarded
-			pad.l_x = (fabsf(pad.l_x) > pad.l_dz) ? pad.l_x : 0.0f;
-			pad.l_y = (fabsf(pad.l_y) > pad.l_dz) ? pad.l_y : 0.0f;
-			pad.r_x = (fabsf(pad.r_x) > pad.r_dz) ? pad.r_x : 0.0f;
-			pad.r_y = (fabsf(pad.r_y) > pad.r_dz) ? pad.r_y : 0.0f;
+			//constexpr float l_dz = 0.3f;
+			//constexpr float r_dz = 0.3f;
+
+			//// Apply deadzone. All values below the deadzone will be discarded
+			//pad.l_x = (fabsf(pad.l_x) > pad.l_dz) ? pad.l_x : 0.0f;
+			//pad.l_y = (fabsf(pad.l_y) > pad.l_dz) ? pad.l_y : 0.0f;
+			//pad.r_x = (fabsf(pad.r_x) > pad.r_dz) ? pad.r_x : 0.0f;
+			//pad.r_y = (fabsf(pad.r_y) > pad.r_dz) ? pad.r_y : 0.0f;
+
+			// Define a deadzone threshold 
+			constexpr float PadDeadzone = 0.3f;
+
+			// Apply deadzone only to the left joystick 
+			pad.l_x = (fabsf(pad.l_x) > PadDeadzone) ? pad.l_x : 0.0f;
+			pad.l_y = (fabsf(pad.l_y) > PadDeadzone) ? pad.l_y : 0.0f;
+			pad.r_x = (fabsf(pad.r_x) > PadDeadzone) ? pad.r_x : 0.0f;
+			pad.r_y = (fabsf(pad.r_y) > PadDeadzone) ? pad.r_y : 0.0f;
+
+
+
+
+
+
 
 			if (pad.rumble_countdown > 0)
 				pad.rumble_countdown--;
