@@ -98,6 +98,7 @@ Update_Status Application::Update()
 
 			//kill the app
 			/*ret = Update_Status::UPDATE_STOP;*/
+			exit(0);
 		}
 
 	}
