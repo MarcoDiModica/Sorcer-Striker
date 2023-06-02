@@ -89,6 +89,12 @@ public:
 	Animation bright2;
 	Animation bright3;
 
+	Animation flip;
+	
+
+
+
+
 	// The player's collider
 	Collider* collider = nullptr;
 	Collider* collider2 = nullptr;

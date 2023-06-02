@@ -19,9 +19,15 @@
 
 #include <stdio.h>
 
+bool Animation::Finished() const
+{
+	return currentFrame >= totalFrames && !loop && !pingpong;
+}
+
+
 ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
 {
-	// idle animation - just one sprite
+	// idle animation
 	idleAnim.PushBack({ 138, 154, 32, 29 });
 	idleAnim.PushBack({ 172, 154, 32, 29 });
 	idleAnim.PushBack({ 204, 154, 32, 29 });
@@ -33,14 +39,14 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
 	leftAnim.PushBack({ 85, 153, 28, 29 });
 	leftAnim.PushBack({ 113, 153, 24, 29 });
 	leftAnim.loop = false;
-	leftAnim.speed = 0.1f;
+	leftAnim.speed = 0.05f;
 
 	// Move rightwards
 	idleAnim.PushBack({ 138, 154, 32, 29 });
 	rightAnim.PushBack({ 126, 65, 28, 29 });
 	rightAnim.PushBack({ 101, 66, 24, 29 });
 	rightAnim.loop = false;
-	rightAnim.speed = 0.1f;
+	rightAnim.speed = 0.05f;
 
 	idleAnim.PushBack({ 138, 154, 32, 29 });
 	bright1.PushBack({ 241, 154, 32, 29 });
@@ -55,6 +61,28 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
 	boost.PushBack({ 188, 126, 44, 28 });
 	boost.loop = true;
 	boost.speed = 0.07f;
+
+	//a flip animation for the player at the start of SceneLevel1
+	//1
+	flip.PushBack({ 127, 65, 29, 31 });
+	//2
+	flip.PushBack({ 102, 66, 27, 30 });
+	//3
+	flip.PushBack({ 155, 65, 22, 30 });
+	//4
+	flip.PushBack({ 175, 66, 31, 29 });
+	//5
+	flip.PushBack({ 204, 65, 39, 28 });
+	//6
+	flip.PushBack({ 36, 153, 29, 32 });
+	//7
+	flip.PushBack({ 63, 154, 26, 30 });
+	//8
+	flip.PushBack({ 85, 153, 30, 32 });
+	flip.loop = false;
+	flip.speed = 0.1f;
+
+	
 }
 
 ModulePlayer::~ModulePlayer()
@@ -134,6 +162,37 @@ Update_Status ModulePlayer::Update()
 	{
 		position.y = App->render->camera.y + 289;
 	}
+
+	
+	
+	////if camera position is 1000, do the flip animation once and then go back to idle
+	//if (App->player->position.y <= -700 && App->sceneLevel_1->eldenboy)
+	//{
+
+	//	currentAnimation = &flip;
+	//	if (flip.Finished())
+	//	{
+	//		currentAnimation = &idleAnim;
+	//	}
+	//	
+
+	//}
+	// this one doesn't work
+
+	/*I created a class called Finished() in line 22, which seems to be working, but this is somehow connected to the control,
+	which we don't want, please help it doesn't fucking make sense*/
+	bool isFlipAnimationTriggered = false;
+
+	if (App->player->position.y <= -800 && App->sceneLevel_1->eldenboy && !isFlipAnimationTriggered && App->input->keys[SDL_SCANCODE_W] != Key_State::KEY_REPEAT)
+	{
+		currentAnimation = &flip;
+		isFlipAnimationTriggered = true;
+		if (flip.Finished())
+		{
+			currentAnimation = &idleAnim;
+		}
+	}
+
 
 	if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT && App->sceneLevel_1->eldenboy || pad.l_x < 0.0f && App->sceneLevel_1->eldenboy)
 	{
@@ -381,6 +440,8 @@ Update_Status ModulePlayer::Update()
 	// Update shot countdown
 	if (shotCountdown > 0)
 		--shotCountdown;
+
+	
 
 	return Update_Status::UPDATE_CONTINUE;
 }
