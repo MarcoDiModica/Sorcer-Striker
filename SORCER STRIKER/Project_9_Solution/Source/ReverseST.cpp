@@ -12,6 +12,7 @@ ReverseST::ReverseST(int x, int y) : Enemy(x, y)
 
 	cnt = 4;
 	tipo = Enemy_Type::REVERSEST;
+	enemieH = 34;
 
 	Anim1Rev.PushBack({ 1100,21,36,34 });
 	Anim1Rev.PushBack({ 1018,20 ,36,34 });

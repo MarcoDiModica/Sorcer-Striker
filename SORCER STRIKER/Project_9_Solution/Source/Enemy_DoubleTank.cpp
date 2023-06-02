@@ -10,7 +10,7 @@ Enemy_DoubleTank::Enemy_DoubleTank(int x, int y) : Enemy(x, y)
 {
 	cnt = 6;
 	tipo = Enemy_Type::DOUBLETANK;
-
+	enemieH = 42;
 
 	
 	Anim1Rev.PushBack({ 1089,62,72,44 });

@@ -48,6 +48,8 @@ public:
 
 	int bossdelete;
 
+	int enemieH;
+
 	// A flag for the enemy removal. Important! We do not delete objects instantly
 	bool pendingToDelete = false;
 

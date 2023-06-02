@@ -13,6 +13,7 @@ Enemy_BlueDragon2::Enemy_BlueDragon2(int x, int y) : Enemy(x, y)
 {
 	cnt = 6;
 	tipo = Enemy_Type::BlUEDRAGON2;
+	enemieH = 140;
 
 	DrakeAnim1.PushBack({ 428,278,116,130 });
 	DrakeAnim1.PushBack({ 704,280,116,130 });

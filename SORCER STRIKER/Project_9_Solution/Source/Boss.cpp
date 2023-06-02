@@ -17,6 +17,7 @@ Boss::Boss(int x, int y) :Enemy(x, y) {
 
 	cnt = 10;
 	tipo = Enemy_Type::BOSS;
+	enemieH = 128;
 
 	flyAnim.PushBack({ 95,418,101,128 });
 	flyAnim.PushBack({ 377, 418, 101,128 });

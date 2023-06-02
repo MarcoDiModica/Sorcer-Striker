@@ -11,6 +11,7 @@ BossLeft::BossLeft(int x, int y) :Enemy(x, y) {
 
 	cnt = 10;
 	tipo = Enemy_Type::BOSSLEFT;
+	enemieH = 123;
 
 	flyAnim.PushBack({ 12,418,83,123 });
 	flyAnim.PushBack({ 293, 418, 83,123 });

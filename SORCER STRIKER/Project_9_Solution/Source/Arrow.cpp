@@ -13,6 +13,7 @@ Arrow::Arrow(int x, int y) : Enemy(x, y)
 	tipo = Enemy_Type::ARROW;
 	start = SDL_GetTicks();
 	next = start + interval;
+	enemieH = 39;
 
 	Cristal.PushBack({ 1075,126,39,39 });
 	Cristal.PushBack({  });

@@ -261,7 +261,7 @@ bool SceneLevel1::Start()
 	App->enemies->AddEnemy(Enemy_Type::BOSS, 83+250, -8800);
 	App->enemies->AddEnemy(Enemy_Type::BOSSRIGHT, 180+250, -8800);
 	
-
+	App->enemies->AddEnemy(Enemy_Type::BlUEDRAGON, 0 + 250, -1220);
 
 	App->render->camera.x = 0 + space;
 	App->render->camera.y = 0 + space;

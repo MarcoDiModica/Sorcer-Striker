@@ -11,6 +11,7 @@ Enemy_BrownShip::Enemy_BrownShip(int x, int y) : Enemy(x, y)
 {
 	cnt = 3;
 	tipo = Enemy_Type::BROWNSHIP;
+	enemieH = 30;
 
 	Anim1.PushBack({ 44, 5, 36, 34 });
 	

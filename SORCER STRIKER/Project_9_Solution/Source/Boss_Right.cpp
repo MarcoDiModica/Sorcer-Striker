@@ -10,6 +10,7 @@ BossRight::BossRight(int x, int y) :Enemy(x, y) {
 
 	cnt = 10;
 	tipo = Enemy_Type::BOSSRIGHT;
+	enemieH = 120;
 
 	flyAnim.PushBack({ 196,418,80,120 });
 	flyAnim.PushBack({ 478, 418, 80,120 });

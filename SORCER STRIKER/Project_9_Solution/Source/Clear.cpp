@@ -11,6 +11,7 @@ Clear::Clear(int x, int y) : Enemy(x, y)
 {
 	cnt = 1;
 	tipo = Enemy_Type::CLEAR;
+	enemieH = 47;
 
 	Heroina.PushBack({ 947,211,80,47 });
 	Heroina.loop = true;

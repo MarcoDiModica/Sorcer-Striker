@@ -9,6 +9,7 @@ Enemy_RedBird2::Enemy_RedBird2(int x, int y) : Enemy(x, y)
 {
 	cnt = 1;
 	tipo = Enemy_Type::REDBIRD2;
+	enemieH = 27;
 
 	flyAnim.PushBack({ 0,0,21,27 });
 	flyAnim.PushBack({ 0, 95, 42, 52 });

@@ -12,6 +12,7 @@ Chest::Chest(int x, int y) : Enemy(x, y)
 {
 	cnt = 1;
 	tipo = Enemy_Type::CHEST;
+	enemieH = 28;
 
 	hoverAnim.PushBack({ 105,306,28,28 });
 	hoverAnim.PushBack({ 134,304,28,28 });

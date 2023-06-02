@@ -10,6 +10,7 @@ Enemy_Minion::Enemy_Minion(int x, int y) :Enemy(x, y) {
 
 	cnt = 1;
 	tipo = Enemy_Type::MINION;
+	enemieH = 24;
 
 	flyAnim.PushBack({ 18,229,26,24 });
 	currentAnim = &flyAnim;

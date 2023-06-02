@@ -47,285 +47,288 @@ void Enemy::Draw()
 
 void Enemy::OnCollision(Collider* collider)
 {
-	cnt--;
-	
-	if (tipo == Enemy_Type::BROWNSHIP) 
+	if (position.y + enemieH> App->render->camera.y)
 	{
-		if (cnt == 0) {
-			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
-			App->audio->PlayFx(destroyedFx);
+		cnt--;
 
-			App->player->score += 50;
-
-			SetToDelete();
-		}
-		else if (cnt == 1)
+		if (tipo == Enemy_Type::BROWNSHIP)
 		{
-			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
-			App->audio->PlayFx(destroyedFx);
-			App->player->score += 10;
-			Anim2 = Anim3;
-			currentAnim = &Anim2;
+			if (cnt == 0) {
+				App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+				App->audio->PlayFx(destroyedFx);
+
+				App->player->score += 50;
+
+				SetToDelete();
+			}
+			else if (cnt == 1)
+			{
+				App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+				App->audio->PlayFx(destroyedFx);
+				App->player->score += 10;
+				Anim2 = Anim3;
+				currentAnim = &Anim2;
+			}
+			else if (cnt == 2)
+			{
+				App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+				App->audio->PlayFx(destroyedFx);
+				App->player->score += 10;
+				currentAnim = &Anim2;
+			}
 		}
-		else if (cnt == 2)
+
+		if (tipo == Enemy_Type::BROWNSHIP2)
 		{
-			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
-			App->audio->PlayFx(destroyedFx);
-			App->player->score += 10;
-			currentAnim = &Anim2;
-		}	
-	}
-	
-	if (tipo == Enemy_Type::BROWNSHIP2)
-	{
-		if (cnt == 0) {
-			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
-			App->audio->PlayFx(destroyedFx);
+			if (cnt == 0) {
+				App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+				App->audio->PlayFx(destroyedFx);
 
-			App->player->score += 50;
+				App->player->score += 50;
 
-			SetToDelete();
+				SetToDelete();
+			}
+			else if (cnt == 1)
+			{
+				App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+				App->audio->PlayFx(destroyedFx);
+				App->player->score += 10;
+				Anim2 = Anim3;
+				currentAnim = &Anim2;
+			}
+			else if (cnt == 2)
+			{
+				App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+				App->audio->PlayFx(destroyedFx);
+				App->player->score += 10;
+				currentAnim = &Anim2;
+			}
 		}
-		else if (cnt == 1)
+
+		if (tipo == Enemy_Type::BAG)
 		{
-			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
-			App->audio->PlayFx(destroyedFx);
-			App->player->score += 10;
-			Anim2 = Anim3;
-			currentAnim = &Anim2;
+			if (cnt == 0) {
+				App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+				App->audio->PlayFx(destroyedFx);
+				App->player->score += 20;
+				SetToDelete();
+				App->enemies->AddEnemy(Enemy_Type::COIN, position.x, position.y);
+			}
 		}
-		else if (cnt == 2)
+
+		if (tipo == Enemy_Type::CHEST)
 		{
-			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
-			App->audio->PlayFx(destroyedFx);
-			App->player->score += 10;
-			currentAnim = &Anim2;
-		}
-	}
+			if (cnt == 0) {
+				App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+				App->audio->PlayFx(destroyedFx);
 
-	if (tipo == Enemy_Type::BAG)
-	{
-		if (cnt == 0) {
-			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
-			App->audio->PlayFx(destroyedFx);
-			App->player->score += 20;
-			SetToDelete();
-			App->enemies->AddEnemy(Enemy_Type::COIN, position.x, position.y);
-		}
-	}
+				SetToDelete();
+				App->enemies->AddEnemy(Enemy_Type::BOOK, position.x, position.y);
+			}
 
-	if (tipo == Enemy_Type::CHEST)
-	{
-		if (cnt == 0) {
-			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
-			App->audio->PlayFx(destroyedFx);
-
-			SetToDelete();
-			App->enemies->AddEnemy(Enemy_Type::BOOK, position.x, position.y);
 		}
 
-	}
-
-	if (tipo == Enemy_Type::DOUBLETANK)
-	{
-		if (cnt == 0) {
-			App->audio->PlayFx(destroyedFx);
-			App->particles->AddParticle(App->particles->InsaneEXplosion, position.x , position.y -10);
-		}
-		else
+		if (tipo == Enemy_Type::DOUBLETANK)
 		{
-			App->particles->AddParticle(App->particles->explosion, collider->rect.x - 15, position.y + 26);
-			App->audio->PlayFx(destroyedFx);
-			App->player->score += 10;
+			if (cnt == 0) {
+				App->audio->PlayFx(destroyedFx);
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x, position.y - 10);
+			}
+			else
+			{
+				App->particles->AddParticle(App->particles->explosion, collider->rect.x - 15, position.y + 26);
+				App->audio->PlayFx(destroyedFx);
+				App->player->score += 10;
+			}
 		}
-	}
 
-	if (tipo == Enemy_Type::REDBIRD)
-	{
-		if (cnt == 0) {
-			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
-			App->audio->PlayFx(destroyedFx);
-
-			App->player->score += 50;
-
-			SetToDelete();
-		}
-	}
-
-	if (tipo == Enemy_Type::REDBIRD2)
-	{
-		if (cnt == 0) {
-			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
-			App->audio->PlayFx(destroyedFx);
-
-			App->player->score += 50;
-
-			SetToDelete();
-		}
-	}
-
-	if (tipo == Enemy_Type::REDBIRD3)
-	{
-		if (cnt == 0) {
-			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
-			App->audio->PlayFx(destroyedFx);
-
-			App->player->score += 50;
-
-			SetToDelete();
-		}
-	}
-
-	if (tipo == Enemy_Type::SINGLETANK)
-	{
-		if (cnt == 0) {
-			App->audio->PlayFx(destroyedFx);
-			
-			App->particles->AddParticle(App->particles->BigExplosion, position.x - 8, position.y + 5);
-			
-
-			App->player->score += 100;
-
-			
-		}
-		else
+		if (tipo == Enemy_Type::REDBIRD)
 		{
-			App->particles->AddParticle(App->particles->explosion, collider->rect.x - 15, position.y);
-			App->player->score += 10;
-			App->audio->PlayFx(destroyedFx);
-		}
-	}
-	
-	if (tipo == Enemy_Type::BlUEDRAGON)
-	{
-		if (cnt == 0) {
-			App->audio->PlayFx(destroyedFx);
-			App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 20 , position.y + 20);
+			if (cnt == 0) {
+				App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+				App->audio->PlayFx(destroyedFx);
 
-			App->player->score += 100;
+				App->player->score += 50;
 
-			SetToDelete();
+				SetToDelete();
+			}
 		}
-		else
+
+		if (tipo == Enemy_Type::REDBIRD2)
 		{
-			App->particles->AddParticle(App->particles->BigExplosion, collider->rect.x - 25, position.y + 76);
-			App->audio->PlayFx(destroyedFx);
-			App->player->score += 10;
+			if (cnt == 0) {
+				App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+				App->audio->PlayFx(destroyedFx);
+
+				App->player->score += 50;
+
+				SetToDelete();
+			}
 		}
-	}
 
-	if (tipo == Enemy_Type::BlUEDRAGON2)
-	{
-		if (cnt == 0) {
-			App->audio->PlayFx(destroyedFx);
-			App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 20, position.y + 20);
-
-			App->player->score += 100;
-
-			SetToDelete();
-		}
-		else
+		if (tipo == Enemy_Type::REDBIRD3)
 		{
-			App->particles->AddParticle(App->particles->BigExplosion, collider->rect.x - 25, position.y + 76);
-			App->audio->PlayFx(destroyedFx);
-			App->player->score += 10;
+			if (cnt == 0) {
+				App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+				App->audio->PlayFx(destroyedFx);
+
+				App->player->score += 50;
+
+				SetToDelete();
+			}
 		}
-	}
 
-	if (tipo == Enemy_Type::FLYINGLIZARD)
-	{
-		if (cnt == 0) {
-			App->audio->PlayFx(destroyedFx);
-			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
-
-			App->player->score += 100;
-
-			SetToDelete();
-		}
-	}
-
-	if (tipo == Enemy_Type::REVERSEST)
-	{
-		if (cnt == 0) {
-			App->audio->PlayFx(destroyedFx);
-			App->particles->AddParticle(App->particles->BigExplosion, position.x - 8, position.y + 5);
-
-			App->player->score += 100;
-		}
-		else
+		if (tipo == Enemy_Type::SINGLETANK)
 		{
-			App->particles->AddParticle(App->particles->explosion, collider->rect.x - 15, position.y);
-			App->player->score += 10;
-			App->audio->PlayFx(destroyedFx);
+			if (cnt == 0) {
+				App->audio->PlayFx(destroyedFx);
+
+				App->particles->AddParticle(App->particles->BigExplosion, position.x - 8, position.y + 5);
+
+
+				App->player->score += 100;
+
+
+			}
+			else
+			{
+				App->particles->AddParticle(App->particles->explosion, collider->rect.x - 15, position.y);
+				App->player->score += 10;
+				App->audio->PlayFx(destroyedFx);
+			}
 		}
-	}
 
-	if (tipo == Enemy_Type::REVERSEDT)
-	{
-		if (cnt == 0) {
-			App->audio->PlayFx(destroyedFx);
-			
-			App->particles->AddParticle(App->particles->InsaneEXplosion, position.x, position.y - 10);
-
-			//rumble when killed the doubletank
-			App->input->ShakeController(0, 60, 0.2f);
-			App->player->score += 100;
-
-		}
-		else
+		if (tipo == Enemy_Type::BlUEDRAGON)
 		{
-			App->particles->AddParticle(App->particles->explosion, collider->rect.x - 15, position.y + 26);
-			App->audio->PlayFx(destroyedFx);
-			App->player->score += 10;
-		}
-	}
-	
-	if (tipo == Enemy_Type::BOSSLEFT)
-	{
-		if (cnt == 0) {
+			if (cnt == 0) {
+				App->audio->PlayFx(destroyedFx);
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 20, position.y + 20);
 
-			//SUPER EXPLOSION
-			App->player->score += 1000;
+				App->player->score += 100;
+
+				SetToDelete();
+			}
+			else
+			{
+				App->particles->AddParticle(App->particles->BigExplosion, collider->rect.x - 25, position.y + 76);
+				App->audio->PlayFx(destroyedFx);
+				App->player->score += 10;
+			}
 		}
-		else
+
+		if (tipo == Enemy_Type::BlUEDRAGON2)
 		{
-			App->particles->AddParticle(App->particles->InsaneEXplosion, collider->rect.x - 35, position.y + 46);
-			App->audio->PlayFx(destroyedFx);
-			App->player->score += 100;
-		}
-	}
+			if (cnt == 0) {
+				App->audio->PlayFx(destroyedFx);
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 20, position.y + 20);
 
-	if (tipo == Enemy_Type::BOSSRIGHT)
-	{
-		if (cnt == 0) {
+				App->player->score += 100;
 
-			//SUPER EXPLOSION
-			App->player->score += 1000;
+				SetToDelete();
+			}
+			else
+			{
+				App->particles->AddParticle(App->particles->BigExplosion, collider->rect.x - 25, position.y + 76);
+				App->audio->PlayFx(destroyedFx);
+				App->player->score += 10;
+			}
 		}
-		else
+
+		if (tipo == Enemy_Type::FLYINGLIZARD)
 		{
-			App->particles->AddParticle(App->particles->InsaneEXplosion, collider->rect.x - 35, position.y + 46);
-			App->audio->PlayFx(destroyedFx);
-			App->player->score += 100;
-		}
-	}
+			if (cnt == 0) {
+				App->audio->PlayFx(destroyedFx);
+				App->particles->AddParticle(App->particles->explosion, position.x, position.y);
 
-	if (tipo == Enemy_Type::BOSS)
-	{
-		if (cnt == 0) {
-			
-			//Anadir explosiones para disimular que hemos deleteado todos los enemigos : OPCION 1
+				App->player->score += 100;
 
-			App->player->score += 10000;
-			App->enemies->Disable();
-			
-			//ponerle la animacion de que esta derrotado 
+				SetToDelete();
+			}
 		}
-		else
+
+		if (tipo == Enemy_Type::REVERSEST)
 		{
-			App->particles->AddParticle(App->particles->InsaneEXplosion, collider->rect.x - 35, position.y + 46);
-			App->audio->PlayFx(destroyedFx);
-			App->player->score += 100;
+			if (cnt == 0) {
+				App->audio->PlayFx(destroyedFx);
+				App->particles->AddParticle(App->particles->BigExplosion, position.x - 8, position.y + 5);
+
+				App->player->score += 100;
+			}
+			else
+			{
+				App->particles->AddParticle(App->particles->explosion, collider->rect.x - 15, position.y);
+				App->player->score += 10;
+				App->audio->PlayFx(destroyedFx);
+			}
+		}
+
+		if (tipo == Enemy_Type::REVERSEDT)
+		{
+			if (cnt == 0) {
+				App->audio->PlayFx(destroyedFx);
+
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x, position.y - 10);
+
+				//rumble when killed the doubletank
+				App->input->ShakeController(0, 60, 0.2f);
+				App->player->score += 100;
+
+			}
+			else
+			{
+				App->particles->AddParticle(App->particles->explosion, collider->rect.x - 15, position.y + 26);
+				App->audio->PlayFx(destroyedFx);
+				App->player->score += 10;
+			}
+		}
+
+		if (tipo == Enemy_Type::BOSSLEFT)
+		{
+			if (cnt == 0) {
+
+				//SUPER EXPLOSION
+				App->player->score += 1000;
+			}
+			else
+			{
+				App->particles->AddParticle(App->particles->InsaneEXplosion, collider->rect.x - 35, position.y + 46);
+				App->audio->PlayFx(destroyedFx);
+				App->player->score += 100;
+			}
+		}
+
+		if (tipo == Enemy_Type::BOSSRIGHT)
+		{
+			if (cnt == 0) {
+
+				//SUPER EXPLOSION
+				App->player->score += 1000;
+			}
+			else
+			{
+				App->particles->AddParticle(App->particles->InsaneEXplosion, collider->rect.x - 35, position.y + 46);
+				App->audio->PlayFx(destroyedFx);
+				App->player->score += 100;
+			}
+		}
+
+		if (tipo == Enemy_Type::BOSS)
+		{
+			if (cnt == 0) {
+
+				//Anadir explosiones para disimular que hemos deleteado todos los enemigos : OPCION 1
+
+				App->player->score += 10000;
+				App->enemies->Disable();
+
+				//ponerle la animacion de que esta derrotado 
+			}
+			else
+			{
+				App->particles->AddParticle(App->particles->InsaneEXplosion, collider->rect.x - 35, position.y + 46);
+				App->audio->PlayFx(destroyedFx);
+				App->player->score += 100;
+			}
 		}
 	}
 }

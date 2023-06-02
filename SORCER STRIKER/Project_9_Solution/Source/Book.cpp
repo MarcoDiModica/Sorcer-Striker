@@ -12,6 +12,7 @@ Book::Book(int x, int y) : Enemy(x, y)
 	cnt = 1;
 	tipo = Enemy_Type::BOOK;
 	buk = App->audio->LoadFx("Assets/Fx/book.wav");
+	enemieH = 21;
 
 	hoverAnim.PushBack({ 110,334,17,21 });
 	hoverAnim.PushBack({ 139,334,17,21 });

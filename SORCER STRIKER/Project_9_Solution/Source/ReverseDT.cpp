@@ -11,6 +11,7 @@ ReverseDT::ReverseDT(int x, int y) : Enemy(x, y)
 {
 	cnt = 6;
 	tipo = Enemy_Type::REVERSEDT;
+	enemieH = 42;
 
 	Anim1.PushBack({ 84,160,72,44 });
 	Anim1.PushBack({ 164,160,72,44 });

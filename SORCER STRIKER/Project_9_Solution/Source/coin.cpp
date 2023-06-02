@@ -11,6 +11,7 @@ Coin::Coin(int x, int y) : Enemy(x, y)
 {
 	cnt = 1;
 	tipo = Enemy_Type::COIN;
+	enemieH = 15;
 
 	hoverAnim.PushBack({ 14,369,15,15 });
 	hoverAnim.PushBack({ 33,369, 15, 15 });
