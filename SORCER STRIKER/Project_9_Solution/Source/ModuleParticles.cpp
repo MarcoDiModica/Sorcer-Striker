@@ -206,6 +206,30 @@ bool ModuleParticles::Start()
 	enemieShot7.anim.speed = 0.2f;
 	enemieShot7.direction = man;
 
+	enemieShotTANK.anim.PushBack({ 20,201,13,13 });
+	enemieShotTANK.anim.PushBack({ 73,201,13,13 });
+	enemieShotTANK.anim.PushBack({ 56,201,13,13 });
+	enemieShotTANK.anim.PushBack({ 38,201,13,13 });
+
+	enemieShotTANK.speed.y = 2;
+	enemieShotTANK.speed.x = -1;
+	enemieShotTANK.lifetime = 120;
+	enemieShotTANK.anim.loop = true;
+	enemieShotTANK.anim.speed = 0.3f;
+	enemieShotTANK.direction = man;
+
+	enemieShotTANK2.anim.PushBack({ 20,201,13,13 });
+	enemieShotTANK2.anim.PushBack({ 73,201,13,13 });
+	enemieShotTANK2.anim.PushBack({ 56,201,13,13 });
+	enemieShotTANK2.anim.PushBack({ 38,201,13,13 });
+				  
+	enemieShotTANK2.speed.y = 2;
+	enemieShotTANK2.speed.x = 1;
+	enemieShotTANK2.lifetime = 120;
+	enemieShotTANK2.anim.loop = true;
+	enemieShotTANK2.anim.speed = 0.3f;
+	enemieShotTANK2.direction = man;
+
 	BigExplosion.anim.PushBack({ 330,148,55,55 });
 	BigExplosion.anim.PushBack({ 400,148,55,55 });
 	BigExplosion.anim.PushBack({ 462,148,55,55 });

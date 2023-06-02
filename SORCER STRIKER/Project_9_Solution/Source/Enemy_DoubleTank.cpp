@@ -27,6 +27,8 @@ Enemy_DoubleTank::Enemy_DoubleTank(int x, int y) : Enemy(x, y)
 	Mark.PushBack({327,167,67,36});
 	Mark.loop = true;
 
+	current = SDL_GetTicks();
+
 	collider = App->collisions->AddCollider({ position.x,position.y,72,42 }, Collider::Type::ITEM, (Module*)App->enemies);
 }
 
@@ -45,6 +47,22 @@ void Enemy_DoubleTank::Update()
 		{
 			collider->type = Collider::Type::NONE;
 		}
+	}
+
+	if (position.y == App->render->camera.y)
+	{
+		next = current + interval;
+	}
+
+	current = SDL_GetTicks();
+
+	if (current > next && cnt > 2)
+	{
+		App->particles->AddParticle(App->particles->enemieShotTANK, position.x + 25, position.y + 12);
+		App->particles->AddParticle(App->particles->enemieShotTANK, position.x + 55, position.y + 12);
+
+		interval = rand() % 1501 + 1500;
+		next = current + interval;
 	}
 
 	Enemy::Update();

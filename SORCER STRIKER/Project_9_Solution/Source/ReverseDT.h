@@ -24,5 +24,9 @@ private:
 	Animation Anim1Rev;
 	Animation Anim2;
 	Animation Mark;
+
+	Uint32 current;
+	Uint32 next;
+	Uint32 interval = 800;
 };
 #endif // __REVERSEDT__

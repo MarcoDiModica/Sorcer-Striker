@@ -24,5 +24,9 @@ private:
 	Animation Anim2;
 	Animation Anim1Rev;
 	Animation Mark;
+
+	Uint32 current;
+	Uint32 next;
+	Uint32 interval = 800;
 };
 #endif // __ENEMY_SINGLETANK_H__

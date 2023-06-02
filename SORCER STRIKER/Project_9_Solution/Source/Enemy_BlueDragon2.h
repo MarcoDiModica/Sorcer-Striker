@@ -29,6 +29,6 @@ private:
 
 	Uint32 current;
 	Uint32 next;
-	Uint32 interval = 1000;
+	Uint32 interval = 800;
 };
 #endif

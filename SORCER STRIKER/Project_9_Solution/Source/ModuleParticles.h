@@ -74,6 +74,8 @@ public:
 	Particle enemieShot6;
 	Particle enemieShot7;
 	Particle enemieShot8;
+	Particle enemieShotTANK;
+	Particle enemieShotTANK2;
 	Particle BigExplosion;
 	Particle SingleTankMark;
 	Particle InsaneEXplosion;

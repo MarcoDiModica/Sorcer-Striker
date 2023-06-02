@@ -36,6 +36,8 @@ Enemy_SingleTank::Enemy_SingleTank(int x, int y) : Enemy(x, y)
 
 	Mark.PushBack({ 213,257,38,40 });
 
+	current = SDL_GetTicks();
+
 	collider = App->collisions->AddCollider({ position.x,position.y,36,34 }, Collider::Type::ITEM, (Module*)App->enemies);
 
 }
@@ -55,6 +57,21 @@ void Enemy_SingleTank::Update()
 		{
 			collider->type = Collider::Type::NONE;
 		}
+	}
+
+	if (position.y == App->render->camera.y)
+	{
+		next = current + interval;
+	}
+
+	current = SDL_GetTicks();
+
+	if (current > next && cnt > 1)
+	{
+		App->particles->AddParticle(App->particles->enemieShotTANK, position.x + 13, position.y + 12);
+
+		interval = rand() % 1201 + 1200;
+		next = current + interval;
 	}
 
 	Enemy:: Update();

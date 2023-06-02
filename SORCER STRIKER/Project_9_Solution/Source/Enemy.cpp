@@ -152,6 +152,30 @@ void Enemy::OnCollision(Collider* collider)
 		}
 	}
 
+	if (tipo == Enemy_Type::REDBIRD2)
+	{
+		if (cnt == 0) {
+			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+			App->audio->PlayFx(destroyedFx);
+
+			App->player->score += 50;
+
+			SetToDelete();
+		}
+	}
+
+	if (tipo == Enemy_Type::REDBIRD3)
+	{
+		if (cnt == 0) {
+			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+			App->audio->PlayFx(destroyedFx);
+
+			App->player->score += 50;
+
+			SetToDelete();
+		}
+	}
+
 	if (tipo == Enemy_Type::SINGLETANK)
 	{
 		if (cnt == 0) {

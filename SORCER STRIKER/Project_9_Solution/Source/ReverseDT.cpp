@@ -5,6 +5,7 @@
 #include "ModuleRender.h"
 #include "ModulePlayer.h"
 #include "ModuleParticles.h"
+#include <cstdlib>
 
 ReverseDT::ReverseDT(int x, int y) : Enemy(x, y)
 {
@@ -26,6 +27,10 @@ ReverseDT::ReverseDT(int x, int y) : Enemy(x, y)
 	Anim2.PushBack({ 244,158,72,42 }); 
 	//falta la marca del suelo//
 
+	App->particles->man = -1;
+
+	current = SDL_GetTicks();
+
 	collider = App->collisions->AddCollider({ position.x,position.y,72,42 }, Collider::Type::ITEM, (Module*)App->enemies);
 }
 
@@ -45,6 +50,22 @@ void ReverseDT::Update()
 	{
 		currentAnim = &Anim2;
 
+	}
+
+	if (position.y == App->render->camera.y)
+	{
+		next = current + interval;
+	}
+
+	current = SDL_GetTicks();
+
+	if (current > next && cnt > 2)
+	{
+		App->particles->AddParticle(App->particles->enemieShotTANK2, position.x + 25, position.y + 12);
+		App->particles->AddParticle(App->particles->enemieShotTANK2, position.x + 55, position.y + 12);
+
+		interval = rand() % 1501 + 1500;
+		next = current + interval;
 	}
 
 	Enemy::Update();

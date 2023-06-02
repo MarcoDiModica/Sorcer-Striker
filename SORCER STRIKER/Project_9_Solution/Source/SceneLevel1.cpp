@@ -308,7 +308,7 @@ Update_Status SceneLevel1::Update()
 		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneStageclear, 40);
 	}*/
 
-	if (App->player->position.y <= -5930)
+	if (App->render->camera.y <= -5930)
 	{
 		App->render->camera.y += 1;
 		App->player->position.y += 1;
@@ -322,7 +322,6 @@ Update_Status SceneLevel1::Update()
 	else
 	{
 		eldenboy = true;
-		
 	}
 	
 	return Update_Status::UPDATE_CONTINUE;

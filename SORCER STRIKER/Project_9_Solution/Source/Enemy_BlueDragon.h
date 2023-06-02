@@ -31,6 +31,6 @@ private:
 
 	Uint32 current;
 	Uint32 next;
-	Uint32 interval = 500;
+	Uint32 interval = 800;
 };
 #endif // __ENEMY_SINGLETANK_H__
