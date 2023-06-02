@@ -29,6 +29,8 @@ Enemy_SingleTank::Enemy_SingleTank(int x, int y) : Enemy(x, y)
 
 	currentAnim = &Anim1;
 
+	path.PushBack({ -0.5f, 0.0f }, 300, &Anim1);
+	path.loop = false;
 
 	/*currentAnim = &Anim1Rev;*/
 	
@@ -45,6 +47,13 @@ Enemy_SingleTank::Enemy_SingleTank(int x, int y) : Enemy(x, y)
 
 void Enemy_SingleTank::Update()
 {
+	if (!mikados)
+	{
+		path.Update();
+		currentAnim = path.GetCurrentAnimation();
+		position = spawnPos + path.GetRelativePosition();
+		mikados = true;
+	}
 
 	if (cnt == 1)
 	{

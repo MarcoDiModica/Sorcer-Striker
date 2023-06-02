@@ -2,6 +2,7 @@
 #define __ENEMY_SINGLETANK_H__
 
 #include "Enemy.h"
+#include "Path.h"
 
 class Enemy_SingleTank : public Enemy {
 public:
@@ -11,6 +12,9 @@ public:
 	void Update();
 
 private:
+
+	Path path;
+	bool mikados = false;
 
 	float waveRatio = 0.0f;
 
