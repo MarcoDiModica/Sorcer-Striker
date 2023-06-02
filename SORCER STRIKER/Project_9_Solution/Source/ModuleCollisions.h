@@ -1,7 +1,7 @@
 #ifndef __MODULE_COLLISIONS_H__
 #define __MODULE_COLLISIONS_H__
 
-#define MAX_COLLIDERS 128  //tenemos que hacer colliders exactos para que no se dupliquen
+#define MAX_COLLIDERS 200  //tenemos que hacer colliders exactos para que no se dupliquen
 
 #include "Module.h"
 #include "Collider.h"
