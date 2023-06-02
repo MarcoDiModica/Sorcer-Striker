@@ -246,6 +246,19 @@ void Enemy::OnCollision(Collider* collider)
 			}
 		}
 
+		if (tipo == Enemy_Type::MINION)
+		{
+			if (cnt == 0) {
+				App->audio->PlayFx(destroyedFx);
+				App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+
+				App->player->score += 100;
+
+				SetToDelete();
+
+			}
+		}
+
 		if (tipo == Enemy_Type::REVERSEST)
 		{
 			if (cnt == 0) {
@@ -286,7 +299,11 @@ void Enemy::OnCollision(Collider* collider)
 		{
 			if (cnt == 0) {
 
-				//SUPER EXPLOSION
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 45, position.y);
+				App->particles->AddParticle(App->particles->explosion, position.x + 30, position.y - 8);
+				App->particles->AddParticle(App->particles->explosion, position.x + 25, position.y + 25);
+				App->particles->AddParticle(App->particles->BigExplosion, position.x + 60, position.y + 60);
+				App->particles->AddParticle(App->particles->explosion, position.x + 65, position.y - 10);
 				App->player->score += 1000;
 			}
 			else
@@ -301,7 +318,11 @@ void Enemy::OnCollision(Collider* collider)
 		{
 			if (cnt == 0) {
 
-				//SUPER EXPLOSION
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 25, position.y);
+				App->particles->AddParticle(App->particles->explosion, position.x + 10, position.y - 8);
+				App->particles->AddParticle(App->particles->explosion, position.x + 5, position.y + 25);
+				App->particles->AddParticle(App->particles->BigExplosion, position.x + 40, position.y + 60);
+				App->particles->AddParticle(App->particles->explosion, position.x + 45, position.y - 10);
 				App->player->score += 1000;
 			}
 			else
@@ -316,6 +337,21 @@ void Enemy::OnCollision(Collider* collider)
 		{
 			if (cnt == 0) {
 
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x - 25, position.y);
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x, position.y);
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 25, position.y);
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 50, position.y);
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 55, position.y+25);
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x - 25, position.y+30);
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x, position.y+28);
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 20, position.y+23);
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 75, position.y+17);
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x - 25, position.y-30);
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x, position.y-19);
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x - 40, position.y-12);
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x - 33, position.y-30);
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x - 70, position.y + 5);
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x - 65, position.y - 22);
 				//Anadir explosiones para disimular que hemos deleteado todos los enemigos : OPCION 1
 
 				App->player->score += 10000;

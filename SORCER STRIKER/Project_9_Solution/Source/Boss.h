@@ -17,10 +17,6 @@ public:
 
 	void Update();
 
-	Uint32 current;
-	Uint32 next;
-	Uint32 interval = 1000;
-
 
 private:
 
@@ -38,6 +34,9 @@ private:
 
 	Animation flyAnim;
 	Animation dedge;
+	uint next;
+	uint current;
+	uint spawnInterval;
 
 
 };
