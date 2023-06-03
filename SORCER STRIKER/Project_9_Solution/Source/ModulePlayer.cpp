@@ -8,6 +8,7 @@
 #include "ModuleAudio.h"
 #include "ModuleCollisions.h"
 #include "Boss.h"
+#include "Miyamoto.h"
 #include "ModuleFadeToBlack.h"
 #include "ModuleFonts.h"
 #include "ModuleCollisions.h"
@@ -296,7 +297,8 @@ Update_Status ModulePlayer::Update()
 		App->enemies->AddEnemy(Enemy_Type::STAGE, -20 + 250, App->render->camera.y + 50);
 		App->enemies->AddEnemy(Enemy_Type::CLEAR, SCREEN_WIDTH / 2 - 30 + 250, App->render->camera.y + 50);
 		App->enemies->AddEnemy(Enemy_Type::TEXT, 84 + 250, App->render->camera.y + 178);
-		App->enemies->AddEnemy(Enemy_Type::MIYAMOTO, 90 + 250, App->render->camera.y + 80);
+		App->enemies->AddEnemy(Enemy_Type::MIYAMOTO, 90 + 250, App->render->camera.y - 80);
+		
 		App->player->collider->type = Collider::Type::NONE;
 
 		start = SDL_GetTicks();
@@ -440,7 +442,7 @@ Update_Status ModulePlayer::Update()
 		App->enemies->AddEnemy(Enemy_Type::TEXT, 20 + 250, App->render->camera.y +40);
 		App->enemies->AddEnemy(Enemy_Type::MIYAMOTO, 20 + 250, App->render->camera.y + 80);
 	}
-	if (App->render->camera.y ==-8700)
+	if (App->render->camera.y == -8700)
 	{
 		App->enemies->AddEnemy(Enemy_Type::WARNING, 20 + 250, App->render->camera.y + 40);
 		App->enemies->AddEnemy(Enemy_Type::ARROW, 110 + 250, App->render->camera.y + 55);

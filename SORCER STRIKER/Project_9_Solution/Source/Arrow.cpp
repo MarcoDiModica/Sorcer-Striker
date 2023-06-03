@@ -18,7 +18,7 @@ Arrow::Arrow(int x, int y) : Enemy(x, y)
 	Cristal.PushBack({ 1075,126,39,39 });
 	Cristal.PushBack({  });
 	Cristal.loop = true;
-	Cristal.speed = 0.05f;
+	Cristal.speed = 0.03f;
 
 	currentAnim = &Cristal;
 
@@ -27,12 +27,7 @@ Arrow::Arrow(int x, int y) : Enemy(x, y)
 
 void Arrow::Update()
 {
-	position.y += mondongo;
-
-	if (position.y >= App->render->camera.y + 30) {
-		mondongo = 0;
-	}
-
+	position.y += 0;
 	current = SDL_GetTicks();
 	if (current > next) {
 		SetToDelete();
