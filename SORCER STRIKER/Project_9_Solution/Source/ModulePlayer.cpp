@@ -65,15 +65,15 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
 	//a flip animation for the player at the start of SceneLevel1
 	
 	//1
-	flip.PushBack({ 127, 65, 29, 31 });
+	flip.PushBack({ 127, 65, 31, 30 });
 	//2
-	flip.PushBack({ 102, 66, 27, 30 });
+	flip.PushBack({ 101, 64, 24, 30 });
 	//3
-	flip.PushBack({ 155, 65, 22, 30 });
+	flip.PushBack({ 153, 65, 21, 28 });
 	//4
-	flip.PushBack({ 175, 66, 31, 29 });
+	flip.PushBack({ 175, 65, 29, 26 });
 	//5
-	flip.PushBack({ 204, 65, 39, 28 });
+	flip.PushBack({ 204, 66, 32, 26 });
 	//6
 	flip.PushBack({ 36, 153, 29, 32 });
 	//7
