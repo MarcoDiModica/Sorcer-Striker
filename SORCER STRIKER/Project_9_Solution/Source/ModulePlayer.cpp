@@ -427,6 +427,13 @@ Update_Status ModulePlayer::Update()
 	{
 		App->enemies->AddEnemy(Enemy_Type::WARNING, 20 + 250, App->render->camera.y +40);
 	}
+	if (App->player->position.y==-8700)
+	{
+		App->enemies->AddEnemy(Enemy_Type::WARNING, 20 + 250, App->render->camera.y + 40);
+		App->enemies->AddEnemy(Enemy_Type::ARROW, 110 + 250, App->render->camera.y + 55);
+
+	}
+
 	
 	//// Switch gamepad debug info
 	//if (App->input->keys[SDL_SCANCODE_F6] == KEY_DOWN)
