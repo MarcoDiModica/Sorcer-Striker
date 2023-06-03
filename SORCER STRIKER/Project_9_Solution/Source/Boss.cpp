@@ -15,7 +15,7 @@
 
 Boss::Boss(int x, int y) :Enemy(x, y) {
 
-	cnt = 40;
+	cnt = 80;
 	tipo = Enemy_Type::BOSS;
 	enemieH = 128;
 

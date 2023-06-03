@@ -10,7 +10,7 @@
 
 ReverseDT::ReverseDT(int x, int y) : Enemy(x, y)
 {
-	cnt = 6;
+	cnt = 8;
 	tipo = Enemy_Type::REVERSEDT;
 	enemieH = 42;
 

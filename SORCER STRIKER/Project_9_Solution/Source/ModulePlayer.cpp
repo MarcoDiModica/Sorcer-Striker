@@ -244,7 +244,7 @@ Update_Status ModulePlayer::Update()
 		position.y -= speed + 2;
 	}
 
-	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN && destroyed == false && App->sceneLevel_1->eldenboy == true || pad.a == true && destroyed == false && App->sceneLevel_1->eldenboy == true)
+	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_REPEAT && destroyed == false && App->sceneLevel_1->eldenboy == true || pad.a == true && destroyed == false && App->sceneLevel_1->eldenboy == true)
 	{
 		if (playershots <= 2)
 		{

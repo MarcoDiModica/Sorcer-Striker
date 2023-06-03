@@ -10,7 +10,7 @@
 Enemy_SingleTank::Enemy_SingleTank(int x, int y) : Enemy(x, y) 
 {
 
-	cnt = 4;
+	cnt = 6;
 	tipo = Enemy_Type::SINGLETANK;
 	enemieH = 34;
 
