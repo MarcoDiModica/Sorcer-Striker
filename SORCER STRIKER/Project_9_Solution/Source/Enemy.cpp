@@ -4,6 +4,7 @@
 #include "ModuleCollisions.h"
 #include "ModuleParticles.h"
 #include "ModuleAudio.h"
+#include <SDL_mixer/include/SDL_mixer.h>
 #include "ModuleRender.h"
 #include "ModuleEnemies.h"
 #include "ModulePlayer.h"
@@ -51,8 +52,7 @@ void Enemy::Update()
 	}
 	if (tipo == Enemy_Type::BOSS && !win) {
 		if (cnt == 0) {
-			App->enemies->AddEnemy(Enemy_Type::STAGE, -20 + 250, App->render->camera.y + 50);
-			App->enemies->AddEnemy(Enemy_Type::CLEAR, SCREEN_WIDTH / 2 - 30 + 250, App->render->camera.y + 50);
+			
 			win = true;
 		}
 	}
@@ -373,8 +373,26 @@ void Enemy::OnCollision(Collider* collider)
 				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x - 65, position.y - 22, Collider::Type::NONE, 18);
 				//Añadir explosiones para disimular que hemos deleteado todos los enemigos : OPCION 1
 				
+				Mix_PauseMusic();
+				App->audio->PlayFx(App->player->winFx);
+				if (App->player->score > App->player->highscore) {
+					App->player->highscore = App->player->score;
+				}
+				App->player->score = 0;
+				App->player->lives = 3;
+
+				App->enemies->AddEnemy(Enemy_Type::STAGE, -20 + 250, App->render->camera.y + 50);
+				App->enemies->AddEnemy(Enemy_Type::CLEAR, SCREEN_WIDTH / 2 - 30 + 250, App->render->camera.y + 50);
+				//App->enemies->AddEnemy(Enemy_Type::MIYAMOTO, 90 + 250, App->render->camera.y - 80);
+
+
+				App->player->collider->type = Collider::Type::NONE;
+
+				App->player->start = SDL_GetTicks();
+				App->player->next = App->player->start + App->player->interval;
+				App->player->crack = !App->player->crack;
 				App->player->score += 10000;
-				App->enemies->Disable();
+				//App->enemies->Disable();
 
 				//ponerle la animacion de que esta derrotado 
 			}
