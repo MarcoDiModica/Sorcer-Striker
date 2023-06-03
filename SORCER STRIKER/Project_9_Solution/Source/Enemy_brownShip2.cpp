@@ -31,7 +31,6 @@ Enemy_BrownShip2::Enemy_BrownShip2(int x, int y) : Enemy(x, y)
 	collider = App->collisions->AddCollider({ position.x, position.y, 36, 34 }, Collider::Type::ENEMY, (Module*)App->enemies);
 }
 
-
 void Enemy_BrownShip2::Update()
 {
 	if (Anim2.HasFinished())
