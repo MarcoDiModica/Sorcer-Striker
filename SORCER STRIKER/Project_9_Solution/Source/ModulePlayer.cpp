@@ -107,7 +107,7 @@ bool ModulePlayer::Start()
 	loseFx = App->audio->LoadFx("Assets/Music/gameover.ogg");
 	coinFx = App->audio->LoadFx("Assets/Fx/coin.wav");
 	damageFx = App->audio->LoadFx("Assets/Fx/lose.wav");
-	bigexplioson = App->audio->LoadFx("Assets/Fx/BIG EXPLOSION.wav");
+	bigexplioson = App->audio->LoadFx("Assets/Fx/BIG-EXPLOSION.wav");
 	//lasthitFx = App->audio->LoadFx("Assets/Fx/lasthit.wav");
 
 	position.x = 63 + 250;
@@ -512,10 +512,6 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 			App->particles->AddParticle(App->particles->explosion, position.x - 7, position.y + 12, Collider::Type::NONE, 40);
 			App->particles->AddParticle(App->particles->explosion, position.x + 5, position.y - 5, Collider::Type::NONE, 28);
 			App->particles->AddParticle(App->particles->explosion, position.x - 4, position.y - 4, Collider::Type::NONE, 21);
-
-			/*App->audio->PlayFx(explosionFx);*/
-
-			
 
 			//Rumble the Gamepad when colliding
 			App->input->ShakeController(0, 110, 0.9f);

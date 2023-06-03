@@ -50,7 +50,7 @@ Enemy_BlueDragon::Enemy_BlueDragon(int x, int y) : Enemy(x, y)
 }
 
 void Enemy_BlueDragon::Update()
-{
+{  
 	if (position.y > (App->render->camera.y + 40)) {
 		position.y -= App->sceneLevel_1->aprendeaprogramar;
 	}

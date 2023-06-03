@@ -32,7 +32,7 @@ void Coin::Update()
 {
 	position.y += 1.5f;
 	
-	if (position.x >= App->player->position.x && position.x + 11 <= App->player->position.x + 32 && position.y + 11 >= App->player->position.y)
+	if (App->player->position.x < position.x + 15 && App->player->position.x + 32 > position.x && App->player->position.y < position.y + enemieH && App->player->position.y + 29 > position.y) 
 	{
 		App->player->score += 200;
 		App->audio->PlayFx(App->player->coinFx);
