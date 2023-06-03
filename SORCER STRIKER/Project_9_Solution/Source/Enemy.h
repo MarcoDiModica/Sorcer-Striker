@@ -40,6 +40,9 @@ public:
 	// The current position in the world
 	iPoint position;
 
+	float speedXshot;
+	float speedYshot;
+
 	// The enemy's texture
 	SDL_Texture* texture = nullptr;
 

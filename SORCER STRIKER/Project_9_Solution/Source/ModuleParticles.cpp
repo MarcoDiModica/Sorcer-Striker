@@ -230,6 +230,16 @@ bool ModuleParticles::Start()
 	enemieShotTANK2.anim.speed = 0.3f;
 	enemieShotTANK2.direction = man;
 
+	directionshot.anim.PushBack({ 20,201,13,13 });
+	directionshot.anim.PushBack({ 73,201,13,13 });
+	directionshot.anim.PushBack({ 56,201,13,13 });
+	directionshot.anim.PushBack({ 38,201,13,13 });
+
+	directionshot.lifetime = 120;
+	directionshot.anim.loop = true;
+	directionshot.anim.speed = 0.3f;
+	directionshot.direction = man;
+
 	BigExplosion.anim.PushBack({ 330,148,55,55 });
 	BigExplosion.anim.PushBack({ 400,148,55,55 });
 	BigExplosion.anim.PushBack({ 462,148,55,55 });

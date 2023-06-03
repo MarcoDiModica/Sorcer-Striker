@@ -62,16 +62,22 @@ void Enemy_BlueDragon::Update()
 
 	current = SDL_GetTicks();
 
-	if (current > next)
+	if (current > next && position.y < App->render->camera.y + 200 && position.y > App->render->camera.y)
 	{
-		App->particles->AddParticle(App->particles->enemieShot, position.x + (rand() % 51 + 30), position.y + 100, Collider::Type::ENEMY_SHOT);
-		App->particles->cocaina = static_cast<float>(std::rand()) / RAND_MAX * 2 + 1;
-		App->particles->AddParticle(App->particles->enemieShot2, position.x + (rand() % 51 + 30), position.y + 90, Collider::Type::ENEMY_SHOT);
-		App->particles->cocaina2 = static_cast<float>(std::rand()) / RAND_MAX * 2 + 1;
-		App->particles->AddParticle(App->particles->enemieShot3, position.x + (rand() % 51 + 30), position.y + 110, Collider::Type::ENEMY_SHOT);
-		App->particles->cocaina3 = static_cast<float>(std::rand()) / RAND_MAX * 2 + 1;
-		App->particles->AddParticle(App->particles->enemieShot4, position.x + (rand() % 51 + 30), position.y + 120, Collider::Type::ENEMY_SHOT);
-		App->particles->cocaina4 = static_cast<float>(std::rand()) / RAND_MAX * 2 + 1;
+		int a = App->sceneLevel_1->aprendeaprogramar;
+		speedXshot = (App->player->position.x + 1 - (position.x + 35)) / 60.0f;
+		speedYshot = (App->player->position.y + a - position.y) / 60.0f;
+
+		App->particles->directionshot.speed.x = speedXshot;
+		App->particles->directionshot.speed.y = speedYshot;
+		
+		App->particles->AddParticle(App->particles->directionshot, position.x + (rand() % 51 + 30), position.y + 100, Collider::Type::ENEMY_SHOT);
+		
+		App->particles->AddParticle(App->particles->directionshot, position.x + (rand() % 51 + 30), position.y + 90, Collider::Type::ENEMY_SHOT);
+		
+		App->particles->AddParticle(App->particles->directionshot, position.x + (rand() % 51 + 30), position.y + 110, Collider::Type::ENEMY_SHOT);
+		
+		App->particles->AddParticle(App->particles->directionshot, position.x + (rand() % 51 + 30), position.y + 120, Collider::Type::ENEMY_SHOT);
 		
 		interval = rand() % 1001 + 1000;
 		next = current + interval;
