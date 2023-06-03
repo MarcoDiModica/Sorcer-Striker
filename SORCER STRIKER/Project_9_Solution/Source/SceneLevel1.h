@@ -28,6 +28,7 @@ public:
 	Update_Status PostUpdate() override;
 	int aprendeaprogramar = 2;
 	int space = 250;
+	uint cuidado = 0;
 	Uint32 current;
 	Uint32 next;
 	Uint32 interval = 4000;

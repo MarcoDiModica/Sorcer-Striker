@@ -36,7 +36,7 @@ bool SceneLevel1::Start()
 	eldenboy = false;
 
 	App->audio->PlayMusic("Assets/Music/stage1.ogg", 1.0f);
-
+	cuidado = App->audio->LoadFx("Assets/Fx/Warning.wav");
 	App->particles->AddParticle(App->particles->tubo, 0 + space, 520, Collider::Type::NONE);
 	App->particles->AddParticle(App->particles->tubo, 0 + space, 250, Collider::Type::NONE);
 	App->particles->AddParticle(App->particles->tubo, 0 + space, -50, Collider::Type::NONE);
@@ -382,6 +382,7 @@ Update_Status SceneLevel1::Update()
 	}
 	if (App->render->camera.y == -8880)
 	{
+		App->audio->PlayFx(cuidado);
 		App->enemies->AddEnemy(Enemy_Type::WARNING, 20 + 250, -8900 - 40);
 		
 

@@ -5,6 +5,7 @@
 #include "ModuleRender.h"
 #include "ModuleAudio.h"
 #include "ModuleInput.h"
+#include "ModuleFonts.h"
 #include "ModuleFadeToBlack.h"
 #include "ModuleCollisions.h"
 #include <SDL_mixer/include/SDL_mixer.h>
@@ -29,8 +30,10 @@ bool SceneStageclear::Start()
 
 	Mix_PauseMusic();
 
-	bgTexture = App->textures->Load("Assets/Sprites/goodending.png");
+	bgTexture = App->textures->Load("Assets/Sprites/raizing.png");
 	/*App->audio->PlayMusic("Assets/Music/introTitle.ogg", 1.0f);*/
+	char lookupTable[] = { "! @,_./0123456789$;< ?abcdefghijklmnopqrstuvwxyz" };
+	insertFont = App->fonts->Load("Assets/Fonts/textocosa.png", lookupTable, 2);
 	App->audio->PlayFx(App->player->winFx);
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;
@@ -69,7 +72,23 @@ Update_Status SceneStageclear::Update()
 Update_Status SceneStageclear::PostUpdate()
 {
 	// Draw everything --------------------------------------
-	App->render->Blit(bgTexture, 0, 0, NULL);
+	App->render->Blit(bgTexture, 85, 247, NULL);
+	App->fonts->BlitText(100, 40, insertFont, "notice");
+	App->fonts->BlitText(20, 80, insertFont, "this game is for use in");
+
+	App->fonts->BlitText(20, 100, insertFont, "europe only.");
+	App->fonts->BlitText(20, 120, insertFont, "sales, export, or operation");
+	App->fonts->BlitText(20, 140, insertFont, "outside this territory");
+	App->fonts->BlitText(20, 160, insertFont, "may violate international");	
+	App->fonts->BlitText(20, 180, insertFont, "copyright and trademark");
+	App->fonts->BlitText(20, 200, insertFont, "laws and the violator");
+	App->fonts->BlitText(20, 220, insertFont, "subject to severe penalties.");
+	App->fonts->BlitText(52, 290, insertFont, "raizing co.,ltd. 1993");
+
+
+
+
+
 
 	return Update_Status::UPDATE_CONTINUE;
 }

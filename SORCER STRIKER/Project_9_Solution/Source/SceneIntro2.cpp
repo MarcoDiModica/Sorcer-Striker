@@ -51,7 +51,7 @@ Update_Status SceneIntro2::Update()
 
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN || pad.a == true)
 	{
-		App->fade->FadeToBlack(this, (Module*)App->sceneIntro3, 50);
+		App->fade->FadeToBlack(this, (Module*)App->sceneStageclear, 50);
 	}
 	
 	
@@ -61,7 +61,7 @@ Update_Status SceneIntro2::Update()
 
 	if (PabloArquitecto >= 14000)
 	{
-		App->fade->FadeToBlack(this, (Module*)App->sceneIntro3, 50);
+		App->fade->FadeToBlack(this, (Module*)App->sceneStageclear, 50);
 	}
 
 	return Update_Status::UPDATE_CONTINUE;
