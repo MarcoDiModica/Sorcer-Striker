@@ -32,7 +32,7 @@ private:
 
 	int spawn_y = 0;
 
-	int waveHeight = 0;
+	int waveHeight = 10;
 
 	Animation flyAnim;
 	

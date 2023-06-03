@@ -7,10 +7,11 @@
 #include "ModuleParticles.h"
 #include "Boss.h"
 #include <cstdlib>
+#include "SceneLevel1.h"
 
 BossLeft::BossLeft(int x, int y) :Enemy(x, y) {
 
-	cnt = 10;
+	cnt = 15;
 	tipo = Enemy_Type::BOSSLEFT;
 	enemieH = 123;
 
@@ -30,7 +31,6 @@ BossLeft::BossLeft(int x, int y) :Enemy(x, y) {
 void BossLeft::Update() {
 	position.y -= 0;
 
-	position.x = spawnPos.x + (waveHeight * sinf(waveRatio));
 
 	if (App->render->camera.y <= (-8525 - SCREEN_HEIGHT / 2))
 	{
@@ -47,27 +47,28 @@ void BossLeft::Update() {
 
 	if (cnt == 0) {
 		
-		App->particles->AddParticle(App->particles->enemieShot, position.x + (rand() % 51 + 30), position.y + 100, Collider::Type::ENEMY_SHOT);
-		App->particles->cocaina = static_cast<float>(std::rand()) / RAND_MAX * 2 + 1;
-		App->particles->AddParticle(App->particles->enemieShot2, position.x + (rand() % 51 + 30), position.y + 90, Collider::Type::ENEMY_SHOT);
-		App->particles->cocaina2 = static_cast<float>(std::rand()) / RAND_MAX * 2 + 1;
-		App->particles->AddParticle(App->particles->enemieShot3, position.x + (rand() % 51 + 30), position.y + 110, Collider::Type::ENEMY_SHOT);
-		App->particles->cocaina3 = static_cast<float>(std::rand()) / RAND_MAX * 2 + 1;
-		App->particles->AddParticle(App->particles->enemieShot4, position.x + (rand() % 51 + 30), position.y + 120, Collider::Type::ENEMY_SHOT);
-		App->particles->cocaina4 = static_cast<float>(std::rand()) / RAND_MAX * 2 + 1;
-		App->particles->AddParticle(App->particles->enemieShot, position.x + (rand() % 51 + 30), position.y + 130, Collider::Type::ENEMY_SHOT);
-		App->particles->cocaina5 = static_cast<float>(std::rand()) / RAND_MAX * 2 + 1;
-		App->particles->AddParticle(App->particles->enemieShot2, position.x + (rand() % 51 + 30), position.y + 150, Collider::Type::ENEMY_SHOT);
-		App->particles->cocaina6 = static_cast<float>(std::rand()) / RAND_MAX * 2 + 1;
-		App->particles->AddParticle(App->particles->enemieShot3, position.x + (rand() % 51 + 30), position.y + 150, Collider::Type::ENEMY_SHOT);
-		App->particles->cocaina7 = static_cast<float>(std::rand()) / RAND_MAX * 2 + 1;
-		App->particles->AddParticle(App->particles->enemieShot4, position.x + (rand() % 51 + 30), position.y + 160, Collider::Type::ENEMY_SHOT);
-		App->particles->cocaina8 = static_cast<float>(std::rand()) / RAND_MAX * 2 + 1;
+		int a = App->sceneLevel_1->aprendeaprogramar;
+		speedXshot = (App->player->position.x + 1 - (position.x + 35)) / 60.0f;
+		speedYshot = (App->player->position.y + a - position.y) / 60.0f;
+
+		App->particles->directionshot.speed.x = speedXshot;
+		App->particles->directionshot.speed.y = speedYshot;
+
+
+		App->particles->AddParticle(App->particles->directionshot, position.x + (rand() % 51 + 30), position.y + 80, Collider::Type::ENEMY_SHOT);
+		App->particles->AddParticle(App->particles->directionshot, position.x + (rand() % 51 + 30), position.y + 95, Collider::Type::ENEMY_SHOT);
+		App->particles->AddParticle(App->particles->directionshot, position.x + (rand() % 51 + 30), position.y + 160, Collider::Type::ENEMY_SHOT);
+		App->particles->AddParticle(App->particles->directionshot, position.x + (rand() % 51 + 30), position.y + 70, Collider::Type::ENEMY_SHOT);
+		App->particles->AddParticle(App->particles->directionshot, position.x + (rand() % 51 + 30), position.y + 100, Collider::Type::ENEMY_SHOT);
+		App->particles->AddParticle(App->particles->directionshot, position.x + (rand() % 51 + 30), position.y + 90, Collider::Type::ENEMY_SHOT);
+		App->particles->AddParticle(App->particles->directionshot, position.x + (rand() % 51 + 30), position.y + 110, Collider::Type::ENEMY_SHOT);
+		App->particles->AddParticle(App->particles->directionshot, position.x + (rand() % 51 + 30), position.y + 120, Collider::Type::ENEMY_SHOT);
 
 		cnt = -1;
 
 	}
 	
+	position.x = spawnPos.x + (waveHeight * sinf(waveRatio));
 
 	Enemy::Update();
 }
