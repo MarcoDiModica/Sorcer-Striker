@@ -369,14 +369,15 @@ Update_Status SceneLevel1::Update()
 		App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 5 + 250, -6100 - 400);
 		App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 5 + 250, -6150 - 400);
 
-	}
-
-
+	} 
 	
-	if (App->render->camera.y == -9300) {
-		App->enemies->AddEnemy(Enemy_Type::BOSSLEFT, 0 + 250 - 10, -9400);
-		App->enemies->AddEnemy(Enemy_Type::BOSS, 90 + 250 - 10, -9400);
-		App->enemies->AddEnemy(Enemy_Type::BOSSRIGHT, 180 + 250 - 10, -9400);
+	if (App->render->camera.y == -9150) {
+
+		App->enemies->AddEnemy(Enemy_Type::BOSSLEFT, 0 + 250 - 10, -9250);
+		App->enemies->AddEnemy(Enemy_Type::BOSS, 90 + 250 - 10, -9250);
+		App->enemies->AddEnemy(Enemy_Type::BOSSRIGHT, 180 + 250 - 10, -9250);
+
+		App->audio->PlayMusic("Assets/Music/boss.ogg", 0.0f);
 
 	}
 	if (App->render->camera.y == -8880)
