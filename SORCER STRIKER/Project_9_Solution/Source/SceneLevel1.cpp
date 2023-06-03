@@ -51,12 +51,9 @@ bool SceneLevel1::Start()
 	App->enemies->AddEnemy(Enemy_Type::BAG, 80 + 250, -1150);
 
 
-	
-
 	//chest//
 	App->enemies->AddEnemy(Enemy_Type::CHEST, 48 + 250, -1680);
 
-	
 
 	//mages //
 	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 160 + 250, -1450);
@@ -68,7 +65,7 @@ bool SceneLevel1::Start()
 	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP2, 80 + 250, -2400);
 
 	//bag//
-	App->enemies->AddEnemy(Enemy_Type::BAG, 140 + 250, -2300);
+	App->enemies->AddEnemy(Enemy_Type::BAG, 120 + 250, -2300);
 
 	
 	//more mages//
@@ -76,8 +73,8 @@ bool SceneLevel1::Start()
 	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP2, 80 + 250, -3060);
 
 	//bags//
-	App->enemies->AddEnemy(Enemy_Type::BAG, 85 + 250, -3500);
-	App->enemies->AddEnemy(Enemy_Type::BAG, 170 + 250, -3700);
+	App->enemies->AddEnemy(Enemy_Type::BAG, 70 + 250, -3500);
+	App->enemies->AddEnemy(Enemy_Type::BAG, 100 + 250, -3700);
 
 
 	//dragon//
@@ -94,7 +91,7 @@ bool SceneLevel1::Start()
 
 
 	//bag//
-	App->enemies->AddEnemy(Enemy_Type::BAG, 170 + 250, -5000);
+	App->enemies->AddEnemy(Enemy_Type::BAG, 110 + 250, -5000);
 
 	
 
