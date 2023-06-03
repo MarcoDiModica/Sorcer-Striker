@@ -31,7 +31,7 @@ Enemy_SingleTank::Enemy_SingleTank(int x, int y) : Enemy(x, y)
 	currentAnim = &Anim1;
 
 	//make the path
-	path.PushBack({ -0.5f, 0.0f }, 70);
+	path.PushBack({ -0.5f, 0.0f }, 40);
 	//make the path stop
 	path.PushBack({ 0.0f, 0.0f }, 1000);
 
