@@ -292,6 +292,8 @@ Update_Status ModulePlayer::Update()
 
 		App->enemies->AddEnemy(Enemy_Type::STAGE, -20 + 250, App->render->camera.y + 50);
 		App->enemies->AddEnemy(Enemy_Type::CLEAR, SCREEN_WIDTH / 2 - 30 + 250, App->render->camera.y + 50);
+		App->enemies->AddEnemy(Enemy_Type::TEXT, 84 + 250, App->render->camera.y + 178);
+		App->enemies->AddEnemy(Enemy_Type::MIYAMOTO, 90 + 250, App->render->camera.y + 80);
 		App->player->collider->type = Collider::Type::NONE;
 
 		start = SDL_GetTicks();
@@ -432,7 +434,8 @@ Update_Status ModulePlayer::Update()
 	}
 	if (App->input->keys[SDL_SCANCODE_L] == Key_State::KEY_DOWN && App->sceneLevel_1->eldenboy)
 	{
-		App->enemies->AddEnemy(Enemy_Type::WARNING, 20 + 250, App->render->camera.y +40);
+		App->enemies->AddEnemy(Enemy_Type::TEXT, 20 + 250, App->render->camera.y +40);
+		App->enemies->AddEnemy(Enemy_Type::MIYAMOTO, 20 + 250, App->render->camera.y + 80);
 	}
 	if (App->player->position.y==-8700)
 	{
