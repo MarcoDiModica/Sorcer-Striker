@@ -48,6 +48,7 @@ Enemy_SingleTank::Enemy_SingleTank(int x, int y) : Enemy(x, y)
 
 void Enemy_SingleTank::Update()
 {
+	position.x -= 1;
 	if (!mikados)
 	{
 		path.Update();

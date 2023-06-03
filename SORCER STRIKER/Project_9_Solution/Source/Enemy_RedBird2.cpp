@@ -22,7 +22,7 @@ Enemy_RedBird2::Enemy_RedBird2(int x, int y) : Enemy(x, y)
 
 void Enemy_RedBird2::Update()
 {
-	position.x += 1;
+	position.x += 1.5f;
 	position.y += 1;
 
 	if (position.y > (App->render->camera.y + SCREEN_HEIGHT + 50)) {

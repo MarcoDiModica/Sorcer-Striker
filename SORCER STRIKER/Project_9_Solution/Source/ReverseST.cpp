@@ -38,6 +38,8 @@ ReverseST::ReverseST(int x, int y) : Enemy(x, y)
 
 void ReverseST::Update()
 {
+	position.x += 1;
+
 	if (cnt == 1)
 	{
 		currentAnim = &Anim2;
