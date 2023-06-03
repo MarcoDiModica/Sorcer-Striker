@@ -30,6 +30,11 @@ ReverseST::ReverseST(int x, int y) : Enemy(x, y)
 
 	App->particles->man = -1;
 
+	//make the path
+	path.PushBack({ 0.5f, 0.0f }, 70);
+	//make the path stop
+	path.PushBack({ 0.0f, 0.0f }, 1000);
+
 	current = SDL_GetTicks();
 
 	collider = App->collisions->AddCollider({ position.x,position.y,36,34 }, Collider::Type::ITEM, (Module*)App->enemies);
@@ -38,8 +43,8 @@ ReverseST::ReverseST(int x, int y) : Enemy(x, y)
 
 void ReverseST::Update()
 {
-	position.x += 1;
-
+	path.Update();
+	position = spawnPos + path.GetRelativePosition();
 	if (cnt == 1)
 	{
 		currentAnim = &Anim2;
