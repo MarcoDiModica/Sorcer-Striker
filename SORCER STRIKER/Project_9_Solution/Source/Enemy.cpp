@@ -356,7 +356,7 @@ void Enemy::OnCollision(Collider* collider)
 				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x - 70, position.y + 5, Collider::Type::NONE, 31);
 				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x - 65, position.y - 22, Collider::Type::NONE, 18);
 				//Añadir explosiones para disimular que hemos deleteado todos los enemigos : OPCION 1
-				App->particles->Disable();
+				
 				App->enemies->Disable();
 				App->enemies->Enable();
 				
