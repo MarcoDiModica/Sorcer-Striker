@@ -53,13 +53,7 @@ void Enemy_SingleTank::Update()
 {
 	path.Update();
 	position = spawnPos + path.GetRelativePosition();
-	/*if (!mikados)
-	{
-		path.Update();
-		currentAnim = path.GetCurrentAnimation();
-		
-		mikados = true;
-	}*/
+	
 
 	if (cnt == 1)
 	{
