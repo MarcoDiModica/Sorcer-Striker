@@ -69,12 +69,34 @@ void Enemy_BlueDragon::Update()
 		speedYshot = (App->player->position.y - position.y) / 60.0f;
 		if (a == 1)
 		{
-
+			if (speedYshot < -2.5f)
+			{
+				speedYshot = -2.5f;
+			}
+			if (speedYshot > 2.5f)
+			{
+				speedYshot = 2.5f;
+			}
+			if (speedYshot == 0)
+			{
+				speedYshot += 0.5f;
+			}
+			
 		}
 		if (a == 2)
 		{
-			speedYshot -= 3;
-			speedXshot++;
+			if (speedYshot < -2.5f)
+			{
+				speedYshot = -2.5f;
+			}
+			if (speedYshot > 2.5f)
+			{
+				speedYshot = 2.5f;
+			}
+			if (speedYshot == 0)
+			{
+				speedYshot += 0.5f;
+			}
 		}
 
 		App->particles->directionshot.speed.x = speedXshot;

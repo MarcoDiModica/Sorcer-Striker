@@ -69,7 +69,18 @@ void Enemy_BrownShip::Update()
 			}
 			if (a == 2)
 			{
-				speedYshot -= 3;
+				if (speedYshot < -2.5f)
+				{
+					speedYshot = -2.5f;
+				}
+				if (speedYshot > 2.5f)
+				{
+					speedYshot = 2.5f;
+				}
+				if (speedYshot == 0)
+				{
+					speedYshot += 0.5f;
+				}
 				speedXshot++;
 			}
 

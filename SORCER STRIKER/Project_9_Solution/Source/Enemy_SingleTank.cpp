@@ -82,11 +82,33 @@ void Enemy_SingleTank::Update()
 		speedYshot = (App->player->position.y + a - position.y) / 60.0f;
 		if (a == 1)
 		{
-
+			if (speedYshot < -2.5f)
+			{
+				speedYshot = -2.5f;
+			}
+			if (speedYshot > 2.5f)
+			{
+				speedYshot = 2.5f;
+			}
+			if (speedYshot == 0)
+			{
+				speedYshot += 0.5f;
+			}
 		}
 		if (a == 2)
 		{
-			speedYshot--;
+			if (speedYshot < -2.5f)
+			{
+				speedYshot = -2.5f;
+			}
+			if (speedYshot > 2.5f)
+			{
+				speedYshot = 2.5f;
+			}
+			if (speedYshot == 0)
+			{
+				speedYshot += 0.5f;
+			}
 			speedXshot++;
 		}
 
