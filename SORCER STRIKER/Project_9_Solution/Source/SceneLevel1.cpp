@@ -171,7 +171,7 @@ bool SceneLevel1::Start()
 
 
 	App->enemies->AddEnemy(Enemy_Type::DOUBLETANK, 160 + 250, -6910 - 950);
-	App->enemies->AddEnemy(Enemy_Type::DOUBLETANK, 160 + 250, -7020 - 950);
+	
 
 
 
@@ -292,14 +292,14 @@ Update_Status SceneLevel1::Update()
 
 	if (App->render->camera.y == -6460 - 930) {
 
-		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 130 + 250, -6470 - 930);
+		
 		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 170 + 250, -6470 - 930);
 		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -6470 - 930);
 	}
 	
 	if (App->render->camera.y == -6690 - 950) {
 		App->enemies->AddEnemy(Enemy_Type::REVERSEST, 10 + 250, -6700 - 950);
-		App->enemies->AddEnemy(Enemy_Type::REVERSEST, 50 + 250, -6700 - 950);
+		
 	}
 	
 	if (App->render->camera.y == -6890 - 950) {
@@ -308,7 +308,7 @@ Update_Status SceneLevel1::Update()
 	}
 	if (App->render->camera.y == -7260 - 950) {
 		App->enemies->AddEnemy(Enemy_Type::REVERSEST, 50 + 250, -7270 - 950);
-		App->enemies->AddEnemy(Enemy_Type::REVERSEST, 5 + 250, -7270 - 950);
+		
 	}
 
 	if (App->render->camera.y == -7180 - 925) {
