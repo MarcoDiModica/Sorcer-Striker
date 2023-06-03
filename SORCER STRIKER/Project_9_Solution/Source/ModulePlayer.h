@@ -112,6 +112,7 @@ public:
 	uint loseFx = 0;
 	uint coinFx = 0;
 	 uint damageFx = 0; 
+	 uint muerteFx = 0;
 	// uint lasthitFX = 0;
 
 	// Font score index

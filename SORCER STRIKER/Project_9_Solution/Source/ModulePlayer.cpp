@@ -100,6 +100,7 @@ bool ModulePlayer::Start()
 	//win = App->textures->Load("Assets/Sprites/Stage_Clear.png");
 	currentAnimation = &idleAnim;
 	
+	muerteFx = App->audio->LoadFx("Assets/Fx/muerte.wav");
 	laserFx = App->audio->LoadFx("Assets/Fx/laser.wav");
 	explosionFx = App->audio->LoadFx("Assets/Fx/explosion.wav");
 	winFx = App->audio->LoadFx("Assets/Music/win.ogg");
@@ -511,7 +512,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 			App->particles->AddParticle(App->particles->explosion, position.x + 5, position.y - 5, Collider::Type::NONE, 28);
 			App->particles->AddParticle(App->particles->explosion, position.x - 4, position.y - 4, Collider::Type::NONE, 21);
 
-			App->audio->PlayFx(explosionFx);
+			/*App->audio->PlayFx(explosionFx);*/
 
 			
 
@@ -534,7 +535,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 
 			else if (lives > 0)
 			{
-				App->audio->PlayFx(damageFx);
+				App->audio->PlayFx(muerteFx);
 				lives -= 1;
 				currentTime = SDL_GetTicks();
 				nextNotificationTime = currentTime + intervalo;
