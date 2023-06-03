@@ -51,16 +51,22 @@ void Enemy_BlueDragon2::Update()
 
 	current = SDL_GetTicks();
 
-	if (current > next)
+	if (current > next && position.y < App->render->camera.y + 200 && position.y > App->render->camera.y)
 	{
-		App->particles->cocaina5 = static_cast<float>(rand()) / RAND_MAX * -2 - 1;
-		App->particles->AddParticle(App->particles->enemieShot5, position.x + (rand() % 51 + 30), position.y + 100, Collider::Type::ENEMY_SHOT);
-		App->particles->cocaina6 = static_cast<float>(rand()) / RAND_MAX * -2 - 1;
-		App->particles->AddParticle(App->particles->enemieShot6, position.x + (rand() % 51 + 30), position.y + 90, Collider::Type::ENEMY_SHOT);
-		App->particles->cocaina7 = static_cast<float>(rand()) / RAND_MAX * -2 - 1;
-		App->particles->AddParticle(App->particles->enemieShot7, position.x + (rand() % 51 + 30), position.y + 110, Collider::Type::ENEMY_SHOT);
-		App->particles->cocaina8 = static_cast<float>(rand()) / RAND_MAX * -2 - 1;
-		App->particles->AddParticle(App->particles->enemieShot8, position.x + (rand() % 51 + 30), position.y + 120, Collider::Type::ENEMY_SHOT);
+		int a = App->sceneLevel_1->aprendeaprogramar;
+		speedXshot = (App->player->position.x + 1 - (position.x + 35)) / 60.0f;
+		speedYshot = (App->player->position.y + a - position.y) / 60.0f;
+
+		App->particles->directionshot.speed.x = speedXshot;
+		App->particles->directionshot.speed.y = speedYshot;
+
+		App->particles->AddParticle(App->particles->directionshot, position.x + (rand() % 51 + 30), position.y + 100, Collider::Type::ENEMY_SHOT);
+		
+		App->particles->AddParticle(App->particles->directionshot, position.x + (rand() % 51 + 30), position.y + 90, Collider::Type::ENEMY_SHOT);
+		
+		App->particles->AddParticle(App->particles->directionshot, position.x + (rand() % 51 + 30), position.y + 110, Collider::Type::ENEMY_SHOT);
+		
+		App->particles->AddParticle(App->particles->directionshot, position.x + (rand() % 51 + 30), position.y + 120, Collider::Type::ENEMY_SHOT);
 		
 
 		interval = rand() % 1501 + 1500;

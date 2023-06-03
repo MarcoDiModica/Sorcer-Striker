@@ -5,6 +5,7 @@
 #include "ModuleRender.h"
 #include "ModulePlayer.h"
 #include "ModuleParticles.h"
+#include "SceneLevel1.h"
 
 Enemy_DoubleTank::Enemy_DoubleTank(int x, int y) : Enemy(x, y)
 {
@@ -56,10 +57,16 @@ void Enemy_DoubleTank::Update()
 
 	current = SDL_GetTicks();
 
-	if (current > next && cnt > 2)
+	if (current > next && cnt > 2 && position.y < App->render->camera.y + 200 && position.y > App->render->camera.y)
 	{
-		App->particles->AddParticle(App->particles->enemieShotTANK, position.x + 25, position.y + 12);
-		App->particles->AddParticle(App->particles->enemieShotTANK, position.x + 55, position.y + 12);
+		int a = App->sceneLevel_1->aprendeaprogramar;
+		speedXshot = (App->player->position.x + 1 - (position.x + 35)) / 60.0f;
+		speedYshot = (App->player->position.y + a - position.y) / 60.0f;
+
+		App->particles->directionshot.speed.x = speedXshot;
+		App->particles->directionshot.speed.y = speedYshot;
+		App->particles->AddParticle(App->particles->directionshot, position.x + 25, position.y + 12, Collider::Type::ENEMY_SHOT);
+		App->particles->AddParticle(App->particles->directionshot, position.x + 55, position.y + 12, Collider::Type::ENEMY_SHOT);
 
 		interval = rand() % 1501 + 1500;
 		next = current + interval;
