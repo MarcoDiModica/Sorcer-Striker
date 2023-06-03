@@ -87,7 +87,7 @@ void Enemy_SingleTank::Update()
 		App->particles->directionshot.speed.x = speedXshot;
 		App->particles->directionshot.speed.y = speedYshot;
 		
-		App->particles->AddParticle(App->particles->directionshot, position.x + 13, position.y + 12);
+		App->particles->AddParticle(App->particles->directionshot, position.x + 13, position.y + 12, Collider::Type::ENEMY_SHOT);
 
 		interval = rand() % 1201 + 1200;
 		next = current + interval;
