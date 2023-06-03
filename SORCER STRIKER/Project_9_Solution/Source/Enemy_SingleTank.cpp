@@ -54,7 +54,6 @@ void Enemy_SingleTank::Update()
 	path.Update();
 	position = spawnPos + path.GetRelativePosition();
 	
-
 	if (cnt == 1)
 	{
 		currentAnim = &Anim2;

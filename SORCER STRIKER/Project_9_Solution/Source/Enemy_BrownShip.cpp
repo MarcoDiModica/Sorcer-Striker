@@ -58,7 +58,7 @@ void Enemy_BrownShip::Update()
 	{
 		current = SDL_GetTicks();
 
-		if (current > next)
+		if (current > next && position.y < App->render->camera.y + 200 && position.y + enemieH> App->render->camera.y)
 		{
 			int a = App->sceneLevel_1->aprendeaprogramar;
 			speedXshot = (App->player->position.x + 1 - (position.x + 35)) / 60.0f;

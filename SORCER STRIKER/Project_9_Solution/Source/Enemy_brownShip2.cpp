@@ -25,12 +25,17 @@ Enemy_BrownShip2::Enemy_BrownShip2(int x, int y) : Enemy(x, y)
 	Anim3.speed = 0.2f;
 	Anim3.loop = false;
 
-	currentAnim = &Anim1;
+	turnAnim1.PushBack({ 90,48,36,34 });
+	turnAnim1.loop = true;
+	
+	turnAnim2.PushBack({ 88,7,36,34 });
+	turnAnim2.loop = true;
 
+	currentAnim = &Anim1;
 
 	collider = App->collisions->AddCollider({ position.x, position.y, 36, 34 }, Collider::Type::ENEMY, (Module*)App->enemies);
 }
-
+ 
 void Enemy_BrownShip2::Update()
 {
 	if (Anim2.HasFinished())
@@ -42,16 +47,15 @@ void Enemy_BrownShip2::Update()
 		position.y -= App->sceneLevel_1->aprendeaprogramar;
 	}
 
-	if (position.y == App->render->camera.y)
+	if (position.y > 254)
 	{
-		next = current + interval;
-	}
-
-	if (position.y > App->render->camera.y)
-	{
-		current = SDL_GetTicks();
-
-		if (current > next && position.y > (App->render->camera.y + 60))
+		if (position.y > (App->render->camera.y + 50))
+		{
+			position.x += 1;
+			currentAnim = &turnAnim2;
+		}
+		
+		if (position.y == (App->render->camera.y + 50))
 		{
 			int a = App->sceneLevel_1->aprendeaprogramar;
 			speedXshot = (App->player->position.x + 1 - (position.x + 35)) / 60.0f;
@@ -70,11 +74,38 @@ void Enemy_BrownShip2::Update()
 			App->particles->EnemyL.speed.y = speedYshot;
 
 			App->particles->AddParticle(App->particles->EnemyL, position.x + 8, position.y + 10, Collider::Type::ENEMY_SHOT);
-			interval = rand() % 2001 + 2000;
-			next = current + interval;
 		}
 	}
+	else
+	{
+		if (position.y > (App->render->camera.y + 50))
+		{
+			position.x -= 1;
+			currentAnim = &turnAnim1;
+			
+		}
 
+		if (position.y == (App->render->camera.y + 50))
+		{
+			int a = App->sceneLevel_1->aprendeaprogramar;
+			speedXshot = (App->player->position.x + 1 - (position.x + 35)) / 60.0f;
+			speedYshot = (App->player->position.y + a - position.y) / 60.0f;
+			if (a == 1)
+			{
+
+			}
+			if (a == 2)
+			{
+				speedYshot -= 2;
+				speedXshot++;
+			}
+
+			App->particles->EnemyL.speed.x = speedXshot;
+			App->particles->EnemyL.speed.y = speedYshot;
+
+			App->particles->AddParticle(App->particles->EnemyL, position.x + 8, position.y + 10, Collider::Type::ENEMY_SHOT);
+		}
+	}
 
 	Enemy::Update();
 }

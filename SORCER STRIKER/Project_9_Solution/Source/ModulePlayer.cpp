@@ -408,9 +408,9 @@ Update_Status ModulePlayer::Update()
 
 	if (App->input->keys[SDL_SCANCODE_N] == Key_State::KEY_DOWN && App->sceneLevel_1->eldenboy)
 	{
-		App->player->position.y = -8590;
-		App->render->camera.y = -8525 - SCREEN_HEIGHT / 2;
-		App->player->OPTMIZENELJUEGUITO = -8525 - SCREEN_HEIGHT / 2;
+		App->player->position.y = -8640;
+		App->render->camera.y = -8575 - SCREEN_HEIGHT / 2;
+		App->player->OPTMIZENELJUEGUITO = -8575 - SCREEN_HEIGHT / 2;
 	}
 
     // If no up/down movement detected, set the current animation back to idle
@@ -455,6 +455,11 @@ Update_Status ModulePlayer::Update()
 		App->enemies->AddEnemy(Enemy_Type::TEXT, 20 + 250, App->render->camera.y +40);
 		App->enemies->AddEnemy(Enemy_Type::MIYAMOTO, 20 + 250, App->render->camera.y + 80);
 		
+	}
+
+	if (App->input->keys[SDL_SCANCODE_P] == Key_State::KEY_DOWN && App->sceneLevel_1->eldenboy)
+	{
+		App->enemies->AddEnemy(Enemy_Type::BROWNSHIP2, 20 + 250, App->render->camera.y - 40);
 	}
 	
 
