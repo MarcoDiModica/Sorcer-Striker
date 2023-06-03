@@ -247,7 +247,7 @@ Update_Status SceneLevel1::Update()
 	}
 
 
-
+	
 
 	//tanks//
 	if (App->render->camera.y == -5580 - 400) {
@@ -371,12 +371,26 @@ Update_Status SceneLevel1::Update()
 
 	}
 
+
+	
 	if (App->render->camera.y == -9300) {
 		App->enemies->AddEnemy(Enemy_Type::BOSSLEFT, 0 + 250 - 10, -9400);
 		App->enemies->AddEnemy(Enemy_Type::BOSS, 90 + 250 - 10, -9400);
 		App->enemies->AddEnemy(Enemy_Type::BOSSRIGHT, 180 + 250 - 10, -9400);
-	}
 
+	}
+	if (App->render->camera.y == -8880)
+	{
+		App->enemies->AddEnemy(Enemy_Type::WARNING, 20 + 250, -8900 - 40);
+		
+
+	}
+	if (App->render->camera.y == -8960)
+	{
+		
+		App->enemies->AddEnemy(Enemy_Type::ARROW, 110 + 250, -8960 + 35);
+
+	}
 	if (App->render->camera.y <= -5930)
 	{
 		App->render->camera.y += 1;
