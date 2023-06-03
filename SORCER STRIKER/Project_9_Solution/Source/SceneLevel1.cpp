@@ -250,7 +250,7 @@ Update_Status SceneLevel1::Update()
 	
 
 	//tanks//
-	if (App->render->camera.y == -5580 - 400) {
+	if (App->render->camera.y == -5540 - 400) {
 		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 155 + 250, -5590 - 400);
 		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 195 + 250, -5590 - 400);
 		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 235 + 250, -5590 - 400);
@@ -262,7 +262,7 @@ Update_Status SceneLevel1::Update()
 	}
 
 
-	if (App->render->camera.y == -5845 - 900) {
+	if (App->render->camera.y == -5830 - 900) {
 		
 		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 225 + 250, -5850 - 900);
 		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 225 + 250, -5890 - 900);
@@ -277,7 +277,7 @@ Update_Status SceneLevel1::Update()
 		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 225 + 250, -6040 - 900);
 	}
 
-	if (App->render->camera.y == -5845 - 900) {
+	if (App->render->camera.y == -5830 - 900) {
 
 		App->enemies->AddEnemy(Enemy_Type::REVERSEST, 0 + 250, -5850 - 900);
 		App->enemies->AddEnemy(Enemy_Type::REVERSEST, 0 + 250, -5890 - 900);
