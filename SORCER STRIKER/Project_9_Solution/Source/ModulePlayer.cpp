@@ -41,14 +41,14 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
 	leftAnim.PushBack({ 85, 153, 28, 29 });
 	leftAnim.PushBack({ 113, 153, 24, 29 });
 	leftAnim.loop = false;
-	leftAnim.speed = 0.1f;
+	leftAnim.speed = 0.2f;
 
 	// Move rightwards
 	idleAnim.PushBack({ 138, 154, 32, 29 });
 	rightAnim.PushBack({ 126, 65, 28, 29 });
 	rightAnim.PushBack({ 101, 66, 24, 29 });
 	rightAnim.loop = false;
-	rightAnim.speed = 0.1f;
+	rightAnim.speed = 0.2f;
 
 	idleAnim.PushBack({ 138, 154, 32, 29 });
 	bright1.PushBack({ 241, 154, 32, 29 });
@@ -85,7 +85,7 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
 	// 0
 	flip.PushBack({ 138, 154, 32, 29 });
 	flip.loop = false;
-	flip.speed = 0.2f;
+	flip.speed = 0.3f;
 
 	
 }
