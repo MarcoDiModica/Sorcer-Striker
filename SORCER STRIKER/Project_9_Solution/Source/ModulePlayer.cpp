@@ -450,12 +450,7 @@ Update_Status ModulePlayer::Update()
 		}
 	}
 	
-	if (App->input->keys[SDL_SCANCODE_L] == Key_State::KEY_DOWN && App->sceneLevel_1->eldenboy)
-	{
-		App->enemies->AddEnemy(Enemy_Type::TEXT, 20 + 250, App->render->camera.y +40);
-		App->enemies->AddEnemy(Enemy_Type::MIYAMOTO, 20 + 250, App->render->camera.y + 80);
-		
-	}
+	
 
 	if (App->input->keys[SDL_SCANCODE_P] == Key_State::KEY_DOWN && App->sceneLevel_1->eldenboy)
 	{
