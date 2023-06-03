@@ -201,7 +201,7 @@ void Enemy::OnCollision(Collider* collider)
 		if (tipo == Enemy_Type::BlUEDRAGON)
 		{
 			if (cnt == 0) {
-				App->audio->PlayFx(destroyedFx);
+				App->audio->PlayFx(App->player->bigexplioson);
 				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 20, position.y + 20);
 
 				App->player->score += 100;
@@ -219,7 +219,7 @@ void Enemy::OnCollision(Collider* collider)
 		if (tipo == Enemy_Type::BlUEDRAGON2)
 		{
 			if (cnt == 0) {
-				App->audio->PlayFx(destroyedFx);
+				App->audio->PlayFx(App->player->bigexplioson);
 				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 20, position.y + 20);
 
 				App->player->score += 100;
@@ -298,7 +298,7 @@ void Enemy::OnCollision(Collider* collider)
 		if (tipo == Enemy_Type::BOSSLEFT)
 		{
 			if (cnt == 0) {
-
+				App->audio->PlayFx(App->player->bigexplioson);
 				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 45, position.y);
 				App->particles->AddParticle(App->particles->explosion, position.x + 30, position.y - 8);
 				App->particles->AddParticle(App->particles->explosion, position.x + 25, position.y + 25);
@@ -317,7 +317,7 @@ void Enemy::OnCollision(Collider* collider)
 		if (tipo == Enemy_Type::BOSSRIGHT)
 		{
 			if (cnt == 0) {
-
+				App->audio->PlayFx(App->player->bigexplioson);
 				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 25, position.y);
 				App->particles->AddParticle(App->particles->explosion, position.x + 10, position.y - 8);
 				App->particles->AddParticle(App->particles->explosion, position.x + 5, position.y + 25);
@@ -336,7 +336,7 @@ void Enemy::OnCollision(Collider* collider)
 		if (tipo == Enemy_Type::BOSS)
 		{
 			if (cnt == 0) {
-				App->audio->PlayFx(destroyedFx, 7);
+				App->audio->PlayFx(App->player->bigexplioson, 2);
 				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x - 25, position.y, Collider::Type::NONE, 9);
 				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x, position.y, Collider::Type::NONE, 12);
 				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 25, position.y, Collider::Type::NONE, 15);

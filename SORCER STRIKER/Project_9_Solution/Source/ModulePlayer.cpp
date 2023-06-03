@@ -106,6 +106,7 @@ bool ModulePlayer::Start()
 	loseFx = App->audio->LoadFx("Assets/Music/gameover.ogg");
 	coinFx = App->audio->LoadFx("Assets/Fx/coin.wav");
 	damageFx = App->audio->LoadFx("Assets/Fx/lose.wav");
+	bigexplioson = App->audio->LoadFx("Assets/Fx/BIG EXPLOSION.wav");
 	//lasthitFx = App->audio->LoadFx("Assets/Fx/lasthit.wav");
 
 	position.x = 63 + 250;

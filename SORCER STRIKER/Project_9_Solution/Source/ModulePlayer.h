@@ -111,7 +111,8 @@ public:
 	uint winFx = 0;
 	uint loseFx = 0;
 	uint coinFx = 0;
-	 uint damageFx = 0; 
+	uint damageFx = 0;
+	uint bigexplioson = 0;
 	// uint lasthitFX = 0;
 
 	// Font score index
