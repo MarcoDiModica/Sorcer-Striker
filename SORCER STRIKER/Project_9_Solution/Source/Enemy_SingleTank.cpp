@@ -10,7 +10,7 @@
 Enemy_SingleTank::Enemy_SingleTank(int x, int y) : Enemy(x, y) 
 {
 
-	cnt = 6;
+	cnt = 5;
 	tipo = Enemy_Type::SINGLETANK;
 	enemieH = 34;
 
@@ -82,13 +82,13 @@ void Enemy_SingleTank::Update()
 		speedYshot = (App->player->position.y + a - position.y) / 60.0f;
 		if (a == 1)
 		{
-			if (speedYshot < -2.5f)
+			if (speedYshot < -2)
 			{
-				speedYshot = -2.5f;
+				speedYshot = -2;
 			}
-			if (speedYshot > 2.5f)
+			if (speedYshot > 2)
 			{
-				speedYshot = 2.5f;
+				speedYshot = 2;
 			}
 			if (speedYshot == 0)
 			{
@@ -117,7 +117,7 @@ void Enemy_SingleTank::Update()
 		
 		App->particles->AddParticle(App->particles->directionshot, position.x + 13, position.y + 12, Collider::Type::ENEMY_SHOT);
 
-		interval = rand() % 1201 + 1200;
+		interval = rand() % 2001 + 2000;
 		next = current + interval;
 	}
 

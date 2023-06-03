@@ -102,9 +102,20 @@ void Enemy::OnCollision(Collider* collider)
 
 		if (tipo == Enemy_Type::BROWNSHIP2)
 		{
-			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
-			App->audio->PlayFx(destroyedFx);
-			App->player->score += 50;
+			if (cnt == 0)
+			{
+				App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+				App->audio->PlayFx(destroyedFx);
+				App->player->score += 50;
+
+				SetToDelete();
+			}
+			else
+			{
+				App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+				App->audio->PlayFx(destroyedFx);
+				App->player->score += 10;
+			}
 		}
 
 		if (tipo == Enemy_Type::BAG)

@@ -104,7 +104,7 @@ void ReverseDT::Update()
 		App->particles->AddParticle(App->particles->directionshot, position.x + 25, position.y + 12, Collider::Type::ENEMY_SHOT);
 		App->particles->AddParticle(App->particles->directionshot, position.x + 55, position.y + 12, Collider::Type::ENEMY_SHOT);
 
-		interval = rand() % 1501 + 1500;
+		interval = rand() % 2001 + 2000;
 		next = current + interval;
 	}
 
