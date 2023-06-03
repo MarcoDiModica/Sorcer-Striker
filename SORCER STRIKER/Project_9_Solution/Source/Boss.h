@@ -17,7 +17,6 @@ public:
 
 	void Update();
 
-
 private:
 
 	Path path;

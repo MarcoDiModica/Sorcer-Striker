@@ -30,11 +30,20 @@ BossRight::BossRight(int x, int y) :Enemy(x, y) {
 }
 
 void BossRight::Update() {
-	position.y -= 0;
+	position.y += 0;
 
-	if (App->render->camera.y <= (-8525 - SCREEN_HEIGHT / 2))
-	{
+	if (position.y > App->render->camera.y + 30) {
 		position.y -= 1;
+	}
+	
+	tracker += 1;
+
+	if ((tracker == 1000 || tracker == 3000) && cnt > 0) {
+		App->particles->AddParticle(App->particles->flamethrower, position.x + 7, position.y, Collider::Type::ENEMY_SHOT, 80);
+		App->particles->AddParticle(App->particles->flamethrower, position.x + 7, position.y, Collider::Type::ENEMY_SHOT, 90);
+		App->particles->AddParticle(App->particles->flamethrower, position.x + 7, position.y, Collider::Type::ENEMY_SHOT, 110);
+		App->particles->AddParticle(App->particles->flamethrower, position.x + 7, position.y, Collider::Type::ENEMY_SHOT, 120);
+		App->particles->AddParticle(App->particles->flamethrower, position.x + 7, position.y, Collider::Type::ENEMY_SHOT, 130);
 	}
 
 	waveRatio += waveRatioSpeed;
@@ -50,7 +59,7 @@ void BossRight::Update() {
 
 		int a = App->sceneLevel_1->aprendeaprogramar;
 		speedXshot = (App->player->position.x + 1 - (position.x + 35)) / 60.0f;
-		speedYshot = (App->player->position.y + a - position.y) / 60.0f;
+		speedYshot = 3;
 
 		App->particles->directionshot.speed.x = speedXshot;
 		App->particles->directionshot.speed.y = speedYshot;

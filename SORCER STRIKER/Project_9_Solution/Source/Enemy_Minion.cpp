@@ -43,7 +43,7 @@ void Enemy_Minion::Update() {
 
 	if (state == State::MovingUp) {
 			
-			position.x -= 1;
+			position.x -= 2;
 			position.y -= 2;
 
 		if (position.y <= initialY - distanceUp) {
@@ -59,7 +59,7 @@ void Enemy_Minion::Update() {
 	else {
 		if (state == State::MovingUp) {
 			
-			position.x += 1;
+			position.x += 2;
 			position.y -= 2;
 
 			if (position.y <= initialY - distanceUp) {

@@ -15,7 +15,6 @@ public:
 	void Update();
 
 	Animation dedge;
-
 	
 private:
 

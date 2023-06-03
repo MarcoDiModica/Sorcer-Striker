@@ -255,7 +255,19 @@ bool ModuleParticles::Start()
 	InsaneEXplosion.anim.loop = false;
 	InsaneEXplosion.anim.speed = 0.2f;
 
-	flamethrower.anim.PushBack({324,319, });
+	flamethrower.anim.PushBack({ 323,329,20,18 });
+	flamethrower.anim.PushBack({ 349,327,22,21 });
+	flamethrower.anim.PushBack({376,320,27,32});
+	flamethrower.anim.PushBack({ 410,318,33,38 });
+	flamethrower.anim.PushBack({ 410,318,33,38 });
+	flamethrower.anim.PushBack({ 448,322,34,33 });
+	flamethrower.anim.PushBack({ 448,322,34,33 });
+
+	flamethrower.speed.y = 2;
+	flamethrower.lifetime = 120;
+	flamethrower.anim.loop = false;
+	flamethrower.anim.speed = 0.1f;
+
 	
 	return true;
 }

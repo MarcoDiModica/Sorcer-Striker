@@ -53,6 +53,8 @@ public:
 
 	int enemieH;
 
+	uint tracker;
+
 	// A flag for the enemy removal. Important! We do not delete objects instantly
 	bool pendingToDelete = false;
 

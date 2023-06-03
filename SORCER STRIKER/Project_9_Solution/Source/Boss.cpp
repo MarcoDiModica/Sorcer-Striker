@@ -39,47 +39,40 @@ void Boss::Update() {
 
 	position.y -= 0;
 
-	if (position.y == App->render->camera.y) {
-		next = current + spawnInterval;
-	}
-
-	if (spawnInterval <= 0) {
-
-
-		spawnInterval = 1000;
-	}
-
-	if (App->render->camera.y <= (-8525 - SCREEN_HEIGHT / 2))
-	{
+	if (position.y > App->render->camera.y + 30) {
 		position.y -= 1;
 	}
+
+	
+     tracker += 1;
+
+	 if ((tracker == 1000||tracker == 3000) && cnt>0) {
+		 App->particles->AddParticle(App->particles->flamethrower, position.x + 42, position.y, Collider::Type::ENEMY_SHOT, 80);
+		 App->particles->AddParticle(App->particles->flamethrower, position.x + 42, position.y, Collider::Type::ENEMY_SHOT, 90);
+		 App->particles->AddParticle(App->particles->flamethrower, position.x + 42, position.y, Collider::Type::ENEMY_SHOT, 110);
+		 App->particles->AddParticle(App->particles->flamethrower, position.x + 42, position.y, Collider::Type::ENEMY_SHOT, 120);
+		 App->particles->AddParticle(App->particles->flamethrower, position.x + 42, position.y, Collider::Type::ENEMY_SHOT, 130);
+	 }
+	
 
 	waveRatio += waveRatioSpeed;
 
 	current = SDL_GetTicks();
 
-	
-	
 
-	if (current > next && App->render->camera.y < -8800) {
-		App->enemies->AddEnemy(Enemy_Type::MINION, position.x + (rand() % 25 + 20), position.y);
-		App->enemies->AddEnemy(Enemy_Type::MINION, position.x + (rand() % 12 + 5), position.y - (rand() % 5));
+	if (current > next && App->render->camera.y < -9200) {
+		App->enemies->AddEnemy(Enemy_Type::MINION, position.x + (rand() % 25 + 20), position.y+rand()%10);
+		App->enemies->AddEnemy(Enemy_Type::MINION, position.x + (rand() % 12 + 5), position.y - (rand() % 10));
 		
 		spawnInterval = 1000;
 		next = current + spawnInterval;
 	}
 
-	if (cnt == 5) {
+	if (cnt == 0) {
 
 		currentAnim = &dedge;
 
 	}
-
-	if (cnt == 20) {
-
-		
-	}
-	
 
 	position.x = spawnPos.x + (waveHeight * sinf(waveRatio));
 

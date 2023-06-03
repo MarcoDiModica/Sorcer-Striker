@@ -16,10 +16,6 @@ public:
 
 	Animation dedge;
 
-	void DestroyRight() {
-		cnt = 0;
-	}
-
 private:
 
 	Path path;
