@@ -301,11 +301,11 @@ void Enemy::OnCollision(Collider* collider)
 		{
 			if (cnt == 0) {
 				App->audio->PlayFx(App->player->bigexplioson);
-				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 45, position.y);
-				App->particles->AddParticle(App->particles->explosion, position.x + 30, position.y - 8);
-				App->particles->AddParticle(App->particles->explosion, position.x + 25, position.y + 25);
-				App->particles->AddParticle(App->particles->BigExplosion, position.x + 60, position.y + 60);
-				App->particles->AddParticle(App->particles->explosion, position.x + 65, position.y - 10);
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 40, position.y);
+				App->particles->AddParticle(App->particles->explosion, position.x + 25, position.y - 8);
+				App->particles->AddParticle(App->particles->explosion, position.x + 20, position.y + 25);
+				App->particles->AddParticle(App->particles->BigExplosion, position.x + 55, position.y + 60);
+				App->particles->AddParticle(App->particles->explosion, position.x + 60, position.y - 10);
 				App->player->score += 1000;
 			}
 			else
@@ -320,11 +320,11 @@ void Enemy::OnCollision(Collider* collider)
 		{
 			if (cnt == 0) {
 				App->audio->PlayFx(App->player->bigexplioson);
-				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 25, position.y);
-				App->particles->AddParticle(App->particles->explosion, position.x + 10, position.y - 8);
-				App->particles->AddParticle(App->particles->explosion, position.x + 5, position.y + 25);
-				App->particles->AddParticle(App->particles->BigExplosion, position.x + 40, position.y + 60);
-				App->particles->AddParticle(App->particles->explosion, position.x + 45, position.y - 10);
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 30, position.y);
+				App->particles->AddParticle(App->particles->explosion, position.x + 15, position.y - 8);
+				App->particles->AddParticle(App->particles->explosion, position.x + 10, position.y + 25);
+				App->particles->AddParticle(App->particles->BigExplosion, position.x + 45, position.y + 60);
+				App->particles->AddParticle(App->particles->explosion, position.x + 50, position.y - 10);
 				App->player->score += 1000;
 			}
 			else
