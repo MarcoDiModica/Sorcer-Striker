@@ -38,7 +38,7 @@ void BossRight::Update() {
 	
 	tracker += 1;
 
-	if ((tracker == 500 || tracker == 1500) && cnt > 0) {
+	if ((tracker == 500 || tracker == 1500 || tracker == 3000) && cnt > 0) {
 		App->particles->AddParticle(App->particles->flamethrower, position.x + 7, position.y, Collider::Type::ENEMY_SHOT, 80);
 		App->particles->AddParticle(App->particles->flamethrower, position.x + 7, position.y, Collider::Type::ENEMY_SHOT, 90);
 		App->particles->AddParticle(App->particles->flamethrower, position.x + 7, position.y, Collider::Type::ENEMY_SHOT, 110);

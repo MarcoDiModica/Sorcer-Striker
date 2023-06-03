@@ -46,7 +46,7 @@ void Boss::Update() {
 	
      tracker += 1;
 
-	 if ((tracker == 500||tracker == 1500) && cnt>0) {
+	 if ((tracker == 500||tracker == 1500 || tracker == 3000) && cnt>0) {
 		 App->particles->AddParticle(App->particles->flamethrower, position.x + 42, position.y, Collider::Type::ENEMY_SHOT, 80);
 		 App->particles->AddParticle(App->particles->flamethrower, position.x + 42, position.y, Collider::Type::ENEMY_SHOT, 90);
 		 App->particles->AddParticle(App->particles->flamethrower, position.x + 42, position.y, Collider::Type::ENEMY_SHOT, 110);
@@ -60,7 +60,7 @@ void Boss::Update() {
 	current = SDL_GetTicks();
 
 
-	if (current > next && App->render->camera.y < -9600) {
+	if (current > next && App->render->camera.y < -9200) {
 		App->enemies->AddEnemy(Enemy_Type::MINION, position.x + (rand() % 25 + 20), position.y+rand()%10);
 		App->enemies->AddEnemy(Enemy_Type::MINION, position.x + (rand() % 12 + 5), position.y - (rand() % 10));
 		
