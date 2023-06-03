@@ -30,7 +30,7 @@ Enemy_FlyingLizard::Enemy_FlyingLizard(int x, int y) : Enemy(x, y)
 
 void Enemy_FlyingLizard::Update()
 {
-	/*position.y += 2;*/
+	position.y += 2;
 
 	if (position.y > (App->render->camera.y + SCREEN_HEIGHT + 50)) {
 		SetToDelete();

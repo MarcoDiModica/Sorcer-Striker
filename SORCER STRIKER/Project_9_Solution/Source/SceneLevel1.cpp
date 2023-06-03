@@ -156,39 +156,6 @@ bool SceneLevel1::Start()
 	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -6010 - 900);
 	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -6040 - 900);
 
-	//flying lizards //
-	
-	
-	App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 225 + 250, -5680 - 400); 
-	App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 225 + 250, -5700 - 400); 
-	App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 225 + 250, -5730 - 400); 
-	App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 225 + 250, -5760 - 400); 
-	App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 225 + 250, -5800 - 400); 
-	App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 225 + 250, -5850 - 400);  
-	App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 225 + 250, -5900 - 400); 
-	App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 225 + 250, -5950 - 400); 
-	App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 225 + 250, -6000 - 400);
-	App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 225 + 250, -6050 - 400);
-	App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 225 + 250, -6100 - 400); 
-	App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 225 + 250, -6150 - 400);
-	App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 225 + 250, -6200 - 400);
-	App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 225 + 250, -6250 - 400);
-
-	App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 5 + 250, -5680 - 400);
-	App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 5 + 250, -5700 - 400);
-	App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 5 + 250, -5730 - 400);
-	App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 5 + 250, -5760 - 400);
-	App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 5 + 250, -5800 - 400);
-	App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 5 + 250, -5850 - 400);
-	App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 5 + 250, -5900 - 400);
-	App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 5 + 250, -5950 - 400);
-	App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 5 + 250, -6000 - 400);
-	App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 5 + 250, -6050 - 400);
-	App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 5 + 250, -6100 - 400);
-	App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 5 + 250, -6150 - 400);
-	App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 5 + 250, -6200 - 400);
-	App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 5 + 250, -6250 - 400);
-
 	//cofre//
 
 	 App->enemies->AddEnemy(Enemy_Type::CHEST, 120 + 250, -5930 -900);
@@ -257,11 +224,11 @@ bool SceneLevel1::Start()
 
 
 	//boss/
-	App->enemies->AddEnemy(Enemy_Type::BOSSLEFT, 0+250-10, -8800);
+	/*App->enemies->AddEnemy(Enemy_Type::BOSSLEFT, 0+250-10, -8800);
 	App->enemies->AddEnemy(Enemy_Type::BOSS, 90+250-10, -8800);
-	App->enemies->AddEnemy(Enemy_Type::BOSSRIGHT, 180+250-10, -8800);
+	App->enemies->AddEnemy(Enemy_Type::BOSSRIGHT, 180+250-10, -8800);*/
 	
-	App->enemies->AddEnemy(Enemy_Type::BlUEDRAGON, 0 + 250, -1220);
+	
 
 	App->render->camera.x = 0 + space;
 	App->render->camera.y = 0 + space;
@@ -307,6 +274,52 @@ Update_Status SceneLevel1::Update()
 		App->player->score = 0;
 		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneStageclear, 40);
 	}*/
+
+
+
+	if (App->render->camera.y == -5650 - 400) {
+		App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 225 + 250, -5680 - 400); 
+		App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 225 + 250, -5700 - 400); 
+		App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 225 + 250, -5730 - 400); 
+		
+		App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 5 + 250, -5680 - 400);
+		App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 5 + 250, -5700 - 400);
+		App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 5 + 250, -5730 - 400);
+	}
+
+	if (App->render->camera.y == -5800 - 400) {
+
+		App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 225 + 250, -5760 - 400); 
+		App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 225 + 250, -5800 - 400); 
+		App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 225 + 250, -5850 - 400);
+		 
+		App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 5 + 250, -5760 - 400);
+		App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 5 + 250, -5800 - 400);
+		App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 5 + 250, -5850 - 400);
+	}
+
+	if (App->render->camera.y == -5950 - 400) {
+
+		App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 225 + 250, -5900 - 400); 
+		App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 225 + 250, -5950 - 400); 
+		App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 225 + 250, -6000 - 400);
+		
+		App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 5 + 250, -5900 - 400);
+		App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 5 + 250, -5950 - 400);
+		App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 5 + 250, -6000 - 400);
+	}
+
+	if (App->render->camera.y == -6100 - 400) {
+
+		App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 225 + 250, -6050 - 400);
+		App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 225 + 250, -6100 - 400); 
+		App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 225 + 250, -6150 - 400);
+
+		App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 5 + 250, -6050 - 400);
+		App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 5 + 250, -6100 - 400);
+		App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 5 + 250, -6150 - 400);
+
+	}
 
 	if (App->render->camera.y <= -5930)
 	{
