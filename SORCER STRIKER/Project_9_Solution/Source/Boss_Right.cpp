@@ -59,7 +59,7 @@ void BossRight::Update() {
 
 		int a = App->sceneLevel_1->aprendeaprogramar;
 		speedXshot = (App->player->position.x + 1 - (position.x + 35)) / 60.0f;
-		speedYshot = 3;
+		speedYshot = 2;
 
 		App->particles->directionshot.speed.x = speedXshot;
 		App->particles->directionshot.speed.y = speedYshot;
