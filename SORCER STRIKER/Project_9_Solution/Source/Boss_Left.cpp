@@ -11,7 +11,7 @@
 
 BossLeft::BossLeft(int x, int y) :Enemy(x, y) {
 
-	cnt = 15;
+	cnt = 20;
 	tipo = Enemy_Type::BOSSLEFT;
 	enemieH = 123;
 
@@ -38,7 +38,7 @@ void BossLeft::Update() {
 	
     tracker += 1;
 
-	if ((tracker == 1000 || tracker == 3000) && cnt > 0) {
+	if ((tracker == 500 || tracker == 1500 || tracker == 3000) && cnt > 0) {
 		App->particles->AddParticle(App->particles->flamethrower, position.x + 65, position.y, Collider::Type::ENEMY_SHOT, 80);
 		App->particles->AddParticle(App->particles->flamethrower, position.x + 65, position.y, Collider::Type::ENEMY_SHOT, 90);
 		App->particles->AddParticle(App->particles->flamethrower, position.x + 65, position.y, Collider::Type::ENEMY_SHOT, 110);
@@ -59,7 +59,7 @@ void BossLeft::Update() {
 		
 		int a = App->sceneLevel_1->aprendeaprogramar;
 		speedXshot = (App->player->position.x + 1 - (position.x + 35)) / 60.0f;
-		speedYshot = 3;
+		speedYshot = 2;
 
 		App->particles->directionshot.speed.x = speedXshot;
 		App->particles->directionshot.speed.y = speedYshot;

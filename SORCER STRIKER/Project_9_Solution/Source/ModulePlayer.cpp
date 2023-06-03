@@ -34,21 +34,21 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
 	idleAnim.PushBack({ 172, 154, 32, 29 });
 	idleAnim.PushBack({ 204, 154, 32, 29 });
 	idleAnim.loop = true;
-	idleAnim.speed = 0.07f;
+	idleAnim.speed = 0.1f;
 
 	// move leftwards
 	idleAnim.PushBack({ 138, 154, 32, 29 });
 	leftAnim.PushBack({ 85, 153, 28, 29 });
 	leftAnim.PushBack({ 113, 153, 24, 29 });
 	leftAnim.loop = false;
-	leftAnim.speed = 0.2f;
+	leftAnim.speed = 0.1f;
 
 	// Move rightwards
 	idleAnim.PushBack({ 138, 154, 32, 29 });
 	rightAnim.PushBack({ 126, 65, 28, 29 });
 	rightAnim.PushBack({ 101, 66, 24, 29 });
 	rightAnim.loop = false;
-	rightAnim.speed = 0.2f;
+	rightAnim.speed = 0.1f;
 
 	idleAnim.PushBack({ 138, 154, 32, 29 });
 	bright1.PushBack({ 241, 154, 32, 29 });
@@ -65,22 +65,25 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
 	boost.speed = 0.07f;
 
 	//a flip animation for the player at the start of SceneLevel1
+	
 	//1
-	flip.PushBack({ 127, 65, 29, 31 });
+	flip.PushBack({ 127, 65, 31, 30 });
 	//2
-	flip.PushBack({ 102, 66, 27, 30 });
+	flip.PushBack({ 101, 64, 24, 30 });
 	//3
-	flip.PushBack({ 155, 65, 22, 30 });
+	flip.PushBack({ 153, 65, 21, 28 });
 	//4
-	flip.PushBack({ 175, 66, 31, 29 });
+	flip.PushBack({ 175, 65, 29, 26 });
 	//5
-	flip.PushBack({ 204, 65, 39, 28 });
+	flip.PushBack({ 204, 66, 32, 26 });
 	//6
 	flip.PushBack({ 36, 153, 29, 32 });
 	//7
 	flip.PushBack({ 63, 154, 26, 30 });
 	//8
 	flip.PushBack({ 85, 153, 30, 32 });
+	// 0
+	flip.PushBack({ 138, 154, 32, 29 });
 	flip.loop = false;
 	flip.speed = 0.2f;
 
@@ -190,7 +193,7 @@ Update_Status ModulePlayer::Update()
 
 	bool isFlipAnimationTriggered = false;
 
-	if (App->player->position.y <= -800 && App->sceneLevel_1->eldenboy && !isFlipAnimationTriggered)
+	if (App->player->position.y == -630 && App->sceneLevel_1->eldenboy && !isFlipAnimationTriggered)
 	{
 		if (currentAnimation != &flip)
 		{
@@ -199,7 +202,10 @@ Update_Status ModulePlayer::Update()
 			currentAnimation = &flip;
 
 		}
-		
+		else if (isFlipAnimationTriggered = true)
+		{
+			currentAnimation = &idleAnim;
+		}
 		
 	}
 
@@ -305,7 +311,7 @@ Update_Status ModulePlayer::Update()
 		next = start + interval;
 		crack = !crack;
 	}
-	//if()
+
 	if (crack) {
 		if (current > next) {
 			crack = !crack;
@@ -443,6 +449,7 @@ Update_Status ModulePlayer::Update()
 		App->enemies->AddEnemy(Enemy_Type::MIYAMOTO, 20 + 250, App->render->camera.y + 80);
 	}
 	if (App->render->camera.y == -8700)
+
 	{
 		App->enemies->AddEnemy(Enemy_Type::WARNING, 20 + 250, App->render->camera.y + 40);
 		App->enemies->AddEnemy(Enemy_Type::ARROW, 110 + 250, App->render->camera.y + 55);

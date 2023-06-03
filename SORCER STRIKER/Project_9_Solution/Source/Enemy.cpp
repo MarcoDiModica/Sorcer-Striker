@@ -308,7 +308,7 @@ void Enemy::OnCollision(Collider* collider)
 			}
 			else
 			{
-				App->particles->AddParticle(App->particles->InsaneEXplosion, collider->rect.x - 35, position.y + 46);
+				App->particles->AddParticle(App->particles->explosion, collider->rect.x, position.y + 46);
 				App->audio->PlayFx(destroyedFx);
 				App->player->score += 100;
 			}
@@ -327,7 +327,7 @@ void Enemy::OnCollision(Collider* collider)
 			}
 			else
 			{
-				App->particles->AddParticle(App->particles->InsaneEXplosion, collider->rect.x - 35, position.y + 46);
+				App->particles->AddParticle(App->particles->explosion, collider->rect.x, position.y + 46);
 				App->audio->PlayFx(destroyedFx);
 				App->player->score += 100;
 			}
