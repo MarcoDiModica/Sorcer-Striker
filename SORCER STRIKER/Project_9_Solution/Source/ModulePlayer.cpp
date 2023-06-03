@@ -216,7 +216,7 @@ Update_Status ModulePlayer::Update()
 
 	if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT && App->sceneLevel_1->eldenboy || pad.l_x < 0.0f && App->sceneLevel_1->eldenboy)
 	{
-		position.x -= speed + 3;
+		position.x -= speed + 4;
 		if (currentAnimation != &leftAnim && flip.HasFinished())
 		{
 			leftAnim.Reset();
@@ -226,7 +226,7 @@ Update_Status ModulePlayer::Update()
 
 	if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT && App->sceneLevel_1->eldenboy || pad.l_x > 0.0f && App->sceneLevel_1->eldenboy)
 	{
-	    position.x += speed + 3;
+	    position.x += speed + 4;
 		if (currentAnimation != &rightAnim && flip.HasFinished())
 		{
 			rightAnim.Reset();
@@ -546,6 +546,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 			if (lives <= 0) {
 				lives = 3;
 				score = 0;
+				Mix_PauseMusic();
 				App->audio->PlayFx(loseFx);
 				App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneGameOver, 70);
 			}

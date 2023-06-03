@@ -11,7 +11,7 @@
 ReverseST::ReverseST(int x, int y) : Enemy(x, y)
 {
 
-	cnt = 6;
+	cnt = 5;
 	tipo = Enemy_Type::REVERSEST;
 	enemieH = 34;
 
@@ -72,13 +72,13 @@ void ReverseST::Update()
 		speedYshot = (App->player->position.y + a - position.y) / 60.0f;
 		if (a == 1)
 		{
-			if (speedYshot < -2.5f)
+			if (speedYshot < -2)
 			{
-				speedYshot = -2.5f;
+				speedYshot = -2;
 			}
-			if (speedYshot > 2.5f)
+			if (speedYshot > 2)
 			{
-				speedYshot = 2.5f;
+				speedYshot = 2;
 			}
 			if (speedYshot == 0)
 			{
@@ -107,7 +107,7 @@ void ReverseST::Update()
 
 		App->particles->AddParticle(App->particles->directionshot, position.x + 13, position.y + 12, Collider::Type::ENEMY_SHOT);
 
-		interval = rand() % 1201 + 1200;
+		interval = rand() % 2001 + 2000;
 		next = current + interval;
 	}
 
