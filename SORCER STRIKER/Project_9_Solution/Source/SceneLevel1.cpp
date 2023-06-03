@@ -143,35 +143,15 @@ bool SceneLevel1::Start()
 	//bag//
 	App->enemies->AddEnemy(Enemy_Type::BAG, 170 + 250, -5000);
 
-	////Tanks DERECHA //
-
-	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 145 + 250, -5590 - 400);
-	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 185 + 250, -5590 - 400);
-	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 225 + 250, -5590 - 400);
-
-	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -5850 - 900);
-	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -5890 - 900);
-	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -5930 - 900);
-	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -5970 - 900);
-	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -6010 - 900);
-	App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -6040 - 900);
+	
 
 	//cofre//
 
 	 App->enemies->AddEnemy(Enemy_Type::CHEST, 120 + 250, -5930 -900);
 
 
-	//tanks izquierda//
-	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 5 + 250, -5560 - 400);
-	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 40 + 250, -5560 - 400);
-	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 75 + 250, -5560 - 400);
+	
 
-	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -5850 - 900);
-	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -5890 - 900);
-	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -5930 -900);
-	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -5970 - 900);
-	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -6010 - 900);
-	App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -6040 - 900);
 
 	// doubletank derecha //
 
@@ -276,7 +256,69 @@ Update_Status SceneLevel1::Update()
 	}*/
 
 
+	//tanks//
+	if (App->render->camera.y == -5580 - 400) {
+		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 145 + 250, -5590 - 400);
+		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 185 + 250, -5590 - 400);
+		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 225 + 250, -5590 - 400);
 
+		App->enemies->AddEnemy(Enemy_Type::REVERSEST, 5 + 250, -5560 - 400);
+		App->enemies->AddEnemy(Enemy_Type::REVERSEST, 40 + 250, -5560 - 400);
+		App->enemies->AddEnemy(Enemy_Type::REVERSEST, 75 + 250, -5560 - 400);
+
+	}
+
+
+	if (App->render->camera.y == -5845 - 900) {
+		
+		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 230, -5850 - 900);
+		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -5890 - 900);
+		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -5930 - 900);
+		
+	}
+
+	if (App->render->camera.y == -5950 - 900) {
+
+		
+		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -5970 - 900);
+		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -6010 - 900);
+		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -6040 - 900);
+	}
+
+	if (App->render->camera.y == -5845 - 900) {
+
+		App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 230, -5850 - 900);
+		App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -5890 - 900);
+		App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -5930 - 900);
+
+	}
+
+	if (App->render->camera.y == -5950- 900) {
+
+
+		App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -5970 - 900);
+		App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -6010 - 900);
+		App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -6040 - 900);
+	}
+
+	if (App->render->camera.y == -6310 - 900) {
+
+		App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -6320 - 925);
+	}
+
+	if (App->render->camera.y == -6460 - 900) {
+
+		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 130 + 250, -6470 - 930);
+		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 170 + 250, -6470 - 930);
+		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -6470 - 930);
+	}
+	
+
+
+
+
+
+	// Flying lizards//
 	if (App->render->camera.y == -5650 - 400) {
 		App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 225 + 250, -5680 - 400); 
 		App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 225 + 250, -5700 - 400); 
