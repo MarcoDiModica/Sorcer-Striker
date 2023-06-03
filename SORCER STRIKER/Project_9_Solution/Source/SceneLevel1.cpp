@@ -199,8 +199,6 @@ Update_Status SceneLevel1::Update()
 		App->enemies->AddEnemy(Enemy_Type::REDBIRD3,250  + 250, -1020);
 		App->enemies->AddEnemy(Enemy_Type::REDBIRD3, 265 + 250, -1050);
 
-
-
 	}
 
 	if (App->render->camera.y == -1140) {
@@ -211,7 +209,6 @@ Update_Status SceneLevel1::Update()
 		App->enemies->AddEnemy(Enemy_Type::REDBIRD2, 5 + 250, -1240);
 		App->enemies->AddEnemy(Enemy_Type::REDBIRD2, -10 + 250, -1270);
 		App->enemies->AddEnemy(Enemy_Type::REDBIRD2, -25 + 250, -1300);
-
 
 	}
 
@@ -233,7 +230,6 @@ Update_Status SceneLevel1::Update()
 		App->enemies->AddEnemy(Enemy_Type::REDBIRD2, -10 + 250, -2670);
 		App->enemies->AddEnemy(Enemy_Type::REDBIRD2, -25 + 250, -2700);
 
-
 	}
 
 	if (App->render->camera.y == -2790) {
@@ -243,7 +239,6 @@ Update_Status SceneLevel1::Update()
 		App->enemies->AddEnemy(Enemy_Type::REDBIRD3,235 + 250, -2890);
 		App->enemies->AddEnemy(Enemy_Type::REDBIRD3,250 + 250, -2920);
 		App->enemies->AddEnemy(Enemy_Type::REDBIRD3,265 + 250, -2950);
-
 	}
 
 	if (App->render->camera.y == -4550) {
@@ -278,7 +273,6 @@ Update_Status SceneLevel1::Update()
 	}
 
 	if (App->render->camera.y == -5950 - 900) {
-
 		
 		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -5970 - 900);
 		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -6010 - 900);
