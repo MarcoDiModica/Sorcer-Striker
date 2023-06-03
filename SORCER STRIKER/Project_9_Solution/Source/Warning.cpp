@@ -28,10 +28,10 @@ void Warning::Update()
 {
 	position.y += mondongo;
 
-	if (position.y >= App->render->camera.y + 100) {
+	if (position.y >= App->render->camera.y + 155) {
 		mondongo = 0;
 	}
-
+	
 	current = SDL_GetTicks();
 	if (current > next) {
 		SetToDelete();

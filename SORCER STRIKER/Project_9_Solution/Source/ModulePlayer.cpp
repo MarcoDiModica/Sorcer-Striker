@@ -7,6 +7,8 @@
 #include "ModuleParticles.h"
 #include "ModuleAudio.h"
 #include "ModuleCollisions.h"
+#include "Boss.h"
+#include "Miyamoto.h"
 #include "ModuleFadeToBlack.h"
 #include "ModuleFonts.h"
 #include "ModuleCollisions.h"
@@ -65,15 +67,15 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
 	//a flip animation for the player at the start of SceneLevel1
 	
 	//1
-	flip.PushBack({ 127, 65, 29, 31 });
+	flip.PushBack({ 127, 65, 31, 30 });
 	//2
-	flip.PushBack({ 102, 66, 27, 30 });
+	flip.PushBack({ 101, 64, 24, 30 });
 	//3
-	flip.PushBack({ 155, 65, 22, 30 });
+	flip.PushBack({ 153, 65, 21, 28 });
 	//4
-	flip.PushBack({ 175, 66, 31, 29 });
+	flip.PushBack({ 175, 65, 29, 26 });
 	//5
-	flip.PushBack({ 204, 65, 39, 28 });
+	flip.PushBack({ 204, 66, 32, 26 });
 	//6
 	flip.PushBack({ 36, 153, 29, 32 });
 	//7
@@ -303,7 +305,8 @@ Update_Status ModulePlayer::Update()
 		App->enemies->AddEnemy(Enemy_Type::STAGE, -20 + 250, App->render->camera.y + 50);
 		App->enemies->AddEnemy(Enemy_Type::CLEAR, SCREEN_WIDTH / 2 - 30 + 250, App->render->camera.y + 50);
 		App->enemies->AddEnemy(Enemy_Type::TEXT, 84 + 250, App->render->camera.y + 178);
-		App->enemies->AddEnemy(Enemy_Type::MIYAMOTO, 90 + 250, App->render->camera.y + 80);
+		App->enemies->AddEnemy(Enemy_Type::MIYAMOTO, 90 + 250, App->render->camera.y - 80);
+		
 		App->player->collider->type = Collider::Type::NONE;
 
 		start = SDL_GetTicks();
@@ -447,7 +450,8 @@ Update_Status ModulePlayer::Update()
 		App->enemies->AddEnemy(Enemy_Type::TEXT, 20 + 250, App->render->camera.y +40);
 		App->enemies->AddEnemy(Enemy_Type::MIYAMOTO, 20 + 250, App->render->camera.y + 80);
 	}
-	if (App->player->position.y==-8700)
+	if (App->render->camera.y == -8700)
+
 	{
 		App->enemies->AddEnemy(Enemy_Type::WARNING, 20 + 250, App->render->camera.y + 40);
 		App->enemies->AddEnemy(Enemy_Type::ARROW, 110 + 250, App->render->camera.y + 55);

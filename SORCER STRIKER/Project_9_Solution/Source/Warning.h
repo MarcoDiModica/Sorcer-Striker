@@ -15,7 +15,7 @@ public:
 private:
 
 	
-	int mondongo = 2.00f;
+	int mondongo = 3.00f;
 	
 
 	Uint32 current;
