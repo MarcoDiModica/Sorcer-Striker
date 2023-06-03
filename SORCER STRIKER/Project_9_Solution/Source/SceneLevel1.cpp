@@ -371,10 +371,10 @@ Update_Status SceneLevel1::Update()
 
 	}
 
-	if (App->render->camera.y == -9100) {
-		App->enemies->AddEnemy(Enemy_Type::BOSSLEFT, 0 + 250 - 10, -9200);
-		App->enemies->AddEnemy(Enemy_Type::BOSS, 90 + 250 - 10, -9200);
-		App->enemies->AddEnemy(Enemy_Type::BOSSRIGHT, 180 + 250 - 10, -9200);
+	if (App->render->camera.y == -9500) {
+		App->enemies->AddEnemy(Enemy_Type::BOSSLEFT, 0 + 250 - 10, -9600);
+		App->enemies->AddEnemy(Enemy_Type::BOSS, 90 + 250 - 10, -9600);
+		App->enemies->AddEnemy(Enemy_Type::BOSSRIGHT, 180 + 250 - 10, -9600);
 	}
 
 	if (App->render->camera.y <= -5930)
