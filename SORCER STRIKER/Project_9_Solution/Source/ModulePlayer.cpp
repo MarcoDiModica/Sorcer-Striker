@@ -100,6 +100,8 @@ bool ModulePlayer::Start()
 	LOG("Loading player textures");
 
 	bool ret = true;
+	bool stage = false;
+	bool over = false;
 
 	texture = App->textures->Load("Assets/Sprites/character.png");
 	//win = App->textures->Load("Assets/Sprites/Stage_Clear.png");
@@ -290,7 +292,7 @@ Update_Status ModulePlayer::Update()
 	}
 	current = SDL_GetTicks();
 	
-	if (App->input->keys[SDL_SCANCODE_F3] == Key_State::KEY_DOWN && App->sceneLevel_1->eldenboy)
+	if (App->input->keys[SDL_SCANCODE_F3] == Key_State::KEY_DOWN && App->sceneLevel_1->eldenboy && !stage)
 	{
 		Mix_PauseMusic();
 		App->audio->PlayFx(App->player->winFx);
@@ -302,14 +304,15 @@ Update_Status ModulePlayer::Update()
 
 		App->enemies->AddEnemy(Enemy_Type::STAGE, -20 + 250, App->render->camera.y + 50);
 		App->enemies->AddEnemy(Enemy_Type::CLEAR, SCREEN_WIDTH / 2 - 30 + 250, App->render->camera.y + 50);
-		App->enemies->AddEnemy(Enemy_Type::TEXT, 84 + 250, App->render->camera.y + 178);
-		App->enemies->AddEnemy(Enemy_Type::MIYAMOTO, 90 + 250, App->render->camera.y - 80);
+		//App->enemies->AddEnemy(Enemy_Type::MIYAMOTO, 90 + 250, App->render->camera.y - 80);
+		
 		
 		App->player->collider->type = Collider::Type::NONE;
 
 		start = SDL_GetTicks();
 		next = start + interval;
 		crack = !crack;
+		stage = true;
 	}
 
 	if (crack) {
@@ -319,7 +322,7 @@ Update_Status ModulePlayer::Update()
 		}
 	}
 
-	if (App->input->keys[SDL_SCANCODE_F4] == Key_State::KEY_DOWN && App->sceneLevel_1->eldenboy)
+	if (App->input->keys[SDL_SCANCODE_F4] == Key_State::KEY_DOWN && App->sceneLevel_1->eldenboy && !over)
 	{
 		App->audio->PlayFx(loseFx);
 		App->collisions->debug = false;
@@ -337,6 +340,7 @@ Update_Status ModulePlayer::Update()
 			lives -= 1;
 			App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneGameOver, 70);
 		}		
+		over = true;
 	}
 
 	if (App->input->keys[SDL_SCANCODE_1] == Key_State::KEY_DOWN && App->sceneLevel_1->eldenboy)
@@ -443,18 +447,14 @@ Update_Status ModulePlayer::Update()
 			anfetaminas = false;
 		}
 	}
+	
 	if (App->input->keys[SDL_SCANCODE_L] == Key_State::KEY_DOWN && App->sceneLevel_1->eldenboy)
 	{
 		App->enemies->AddEnemy(Enemy_Type::TEXT, 20 + 250, App->render->camera.y +40);
 		App->enemies->AddEnemy(Enemy_Type::MIYAMOTO, 20 + 250, App->render->camera.y + 80);
+		
 	}
-	if (App->render->camera.y == -8700)
-
-	{
-		App->enemies->AddEnemy(Enemy_Type::WARNING, 20 + 250, App->render->camera.y + 40);
-		App->enemies->AddEnemy(Enemy_Type::ARROW, 110 + 250, App->render->camera.y + 55);
-
-	}
+	
 
 	
 	//// Switch gamepad debug info

@@ -16,7 +16,9 @@ public:
 	Enemy(int x, int y);
 
 	int cnt;
-
+	bool text = false;
+	bool miya = false;
+	bool win = false;
 	// Destructor
 	virtual ~Enemy();
 

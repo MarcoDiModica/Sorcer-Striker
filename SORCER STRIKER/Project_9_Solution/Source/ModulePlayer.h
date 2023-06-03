@@ -50,6 +50,8 @@ public:
 	bool crack = false;
 	bool farlopa = false;
 	bool anfetaminas = false;
+	bool stage;
+	bool over;
 
 	Uint32 intervalo = 1000;
 

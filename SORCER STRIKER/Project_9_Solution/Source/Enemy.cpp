@@ -37,6 +37,25 @@ void Enemy::Update()
 	{
 		SetToDelete();
 	}
+	if (tipo == Enemy_Type::MIYAMOTO && !text) {
+		if (position.y >= App->render->camera.y + 100) {
+			App->enemies->AddEnemy(Enemy_Type::TEXT, 84 + 250, App->render->camera.y + 178);
+			text = true;
+		}
+	}
+	if (tipo == Enemy_Type::CLEAR && !miya) {
+		if (position.x <= 140 + 250) {
+			App->enemies->AddEnemy(Enemy_Type::MIYAMOTO, 90 + 250, App->render->camera.y - 80);
+			miya = true;
+		}
+	}
+	if (tipo == Enemy_Type::BOSS && !win) {
+		if (cnt == 0) {
+			App->enemies->AddEnemy(Enemy_Type::STAGE, -20 + 250, App->render->camera.y + 50);
+			App->enemies->AddEnemy(Enemy_Type::CLEAR, SCREEN_WIDTH / 2 - 30 + 250, App->render->camera.y + 50);
+			win = true;
+		}
+	}
 }
 
 void Enemy::Draw()
@@ -352,7 +371,7 @@ void Enemy::OnCollision(Collider* collider)
 				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x - 33, position.y-30, Collider::Type::NONE, 9);
 				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x - 70, position.y + 5, Collider::Type::NONE, 31);
 				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x - 65, position.y - 22, Collider::Type::NONE, 18);
-				//Anadir explosiones para disimular que hemos deleteado todos los enemigos : OPCION 1
+				//Añadir explosiones para disimular que hemos deleteado todos los enemigos : OPCION 1
 				
 				App->player->score += 10000;
 				App->enemies->Disable();
@@ -366,6 +385,7 @@ void Enemy::OnCollision(Collider* collider)
 				App->player->score += 100;
 			}
 		}
+		
 	}
 }
 
