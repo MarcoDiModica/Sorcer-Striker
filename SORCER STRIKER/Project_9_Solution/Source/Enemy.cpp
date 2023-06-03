@@ -201,7 +201,7 @@ void Enemy::OnCollision(Collider* collider)
 		if (tipo == Enemy_Type::BlUEDRAGON)
 		{
 			if (cnt == 0) {
-				App->audio->PlayFx(destroyedFx);
+				App->audio->PlayFx(App->player->bigexplioson);
 				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 20, position.y + 20);
 
 				App->player->score += 100;
@@ -219,7 +219,7 @@ void Enemy::OnCollision(Collider* collider)
 		if (tipo == Enemy_Type::BlUEDRAGON2)
 		{
 			if (cnt == 0) {
-				App->audio->PlayFx(destroyedFx);
+				App->audio->PlayFx(App->player->bigexplioson);
 				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 20, position.y + 20);
 
 				App->player->score += 100;
@@ -298,7 +298,7 @@ void Enemy::OnCollision(Collider* collider)
 		if (tipo == Enemy_Type::BOSSLEFT)
 		{
 			if (cnt == 0) {
-
+				App->audio->PlayFx(App->player->bigexplioson);
 				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 45, position.y);
 				App->particles->AddParticle(App->particles->explosion, position.x + 30, position.y - 8);
 				App->particles->AddParticle(App->particles->explosion, position.x + 25, position.y + 25);
@@ -317,7 +317,7 @@ void Enemy::OnCollision(Collider* collider)
 		if (tipo == Enemy_Type::BOSSRIGHT)
 		{
 			if (cnt == 0) {
-
+				App->audio->PlayFx(App->player->bigexplioson);
 				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 25, position.y);
 				App->particles->AddParticle(App->particles->explosion, position.x + 10, position.y - 8);
 				App->particles->AddParticle(App->particles->explosion, position.x + 5, position.y + 25);
@@ -336,24 +336,24 @@ void Enemy::OnCollision(Collider* collider)
 		if (tipo == Enemy_Type::BOSS)
 		{
 			if (cnt == 0) {
-
-				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x - 25, position.y);
-				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x, position.y);
-				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 25, position.y);
-				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 50, position.y);
-				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 55, position.y+25);
-				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x - 25, position.y+30);
-				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x, position.y+28);
-				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 20, position.y+23);
-				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 75, position.y+17);
-				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x - 25, position.y-30);
-				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x, position.y-19);
-				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x - 40, position.y-12);
-				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x - 33, position.y-30);
-				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x - 70, position.y + 5);
-				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x - 65, position.y - 22);
+				App->audio->PlayFx(App->player->bigexplioson, 2);
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x - 25, position.y, Collider::Type::NONE, 9);
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x, position.y, Collider::Type::NONE, 12);
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 25, position.y, Collider::Type::NONE, 15);
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 50, position.y, Collider::Type::NONE, 17);
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 55, position.y+25, Collider::Type::NONE, 20);
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x - 25, position.y+30, Collider::Type::NONE, 21);
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x, position.y+28, Collider::Type::NONE, 22);
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 20, position.y+23, Collider::Type::NONE, 24);
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 75, position.y+17, Collider::Type::NONE, 27);
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x - 25, position.y-30, Collider::Type::NONE, 30);
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x, position.y-19, Collider::Type::NONE, 15);
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x - 40, position.y-12, Collider::Type::NONE, 8);
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x - 33, position.y-30, Collider::Type::NONE, 9);
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x - 70, position.y + 5, Collider::Type::NONE, 31);
+				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x - 65, position.y - 22, Collider::Type::NONE, 18);
 				//Anadir explosiones para disimular que hemos deleteado todos los enemigos : OPCION 1
-
+				
 				App->player->score += 10000;
 				App->enemies->Disable();
 
@@ -361,7 +361,7 @@ void Enemy::OnCollision(Collider* collider)
 			}
 			else
 			{
-				App->particles->AddParticle(App->particles->InsaneEXplosion, collider->rect.x - 35, position.y + 46);
+				App->particles->AddParticle(App->particles->explosion, collider->rect.x - 35, position.y + 46);
 				App->audio->PlayFx(destroyedFx);
 				App->player->score += 100;
 			}

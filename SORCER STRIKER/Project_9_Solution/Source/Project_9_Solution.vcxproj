@@ -99,6 +99,7 @@
     <ClInclude Include="Enemy_RedBird3.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="Item_MoneyBag.h" />
+    <ClInclude Include="Miyamoto.h" />
     <ClInclude Include="ModuleAudio.h" />
     <ClInclude Include="ModuleCollisions.h" />
     <ClInclude Include="ModuleEnemies.h" />
@@ -128,6 +129,7 @@
     <ClInclude Include="SelectScreen.h" />
     <ClInclude Include="Enemy_SingleTank.h" />
     <ClInclude Include="Stage.h" />
+    <ClInclude Include="Text.h" />
     <ClInclude Include="Warning.h" />
   </ItemGroup>
   <ItemGroup>
@@ -156,6 +158,7 @@
     <ClCompile Include="Globals.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="Item_MoneyBag.cpp" />
+    <ClCompile Include="Miyamoto.cpp" />
     <ClCompile Include="ModuleAudio.cpp" />
     <ClCompile Include="ModuleCollisions.cpp" />
     <ClCompile Include="ModuleEnemies.cpp" />
@@ -183,6 +186,7 @@
     <ClCompile Include="SelectScreen.cpp" />
     <ClCompile Include="Enemy_SingleTank.cpp" />
     <ClCompile Include="Stage.cpp" />
+    <ClCompile Include="Text.cpp" />
     <ClCompile Include="Warning.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

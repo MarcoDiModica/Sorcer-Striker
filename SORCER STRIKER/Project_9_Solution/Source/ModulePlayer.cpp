@@ -100,12 +100,14 @@ bool ModulePlayer::Start()
 	//win = App->textures->Load("Assets/Sprites/Stage_Clear.png");
 	currentAnimation = &idleAnim;
 	
+	muerteFx = App->audio->LoadFx("Assets/Fx/muerte.wav");
 	laserFx = App->audio->LoadFx("Assets/Fx/laser.wav");
 	explosionFx = App->audio->LoadFx("Assets/Fx/explosion.wav");
 	winFx = App->audio->LoadFx("Assets/Music/win.ogg");
 	loseFx = App->audio->LoadFx("Assets/Music/gameover.ogg");
 	coinFx = App->audio->LoadFx("Assets/Fx/coin.wav");
 	damageFx = App->audio->LoadFx("Assets/Fx/lose.wav");
+	bigexplioson = App->audio->LoadFx("Assets/Fx/BIG-EXPLOSION.wav");
 	//lasthitFx = App->audio->LoadFx("Assets/Fx/lasthit.wav");
 
 	position.x = 63 + 250;
@@ -292,6 +294,8 @@ Update_Status ModulePlayer::Update()
 
 		App->enemies->AddEnemy(Enemy_Type::STAGE, -20 + 250, App->render->camera.y + 50);
 		App->enemies->AddEnemy(Enemy_Type::CLEAR, SCREEN_WIDTH / 2 - 30 + 250, App->render->camera.y + 50);
+		App->enemies->AddEnemy(Enemy_Type::TEXT, 84 + 250, App->render->camera.y + 178);
+		App->enemies->AddEnemy(Enemy_Type::MIYAMOTO, 90 + 250, App->render->camera.y + 80);
 		App->player->collider->type = Collider::Type::NONE;
 
 		start = SDL_GetTicks();
@@ -432,7 +436,8 @@ Update_Status ModulePlayer::Update()
 	}
 	if (App->input->keys[SDL_SCANCODE_L] == Key_State::KEY_DOWN && App->sceneLevel_1->eldenboy)
 	{
-		App->enemies->AddEnemy(Enemy_Type::WARNING, 20 + 250, App->render->camera.y +40);
+		App->enemies->AddEnemy(Enemy_Type::TEXT, 20 + 250, App->render->camera.y +40);
+		App->enemies->AddEnemy(Enemy_Type::MIYAMOTO, 20 + 250, App->render->camera.y + 80);
 	}
 	if (App->player->position.y==-8700)
 	{
@@ -511,10 +516,6 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 			App->particles->AddParticle(App->particles->explosion, position.x + 5, position.y - 5, Collider::Type::NONE, 28);
 			App->particles->AddParticle(App->particles->explosion, position.x - 4, position.y - 4, Collider::Type::NONE, 21);
 
-			App->audio->PlayFx(explosionFx);
-
-			
-
 			//Rumble the Gamepad when colliding
 			App->input->ShakeController(0, 110, 0.9f);
 			
@@ -534,7 +535,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 
 			else if (lives > 0)
 			{
-				App->audio->PlayFx(damageFx);
+				App->audio->PlayFx(muerteFx);
 				lives -= 1;
 				currentTime = SDL_GetTicks();
 				nextNotificationTime = currentTime + intervalo;

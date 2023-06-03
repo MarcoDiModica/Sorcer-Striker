@@ -30,6 +30,8 @@ enum class Enemy_Type
 	CLEAR,
 	WARNING,
 	ARROW,
+	MIYAMOTO,
+	TEXT,
 	BOSSLEFT,
 	BOSSRIGHT,
 	MINION,

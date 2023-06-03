@@ -50,23 +50,32 @@ Enemy_BlueDragon::Enemy_BlueDragon(int x, int y) : Enemy(x, y)
 }
 
 void Enemy_BlueDragon::Update()
-{
+{  
 	if (position.y > (App->render->camera.y + 40)) {
 		position.y -= App->sceneLevel_1->aprendeaprogramar;
 	}
 
-	if (position.y == App->render->camera.y)
+	if (position.y == App->render->camera.y - 50)
 	{
 		next = current + interval;
 	}
 
 	current = SDL_GetTicks();
 
-	if (current > next && position.y < App->render->camera.y + 200 && position.y > App->render->camera.y)
+	if (current > next && position.y < App->render->camera.y + 200 && position.y + enemieH> App->render->camera.y )
 	{
 		int a = App->sceneLevel_1->aprendeaprogramar;
 		speedXshot = (App->player->position.x + 1 - (position.x + 35)) / 60.0f;
-		speedYshot = (App->player->position.y + a - position.y) / 60.0f;
+		speedYshot = (App->player->position.y - position.y) / 60.0f;
+		if (a == 1)
+		{
+
+		}
+		if (a == 2)
+		{
+			speedYshot -= 3;
+			speedXshot++;
+		}
 
 		App->particles->directionshot.speed.x = speedXshot;
 		App->particles->directionshot.speed.y = speedYshot;
