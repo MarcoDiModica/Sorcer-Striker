@@ -80,6 +80,7 @@ public:
 	Particle SingleTankMark;
 	Particle InsaneEXplosion;
 	Particle directionshot;
+	Particle flamethrower;
 
 	float cocaina = 0.00f;
 	float cocaina2 = 0.00f;

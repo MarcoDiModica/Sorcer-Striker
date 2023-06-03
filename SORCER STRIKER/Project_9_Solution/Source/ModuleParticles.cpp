@@ -254,6 +254,8 @@ bool ModuleParticles::Start()
 
 	InsaneEXplosion.anim.loop = false;
 	InsaneEXplosion.anim.speed = 0.2f;
+
+	flamethrower.anim.PushBack({324,319, });
 	
 	return true;
 }

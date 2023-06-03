@@ -15,7 +15,7 @@
 
 Boss::Boss(int x, int y) :Enemy(x, y) {
 
-	cnt = 15;
+	cnt = 40;
 	tipo = Enemy_Type::BOSS;
 	enemieH = 128;
 
@@ -69,11 +69,16 @@ void Boss::Update() {
 		next = current + spawnInterval;
 	}
 
-	if (cnt == 0) {
+	if (cnt == 5) {
 
 		currentAnim = &dedge;
 
-	  }
+	}
+
+	if (cnt == 20) {
+
+		
+	}
 	
 
 	position.x = spawnPos.x + (waveHeight * sinf(waveRatio));
