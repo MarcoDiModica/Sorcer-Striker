@@ -11,7 +11,7 @@
 
 BossLeft::BossLeft(int x, int y) :Enemy(x, y) {
 
-	cnt = 20;
+	cnt = 33;
 	tipo = Enemy_Type::BOSSLEFT;
 	enemieH = 123;
 

@@ -7,7 +7,7 @@
 
 Enemy_RedBird::Enemy_RedBird(int x, int y) : Enemy(x, y)
 {
-	cnt = 1;
+	cnt = 2;
 	tipo = Enemy_Type::REDBIRD;
 	enemieH = 27;
 	

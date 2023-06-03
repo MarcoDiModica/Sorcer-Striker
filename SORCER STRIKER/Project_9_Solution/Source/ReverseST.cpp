@@ -11,7 +11,7 @@
 ReverseST::ReverseST(int x, int y) : Enemy(x, y)
 {
 
-	cnt = 4;
+	cnt = 6;
 	tipo = Enemy_Type::REVERSEST;
 	enemieH = 34;
 

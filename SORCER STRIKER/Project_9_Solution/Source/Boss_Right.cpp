@@ -11,7 +11,7 @@
 
 BossRight::BossRight(int x, int y) :Enemy(x, y) {
 
-	cnt = 20;
+	cnt = 33;
 	tipo = Enemy_Type::BOSSRIGHT;
 	enemieH = 120;
 

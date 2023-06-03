@@ -9,7 +9,7 @@
 
 Enemy_BrownShip::Enemy_BrownShip(int x, int y) : Enemy(x, y)
 {
-	cnt = 3;
+	cnt = 5;
 	tipo = Enemy_Type::BROWNSHIP;
 	enemieH = 30;
 

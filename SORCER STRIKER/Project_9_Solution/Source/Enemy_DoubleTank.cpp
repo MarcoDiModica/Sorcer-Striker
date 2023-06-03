@@ -9,7 +9,7 @@
 
 Enemy_DoubleTank::Enemy_DoubleTank(int x, int y) : Enemy(x, y)
 {
-	cnt = 6;
+	cnt = 8;
 	tipo = Enemy_Type::DOUBLETANK;
 	enemieH = 42;
 

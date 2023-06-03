@@ -11,7 +11,7 @@
 
 Enemy_BlueDragon::Enemy_BlueDragon(int x, int y) : Enemy(x, y)
 {
-	cnt = 6;
+	cnt = 10;
 	tipo = Enemy_Type::BlUEDRAGON;
 	enemieH = 140;
 
@@ -51,7 +51,7 @@ Enemy_BlueDragon::Enemy_BlueDragon(int x, int y) : Enemy(x, y)
 
 void Enemy_BlueDragon::Update()
 {  
-	if (position.y > (App->render->camera.y + 40)) {
+	if (position.y > (App->render->camera.y + 25)) {
 		position.y -= App->sceneLevel_1->aprendeaprogramar;
 	}
 
