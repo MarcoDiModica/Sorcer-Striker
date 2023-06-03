@@ -116,6 +116,8 @@ bool ModulePlayer::Start()
 	position.x = 63 + 250;
 	position.y = 600;
 	OPTMIZENELJUEGUITO = 0;
+	playershots = 2;
+	laserspeed = -8;
 
 	destroyed = false;
 
