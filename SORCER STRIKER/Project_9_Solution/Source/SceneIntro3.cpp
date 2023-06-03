@@ -32,14 +32,15 @@ SceneIntro3::~SceneIntro3()
 bool SceneIntro3::Start()
 {
 	LOG("Loading background assets");
-	Mix_ResumeMusic();
+	
 	bool ret = true;
 	int contador_segundos = 0;
 	bgTexture = App->textures->Load("Assets/Sprites/menu.png");
 	//bgTexture2 = App->textures->Load("Assets/Sprites/StageClear.png");
 	char lookupTable[] = { "! @,_./0123456789$;< ?abcdefghijklmnopqrstuvwxyz" };
 	insertFont = App->fonts->Load("Assets/Fonts/textocosa.png", lookupTable, 2);
-	App->audio->PlayMusic("Assets/Music/introTitle.ogg", 1.0f); 
+	Mix_ResumeMusic();
+	App->audio->PlayMusic("Assets/Music/introTitle.ogg", 1.0f);
 	coinFx = App->audio->LoadFx("Assets/Fx/coin.wav");
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;

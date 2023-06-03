@@ -27,14 +27,12 @@ bool SceneStageclear::Start()
 	LOG("Loading background assets");
 
 	bool ret = true;
-
-	Mix_PauseMusic();
-
+	
 	bgTexture = App->textures->Load("Assets/Sprites/raizing.png");
 	/*App->audio->PlayMusic("Assets/Music/introTitle.ogg", 1.0f);*/
 	char lookupTable[] = { "! @,_./0123456789$;< ?abcdefghijklmnopqrstuvwxyz" };
 	insertFont = App->fonts->Load("Assets/Fonts/textocosa.png", lookupTable, 2);
-	App->audio->PlayFx(App->player->winFx);
+	
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;
 
