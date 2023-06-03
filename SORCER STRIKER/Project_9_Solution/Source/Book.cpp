@@ -29,13 +29,13 @@ void Book::Update()
 {
 	position.y += 1.5f;
 	
-	if (position.x >= App->player->position.x && position.x + 11 <= App->player->position.x + 32 && position.y + 11 >= App->player->position.y)
+	if (App->player->position.x < position.x + 15 && App->player->position.x + 32 > position.x && App->player->position.y < position.y + enemieH && App->player->position.y + 29 > position.y)
 	{
 		App->audio->PlayFx(buk);
-		if (App->player->playershots <= 5) 
+		if (App->player->playershots <= 5)
 		{
 			App->player->playershots += 1;
-			
+
 		}
 		SetToDelete();
 	}

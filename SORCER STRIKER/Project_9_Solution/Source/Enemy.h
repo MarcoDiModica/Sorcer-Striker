@@ -47,7 +47,7 @@ public:
 	SDL_Texture* texture = nullptr;
 
 	// Sound fx when destroyed
-	int destroyedFx = 0;
+	uint destroyedFx = 0;
 
 	int bossdelete;
 
