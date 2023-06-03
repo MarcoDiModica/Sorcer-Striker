@@ -28,9 +28,8 @@ Enemy_BrownShip2::Enemy_BrownShip2(int x, int y) : Enemy(x, y)
 	currentAnim = &Anim1;
 
 
-	collider = App->collisions->AddCollider({ position.y + 5, position.y, 34, 30 }, Collider::Type::ENEMY, (Module*)App->enemies);
+	collider = App->collisions->AddCollider({ position.x, position.y, 36, 34 }, Collider::Type::ENEMY, (Module*)App->enemies);
 }
-
 
 void Enemy_BrownShip2::Update()
 {
@@ -52,9 +51,25 @@ void Enemy_BrownShip2::Update()
 	{
 		current = SDL_GetTicks();
 
-		if (current > next)
+		if (current > next && position.y > (App->render->camera.y + 60))
 		{
-			App->particles->AddParticle(App->particles->EnemyL, position.x, position.y, Collider::Type::ENEMY_SHOT);
+			int a = App->sceneLevel_1->aprendeaprogramar;
+			speedXshot = (App->player->position.x + 1 - (position.x + 35)) / 60.0f;
+			speedYshot = (App->player->position.y + a - position.y) / 60.0f;
+			if (a == 1)
+			{
+
+			}
+			if (a == 2)
+			{
+				speedYshot -= 2;
+				speedXshot++;
+			}
+
+			App->particles->EnemyL.speed.x = speedXshot;
+			App->particles->EnemyL.speed.y = speedYshot;
+
+			App->particles->AddParticle(App->particles->EnemyL, position.x + 8, position.y + 10, Collider::Type::ENEMY_SHOT);
 			interval = rand() % 2001 + 2000;
 			next = current + interval;
 		}

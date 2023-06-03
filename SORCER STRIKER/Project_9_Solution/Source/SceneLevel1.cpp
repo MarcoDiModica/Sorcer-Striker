@@ -251,46 +251,46 @@ Update_Status SceneLevel1::Update()
 
 	//tanks//
 	if (App->render->camera.y == -5580 - 400) {
-		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 145 + 250, -5590 - 400);
-		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 185 + 250, -5590 - 400);
-		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 225 + 250, -5590 - 400);
+		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 155 + 250, -5590 - 400);
+		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 195 + 250, -5590 - 400);
+		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 235 + 250, -5590 - 400);
 
-		App->enemies->AddEnemy(Enemy_Type::REVERSEST, 5 + 250, -5560 - 400);
-		App->enemies->AddEnemy(Enemy_Type::REVERSEST, 40 + 250, -5560 - 400);
-		App->enemies->AddEnemy(Enemy_Type::REVERSEST, 75 + 250, -5560 - 400);
+		App->enemies->AddEnemy(Enemy_Type::REVERSEST, 5 + 240, -5560 - 400);
+		App->enemies->AddEnemy(Enemy_Type::REVERSEST, 40 + 240, -5560 - 400);
+		App->enemies->AddEnemy(Enemy_Type::REVERSEST, 75 + 240, -5560 - 400);
 
 	}
 
 
 	if (App->render->camera.y == -5845 - 900) {
 		
-		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 230, -5850 - 900);
-		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -5890 - 900);
-		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -5930 - 900);
+		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 225 + 250, -5850 - 900);
+		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 225 + 250, -5890 - 900);
+		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 225 + 250, -5930 - 900);
 		
 	}
 
 	if (App->render->camera.y == -5950 - 900) {
 		
-		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -5970 - 900);
-		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -6010 - 900);
-		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 210 + 250, -6040 - 900);
+		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 225 + 250, -5970 - 900);
+		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 225 + 250, -6010 - 900);
+		App->enemies->AddEnemy(Enemy_Type::SINGLETANK, 225 + 250, -6040 - 900);
 	}
 
 	if (App->render->camera.y == -5845 - 900) {
 
-		App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 230, -5850 - 900);
-		App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -5890 - 900);
-		App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -5930 - 900);
+		App->enemies->AddEnemy(Enemy_Type::REVERSEST, 0 + 250, -5850 - 900);
+		App->enemies->AddEnemy(Enemy_Type::REVERSEST, 0 + 250, -5890 - 900);
+		App->enemies->AddEnemy(Enemy_Type::REVERSEST, 0 + 250, -5930 - 900);
 
 	}
 
 	if (App->render->camera.y == -5950- 900) {
 
 
-		App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -5970 - 900);
-		App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -6010 - 900);
-		App->enemies->AddEnemy(Enemy_Type::REVERSEST, 15 + 250, -6040 - 900);
+		App->enemies->AddEnemy(Enemy_Type::REVERSEST, 0 + 250, -5970 - 900);
+		App->enemies->AddEnemy(Enemy_Type::REVERSEST, 0 + 250, -6010 - 900);
+		App->enemies->AddEnemy(Enemy_Type::REVERSEST, 0 + 250, -6040 - 900);
 	}
 
 	if (App->render->camera.y == -6310 - 925) {
@@ -369,14 +369,15 @@ Update_Status SceneLevel1::Update()
 		App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 5 + 250, -6100 - 400);
 		App->enemies->AddEnemy(Enemy_Type::FLYINGLIZARD, 5 + 250, -6150 - 400);
 
-	}
-
-
+	} 
 	
-	if (App->render->camera.y == -9300) {
-		App->enemies->AddEnemy(Enemy_Type::BOSSLEFT, 0 + 250 - 10, -9400);
-		App->enemies->AddEnemy(Enemy_Type::BOSS, 90 + 250 - 10, -9400);
-		App->enemies->AddEnemy(Enemy_Type::BOSSRIGHT, 180 + 250 - 10, -9400);
+	if (App->render->camera.y == -9150) {
+
+		App->enemies->AddEnemy(Enemy_Type::BOSSLEFT, 0 + 250 - 10, -9250);
+		App->enemies->AddEnemy(Enemy_Type::BOSS, 90 + 250 - 10, -9250);
+		App->enemies->AddEnemy(Enemy_Type::BOSSRIGHT, 180 + 250 - 10, -9250);
+
+		App->audio->PlayMusic("Assets/Music/boss.ogg", 0.0f);
 
 	}
 	if (App->render->camera.y == -8880)

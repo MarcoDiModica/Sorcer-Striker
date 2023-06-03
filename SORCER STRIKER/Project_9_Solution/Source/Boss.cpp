@@ -60,7 +60,7 @@ void Boss::Update() {
 	current = SDL_GetTicks();
 
 
-	if (current > next && App->render->camera.y < -9300) {
+	if (current > next && App->render->camera.y < -9150) {
 		App->enemies->AddEnemy(Enemy_Type::MINION, position.x + (rand() % 25 + 20), position.y+rand()%10);
 		App->enemies->AddEnemy(Enemy_Type::MINION, position.x + (rand() % 12 + 5), position.y - (rand() % 10));
 		

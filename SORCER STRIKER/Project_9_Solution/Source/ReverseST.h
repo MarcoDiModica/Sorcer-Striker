@@ -2,6 +2,7 @@
 #define __REVERSEST_H__
 
 #include "Enemy.h"
+#include "Path.h"
 
 class ReverseST : public Enemy {
 public:
@@ -11,6 +12,8 @@ public:
 	void Update();
 
 private:
+
+	Path path;
 
 	float waveRatio = 0.0f;
 
