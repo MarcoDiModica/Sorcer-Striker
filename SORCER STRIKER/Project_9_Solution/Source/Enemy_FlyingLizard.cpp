@@ -25,7 +25,7 @@ Enemy_FlyingLizard::Enemy_FlyingLizard(int x, int y) : Enemy(x, y)
 	
 	currentAnim = &FlyAnim1;
 
-	collider = App->collisions->AddCollider({ position.x,position.y,36,34 }, Collider::Type::ENEMY, (Module*)App->enemies);
+	collider = App->collisions->AddCollider({ position.x,position.y,24,14 }, Collider::Type::ENEMY, (Module*)App->enemies);
 }
 
 void Enemy_FlyingLizard::Update()
