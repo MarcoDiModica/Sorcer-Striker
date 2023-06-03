@@ -70,8 +70,8 @@ void ReverseDT::Update()
 		App->particles->directionshot.speed.x = speedXshot;
 		App->particles->directionshot.speed.y = speedYshot;
 		
-		App->particles->AddParticle(App->particles->directionshot, position.x + 25, position.y + 12);
-		App->particles->AddParticle(App->particles->directionshot, position.x + 55, position.y + 12);
+		App->particles->AddParticle(App->particles->directionshot, position.x + 25, position.y + 12, Collider::Type::ENEMY_SHOT);
+		App->particles->AddParticle(App->particles->directionshot, position.x + 55, position.y + 12, Collider::Type::ENEMY_SHOT);
 
 		interval = rand() % 1501 + 1500;
 		next = current + interval;

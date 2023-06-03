@@ -19,10 +19,10 @@
 
 #include <stdio.h>
 
-bool Animation::Finished() const
-{
-	return currentFrame >= totalFrames && !loop && !pingpong;
-}
+//bool Animation::Finished() const
+//{
+//	return currentFrame >= totalFrames && !loop && !pingpong;
+//}
 
 
 ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
@@ -39,14 +39,14 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
 	leftAnim.PushBack({ 85, 153, 28, 29 });
 	leftAnim.PushBack({ 113, 153, 24, 29 });
 	leftAnim.loop = false;
-	leftAnim.speed = 0.05f;
+	leftAnim.speed = 0.2f;
 
 	// Move rightwards
 	idleAnim.PushBack({ 138, 154, 32, 29 });
 	rightAnim.PushBack({ 126, 65, 28, 29 });
 	rightAnim.PushBack({ 101, 66, 24, 29 });
 	rightAnim.loop = false;
-	rightAnim.speed = 0.05f;
+	rightAnim.speed = 0.2f;
 
 	idleAnim.PushBack({ 138, 154, 32, 29 });
 	bright1.PushBack({ 241, 154, 32, 29 });
@@ -80,7 +80,7 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
 	//8
 	flip.PushBack({ 85, 153, 30, 32 });
 	flip.loop = false;
-	flip.speed = 0.1f;
+	flip.speed = 0.2f;
 
 	
 }
@@ -181,22 +181,28 @@ Update_Status ModulePlayer::Update()
 
 	/*I created a class called Finished() in line 22, which seems to be working, but this is somehow connected to the control,
 	which we don't want, please help it doesn't fucking make sense*/
+
+
+
 	bool isFlipAnimationTriggered = false;
 
-	if (App->player->position.y <= -800 && App->sceneLevel_1->eldenboy && !isFlipAnimationTriggered && App->input->keys[SDL_SCANCODE_W] != Key_State::KEY_REPEAT)
+	if (App->player->position.y <= -800 && App->sceneLevel_1->eldenboy && !isFlipAnimationTriggered)
 	{
-		currentAnimation = &flip;
-		isFlipAnimationTriggered = true;
-		if (flip.Finished())
+		if (currentAnimation != &flip)
 		{
-			currentAnimation = &idleAnim;
+			flip.Reset();
+			isFlipAnimationTriggered = true;
+			currentAnimation = &flip;
+
 		}
+		
+		
 	}
 
 
 	if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT && App->sceneLevel_1->eldenboy || pad.l_x < 0.0f && App->sceneLevel_1->eldenboy)
 	{
-		position.x -= speed + 2;
+		position.x -= speed + 3;
 		if (currentAnimation != &leftAnim)
 		{
 			leftAnim.Reset();
@@ -206,7 +212,7 @@ Update_Status ModulePlayer::Update()
 
 	if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT && App->sceneLevel_1->eldenboy || pad.l_x > 0.0f && App->sceneLevel_1->eldenboy)
 	{
-	    position.x += speed + 2;
+	    position.x += speed + 3;
 		if (currentAnimation != &rightAnim)
 		{
 			rightAnim.Reset();
@@ -394,7 +400,8 @@ Update_Status ModulePlayer::Update()
 		&& App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_IDLE
 		&& App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_IDLE
 		&& App->sceneLevel_1->eldenboy
-		&&(pad.up == false && pad.down == false)&&(pad.l_y == 0 && pad.l_x == 0))
+		&&(pad.up == false && pad.down == false)&&(pad.l_y == 0 && pad.l_x == 0)
+		&& App->player->position.y <= -800)
 		currentAnimation = &idleAnim;
 
 	if (ahora)
@@ -427,6 +434,13 @@ Update_Status ModulePlayer::Update()
 	{
 		App->enemies->AddEnemy(Enemy_Type::WARNING, 20 + 250, App->render->camera.y +40);
 	}
+	if (App->player->position.y==-8700)
+	{
+		App->enemies->AddEnemy(Enemy_Type::WARNING, 20 + 250, App->render->camera.y + 40);
+		App->enemies->AddEnemy(Enemy_Type::ARROW, 110 + 250, App->render->camera.y + 55);
+
+	}
+
 	
 	//// Switch gamepad debug info
 	//if (App->input->keys[SDL_SCANCODE_F6] == KEY_DOWN)
