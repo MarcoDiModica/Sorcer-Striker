@@ -196,7 +196,7 @@ Update_Status ModulePlayer::Update()
 
 	if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT && App->sceneLevel_1->eldenboy || pad.l_x < 0.0f && App->sceneLevel_1->eldenboy)
 	{
-		position.x -= speed + 2;
+		position.x -= speed + 3;
 		if (currentAnimation != &leftAnim)
 		{
 			leftAnim.Reset();
@@ -206,7 +206,7 @@ Update_Status ModulePlayer::Update()
 
 	if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT && App->sceneLevel_1->eldenboy || pad.l_x > 0.0f && App->sceneLevel_1->eldenboy)
 	{
-	    position.x += speed + 2;
+	    position.x += speed + 3;
 		if (currentAnimation != &rightAnim)
 		{
 			rightAnim.Reset();
