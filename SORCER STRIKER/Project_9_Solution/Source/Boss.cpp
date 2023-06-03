@@ -31,7 +31,7 @@ Boss::Boss(int x, int y) :Enemy(x, y) {
 
 	collider = App->collisions->AddCollider({ position.x,position.y,90,124 }, Collider::Type::ENEMY, (Module*)App->enemies);
 
-	spawnInterval = 500;
+	spawnInterval = 1000;
 	//////////////////OEE WATON SI LE DAI A LA TECLA ENE VAI A LA ZONA DEL BO
 }
 
@@ -46,7 +46,7 @@ void Boss::Update() {
 	if (spawnInterval <= 0) {
 
 
-		spawnInterval = 500;
+		spawnInterval = 1000;
 	}
 
 	if (App->render->camera.y <= (-8525 - SCREEN_HEIGHT / 2))
@@ -58,11 +58,14 @@ void Boss::Update() {
 
 	current = SDL_GetTicks();
 
-	if (current > next) {
+	
+	
+
+	if (current > next && App->render->camera.y < -8800) {
 		App->enemies->AddEnemy(Enemy_Type::MINION, position.x + (rand() % 25 + 20), position.y);
 		App->enemies->AddEnemy(Enemy_Type::MINION, position.x + (rand() % 12 + 5), position.y - (rand() % 5));
 		
-		spawnInterval = 500;
+		spawnInterval = 1000;
 		next = current + spawnInterval;
 	}
 
@@ -70,7 +73,8 @@ void Boss::Update() {
 
 		currentAnim = &dedge;
 
-	}
+	  }
+	
 
 	position.x = spawnPos.x + (waveHeight * sinf(waveRatio));
 

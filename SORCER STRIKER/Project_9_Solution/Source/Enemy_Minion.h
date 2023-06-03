@@ -37,6 +37,8 @@ private:
 	uint distanceUp;
 	int randomNumber;
 
+
+
 	enum class State {
 		MovingUp,
 	    MovingDown

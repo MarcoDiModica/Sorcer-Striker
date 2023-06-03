@@ -14,11 +14,10 @@ Enemy_Minion::Enemy_Minion(int x, int y) :Enemy(x, y) {
 	tipo = Enemy_Type::MINION;
 	enemieH = 24;
 
-	flyAnim.PushBack({ 124,219,26,24 });
-	flyAnim.PushBack({ 98,219,26,24 });
-	flyAnim.PushBack({ 72,219,26,24 });
-	flyAnim.PushBack({ 46,219,26,24 });
-	flyAnim.PushBack({ 18,219,26,24 });
+	flyAnim.PushBack({ 15,418,34,34 });
+	flyAnim.PushBack({ 60,418,34,34 });
+	flyAnim.PushBack({ 109,418,44,34 });
+	flyAnim.PushBack({ 168,418,41,34 });
 	flyAnim.speed = 0.1f;
 	flyAnim.loop = false;
 	currentAnim = &flyAnim;
@@ -26,7 +25,7 @@ Enemy_Minion::Enemy_Minion(int x, int y) :Enemy(x, y) {
 	initialY = position.y;
 	distanceUp = 50;
 
-	collider = App->collisions->AddCollider({ position.x,position.y,26,24 }, Collider::Type::ENEMY, (Module*)App->enemies);
+	collider = App->collisions->AddCollider({ position.x,position.y,34,32 }, Collider::Type::ENEMY, (Module*)App->enemies);
 
 	randomNumber = rand() % 2;
 
@@ -35,6 +34,8 @@ Enemy_Minion::Enemy_Minion(int x, int y) :Enemy(x, y) {
 }
 
 void Enemy_Minion::Update() {
+
+
 
 
 	if( randomNumber == 0) {
