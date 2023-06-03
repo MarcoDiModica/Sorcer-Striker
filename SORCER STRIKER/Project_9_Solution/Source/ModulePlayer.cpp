@@ -7,6 +7,7 @@
 #include "ModuleParticles.h"
 #include "ModuleAudio.h"
 #include "ModuleCollisions.h"
+#include "Boss.h"
 #include "ModuleFadeToBlack.h"
 #include "ModuleFonts.h"
 #include "ModuleCollisions.h"
@@ -302,7 +303,7 @@ Update_Status ModulePlayer::Update()
 		next = start + interval;
 		crack = !crack;
 	}
-
+	//if()
 	if (crack) {
 		if (current > next) {
 			crack = !crack;
@@ -439,7 +440,7 @@ Update_Status ModulePlayer::Update()
 		App->enemies->AddEnemy(Enemy_Type::TEXT, 20 + 250, App->render->camera.y +40);
 		App->enemies->AddEnemy(Enemy_Type::MIYAMOTO, 20 + 250, App->render->camera.y + 80);
 	}
-	if (App->player->position.y==-8700)
+	if (App->render->camera.y ==-8700)
 	{
 		App->enemies->AddEnemy(Enemy_Type::WARNING, 20 + 250, App->render->camera.y + 40);
 		App->enemies->AddEnemy(Enemy_Type::ARROW, 110 + 250, App->render->camera.y + 55);

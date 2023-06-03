@@ -20,7 +20,7 @@ private:
 
 	Uint32 current;
 	Uint32 next;
-	Uint32 interval = 8000;
+	Uint32 interval = 4000;
 	Uint32 start;
 
 
