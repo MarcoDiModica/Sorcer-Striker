@@ -171,7 +171,7 @@ Update_Status SceneLevel1::Update()
 		App->enemies->AddEnemy(Enemy_Type::ARROW, 107, App->render->camera.y - 80);
 	}*/
 
-	if (App->player->position.y <= -16700)
+	/*if (App->player->position.y <= -16700)
 	{
 		App->audio->PlayFx(App->player->winFx);
 		App->particles->AddParticle(App->particles->Stage, 35, -140, Collider::Type::NONE);
@@ -184,7 +184,7 @@ Update_Status SceneLevel1::Update()
 		App->player->lives = 3;
 		App->player->score = 0;
 		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneStageclear, 40);
-	}
+	}*/
 
 	//globos//
 	if (App->render->camera.y == -900) {
