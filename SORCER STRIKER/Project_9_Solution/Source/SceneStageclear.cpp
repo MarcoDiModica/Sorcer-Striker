@@ -61,6 +61,12 @@ Update_Status SceneStageclear::Update()
 		App->fade->FadeToBlack(this, (Module*)App->sceneIntro3, 30);
 	}
 
+	kol = SDL_GetTicks();
+
+	if (kol >= 14000)
+	{
+		App->fade->FadeToBlack(this, (Module*)App->sceneIntro3, 50);
+	}
 
 
 	return Update_Status::UPDATE_CONTINUE;

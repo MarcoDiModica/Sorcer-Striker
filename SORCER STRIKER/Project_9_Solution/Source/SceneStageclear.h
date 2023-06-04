@@ -9,6 +9,7 @@ struct SDL_Texture;
 class SceneStageclear : public Module
 {
 public:
+	int kol = 0;
 	//Constructor
 	SceneStageclear(bool startEnabled);
 
@@ -31,5 +32,6 @@ public:
 	// The scene sprite sheet loaded into an SDL_Texture
 	SDL_Texture* bgTexture = nullptr;
 	int insertFont = -1;
+	
 };
 #endif

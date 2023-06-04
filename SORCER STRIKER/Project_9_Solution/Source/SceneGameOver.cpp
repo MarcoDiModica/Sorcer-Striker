@@ -59,10 +59,7 @@ Update_Status SceneGameOver::Update()
 
 	erm = SDL_GetTicks();
 
-	if (erm >= 7000)
-	{
-		App->fade->FadeToBlack(this, (Module*)App->sceneIntro3, 50);
-	}
+	
 	return Update_Status::UPDATE_CONTINUE;
 }
 
