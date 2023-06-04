@@ -36,15 +36,14 @@ bool SceneGameOver::Start()
 	App->render->camera.y = 0;
 
 	
-	App->collisions->CleanUp();
+	/*App->collisions->CleanUp();
 	App->particles->CleanUp();
 	App->enemies->CleanUp();
 	App->player->CleanUp();
 
 	App->collisions->Disable();
-	App->particles->Disable();
 	App->enemies->Disable();
-	App->player->Disable();
+	App->player->Disable();*/
 
 	return ret;
 }
