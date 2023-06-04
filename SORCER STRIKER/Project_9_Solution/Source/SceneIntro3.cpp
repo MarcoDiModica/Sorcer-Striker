@@ -82,7 +82,6 @@ Update_Status SceneIntro3::Update()
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN || pad.a == true)
 	{
 		App->fade->FadeToBlack(this, (Module*)App->selectscreen, 40);
-		App->audio->PlayFx(coinFx);
 	}
 	
 	
