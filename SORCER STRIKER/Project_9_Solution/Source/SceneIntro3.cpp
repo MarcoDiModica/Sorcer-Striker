@@ -46,7 +46,7 @@ bool SceneIntro3::Start()
 	App->render->camera.y = 0;
 
 	App->collisions->Disable();
-	/*App->particles->Disable();*/
+	App->particles->CleanUp();
 	App->enemies->Disable();
 	App->player->Disable();
 
