@@ -46,6 +46,8 @@ bool ModuleAudio::Init()
 		ret = false;
 	}
 
+	Mix_AllocateChannels(32);
+
 	return ret;
 }
 

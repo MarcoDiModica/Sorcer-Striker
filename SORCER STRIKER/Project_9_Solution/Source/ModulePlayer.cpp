@@ -126,6 +126,8 @@ bool ModulePlayer::Start()
 	laserspeed = -8;
 	lives = 3;
 	score = 0;
+	god_mode = false;
+	App->collisions->debug = false;
 
 	destroyed = false;
 

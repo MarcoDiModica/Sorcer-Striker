@@ -29,7 +29,6 @@ bool SceneLevel1::Start()
 	LOG("Loading background assets");
 
 	bool ret = true;
-
 	bgTexture = App->textures->Load("Assets/Sprites/inicio.png");
 	bgTexture2 = App->textures->Load("Assets/Sprites/tank.png");
 	bgTexture3 = App->textures->Load("Assets/Sprites/boss.png");

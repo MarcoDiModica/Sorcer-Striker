@@ -25,7 +25,7 @@ Enemy_Minion::Enemy_Minion(int x, int y) :Enemy(x, y) {
 	initialY = position.y;
 	distanceUp = 50;
 
-	collider = App->collisions->AddCollider({ position.x,position.y,34,32 }, Collider::Type::ENEMY, (Module*)App->enemies);
+	collider = App->collisions->AddCollider({ position.x,position.y,44,34 }, Collider::Type::ENEMY, (Module*)App->enemies);
 
 	randomNumber = rand() % 2;
 

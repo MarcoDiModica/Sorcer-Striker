@@ -44,6 +44,8 @@ bool SceneGameOver::Start()
 	App->collisions->Disable();
 	App->enemies->Disable();
 	App->player->Disable();*/
+	
+	
 
 	return ret;
 }
