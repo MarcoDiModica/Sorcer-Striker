@@ -412,8 +412,8 @@ void Enemy::OnCollision(Collider* collider)
 				App->enemies->Disable();
 				App->enemies->Enable();
 				
-				/*App->audio->PlayMusic("Assets/Music/win.ogg", 0.0f);*/
-				App->audio->PlayFx(App->player->winFx);
+				App->audio->PlayMusic("Assets/Music/win.ogg", 0.0f);
+				/*App->audio->PlayFx(App->player->winFx);*/
 				if (App->player->score > App->player->highscore) {
 					App->player->highscore = App->player->score;
 				}

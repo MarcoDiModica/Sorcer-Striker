@@ -117,6 +117,7 @@ public:
 	uint bigexplioson = 0;
 	uint muerteFx = 0;
 	uint pkfire = 0;
+	uint hit = 0;
 
 	// uint lasthitFX = 0;
 

@@ -116,6 +116,7 @@ bool ModulePlayer::Start()
 	damageFx = App->audio->LoadFx("Assets/Fx/lose.wav");
 	bigexplioson = App->audio->LoadFx("Assets/Fx/BIG-EXPLOSION.wav");
 	pkfire = App->audio->LoadFx("Assets/Fx/bossfire.wav");
+	hit = App->audio->LoadFx("Assets/Fx/lasthit.wav");
 	//lasthitFx = App->audio->LoadFx("Assets/Fx/lasthit.wav");
 
 	position.x = 63 + 250;
