@@ -396,8 +396,6 @@ void Enemy::OnCollision(Collider* collider)
 				if (App->player->score > App->player->highscore) {
 					App->player->highscore = App->player->score;
 				}
-				App->player->score = 0;
-				App->player->lives = 3;
 
 				App->enemies->AddEnemy(Enemy_Type::STAGE, -20 + 250, App->render->camera.y + 50);
 				App->enemies->AddEnemy(Enemy_Type::CLEAR, SCREEN_WIDTH / 2 - 30 + 250, App->render->camera.y + 50);
@@ -409,9 +407,6 @@ void Enemy::OnCollision(Collider* collider)
 				App->player->next = App->player->start + App->player->interval;
 				App->player->crack = !App->player->crack;
 				App->player->score += 10000;
-				
-
-				//ponerle la animacion de que esta derrotado 
 			}
 			else
 			{

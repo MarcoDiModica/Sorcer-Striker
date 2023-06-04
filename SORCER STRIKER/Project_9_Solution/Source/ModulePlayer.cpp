@@ -123,6 +123,8 @@ bool ModulePlayer::Start()
 	OPTMIZENELJUEGUITO = 0;
 	playershots = 2;
 	laserspeed = -8;
+	lives = 3;
+	score = 0;
 
 	destroyed = false;
 
@@ -532,6 +534,8 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 			//Rumble the Gamepad when colliding
 			App->input->ShakeController(0, 110, 0.9f);
 			
+			App->audio->PlayFx(muerteFx);
+
 			destroyed = true;
 			/*App->collisions->debug = false;*/
 			
@@ -540,8 +544,6 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 			}
 
 			if (lives <= 0) {
-				lives = 3;
-				score = 0;
 				Mix_PauseMusic();
 				App->audio->PlayFx(loseFx);
 				App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneGameOver, 70);
@@ -549,7 +551,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 
 			else if (lives > 0)
 			{
-				App->audio->PlayFx(muerteFx);
+				
 				lives -= 1;
 				currentTime = SDL_GetTicks();
 				nextNotificationTime = currentTime + intervalo;
