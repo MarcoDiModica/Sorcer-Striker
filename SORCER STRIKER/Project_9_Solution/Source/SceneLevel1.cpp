@@ -188,12 +188,12 @@ Update_Status SceneLevel1::Update()
 
 	//globos//
 	if (App->render->camera.y == -900) {
-		App->enemies->AddEnemy(Enemy_Type::REDBIRD3,190 + 250, -900);
-		App->enemies->AddEnemy(Enemy_Type::REDBIRD3,205 + 250, -930);
-		App->enemies->AddEnemy(Enemy_Type::REDBIRD3,220 + 250, -960);
-		App->enemies->AddEnemy(Enemy_Type::REDBIRD3,235+ 250, -990);
-		App->enemies->AddEnemy(Enemy_Type::REDBIRD3,250  + 250, -1020);
-		App->enemies->AddEnemy(Enemy_Type::REDBIRD3, 265 + 250, -1050);
+		App->enemies->AddEnemy(Enemy_Type::REDBIRD3,190 + 250, -1000);
+		App->enemies->AddEnemy(Enemy_Type::REDBIRD3,205 + 250, -1030);
+		App->enemies->AddEnemy(Enemy_Type::REDBIRD3,220 + 250, -1060);
+		App->enemies->AddEnemy(Enemy_Type::REDBIRD3,235+ 250, -1090);
+		App->enemies->AddEnemy(Enemy_Type::REDBIRD3,250  + 250, -1120);
+		App->enemies->AddEnemy(Enemy_Type::REDBIRD3, 265 + 250, -1150);
 
 	}
 
