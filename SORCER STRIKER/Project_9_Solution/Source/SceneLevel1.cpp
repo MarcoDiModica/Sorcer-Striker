@@ -419,7 +419,7 @@ Update_Status SceneLevel1::Update()
 		App->audio->PlayMusic("Assets/Music/boss.ogg", 0.0f);
 
 	}
-	if (App->render->camera.y == -8880)
+	if (App->render->camera.y == -8900)
 	{
 		App->audio->PlayFx(cuidado);
 		App->enemies->AddEnemy(Enemy_Type::WARNING, 20 + 250, -8900 - 40);
