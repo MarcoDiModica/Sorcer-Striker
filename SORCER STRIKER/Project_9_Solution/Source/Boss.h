@@ -30,7 +30,8 @@ private:
 	int spawn_y = 0;
 
 	int waveHeight = 10;
-
+	uint loseFx = 0;
+	bool erm = false;
 	Animation flyAnim;
 	Animation dedge;
 	uint next;
