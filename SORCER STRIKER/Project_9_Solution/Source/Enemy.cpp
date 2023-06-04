@@ -301,6 +301,7 @@ void Enemy::OnCollision(Collider* collider)
 		if (tipo == Enemy_Type::BOSSLEFT)
 		{
 			if (cnt == 0) {
+				App->input->ShakeController(0, 100, 0.3f);
 				App->audio->PlayFx(App->player->bigexplioson);
 				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 40, position.y);
 				App->particles->AddParticle(App->particles->explosion, position.x + 25, position.y - 8);
@@ -319,6 +320,7 @@ void Enemy::OnCollision(Collider* collider)
 			{
 				App->particles->AddParticle(App->particles->explosion, collider->rect.x, position.y + 46);
 				App->audio->PlayFx(destroyedFx);
+				
 				App->player->score += 100;
 			}
 		}
@@ -326,6 +328,7 @@ void Enemy::OnCollision(Collider* collider)
 		if (tipo == Enemy_Type::BOSSRIGHT)
 		{
 			if (cnt == 0) {
+				App->input->ShakeController(0, 100, 0.3f);
 				App->audio->PlayFx(App->player->bigexplioson);
 				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 30, position.y);
 				App->particles->AddParticle(App->particles->explosion, position.x + 15, position.y - 8);
@@ -351,6 +354,7 @@ void Enemy::OnCollision(Collider* collider)
 		if (tipo == Enemy_Type::BOSS)
 		{
 			if (cnt == 0) {
+				App->input->ShakeController(0, 100, 0.3f);
 				Mix_PauseMusic();
 				App->audio->PlayFx(App->player->bigexplioson, 2);
 				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x - 25, position.y, Collider::Type::NONE, 9);
