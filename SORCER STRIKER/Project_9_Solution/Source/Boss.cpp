@@ -5,12 +5,15 @@
 #include "ModuleRender.h"
 #include "ModulePlayer.h"
 #include "ModuleParticles.h"
+#include "ModuleFadeToBlack.h"
+#include "SceneGameOver.h"
 #include "Boss_Right.h"
 #include "Boss_Left.h"
 #include "Enemy_Minion.h"
 #include "SceneLevel1.h"
 #include <cstdlib>
 #include <ctime>
+#include <SDL_mixer/include/SDL_mixer.h>
 #include "ModuleAudio.h"
 
 
@@ -79,10 +82,28 @@ void Boss::Update() {
 
 	}
 
-	if (position.y <= -12000) {
-		position.y += 1;
-	}
+	
+	if (App->render->camera.y <= -12000) {
+		position.y += 2;
 
+		
+	}
+	if (App->render->camera.y == -12000) {
+		Mix_PauseMusic();
+
+		App->audio->PlayFx(App->player->loseFx);
+
+		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneGameOver, 70);
+		if (App->player->score > App->player->highscore) {
+			App->player->highscore = App->player->score;
+		}
+
+		
+			App->player->lives = 3;
+			App->player->score = 0;
+			
+		
+	}
 	position.x = spawnPos.x + (waveHeight * sinf(waveRatio));
 
 

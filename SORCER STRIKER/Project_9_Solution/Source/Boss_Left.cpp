@@ -78,8 +78,10 @@ void BossLeft::Update() {
 
 	}
 
-	if (position.y <= -12000) {
-		position.y += 1;
+	if (App->render->camera.y <= -12000) {
+		position.y += 2;
+
+
 	}
 	
 	position.x = spawnPos.x + (waveHeight * sinf(waveRatio));
