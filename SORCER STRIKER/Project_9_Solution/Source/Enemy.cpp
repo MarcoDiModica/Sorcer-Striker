@@ -166,6 +166,13 @@ void Enemy::OnCollision(Collider* collider)
 
 				SetToDelete();
 			}
+			else
+			{
+				App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+				App->audio->PlayFx(destroyedFx);
+
+				App->player->score += 10;
+			}
 		}
 
 		if (tipo == Enemy_Type::REDBIRD2)
@@ -178,6 +185,13 @@ void Enemy::OnCollision(Collider* collider)
 
 				SetToDelete();
 			}
+			else
+			{
+				App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+				App->audio->PlayFx(destroyedFx);
+
+				App->player->score += 10;
+			}
 		}
 
 		if (tipo == Enemy_Type::REDBIRD3)
@@ -189,6 +203,13 @@ void Enemy::OnCollision(Collider* collider)
 				App->player->score += 50;
 
 				SetToDelete();
+			}
+			else
+			{
+				App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+				App->audio->PlayFx(destroyedFx);
+
+				App->player->score += 10;
 			}
 		}
 

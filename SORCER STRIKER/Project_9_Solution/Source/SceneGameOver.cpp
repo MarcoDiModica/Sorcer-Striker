@@ -41,6 +41,11 @@ bool SceneGameOver::Start()
 	App->enemies->CleanUp();
 	App->player->CleanUp();
 
+	App->collisions->Disable();
+	App->particles->Disable();
+	App->enemies->Disable();
+	App->player->Disable();
+
 	return ret;
 }
 

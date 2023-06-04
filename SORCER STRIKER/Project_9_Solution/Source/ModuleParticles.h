@@ -7,7 +7,7 @@
 #include "Particle.h"
 #include "Collider.h"
 
-#define MAX_ACTIVE_PARTICLES 1000
+#define MAX_ACTIVE_PARTICLES 300
 
 struct SDL_Texture;
 struct Collider;

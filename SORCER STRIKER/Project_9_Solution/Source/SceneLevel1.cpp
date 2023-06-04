@@ -138,18 +138,16 @@ bool SceneLevel1::Start()
 
 
 	//boss/
-	
-	
-	
+
 
 	App->render->camera.x = 0 + space;
 	App->render->camera.y = 0 + space;
-	
+
 	App->items->Enable();
 	App->player->Enable();
 	App->enemies->Enable();
 	App->collisions->Enable();
-	App->particles->Enable();
+	/*App->particles->Enable();*/
 
 	return ret;
 }

@@ -100,8 +100,8 @@ bool ModulePlayer::Start()
 	LOG("Loading player textures");
 
 	bool ret = true;
-	bool stage = false;
-	bool over = false;
+	stage = false;
+	over = false;
 
 	texture = App->textures->Load("Assets/Sprites/character.png");
 	//win = App->textures->Load("Assets/Sprites/Stage_Clear.png");
@@ -311,7 +311,7 @@ Update_Status ModulePlayer::Update()
 		App->enemies->AddEnemy(Enemy_Type::CLEAR, SCREEN_WIDTH / 2 - 30 + 250, App->render->camera.y + 50);
 		//App->enemies->AddEnemy(Enemy_Type::MIYAMOTO, 90 + 250, App->render->camera.y - 80);
 		
-		
+		god_mode = true;
 		App->player->collider->type = Collider::Type::NONE;
 
 		start = SDL_GetTicks();

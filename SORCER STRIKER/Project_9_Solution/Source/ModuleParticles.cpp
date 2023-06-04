@@ -36,6 +36,7 @@ bool ModuleParticles::Start()
 	explosion.anim.PushBack({ 330, 10, 34, 35 });
 	explosion.anim.loop = false;
 	explosion.anim.speed = 0.3f;
+	
 
 	laser2.anim.PushBack({ 24, 26, 8, 21 });
 	
@@ -246,6 +247,7 @@ bool ModuleParticles::Start()
 	BigExplosion.anim.loop = false;
 	BigExplosion.anim.speed = 0.2f;
 	BigExplosion.speed.y = -2;
+	
 
 	InsaneEXplosion.anim.PushBack({ 4,283,98,90 });
 	InsaneEXplosion.anim.PushBack({ 128,294,76,76 });
