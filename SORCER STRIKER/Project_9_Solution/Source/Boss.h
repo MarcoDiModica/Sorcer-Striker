@@ -37,8 +37,7 @@ private:
 	uint current;
 	uint spawnInterval;
 
-
-
+	uint id = 0;
 };
 
 #endif 

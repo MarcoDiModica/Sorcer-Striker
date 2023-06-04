@@ -79,7 +79,7 @@ void BossLeft::Update() {
 	}
 
 	if (position.y <= -12000) {
-		position.y += 0;
+		position.y += 1;
 	}
 	
 	position.x = spawnPos.x + (waveHeight * sinf(waveRatio));
