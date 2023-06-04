@@ -102,9 +102,20 @@ void Enemy::OnCollision(Collider* collider)
 
 		if (tipo == Enemy_Type::BROWNSHIP2)
 		{
-			App->particles->AddParticle(App->particles->explosion, position.x, position.y);
-			App->audio->PlayFx(destroyedFx);
-			App->player->score += 50;
+			if (cnt == 0)
+			{
+				App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+				App->audio->PlayFx(destroyedFx);
+				App->player->score += 50;
+
+				SetToDelete();
+			}
+			else
+			{
+				App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+				App->audio->PlayFx(destroyedFx);
+				App->player->score += 10;
+			}
 		}
 
 		if (tipo == Enemy_Type::BAG)
@@ -302,7 +313,8 @@ void Enemy::OnCollision(Collider* collider)
 		{
 			if (cnt == 0) {
 				App->input->ShakeController(0, 100, 0.3f);
-				App->audio->PlayFx(App->player->bigexplioson);
+				
+				App->audio->PlayFx(App->player->pkfire);
 				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 40, position.y);
 				App->particles->AddParticle(App->particles->explosion, position.x + 25, position.y - 8);
 				App->particles->AddParticle(App->particles->explosion, position.x + 20, position.y + 25);
@@ -318,7 +330,7 @@ void Enemy::OnCollision(Collider* collider)
 			}
 			else
 			{
-				App->particles->AddParticle(App->particles->explosion, collider->rect.x, position.y + 46);
+				App->particles->AddParticle(App->particles->explosion, collider->rect.x-17, position.y + 46);
 				App->audio->PlayFx(destroyedFx);
 				
 				App->player->score += 100;
@@ -329,7 +341,8 @@ void Enemy::OnCollision(Collider* collider)
 		{
 			if (cnt == 0) {
 				App->input->ShakeController(0, 100, 0.3f);
-				App->audio->PlayFx(App->player->bigexplioson);
+				
+				App->audio->PlayFx(App->player->pkfire);
 				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 30, position.y);
 				App->particles->AddParticle(App->particles->explosion, position.x + 15, position.y - 8);
 				App->particles->AddParticle(App->particles->explosion, position.x + 10, position.y + 25);
@@ -337,15 +350,16 @@ void Enemy::OnCollision(Collider* collider)
 				App->particles->AddParticle(App->particles->explosion, position.x + 50, position.y - 10);
 				App->player->score += 1000;
 
-				App->particles->AddParticle(App->particles->flamethrower, position.x - 40, position.y, Collider::Type::ENEMY_SHOT, 80);
-				App->particles->AddParticle(App->particles->flamethrower, position.x - 40, position.y, Collider::Type::ENEMY_SHOT, 90);
-				App->particles->AddParticle(App->particles->flamethrower, position.x - 40, position.y, Collider::Type::ENEMY_SHOT, 110);
-				App->particles->AddParticle(App->particles->flamethrower, position.x - 40, position.y, Collider::Type::ENEMY_SHOT, 120);
-				App->particles->AddParticle(App->particles->flamethrower, position.x - 40, position.y, Collider::Type::ENEMY_SHOT, 130);
+				
+				App->particles->AddParticle(App->particles->flamethrower, position.x - 50, position.y, Collider::Type::ENEMY_SHOT, 80);
+				App->particles->AddParticle(App->particles->flamethrower, position.x - 50, position.y, Collider::Type::ENEMY_SHOT, 90);
+				App->particles->AddParticle(App->particles->flamethrower, position.x - 50, position.y, Collider::Type::ENEMY_SHOT, 110);
+				App->particles->AddParticle(App->particles->flamethrower, position.x - 50, position.y, Collider::Type::ENEMY_SHOT, 120);
+				App->particles->AddParticle(App->particles->flamethrower, position.x - 50, position.y, Collider::Type::ENEMY_SHOT, 130);
 			}
 			else
 			{
-				App->particles->AddParticle(App->particles->explosion, collider->rect.x, position.y + 46);
+				App->particles->AddParticle(App->particles->explosion, collider->rect.x-17, position.y + 46);
 				App->audio->PlayFx(destroyedFx);
 				App->player->score += 100;
 			}
@@ -372,7 +386,7 @@ void Enemy::OnCollision(Collider* collider)
 				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x - 33, position.y-30, Collider::Type::NONE, 9);
 				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x - 70, position.y + 5, Collider::Type::NONE, 31);
 				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x - 65, position.y - 22, Collider::Type::NONE, 18);
-				//Añadir explosiones para disimular que hemos deleteado todos los enemigos : OPCION 1
+				//Aï¿½adir explosiones para disimular que hemos deleteado todos los enemigos : OPCION 1
 				
 				App->enemies->Disable();
 				App->enemies->Enable();

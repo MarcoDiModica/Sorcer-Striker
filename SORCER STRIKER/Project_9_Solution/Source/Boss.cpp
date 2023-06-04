@@ -11,6 +11,7 @@
 #include "SceneLevel1.h"
 #include <cstdlib>
 #include <ctime>
+#include "ModuleAudio.h"
 
 
 Boss::Boss(int x, int y) :Enemy(x, y) {
@@ -31,6 +32,7 @@ Boss::Boss(int x, int y) :Enemy(x, y) {
 
 	collider = App->collisions->AddCollider({ position.x,position.y,90,124 }, Collider::Type::ENEMY, (Module*)App->enemies);
 
+
 	spawnInterval = 1000;
 	//////////////////OEE WATON SI LE DAI A LA TECLA ENE VAI A LA ZONA DEL BO
 }
@@ -47,11 +49,14 @@ void Boss::Update() {
      tracker += 1;
 
 	 if ((tracker == 500||tracker == 1500 || tracker == 3000) && cnt>0) {
+
+		 App->audio->PlayFx(App->player->pkfire);
 		 App->particles->AddParticle(App->particles->flamethrower, position.x + 40, position.y, Collider::Type::ENEMY_SHOT, 80);
 		 App->particles->AddParticle(App->particles->flamethrower, position.x + 40, position.y, Collider::Type::ENEMY_SHOT, 90);
 		 App->particles->AddParticle(App->particles->flamethrower, position.x + 40, position.y, Collider::Type::ENEMY_SHOT, 110);
 		 App->particles->AddParticle(App->particles->flamethrower, position.x + 40, position.y, Collider::Type::ENEMY_SHOT, 120);
 		 App->particles->AddParticle(App->particles->flamethrower, position.x + 40, position.y, Collider::Type::ENEMY_SHOT, 130);
+
 	 }
 	
 
@@ -75,7 +80,7 @@ void Boss::Update() {
 	}
 
 	if (position.y <= -12000) {
-		position.y += 0;
+		position.y += 1;
 	}
 
 	position.x = spawnPos.x + (waveHeight * sinf(waveRatio));

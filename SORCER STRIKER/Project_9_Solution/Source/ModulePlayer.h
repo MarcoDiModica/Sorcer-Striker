@@ -115,7 +115,8 @@ public:
 	uint coinFx = 0;
 	uint damageFx = 0;
 	uint bigexplioson = 0;
-	 uint muerteFx = 0;
+	uint muerteFx = 0;
+	uint pkfire = 0;
 
 	// uint lasthitFX = 0;
 
