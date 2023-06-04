@@ -16,15 +16,7 @@ private:
 
 	Path path;
 
-	float waveRatio = 0.0f;
-
-	float waveRatioSpeed = 0.2f;
 	int mondongo = -3.00f;
-	int spawn_y = 0;
-	int spawn_x = 0;
-
-	int waveHeight = 15;
-
 
 	Animation Heroina;
 

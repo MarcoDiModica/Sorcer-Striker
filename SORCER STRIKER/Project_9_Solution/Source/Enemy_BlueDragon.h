@@ -16,14 +16,6 @@ private:
 
 	Path path;
 
-	float waveRatio = 0.0f;
-
-	float waveRatioSpeed = 0.2f;
-
-	int spawn_y = 0;
-
-	int waveHeight = 15;
-
 	Animation DrakeAnim1;
 	Animation DrakeAnim2;
 	Animation DrakeAnim3;

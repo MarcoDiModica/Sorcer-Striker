@@ -49,6 +49,11 @@ bool SceneIntro3::Start()
 	App->particles->CleanUp();
 	App->enemies->CleanUp();
 	App->player->CleanUp();
+
+	App->collisions->Disable();
+	App->particles->Disable();
+	App->enemies->Disable();
+	App->player->Disable();
 	return ret;
 }
 

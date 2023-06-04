@@ -45,7 +45,7 @@ bool SceneLevel1::Start()
 	App->particles->AddParticle(App->particles->tubo, 0 + space, -950, Collider::Type::NONE);
 	App->particles->AddParticle(App->particles->tubo, 0 + space, -1250, Collider::Type::NONE);
 
-	
+	aprendeaprogramar = 2;
 
 	//bag//
 	App->enemies->AddEnemy(Enemy_Type::BAG, 80 + 250, -1150);
@@ -148,7 +148,8 @@ bool SceneLevel1::Start()
 	App->items->Enable();
 	App->player->Enable();
 	App->enemies->Enable();
-	
+	App->collisions->Enable();
+	App->particles->Enable();
 
 	return ret;
 }
