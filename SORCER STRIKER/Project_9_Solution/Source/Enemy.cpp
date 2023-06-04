@@ -146,6 +146,7 @@ void Enemy::OnCollision(Collider* collider)
 			if (cnt == 0) {
 				App->audio->PlayFx(destroyedFx);
 				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x, position.y - 10);
+				App->input->ShakeController(0, 60, 0.2f);
 			}
 			else
 			{
@@ -216,7 +217,7 @@ void Enemy::OnCollision(Collider* collider)
 			if (cnt == 0) {
 				App->audio->PlayFx(App->player->bigexplioson);
 				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 20, position.y + 20);
-
+				App->input->ShakeController(0, 60, 0.2f);
 				App->player->score += 100;
 
 				SetToDelete();
@@ -234,7 +235,7 @@ void Enemy::OnCollision(Collider* collider)
 			if (cnt == 0) {
 				App->audio->PlayFx(App->player->bigexplioson);
 				App->particles->AddParticle(App->particles->InsaneEXplosion, position.x + 20, position.y + 20);
-
+				App->input->ShakeController(0, 60, 0.2f);
 				App->player->score += 100;
 
 				SetToDelete();
