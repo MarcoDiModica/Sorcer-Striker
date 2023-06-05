@@ -1,3 +1,6 @@
+Github Web Page:
+https://marcodimodica.github.io/Sorcer-Striker/
+
 Github of the project : 
 https://github.com/MarcoDiModica/Sorcer-Striker
 
@@ -74,7 +77,9 @@ k = skip all intros
 m = slowed down tank zone
 n = Boss
 
+https://youtu.be/O0l-YeNsApY
 
+https://youtu.be/pelnx8CoUpI
 
 
 Additional Comments
