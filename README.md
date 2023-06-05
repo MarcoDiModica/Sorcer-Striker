@@ -1,5 +1,3 @@
-theme: Cayman
-
 Github Web Page:
 https://marcodimodica.github.io/Sorcer-Striker/
 
@@ -19,7 +17,9 @@ Pablo Longarón: https://github.com/PabloL2003
 Description of the Game 
 Sorcer striker is a vertical scrolling shooter launched in japan and europe on the 90’s which consists of purely destroying enemies with your spaceship, one of it’s characteristics is that every single time that a stage changes new types of enemies will appears as well as a new background and new soundtrack, it is also important to say that in the original game you could swap the element of your spaceship to deal a specific type of damage, this was implemented around the idea that the pilots are sorcerors that control the nature elements. 
 
+Pablo did Audio, Sprites and Level Design. Jordi did some enemies and the final boss. Yiwey did gamepad implentation, FULLSCREEN mode and some polish. Alex did UI and screen implementations. Marco did enemies. coding technical things and assisting other team members.
 
+Besides the current responsibility, each team member has worked on polishing the game and testing it.
 
 
 How to play the game 
