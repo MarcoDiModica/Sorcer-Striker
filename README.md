@@ -1,18 +1,19 @@
 Github Web Page:
-https://marcodimodica.github.io/Sorcer-Striker/
+[WEBPAGE](https://marcodimodica.github.io/Sorcer-Striker/)
 
 Github of the project : 
-https://github.com/MarcoDiModica/Sorcer-Striker
+[PROJECT](https://github.com/MarcoDiModica/Sorcer-Striker)
 
+[DOWNLOAD RELEASE](https://github.com/MarcoDiModica/Sorcer-Striker/releases/tag/v1.0)
 
 **Team Members**
 
 
-Jordi Tur: https://github.com/Jordopol
-Marco di Modica: https://github.com/MarcoDiModica
-Alex Becerra: https://github.com/Bonnie041008
-Yiwei Ye: https://github.com/Yeeway69
-Pablo Longarón: https://github.com/PabloL2003
+Jordi Tur: [GITHUB](https://github.com/Jordopol)
+Marco di Modica: [GITHUB](https://github.com/MarcoDiModica)
+Alex Becerra: [GITHUB](https://github.com/Bonnie041008)
+Yiwei Ye: [GITHUB](https://github.com/Yeeway69)
+Pablo Longarón: [GITHUB](https://github.com/PabloL2003)
         
 **Description of the Game**
 Sorcer striker is a vertical scrolling shooter launched in japan and europe on the 90’s which consists of purely destroying enemies with your spaceship, one of it’s characteristics is that every single time that a stage changes new types of enemies will appears as well as a new background and new soundtrack, it is also important to say that in the original game you could swap the element of your spaceship to deal a specific type of damage, this was implemented around the idea that the pilots are sorcerors that control the nature elements. 
