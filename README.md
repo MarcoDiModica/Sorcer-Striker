@@ -81,6 +81,8 @@ https://youtu.be/O0l-YeNsApY
 
 https://youtu.be/pelnx8CoUpI
 
+![Group Photo](https://github.com/MarcoDiModica/Sorcer-Striker/assets/125266260/6ade3235-df97-48d9-bf05-f8d42e279c38)
+
 
 Additional Comments
 In order to implement the object class and functionality, we established a new Module, as well as a new entity. Nevertheless, although the items worked perfectly fine and as intended, some error that we have not been able to figure out does not enable the textures for the items to load. It was just this bit that did not work properly regarding the item implementation.
