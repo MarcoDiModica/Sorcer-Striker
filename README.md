@@ -1,4 +1,4 @@
-theme: Architect
+theme: Cayman
 
 Github Web Page:
 https://marcodimodica.github.io/Sorcer-Striker/
