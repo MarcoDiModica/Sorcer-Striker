@@ -52,6 +52,30 @@ S =  Rigth
 D = Down
 Space = Shooting Enemies
 
+Enemy Debug function:
+
+1 = flying balloon
+2 = wizard
+3 = double tank
+4 = Coin bag
+5 = power-up chest
+6 = blue dragon
+7 = flying lizard
+8 = single tank
+9 = reverse double tank
+0 = reverse single tank
+y = second ver dragon
+h = second ver balloon
+g = third ver balloon 
+
+Skip to zones:
+
+k = skip all intros
+m = slowed down tank zone
+n = Boss
+
+
+
 
 Additional Comments
 In order to implement the object class and functionality, we established a new Module, as well as a new entity. Nevertheless, although the items worked perfectly fine and as intended, some error that we have not been able to figure out does not enable the textures for the items to load. It was just this bit that did not work properly regarding the item implementation.
