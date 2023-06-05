@@ -1,3 +1,5 @@
+theme: Architect
+
 Github Web Page:
 https://marcodimodica.github.io/Sorcer-Striker/
 
