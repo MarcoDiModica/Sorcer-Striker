@@ -1,6 +1,8 @@
 Github Web Page:
 [WEBPAGE](https://marcodimodica.github.io/Sorcer-Striker/)
 
+[DIRECT DOWNLOAD](https://github.com/MarcoDiModica/Sorcer-Striker/releases/download/v1.0/Cockcumbeer_Sorcer.Striker_v1.0.zip)
+
 Github of the project : 
 [PROJECT](https://github.com/MarcoDiModica/Sorcer-Striker)
 
