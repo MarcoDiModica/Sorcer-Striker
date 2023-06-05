@@ -80,12 +80,12 @@ k = skip all intros
 m = slowed down tank zone
 n = Boss
 
-**PRESENTATION**
+
 [![Presentation](https://img.youtube.com/vi/O0l-YeNsApY/0.jpg)](https://www.youtube.com/watch?v=O0l-YeNsApY)
 
-**WALKTHROUGH**
+
 [![Presentation](https://img.youtube.com/vi/pelnx8CoUpI/0.jpg)](https://www.youtube.com/watch?v=pelnx8CoUpI)
 
-**GROUP PHOTO**
+
 ![Group Photo](https://github.com/MarcoDiModica/Sorcer-Striker/assets/125266260/6ade3235-df97-48d9-bf05-f8d42e279c38)
 
